@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://smithbcg.github.io/kikers-website/sitemap.xml
