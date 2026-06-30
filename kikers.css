@@ -364,15 +364,16 @@ section{scroll-margin-top:80px}
 
 /* ===== FOOTER ===== */
 footer.ftr{background:var(--ink);color:rgba(255,255,255,.72);padding:54px 0 28px;font-size:14px}
-.ftr-grid{display:grid;grid-template-columns:1.2fr 1.6fr 1fr;gap:40px}
+.ftr-grid{display:grid;grid-template-columns:1fr 2.2fr 1fr;gap:40px}
 .ftr .brand .wm{color:#fff}.ftr .brand .wm span{color:var(--amber-300)}
 .ftr .fcol h5{font-family:var(--display);font-weight:700;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:14px}
 .ftr .fcol a,.ftr .fcol p{color:rgba(255,255,255,.74);margin:0 0 9px;display:block}.ftr .fcol a:hover{color:#fff}
-.ftr .sublinks{display:grid;grid-template-columns:1fr 1fr;gap:24px}.ftr .about p{margin:14px 0 6px}.ftr .about .phone{color:#fff;font-weight:600}
+.ftr .sublinks{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}.ftr .about p{margin:14px 0 6px}.ftr .about .phone{color:#fff;font-weight:600}
 .ftr .social{display:flex;gap:10px;margin-top:14px}.ftr .social a{width:36px;height:36px;border:1px solid rgba(255,255,255,.2);border-radius:var(--r-sm);display:grid;place-items:center;color:#fff;font-size:15px}
 .ftr-bottom{border-top:1px solid rgba(255,255,255,.1);margin-top:36px;padding-top:18px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:center}
 .ftr-bottom .vals{font-family:var(--display);font-style:italic;font-weight:700;text-transform:uppercase;font-size:12px;letter-spacing:.04em;color:var(--amber-300)}.ftr-bottom .copy{font-size:13px;color:rgba(255,255,255,.5)}
 @media(max-width:860px){.ftr-grid{grid-template-columns:1fr;gap:32px}}
+@media(max-width:640px){.ftr .sublinks{grid-template-columns:1fr}}
 
 /* ===== SERVICE AREA ===== */
 .area{background:var(--surface-3)}
