@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kiker's U-Pull-It — Cash for Cars &amp; Self-Service Auto Parts in Pensacola, FL</title>
+<meta name="description" content="Kiker's U-Pull-It is a family-owned self-service salvage yard in Pensacola, FL. We buy cars for cash (running or not), and you can pull your own parts and save. Three generations, 25 years. Open Mon-Fri, 9 AM-4:30 PM; Sat, 8 AM-2 PM. Call 850-435-7630.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,500;0,600;0,700;0,800;1,600;1,700;1,800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+/* ===== TOKENS — Kiker's Site Style Guide ===== */
+:root{
+  --red:#DC161F;--red-700:#B4101A;--red-800:#8C0C14;--red-wash:#FDEDEE;
+  --amber:#F6A100;--amber-300:#FFC74D;--amber-600:#D98200;--amber-wash:#FFF4DC;
+  --ink:#0B0611;--white:#FFFFFF;
+  --bg:#F4F4F6;--surface-1:#FFFFFF;--surface-2:#FFFFFF;--surface-3:#EFEFF1;
+  --text:#0B0611;--text-2:#55555B;--text-3:#86868D;
+  --line:#E5E5E8;--line-2:#D8D8DC;--line-strong:#BEBEC4;
+  --steel-300:#D7DBDE;--steel-500:#A6ABB0;--steel-700:#72767B;
+  --green:#1E9E57;--green-600:#178A4A;--green-700:#0F6E3B;--green-on-wash:#0F6E3B;--green-wash:#E4F5EC;--green-line:rgba(15,110,59,.22);
+  --grad-ink:linear-gradient(160deg,#0B0611,#1A1719);--grad-red:linear-gradient(135deg,#DC161F,#8C0C14);--grad-chrome:linear-gradient(135deg,#E3E6E8,#9A9FA4 55%,#D7DBDE);--grad-amber:linear-gradient(135deg,#FFC74D,#F6A100 55%,#D98200);
+  --r-xs:2px;--r-sm:3px;--r-md:4px;--r-lg:6px;--r-pill:100px;
+  --e1:0 1px 2px rgba(11,6,17,.08);--e2:0 8px 20px rgba(11,6,17,.10);--e3:0 20px 48px rgba(11,6,17,.16);--glow-red:0 0 0 1px rgba(220,22,31,.25),0 10px 28px rgba(220,22,31,.20);
+  --display:'Saira',system-ui,sans-serif;--body:'Inter',system-ui,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace;--maxw:1200px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}img,svg{max-width:100%}
+h1,h2,h3,h4{margin:0;font-family:var(--display);font-weight:800;letter-spacing:-.01em;line-height:1.05;text-transform:uppercase}
+:focus-visible{outline:2px solid var(--amber);outline-offset:2px;border-radius:var(--r-xs)}
+::selection{background:var(--red);color:#fff}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.eyebrow{font-family:var(--body);font-weight:600;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--red);display:inline-flex;align-items:center;gap:8px}
+.eyebrow::before{content:"";width:18px;height:2px;background:var(--red)}
+.eyebrow.on-ink{color:var(--amber-300)}.eyebrow.on-ink::before{background:var(--amber)}
+.mono{font-family:var(--mono)}.k{font-family:var(--mono);font-size:11px;letter-spacing:.05em;color:var(--amber-600)}
+.hint{color:var(--text-3);font-size:13px}
+
+/* ===== SIGNATURES ===== */
+.race-rule{height:14px;width:100%;background-color:#fff;background-image:linear-gradient(45deg,var(--ink) 25%,transparent 25%),linear-gradient(-45deg,var(--ink) 25%,transparent 25%),linear-gradient(45deg,transparent 75%,var(--ink) 75%),linear-gradient(-45deg,transparent 75%,var(--ink) 75%);background-size:14px 14px;background-position:0 0,0 7px,7px -7px,-7px 0;border-top:2px solid var(--red);border-bottom:2px solid var(--red)}
+.hazard{height:6px;background:repeating-linear-gradient(45deg,var(--amber) 0 12px,var(--ink) 12px 24px)}
+
+/* photo placeholder */
+.ph{position:relative;border-radius:var(--r-lg);overflow:hidden;border:1.5px dashed var(--line-strong);background:repeating-linear-gradient(45deg,#fafafb 0 10px,#f1f1f4 10px 20px);display:grid;place-items:center;text-align:center}
+.ph--16x9{aspect-ratio:16/9}.ph--4x5{aspect-ratio:4/5}.ph--dark{border-color:rgba(255,255,255,.22);background:var(--grad-ink)}
+.ph-in{padding:16px;display:flex;flex-direction:column;gap:5px;align-items:center;max-width:92%}
+.ph-cam{font-size:22px;opacity:.85}.ph-kick{font-family:var(--mono);font-size:10px;letter-spacing:.16em;color:var(--amber-600)}.ph--dark .ph-kick{color:var(--amber-300)}
+.ph-desc{font-size:12.5px;color:var(--text-2);line-height:1.4;font-weight:500}.ph--dark .ph-desc{color:rgba(255,255,255,.86)}
+.ph-spec{font-family:var(--mono);font-size:10.5px;color:var(--text-3)}.ph--dark .ph-spec{color:rgba(255,255,255,.5)}
+.ph-tag{position:absolute;left:16px;bottom:16px;z-index:4;max-width:330px;text-align:left;background:rgba(11,6,17,.74);border:1.5px dashed rgba(255,255,255,.35);border-radius:var(--r-md);padding:9px 12px;color:#fff}
+.ph-tag .kk{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--amber-300);margin-bottom:3px}.ph-tag .d{font-size:12px;line-height:1.4}
+
+/* ===== BUTTONS (squared, Saira italic) ===== */
+.btn{--bg:transparent;--fg:var(--text);--bd:transparent;font-family:var(--display);font-weight:700;font-style:italic;text-transform:uppercase;letter-spacing:.04em;font-size:14px;display:inline-flex;align-items:center;justify-content:center;gap:8px;cursor:pointer;padding:0 20px;height:48px;border-radius:var(--r-md);border:1.5px solid var(--bd);background:var(--bg);color:var(--fg);transition:transform .07s,background .15s,box-shadow .15s,border-color .15s;white-space:nowrap}
+.btn:active{transform:translateY(1px)}.btn .ic{font-style:normal;font-weight:700;font-size:15px}
+.btn--filled{--bg:var(--red);--fg:#fff;--bd:var(--red);box-shadow:var(--e1)}.btn--filled:hover{--bg:var(--red-700);--bd:var(--red-700);box-shadow:var(--glow-red)}
+.btn--amber{--bg:var(--amber);--fg:#3a2600;--bd:var(--amber)}.btn--amber:hover{--bg:var(--amber-600);--bd:var(--amber-600)}
+.btn--outline{--bg:transparent;--fg:var(--text);--bd:var(--line-strong)}.btn--outline:hover{--bd:var(--ink)}
+.btn--outline-light{--bg:transparent;--fg:#fff;--bd:rgba(255,255,255,.55)}.btn--outline-light:hover{--bd:#fff;--bg:rgba(255,255,255,.08)}
+.btn--text{--bg:transparent;--fg:var(--red);--bd:transparent;padding:0 8px;height:auto}.btn--text:hover{text-decoration:underline}
+.btn--sm{height:40px;font-size:12px;padding:0 14px}.btn--lg{height:54px;font-size:15px;padding:0 26px}.btn--block{display:flex;width:100%}
+.avail{display:inline-flex;align-items:center;gap:7px;font-weight:600;font-size:12px;padding:4px 10px;border-radius:var(--r-sm);background:var(--green-wash);color:var(--green-on-wash);border:1px solid var(--green-line)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 3px rgba(30,158,87,.22);flex:0 0 auto}
+.dot.pulse{animation:gpulse 1.8s ease-in-out infinite}@keyframes gpulse{0%,100%{box-shadow:0 0 0 3px rgba(30,158,87,.22)}50%{box-shadow:0 0 0 7px rgba(30,158,87,.05)}}
+
+/* ===== NAV / UTILITY ===== */
+.ustrip{background:var(--ink);color:rgba(255,255,255,.86);font-size:13px}
+.ustrip .wrap{display:flex;align-items:center;justify-content:space-between;height:38px;gap:16px}
+.ustrip a{color:#fff;font-weight:500}.ustrip .sep{opacity:.4;margin:0 10px}
+.ustrip .u-left,.ustrip .u-right{display:flex;align-items:center;white-space:nowrap}.ustrip .u-right{color:var(--amber-300)}
+@media(max-width:760px){.ustrip .u-left .addr,.ustrip .u-right .txt{display:none}.ustrip .wrap{justify-content:center;gap:8px}}
+.nav{position:sticky;top:0;z-index:60;height:66px;background:#fff;border-bottom:1px solid transparent;transition:border-color .2s,box-shadow .2s,backdrop-filter .2s}
+.nav.scrolled{border-bottom-color:var(--line);box-shadow:var(--e1);background:rgba(255,255,255,.95);backdrop-filter:blur(8px)}
+.nav .wrap{display:flex;align-items:center;height:66px;gap:18px}
+.brand{display:flex;align-items:center;gap:11px}
+.brand-logo{line-height:0;gap:0}
+.nav .brand-logo{width:168px;max-width:48vw}
+.brand-logo-img{display:block;width:100%;height:auto;object-fit:contain}
+.ftr .brand-logo{width:250px;max-width:100%;background:#fff;border-radius:12px;padding:8px 10px;box-shadow:0 10px 24px rgba(0,0,0,.18)}
+.brand .shield{width:40px;height:40px;border-radius:var(--r-sm);background:var(--grad-red);display:grid;place-items:center;font-family:var(--display);font-style:italic;font-weight:800;color:#fff;font-size:23px;box-shadow:var(--e1)}
+.brand .wm{font-family:var(--display);font-style:italic;font-weight:800;font-size:20px;letter-spacing:-.02em;line-height:.92}
+.brand .wm span{display:block;font-size:9px;letter-spacing:.30em;font-style:normal;font-weight:700;color:var(--red)}
+.nav .spacer{flex:1}.nav .links{display:none;align-items:center;gap:26px}
+.nav .links a{font-size:15px;font-weight:500;color:var(--text)}.nav .links a:hover{color:var(--red)}
+.nav .menu{background:none;border:1px solid var(--line-2);color:var(--text);width:42px;height:42px;border-radius:var(--r-md);font-size:18px;cursor:pointer;display:grid;place-items:center}
+@media(min-width:1040px){.nav .links{display:flex}.nav .menu{display:none}}
+.drawer{position:fixed;inset:0 0 0 auto;width:min(320px,86vw);background:#fff;z-index:90;transform:translateX(100%);transition:transform .24s cubic-bezier(.2,.8,.2,1);box-shadow:var(--e3);padding:24px;display:flex;flex-direction:column;gap:6px}
+.drawer.open{transform:translateX(0)}.drawer a{padding:13px 10px;border-bottom:1px solid var(--line);font-family:var(--display);font-style:italic;font-weight:700;text-transform:uppercase;font-size:16px}.drawer .btn{margin-top:16px}
+.scrim{position:fixed;inset:0;background:rgba(5,3,7,.5);z-index:85;opacity:0;visibility:hidden;transition:opacity .2s}.scrim.open{opacity:1;visibility:visible}
+
+/* ===== HERO ===== */
+.hero{position:relative;overflow:hidden;color:#fff;background:var(--grad-ink)}
+.hero .hero-photo{position:absolute;inset:0;z-index:0;background:linear-gradient(120deg,#211c24,#15121a 60%,#241b1d)}
+.hero::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(11,6,17,.92),rgba(11,6,17,.74) 45%,rgba(11,6,17,.32)),radial-gradient(720px 380px at 92% -10%,rgba(220,22,31,.32),transparent 60%)}
+.hero .wrap{position:relative;z-index:2;padding:64px 24px 76px}
+.hero-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:48px;align-items:center}
+.hero .h-tags{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:18px}
+.chiplet{font-family:var(--mono);font-size:12px;font-weight:500;color:rgba(255,255,255,.82);border:1px solid rgba(255,255,255,.2);padding:5px 11px;border-radius:var(--r-pill)}
+.hero h1{font-size:clamp(40px,5.6vw,68px);font-style:italic;line-height:.92;letter-spacing:-.5px}
+.hero h1 em{color:var(--red);font-style:italic}
+.hero .lede{max-width:54ch;color:rgba(255,255,255,.84);font-size:18px;margin:18px 0 26px}
+.hero .cta-row{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.offer-card{position:relative;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.16);border-radius:var(--r-lg);padding:22px;backdrop-filter:blur(6px)}
+.offer-card .ohead{display:flex;align-items:center;justify-content:space-between;margin-bottom:4px}
+.offer-card h2{font-style:italic;font-size:20px;color:#fff;text-transform:uppercase}
+.offer-card .sub{color:rgba(255,255,255,.7);font-size:13px;margin-bottom:16px}
+.offer-card .qf{display:grid;gap:10px}
+.offer-card input,.offer-card select{width:100%;height:46px;background:rgba(255,255,255,.07);border:1.5px solid rgba(255,255,255,.2);border-radius:var(--r-md);color:#fff;padding:0 12px;font-family:var(--body);font-size:14px;outline:none}
+.offer-card input::placeholder{color:rgba(255,255,255,.55)}.offer-card select{color:rgba(255,255,255,.6)}.offer-card option{color:#111}
+.offer-card input:focus,.offer-card select:focus{border-color:var(--amber)}
+.offer-card .fine{margin-top:10px;text-align:center;color:rgba(255,255,255,.55);font-size:12px}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:30px}.hero .wrap{padding:46px 24px 54px}.hero::after{background:linear-gradient(180deg,rgba(11,6,17,.72),rgba(11,6,17,.92)),radial-gradient(540px 300px at 50% -20%,rgba(220,22,31,.32),transparent 62%)}}
+
+/* ===== SECTIONS ===== */
+section{scroll-margin-top:80px}
+.sec{padding:72px 0}
+.sec-head{margin-bottom:30px}
+.sec-head.center{text-align:center;display:flex;flex-direction:column;align-items:center}
+.sec-head h2{font-size:clamp(26px,3.4vw,38px);margin:8px 0;font-style:italic}
+.sec-head p{margin:0;max-width:62ch;color:var(--text-2);font-size:17px}.sec-head.center p{margin:0 auto}
+.row-between{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+/* ===== CHROME STAT PLATES ===== */
+.plates{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.plate{background:var(--grad-chrome);padding:1.5px;border-radius:var(--r-md);box-shadow:var(--e1)}
+.plate>div{background:var(--surface-2);border-radius:3px;padding:22px 16px;text-align:center}
+.plate .n{font-family:var(--display);font-style:italic;font-weight:800;font-size:38px;line-height:1}
+.plate .n span{font-size:18px}
+.plate .l{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-2);margin-top:8px}
+.plate.dark>div{background:#15131a}.plate.dark .l{color:rgba(255,255,255,.6)}.plate.dark .n{color:#fff}
+@media(max-width:680px){.plates{grid-template-columns:repeat(2,1fr)}}
+
+/* ===== BASE CARDS (services) ===== */
+.cards-row{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.card{background:var(--surface-1);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden}
+.card--elevated{box-shadow:var(--e2);border-color:transparent}
+.card--filled{background:var(--surface-3);border-color:transparent}
+.card .c-body{padding:24px}.card .c-body .ic{font-size:28px;display:block;margin-bottom:10px}
+.card h4{font-style:italic;font-size:19px;margin-bottom:6px}.card .c-body p{margin:0;color:var(--text-2);font-size:14px}
+.card .c-foot{padding:14px 24px;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between}
+@media(max-width:820px){.cards-row{grid-template-columns:1fr}}
+
+/* ===== LEAD FORM ===== */
+.lead{background:#F0F4F8}
+.lead-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.form-card{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--e2);padding:28px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field label{font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--text-2)}
+.field input,.field select{height:48px;background:#fff;border:1.5px solid var(--line-2);border-radius:var(--r-md);padding:0 14px;font-family:var(--body);font-size:15px;color:var(--text);outline:none}
+.field input:focus,.field select:focus{border-color:var(--red)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.verified{list-style:none;padding:0;margin:20px 0 0;display:grid;gap:13px}
+.verified li{display:flex;align-items:flex-start;gap:11px;font-size:15px}
+.verified .vc{width:22px;height:22px;border-radius:50%;background:var(--green);display:grid;place-items:center;color:#fff;font-size:12px;font-weight:700;flex:0 0 auto;margin-top:1px}.verified b{font-weight:700}
+@media(max-width:860px){.lead-grid{grid-template-columns:1fr;gap:30px}.lead-aside .ph{display:none}}
+
+/* ===== FEATURE CARDS (NASCAR) ===== */
+.fcards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.feature-card{position:relative;border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line);min-height:230px;display:flex;flex-direction:column;justify-content:flex-end;background-image:var(--grad-ink);cursor:pointer;transition:transform .18s ease,box-shadow .18s ease}
+.feature-card:hover{transform:translateY(-3px);box-shadow:var(--e2)}
+.feature-card .img{position:absolute;inset:0;background:linear-gradient(200deg,#3a3137,#16131a);opacity:.92}
+.feature-card .img .ph-mini{position:absolute;top:14px;right:14px;font-family:var(--mono);font-size:9px;color:rgba(255,255,255,.45);letter-spacing:.1em}
+.feature-card .img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(11,6,17,.92))}
+.feature-card .flag{position:absolute;top:12px;left:12px;z-index:2;font-family:var(--display);font-weight:800;font-style:italic;font-size:11px;letter-spacing:.06em;color:#fff;background:var(--red);padding:4px 10px;border-radius:var(--r-sm)}
+.feature-card .flag.amber{background:var(--amber);color:#3a2600}
+.feature-card .fc-txt{position:relative;z-index:2;padding:16px}
+.feature-card .fc-txt h4{font-style:italic;font-size:18px;margin-top:4px;color:#fff}
+.feature-card .fc-txt .km{font-family:var(--mono);font-size:11px;color:var(--amber-300);letter-spacing:.05em;display:block;margin-top:4px}
+@media(max-width:980px){.fcards{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.fcards{grid-template-columns:1fr}}
+
+/* ===== INVENTORY LIST (steel avatars + mono) ===== */
+.list{background:var(--surface-1);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden}
+.list .li{display:flex;align-items:center;gap:14px;padding:13px 18px;border-bottom:1px solid var(--line);transition:background .12s}
+.list .li:last-child{border-bottom:none}.list .li:hover{background:var(--surface-3)}
+.list .av{width:42px;height:42px;border-radius:var(--r-sm);background:var(--grad-red);display:grid;place-items:center;font-family:var(--display);font-style:italic;font-weight:800;color:#fff;flex:0 0 auto}
+.list .av.steel{background:var(--grad-chrome);color:var(--ink)}
+.list .tx{flex:1;min-width:0}.list .t1{font-weight:600;font-size:14.5px}.list .t2{font-size:12.5px;color:var(--text-3)}
+.list .meta{font-family:var(--mono);font-size:12px;color:var(--text-2);white-space:nowrap}
+
+/* ===== SPEC PLATE ===== */
+.spec-card{background:var(--surface-1);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;max-width:560px}
+.spec-card .sc-top{display:flex;align-items:center;justify-content:space-between;padding:16px;gap:12px;background:linear-gradient(160deg,#1c1b21,#141318)}
+.spec-card .sc-top h4{font-style:italic;font-size:18px;color:#fff}
+.spec-card .row-tag{font-family:var(--mono);font-size:12px;color:#fff;background:var(--ink);border:1px solid var(--line-2);padding:4px 9px;border-radius:var(--r-sm)}
+.spec-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line)}
+.spec-grid .cell{padding:16px 12px;text-align:center;border-right:1px solid var(--line)}
+.spec-grid .cell:last-child{border-right:none}
+.spec-grid .cell .ic{font-size:20px;color:var(--steel-700)}
+.spec-grid .cell .lab{display:block;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3);margin-top:6px}
+.spec-grid .cell .val{display:block;font-family:var(--mono);font-weight:700;font-size:14px;margin-top:2px}
+.spec-card .sc-foot{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:12px 16px;border-top:1px solid var(--line)}
+.spec-card .sc-foot .btn{min-width:0;white-space:normal;text-align:center}
+@media(max-width:560px){.spec-grid{grid-template-columns:repeat(2,1fr)}.spec-grid .cell:nth-child(2){border-right:none}.spec-grid .cell:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+
+/* ===== STEPPER ===== */
+.stepper{display:flex;align-items:flex-start;max-width:720px;margin:0 auto}
+.step{flex:1;display:flex;flex-direction:column;align-items:center;text-align:center;position:relative}
+.step::before{content:"";position:absolute;top:24px;right:50%;width:100%;height:2px;background:var(--line)}
+.step:first-child::before{display:none}
+.step.done::before{background:var(--green)}
+.step .node{width:50px;height:50px;border-radius:50%;display:grid;place-items:center;background:var(--grad-red);border:none;font-family:var(--display);font-style:italic;font-weight:800;font-size:20px;color:#fff;position:relative;z-index:1;box-shadow:var(--e1)}
+.step .lab{font-size:14px;margin-top:12px;color:var(--text);font-weight:600;font-family:var(--display);font-style:italic;text-transform:uppercase}
+.step .sub{font-size:13px;color:var(--text-2);margin-top:4px;max-width:22ch}
+@media(max-width:680px){.stepper{flex-direction:column;gap:18px;max-width:420px}.step{flex-direction:row;text-align:left;gap:16px;align-items:flex-start}.step::before{display:none}.step .node{flex:0 0 auto}.step .sub{max-width:none}}
+
+/* ===== STORY (dark) ===== */
+.story{background:var(--grad-ink);color:#fff;position:relative;overflow:hidden}
+.story::after{content:"";position:absolute;inset:0;background:radial-gradient(620px 320px at 8% 110%,rgba(220,22,31,.24),transparent 60%);pointer-events:none}
+.story .wrap{position:relative;z-index:2}
+.story-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+.story h2{font-size:clamp(28px,3.6vw,42px);font-style:italic}.story h2 em{color:var(--red);font-style:italic}
+.story .lede{color:rgba(255,255,255,.84);font-size:17px;margin:18px 0}
+.story p.body{color:rgba(255,255,255,.72);font-size:15px;margin:0}
+@media(max-width:860px){.story-grid{grid-template-columns:1fr;gap:30px}}
+
+/* ===== REVIEWS ===== */
+.agg{display:flex;align-items:center;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:8px}
+.agg .score{font-family:var(--display);font-style:italic;font-weight:800;font-size:40px;line-height:1}
+.agg .stars{color:var(--amber);font-size:22px;letter-spacing:2px}.agg .from{color:var(--text-2);font-size:16px}
+.rcards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:32px}
+.rcard{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--e1);padding:24px}
+.rcard .stars{color:var(--amber);font-size:14px;letter-spacing:1px}.rcard p{margin:12px 0 16px;font-size:14.5px}
+.rcard .who{display:flex;align-items:center;justify-content:space-between;font-size:13px}
+.rcard .who .name{font-weight:600}.rcard .date{font-family:var(--mono);color:var(--text-3)}
+@media(max-width:820px){.rcards{grid-template-columns:1fr}}
+
+/* ===== LOCATION ===== */
+.loc-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:start}
+.map{aspect-ratio:16/11;border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line);background:repeating-linear-gradient(0deg,#e9ebee 0 24px,#eef0f2 24px 48px),repeating-linear-gradient(90deg,rgba(0,0,0,.03) 0 24px,transparent 24px 48px);position:relative;display:grid;place-items:center;box-shadow:var(--e1)}
+.map .pin{text-align:center}.map .pin .p{font-size:40px}.map .pin .t{font-family:var(--mono);font-size:12px;color:var(--text-2);margin-top:6px}
+.addr-row{margin-top:18px}.addr-row .a1{font-family:var(--display);font-style:italic;font-size:20px}.addr-row .a2{font-size:18px;color:var(--red);font-weight:600;margin-top:4px;display:inline-block}
+.hours{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--e1);padding:24px}
+.hours h3{font-style:italic;font-size:20px;margin-bottom:14px}
+.htable{width:100%;border-collapse:collapse}.htable td{padding:9px 0;border-bottom:1px dotted var(--line-2);font-size:14.5px}.htable tr:last-child td{border-bottom:none}
+.htable .day{font-weight:600}.htable .hrs{text-align:right;color:var(--text-2);font-family:var(--mono);font-size:13px}
+.htable tr.today td{background:#FFF7ED}.htable tr.today .day{color:var(--amber-600)}
+.hours .last{margin-top:12px;font-size:13px;color:var(--text-3);font-style:italic}
+.policies{margin-top:18px;border-top:1px solid var(--line);padding-top:16px}
+.policies ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}.policies li{display:flex;gap:9px;font-size:13.5px;color:var(--text-2)}
+.pays{display:flex;gap:8px;margin-top:16px;align-items:center;flex-wrap:wrap}.pays .pc{height:26px;padding:0 8px;display:grid;place-items:center;border:1px solid var(--line-2);border-radius:var(--r-xs);font-size:10px;font-weight:700;color:var(--text-3);font-family:var(--display);font-style:italic}
+@media(max-width:860px){.loc-grid{grid-template-columns:1fr;gap:28px}}
+
+/* ===== FINAL CTA + FOOTER ===== */
+.finalcta{background:var(--red);color:#fff}
+.finalcta .wrap{padding:54px 24px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.finalcta h2{font-style:italic;font-size:clamp(24px,3vw,34px);color:#fff}.finalcta p{margin:8px 0 0;color:rgba(255,255,255,.92);font-size:16px}.finalcta .grp{display:flex;gap:12px;flex-wrap:wrap}
+footer.ftr{background:var(--ink);color:rgba(255,255,255,.72);padding:54px 0 28px;font-size:14px}
+.ftr-grid{display:grid;grid-template-columns:1.2fr 1.6fr 1fr;gap:40px}
+.ftr .brand .wm{color:#fff}.ftr .brand .wm span{color:var(--amber-300)}
+.ftr .fcol h5{font-family:var(--display);font-weight:700;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:14px}
+.ftr .fcol a,.ftr .fcol p{color:rgba(255,255,255,.74);margin:0 0 9px;display:block}.ftr .fcol a:hover{color:#fff}
+.ftr .sublinks{display:grid;grid-template-columns:1fr 1fr;gap:24px}.ftr .about p{margin:14px 0 6px}.ftr .about .phone{color:#fff;font-weight:600}
+.ftr .social{display:flex;gap:10px;margin-top:14px}.ftr .social a{width:36px;height:36px;border:1px solid rgba(255,255,255,.2);border-radius:var(--r-sm);display:grid;place-items:center;color:#fff;font-size:15px}
+.ftr-bottom{border-top:1px solid rgba(255,255,255,.1);margin-top:36px;padding-top:18px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:center}
+.ftr-bottom .vals{font-family:var(--display);font-style:italic;font-weight:700;text-transform:uppercase;font-size:12px;letter-spacing:.04em;color:var(--amber-300)}.ftr-bottom .copy{font-size:13px;color:rgba(255,255,255,.5)}
+@media(max-width:860px){.ftr-grid{grid-template-columns:1fr;gap:32px}}
+.toast-host{position:fixed;z-index:120;left:50%;bottom:26px;transform:translateX(-50%);display:flex;flex-direction:column;gap:10px;align-items:center;pointer-events:none}
+.toast{display:flex;align-items:center;gap:12px;background:var(--ink);border:1px solid #2a2930;border-left:4px solid var(--green);color:#f4f4f5;padding:13px 18px;border-radius:var(--r-md);box-shadow:var(--e3);font-size:14px;min-width:280px;animation:toastin .22s ease}.toast .ic{color:var(--green);font-size:18px}
+@keyframes toastin{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+
+/* ===== RESPONSIVE HARDENING (added) — desktop·laptop·tablet·mobile ===== */
+html{-webkit-text-size-adjust:100%}
+body{overflow-x:hidden}
+img,svg,video,iframe{max-width:100%;height:auto}
+.wrap{width:100%;padding-left:clamp(16px,4vw,24px);padding-right:clamp(16px,4vw,24px)}
+.mono,.meta,.stock,.km,.k,.row-tag,.a2{overflow-wrap:anywhere}
+table{max-width:100%}
+@media(max-width:1024px){.plates,.fcards,.cs-grid,.whygrid,.why-cards,.rcards,.methods,.bcards,.deals,.cards3,.cards-row{grid-template-columns:repeat(2,1fr)}.sec{padding:60px 0}}
+@media(max-width:768px){.hero-grid,.split2,.split2.top,.loc-grid,.area-grid,.svc-split,.prodgrid,.story-grid,.buy-grid,.owner,.paths,.vdp,.lead-grid,.embed .wrap,.contact-grid,.rules-grid,.buy-grid,.duo,.split,.cutaway{grid-template-columns:1fr}.cards-row,.cards3,.rcards,.methods,.bcards,.deals,.steps,.steps3,.tstats{grid-template-columns:1fr}.trustbar .wrap{grid-template-columns:repeat(2,1fr)}.buybox{position:static;top:auto}.finalcta .wrap{flex-direction:column;align-items:flex-start;text-align:left}.oways{flex-direction:column;align-items:flex-start;gap:10px}.sec{padding:48px 0}}
+@media(max-width:560px){.fcards,.cs-grid,.whygrid,.why-cards,.rcards,.methods,.bcards,.deals,.cards3,.cards-row{grid-template-columns:1fr}.cta-row,.hero .cta-row,.grp,.finalcta .grp{flex-direction:column;align-items:stretch;width:100%}.cta-row>.btn,.grp>.btn,.finalcta .grp>.btn{width:100%}.grid2,.offer-card .qf .grid2,.cform .grid2,.embed form{grid-template-columns:1fr}.qgrid{grid-template-columns:1fr}.qbar .qrow{flex-direction:column}.qbar .qrow .btn{width:100%}.gallery .thumbs{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:380px){.plates,.trustbar .wrap{grid-template-columns:1fr}}
+
+</style>
+</head>
+<body id="top">
+
+<!-- UTILITY STRIP -->
+<div class="ustrip"><div class="wrap">
+  <div class="u-left"><span class="addr">📍&nbsp; Pensacola, FL <span class="sep">•</span></span><a href="tel:8504357630">850-435-7630</a></div>
+  <div class="u-right"><span><b id="openNow">Hours Today</b></span><span class="txt"><span class="sep">•</span> Mon-Fri, 9 AM-4:30 PM; Sat, 8 AM-2 PM</span></div>
+</div></div>
+
+<!-- NAV -->
+<header class="nav" id="nav"><div class="wrap">
+  <a class="brand brand-logo" href="#top" aria-label="Kiker's U-Pull-It home"><img class="brand-logo-img" src="assets/kikers-horizontal-logo.svg" alt="" width="1542" height="492"></a>
+  <span class="spacer"></span>
+  <nav class="links"><a href="sell-your-vehicle.html">Sell Your Car</a><a href="#inventory">Find a Part</a><a href="#how">How It Works</a><a href="#story">Our Story</a><a href="contact.html">Visit</a></nav>
+  <a class="btn btn--filled btn--sm" href="#offer" style="margin-left:8px">Get My Offer</a>
+  <button class="menu" id="menuBtn" aria-label="Open menu">☰</button>
+</div></header>
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer"><a href="sell-your-vehicle.html">Sell Your Car</a><a href="#inventory">Find a Part</a><a href="#how">How It Works</a><a href="#story">Our Story</a><a href="contact.html">Visit</a><a class="btn btn--filled btn--block" href="#offer">Get My Cash Offer</a></aside>
+
+<!-- HERO -->
+<section class="hero" id="offer">
+  <div class="hero-photo ph ph--dark"><div class="ph-tag"><span class="kk">📷 HERO BACKGROUND</span><span class="d">Wide shot down a clean row of vehicles in the yard — blue Florida sky, daylight.</span></div></div>
+  <div class="wrap"><div class="hero-grid">
+    <div>
+      <div class="h-tags"><span class="eyebrow on-ink">Pensacola, FL</span><span class="chiplet">Est. 2001 · 3rd generation</span><span class="chiplet">Open Mon-Fri 9-4:30; Sat 8-2</span></div>
+      <h1>Built in the <em>yard.</em></h1>
+      <p class="lede">Three generations on the same Pensacola ground since 1972. We buy your car for cash — running or not — handle the towing and the paperwork, and report it to the state. Done by the book. Or bring your tools and pull your own parts.</p>
+      <div class="cta-row"><a class="btn btn--amber btn--lg" href="#offer-form"><span class="ic">⚡</span>Get a Cash Offer</a><a class="btn btn--outline-light btn--lg" href="#inventory">Find a Part</a></div>
+    </div>
+    <div class="offer-card" id="offer-form">
+      <div class="ohead"><h2>Cash for your car</h2><span class="avail"><span class="dot pulse"></span>Fast</span></div>
+      <div class="sub">A few details — no haggling.</div>
+      <form class="qf" onsubmit="return submitOffer(event)">
+        <input type="text" placeholder="Year, make &amp; model" required>
+        <select required><option value="" selected disabled>Condition</option><option>Runs &amp; drives</option><option>Starts only</option><option>Won't start</option><option>Wrecked / junk</option></select>
+        <input type="tel" placeholder="Phone" required>
+        <button class="btn btn--filled btn--block" type="submit"><span class="ic">⚡</span>Get My Cash Offer</button>
+      </form>
+      <div class="fine">Free &amp; no obligation</div>
+    </div>
+  </div></div>
+</section>
+<div class="hazard"></div>
+
+<!-- CHROME STAT PLATES -->
+<section class="sec" style="padding:48px 0">
+  <div class="wrap">
+    <div class="plates">
+      <div class="plate"><div><div class="n" style="color:var(--red)">25</div><div class="l">Years Serving</div></div></div>
+      <div class="plate"><div><div class="n" style="color:var(--ink)">3</div><div class="l">Generations</div></div></div>
+      <div class="plate"><div><div class="n" style="color:var(--ink)">Free</div><div class="l">Towing</div></div></div>
+      <div class="plate"><div><div class="n" style="color:var(--amber)">6<span>days</span></div><div class="l">Open Each Week</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES (base cards) -->
+<section class="sec" style="padding-top:24px">
+  <div class="wrap">
+    <div class="sec-head center"><span class="eyebrow">More Than a Junkyard</span><h2>What we do</h2></div>
+    <div class="cards-row">
+      <div class="card card--elevated"><div class="c-body"><span class="ic">💵</span><h4>Cash for cars</h4><p>Fast cash, pickup on your schedule, paperwork handled. Running or not.</p></div><div class="c-foot"><span class="k">SELL TO US</span><a class="btn btn--text btn--sm" href="sell-your-vehicle.html">Start →</a></div></div>
+      <div class="card card--filled"><div class="c-body"><span class="ic">🔧</span><h4>Self-serve yard</h4><p>Bring your tools, pull your own parts, pay at the counter. Organized by row.</p></div><div class="c-foot"><span class="k">PULL PARTS</span><a class="btn btn--text btn--sm" href="#inventory">Hours →</a></div></div>
+      <div class="card"><div class="c-body"><span class="ic">🏷️</span><h4>Used parts</h4><p>Pulled, priced and ready. Engines to electrical, flat-rate pricing.</p></div><div class="c-foot"><span class="k">FIND A PART</span><a class="btn btn--text btn--sm" href="#inventory">Search →</a></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- LEAD FORM -->
+<section class="sec lead">
+  <div class="wrap"><div class="lead-grid">
+    <div>
+      <span class="eyebrow">Cash for Cars</span>
+      <h2 style="font-size:clamp(26px,3.4vw,36px);margin:8px 0;font-style:italic">Sell your vehicle for cash</h2>
+      <p style="color:var(--text-2);font-size:17px;margin:0 0 24px;max-width:48ch">Any make, model, or condition. Fair offer fast, free towing, and we handle the title paperwork — reported to the state, done by the book.</p>
+      <div class="form-card">
+        <form onsubmit="return submitOffer(event)">
+          <div class="grid2" style="margin-bottom:16px"><div class="field"><label>Year</label><input placeholder="2012" required></div><div class="field"><label>Make</label><input placeholder="Honda" required></div></div>
+          <div class="grid2" style="margin-bottom:16px"><div class="field"><label>Model</label><input placeholder="Civic" required></div><div class="field"><label>Condition</label><select required><option value="" selected disabled>Select…</option><option>Runs &amp; drives</option><option>Starts only</option><option>Won't start</option><option>Wrecked</option></select></div></div>
+          <div class="grid2" style="margin-bottom:20px"><div class="field"><label>Name</label><input placeholder="First &amp; last" required></div><div class="field"><label>Phone</label><input type="tel" placeholder="(850) 000-0000" required></div></div>
+          <button class="btn btn--filled btn--block btn--lg" type="submit"><span class="ic">⚡</span>Get My Cash Offer</button>
+        </form>
+      </div>
+    </div>
+    <aside class="lead-aside">
+      <div class="ph ph--4x5 ph--dark"><div class="ph-in"><span class="ph-cam">📷</span><span class="ph-kick">PHOTO — THE HANDOFF</span><span class="ph-desc">Keys handed over, a tow truck loading, or cash in hand. Real, daylight.</span></div></div>
+      <ul class="verified">
+        <li><span class="vc">✓</span><span><b>Same-day or scheduled pickup</b> — you choose the time.</span></li>
+        <li><span class="vc">✓</span><span><b>Free towing &amp; paperwork handled</b> — reported to the state.</span></li>
+        <li><span class="vc">✓</span><span><b>Recycled the right way</b> — parts reused, metals recovered.</span></li>
+      </ul>
+    </aside>
+  </div></div>
+</section>
+
+<!-- NEW ARRIVALS (feature cards) -->
+<section class="sec" id="inventory">
+  <div class="wrap">
+    <div class="sec-head"><div class="row-between"><div><span class="eyebrow">Just In</span><h2 style="font-style:italic">This week in the yard</h2></div><a class="btn btn--text" href="#">View all inventory →</a></div></div>
+    <div class="fcards">
+      <div class="feature-card"><div class="img"><span class="ph-mini">PHOTO: F-150</span></div><span class="flag">JUST IN</span><div class="fc-txt"><span class="avail" style="margin-bottom:8px"><span class="dot pulse"></span>In the yard now</span><h4>2011 Ford F-150</h4><span class="km">ROW 22 · ARRIVED TODAY</span></div></div>
+      <div class="feature-card"><div class="img"><span class="ph-mini">PHOTO: Civic</span></div><span class="flag">JUST IN</span><div class="fc-txt"><h4>2012 Honda Civic</h4><span class="km">ROW 14 · 1.8L · AUTO</span></div></div>
+      <div class="feature-card"><div class="img"><span class="ph-mini">PHOTO: Silverado</span></div><span class="flag">HOT PART</span><div class="fc-txt"><span class="km">ENGINE · 5.3L V8</span><h4>'08 Silverado</h4></div></div>
+      <div class="feature-card"><div class="img"><span class="ph-mini">PHOTO: cash</span></div><span class="flag amber">CASH</span><div class="fc-txt"><span class="km">PENSACOLA · 850</span><h4>We buy your ride today</h4></div></div>
+    </div>
+
+    <!-- inventory feed: steel-avatar mono list -->
+    <div style="margin-top:32px;display:grid;grid-template-columns:1.4fr 1fr;gap:32px;align-items:start">
+      <div class="list">
+        <div class="li"><div class="av">F</div><div class="tx"><div class="t1">2011 Ford F-150</div><div class="t2">Arrived today · Crew cab</div></div><div class="meta">ROW 22</div></div>
+        <div class="li"><div class="av steel">H</div><div class="tx"><div class="t1">2012 Honda Civic</div><div class="t2">Engine pulled · 1.8L</div></div><div class="meta">ROW 14</div></div>
+        <div class="li"><div class="av">C</div><div class="tx"><div class="t1">2008 Chevy Silverado</div><div class="t2">Body straight · 5.3L V8</div></div><div class="meta">ROW 07</div></div>
+        <div class="li"><div class="av steel">T</div><div class="tx"><div class="t1">2010 Toyota Sequoia</div><div class="t2">4WD · 4.7L V8</div></div><div class="meta">ROW 31</div></div>
+      </div>
+      <!-- spec plate -->
+      <div class="spec-card">
+        <div class="sc-top"><div><h4>2012 Honda Civic LX</h4><span class="avail" style="margin-top:6px"><span class="dot"></span>Available now</span></div><span class="row-tag">ROW 14</span></div>
+        <div class="spec-grid">
+          <div class="cell"><div class="ic">⛽</div><span class="lab">Engine</span><span class="val">1.8L</span></div>
+          <div class="cell"><div class="ic">⏱</div><span class="lab">Mileage</span><span class="val">112k</span></div>
+          <div class="cell"><div class="ic">⚙</div><span class="lab">Trans</span><span class="val">Auto</span></div>
+          <div class="cell"><div class="ic">📅</div><span class="lab">Arrived</span><span class="val">Jun 12</span></div>
+        </div>
+        <div class="sc-foot"><span class="hint">Parts priced in-yard</span><a class="btn btn--amber btn--sm" href="contact.html">Get directions</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="race-rule"></div>
+
+<!-- HOW IT WORKS (stepper) -->
+<section class="sec" id="how" style="background:var(--surface-3)">
+  <div class="wrap">
+    <div class="sec-head center"><span class="eyebrow">How It Works</span><h2>Cash for cars in four steps</h2><p>Whoever responds first usually wins — so when you reach out, we move.</p></div>
+    <div class="stepper">
+      <div class="step done"><div class="node">1</div><div class="lab">Details</div><div class="sub">Call or send your vehicle info.</div></div>
+      <div class="step done"><div class="node">2</div><div class="lab">Offer</div><div class="sub">A fair cash number, fast.</div></div>
+      <div class="step done"><div class="node">3</div><div class="lab">Pickup</div><div class="sub">Same-day or on your schedule.</div></div>
+      <div class="step"><div class="node">4</div><div class="lab">Paid</div><div class="sub">Cash in hand, paperwork handled.</div></div>
+    </div>
+    <div style="text-align:center;margin-top:38px"><a class="btn btn--filled btn--lg" href="#offer-form"><span class="ic">⚡</span>Get My Cash Offer</a></div>
+  </div>
+</section>
+
+<!-- STORY (dark + chrome plates) -->
+<section class="sec story" id="story">
+  <div class="wrap"><div class="story-grid">
+    <div>
+      <span class="eyebrow on-ink">Our Story</span>
+      <h2>25 years. <em>Three generations.</em></h2>
+      <p class="lede">The property's been in the family since 1972. We reopened as Kiker's U-Pull-It in 2001 — Hunter was 13, out in the yard breaking down wheels. We've been through the hard times and come back stronger. That history is our edge; nobody around here has it.</p>
+      <p class="body">Sell us your car and it's not the end of the road. Good parts keep another local family driving, the metal gets recycled the right way, and you get a fair deal for it.</p>
+    </div>
+    <div class="plates">
+      <div class="plate dark"><div><div class="n">1972</div><div class="l">Land Bought</div></div></div>
+      <div class="plate dark"><div><div class="n">2001</div><div class="l">Reopened</div></div></div>
+      <div class="plate dark"><div><div class="n" style="color:var(--amber)">3rd</div><div class="l">Generation</div></div></div>
+      <div class="plate dark"><div><div class="n" style="color:var(--red)">25</div><div class="l">Years</div></div></div>
+    </div>
+  </div></div>
+</section>
+
+<!-- REVIEWS -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head center"><span class="eyebrow">What Customers Say</span><div class="agg"><span class="score">4.2</span><span class="stars">★★★★★</span><span class="from">based on 687 Google reviews</span></div></div>
+    <div class="rcards">
+      <div class="rcard"><div class="stars">★★★★★</div><p>"Called in the morning, fair price over the phone, picked it up that same afternoon. Cash in hand, no runaround."</p><div class="who"><span class="name">Marcus T. · Pensacola</span><span class="date">2 WKS</span></div></div>
+      <div class="rcard"><div class="stars">★★★★★</div><p>"Yard's organized by rows so I found my part fast. Way cheaper than new, and the staff knew their stuff."</p><div class="who"><span class="name">Dana R. · Pace</span><span class="date">1 MO</span></div></div>
+      <div class="rcard"><div class="stars">★★★★★</div><p>"It was my late husband's car. They were kind, handled everything, and I felt good knowing it'd be recycled right."</p><div class="who"><span class="name">Patricia L. · Milton</span><span class="date">1 MO</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section class="sec" id="visit" style="background:var(--surface-3)">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">Visit the Yard</span><h2 style="font-style:italic">Location &amp; hours</h2></div>
+    <div class="loc-grid">
+      <div>
+        <div class="map"><div class="pin"><div class="p">📍</div><div class="t">Embed live Google Map here</div></div></div>
+        <div class="addr-row"><div class="a1">3010 W. Fairfield Drive, Pensacola, FL 32505</div><a class="a2" href="tel:8504357630">850-435-7630</a>
+          <div style="margin-top:16px;display:flex;gap:12px;flex-wrap:wrap"><a class="btn btn--filled" href="contact.html"><span class="ic">📍</span>Get Directions</a><a class="btn btn--outline" href="tel:8504357630">Call the Yard</a></div>
+        </div>
+      </div>
+      <div class="hours">
+        <h3>Hours</h3>
+        <table class="htable" id="htable">
+          <tr data-d="1"><td class="day">Monday</td><td class="hrs">9:00 AM - 4:30 PM</td></tr>
+          <tr data-d="2"><td class="day">Tuesday</td><td class="hrs">9:00 AM - 4:30 PM</td></tr>
+          <tr data-d="3"><td class="day">Wednesday</td><td class="hrs">9:00 AM - 4:30 PM</td></tr>
+          <tr data-d="4"><td class="day">Thursday</td><td class="hrs">9:00 AM - 4:30 PM</td></tr>
+          <tr data-d="5"><td class="day">Friday</td><td class="hrs">9:00 AM - 4:30 PM</td></tr>
+          <tr data-d="6"><td class="day">Saturday</td><td class="hrs">8:00 AM - 2:00 PM</td></tr>
+          <tr data-d="0"><td class="day">Sunday</td><td class="hrs">Closed</td></tr>
+        </table>
+        <div class="last">Last admission 30 minutes before close.</div>
+        <div class="policies"><ul>
+          <li>🧰 Bring your own tools and gloves — it's self-serve.</li>
+          <li>👟 Closed-toe shoes required; 16 and up on the yard.</li>
+          <li>🏷️ Parts priced at the counter.</li>
+        </ul></div>
+        <div class="pays"><span class="pc">VISA</span><span class="pc">MC</span><span class="pc">AMEX</span><span class="pc">DISC</span><span class="pc">CASH</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<div class="race-rule"></div>
+<section class="finalcta"><div class="wrap">
+  <div><h2>Got a car to sell? Let's get you paid.</h2><p>Fair offer, free towing, same-day pickup. Pensacola's yard for 25 years.</p></div>
+  <div class="grp"><a class="btn btn--amber btn--lg" href="tel:8504357630"><span class="ic">📞</span>Call 850-435-7630</a><a class="btn btn--outline-light btn--lg" href="#offer-form">Get an Offer</a></div>
+</div></section>
+
+<!-- FOOTER -->
+<footer class="ftr"><div class="wrap">
+  <div class="ftr-grid">
+    <div class="fcol about">
+      <a class="brand brand-logo" href="#top"><img class="brand-logo-img" src="assets/kikers-horizontal-logo.svg" alt="" width="1542" height="492"></a>
+      <p style="margin-top:14px">Self-Service Auto Parts &amp; Cash for Cars</p>
+      <p>3010 W. Fairfield Drive, Pensacola, FL 32505</p>
+      <p><a class="phone" href="tel:8504357630">850-435-7630</a></p>
+      <div class="social"><a href="#" aria-label="Facebook">f</a><a href="#" aria-label="Instagram">◎</a></div>
+    </div>
+    <div class="fcol"><div class="sublinks">
+      <div><h5>Main</h5><a href="index.html">Home</a><a href="about.html">About</a><a href="contact.html">Contact &amp; Visit</a><a href="blog.html">Blog</a><a href="privacy.html">Privacy Policy</a></div>
+      <div><h5>Services</h5><a href="sell-your-vehicle.html">Sell Your Vehicle</a><a href="we-buy-cars-near-pensacola.html">We Buy Cars Near Pensacola</a><a href="u-pull-parts.html">Pull Your Own Parts</a><a href="full-service-parts.html">Full-Service Parts</a><a href="cars-for-sale.html">Cars for Sale</a><a href="cars-for-sale-vehicle.html">Vehicle Detail</a><a href="thank-you.html">Thank You</a></div>
+      <div><h5>Local Pages</h5><a href="sell-your-car-pensacola.html">Sell Your Car in Pensacola</a><a href="sell-your-car-pace.html">Sell Your Car in Pace</a><a href="sell-your-car-milton.html">Sell Your Car in Milton</a><a href="sell-your-car-cantonment.html">Sell Your Car in Cantonment</a></div>
+      <div><h5>Build Versions</h5><a href="home-funnel.html">Home Funnel</a><a href="home-funnel-2.html">Home Funnel 2</a><a href="Kikers-Home.html">Home Concept</a><a href="Kikers-Home-v2.html">Home V2</a><a href="Kikers-Home-with-Photos.html">Home with Photos</a><a href="Sell-Your-Vehicle-v2.html">Sell Vehicle V2</a><a href="Contact-Visit.html">Contact Visit Concept</a><a href="Icon-Comparison.html">Icon Comparison</a><a href="docs/component-kit.html">Component Kit</a></div>
+    </div></div>
+    <div class="fcol"><h5>Visit Us</h5><p class="mono" style="color:#fff">Mon-Fri, 9 AM-4:30 PM<br>Saturday: 8 AM-2 PM<br>Sunday: Closed</p><a class="btn btn--outline-light btn--sm" href="contact.html" style="margin-top:14px">Get Directions</a></div>
+  </div>
+  <div class="ftr-bottom"><span class="copy">© 2026 Kiker's U-Pull-It · Pensacola, FL</span><span class="vals">Own it · Do right · Outwork it · Back each other · Watch out</span></div>
+</div></footer>
+
+<div class="toast-host" id="toastHost" aria-live="polite"></div>
+<script>
+var nav=document.getElementById('nav');function onScroll(){nav.classList.toggle('scrolled',window.scrollY>40);}window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+var drawer=document.getElementById('drawer'),scrim=document.getElementById('scrim');
+document.getElementById('menuBtn').onclick=function(){drawer.classList.add('open');scrim.classList.add('open');};
+scrim.onclick=function(){drawer.classList.remove('open');scrim.classList.remove('open');};
+drawer.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){drawer.classList.remove('open');scrim.classList.remove('open');});});
+(function(){var d=new Date().getDay(),now=new Date(),m=now.getHours()*60+now.getMinutes();var row=document.querySelector('#htable tr[data-d="'+d+'"]');if(row)row.classList.add('today');var weekday=d>=1&&d<=5,sat=d===6;var open=(weekday&&m>=540&&m<990)||(sat&&m>=480&&m<840);var el=document.getElementById('openNow');if(el)el.textContent=open?'Open Today '+(sat?'8-2':'9-4:30'):(d===0?'Closed Sunday':'Closed - see posted hours');})();
+function submitOffer(e){e.preventDefault();window.location.href='https://www.kikersautoparts.com/sell-a-vehicle';return false;}
+var tHost=document.getElementById('toastHost');
+function toast(m){var t=document.createElement('div');t.className='toast';t.innerHTML='<span class="ic">✓</span>'+m;tHost.appendChild(t);setTimeout(function(){t.style.opacity='0';t.style.transform='translateY(8px)';t.style.transition='opacity .2s,transform .2s';setTimeout(function(){t.remove();},220);},3400);}
+</script>
+</body>
+</html>

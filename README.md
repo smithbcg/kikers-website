@@ -1,78 +1,50 @@
-# Kiker's U-Pull-It — Website
+# Kiker's U-Pull-It — Website (full set)
 
-Static HTML site for Kiker's U-Pull-It (Pensacola, FL). No build step, no framework — just
-HTML, one shared CSS file, and one shared JS file. Drop it on any static host.
+Static HTML site. No build step, no framework. Fully responsive (desktop / laptop / tablet / mobile).
 
-## Quick start / deploy
-1. Put this folder in your git repo.
-2. Deploy the folder to any static host (Netlify, Vercel, Cloudflare Pages, GitHub Pages,
-   S3/CloudFront, Apache, Nginx). `index.html` is the home page.
-3. (Recommended) Configure "pretty URLs" so `/sell-your-vehicle/` serves `sell-your-vehicle.html`,
-   etc. The `<link rel="canonical">` tags and sitemap use the pretty form. If you can't rewrite,
-   change the canonicals/sitemap to the `.html` paths instead.
-
-## What's here
-- `*.html` — the pages (see list below). Each links the two shared assets relatively.
-- `kikers.css` — **the design system + all components (single source of truth).** Change tokens,
-  colors, type, and component styles here; do not hand-edit styles inside a page.
-- `kikers.js` — shared behavior (sticky nav, mobile drawer, today's-hours highlight, form
-  routing, toast).
-- `sitemap.xml`, `robots.txt` — currently point at the GitHub Pages launch URL.
-- `docs/component-kit.html` — a visual reference of the design-system components.
-
-### Pages
-Core: index, sell-your-vehicle, u-pull-parts, full-service-parts, about, contact, blog,
+## Page groups
+**Live site** (link the shared `kikers.css` + `kikers.js`; these are the primary launch pages):
+index, sell-your-vehicle, u-pull-parts, full-service-parts, about, contact, blog, cars-for-sale,
+cars-for-sale-vehicle, we-buy-cars-near-pensacola, sell-your-car-{pensacola,pace,milton,cantonment},
 thank-you, 404, privacy.
-Cars for sale: cars-for-sale (listing), cars-for-sale-vehicle (vehicle-detail template).
-Local landing pages: we-buy-cars-near-pensacola, sell-your-car-pensacola, -pace, -milton, -cantonment.
-Alternate concept (not the live home page): home-funnel-2.html.
 
-## Launch status
-Published-ready values currently in the site:
-- Launch URL: `https://smithbcg.github.io/kikers-website/`
-- Address: `3010 W. Fairfield Drive, Pensacola, FL 32505`
-- Phone: `850-435-7630`
-- Email: `sales@kikersautoparts.com`
-- Hours: Monday-Friday, 9 AM-4:30 PM; Saturday, 8 AM-2 PM; Sunday closed.
-- Facebook: `https://www.facebook.com/kikersupullit/`
+**Variants / earlier concepts** (self-contained — each has its own inline CSS, for reference &
+comparison; linked in the footer under Build Versions, not in the main nav): `Kikers-Home.html` (first home), `Kikers-Home-with-Photos.html`
+(photo-rich home), `Kikers-Home-v2.html` (style-guide-vocabulary home), `home-funnel.html` &
+`home-funnel-2.html` (funnel-style home concepts), `Sell-Your-Vehicle-v2.html`,
+`Contact-Visit.html`, `Icon-Comparison.html` (icon-set picker), and `docs/component-kit.html`.
+`index.html` is the active home page.
 
-Before moving to a custom domain, replace the GitHub Pages URL in canonical tags, JSON-LD,
-`sitemap.xml`, and `robots.txt`.
+## Assets
+- `kikers.css` — design system + all components + responsive layer (single source of truth for the live pages).
+- `kikers.js` — shared behavior (sticky nav, mobile drawer, hours highlight, redirects/forms, toast).
+- `sitemap.xml`, `robots.txt`, `docs/component-kit.html`.
 
-## Remaining content placeholders
-Search the files for each token and replace:
-- Photos — every dashed box labeled `📷 PHOTO — …` is a placeholder describing the exact shot
-  needed (hero yard photo, tow/handoff, Hunter portrait, team, vehicles, etc.). Drop in real
-  images and remove the `.ph` placeholder wrappers.
-- Inventory/listing samples — replace sample vehicles and "coming soon" blog/article cards with
-  live inventory and articles when available.
+## Responsive
+Breakpoints (bottom of `kikers.css`, and inlined into each variant): 1024 (4-up → 2-up),
+768 (multi-col → single, sticky buy-box static, stacked CTAs), 560 (single col, full-width CTAs),
+380 (small phone). Global guards prevent horizontal scroll and overflow. Verify in Chrome DevTools
+device mode; tell me any page+width that looks off.
 
-## Forms
-Offer forms redirect to the existing Kiker's `sell-a-vehicle` flow. Message/parts forms open a
-pre-filled email to `sales@kikersautoparts.com`. For a tighter launch, replace the `onsubmit`
-handlers with a real form backend, CRM/Crush, email, or WhatConverts POST and redirect to
-`thank-you.html` on success.
+## Deploy
+Put the folder in git; deploy to any static host (Netlify/Vercel/Cloudflare Pages/GitHub Pages/S3/
+Apache/Nginx). `index.html` is home. Enable pretty-URL rewrites (`/sell-your-vehicle/` → .html) or
+switch canonicals/sitemap to `.html` paths.
 
-## Fonts
-Loaded from Google Fonts (Saira / Inter / JetBrains Mono) via a `<link>` in each page's head and an
-`@import` in `kikers.css`. To remove the CDN dependency, self-host the `.woff2` files and replace
-the link/@import with `@font-face` rules.
+## Launch notes
+- Business address: `3010 W. Fairfield Drive, Pensacola, FL 32505`.
+- Hours: Mon-Fri, 9 AM-4:30 PM; Sat, 8 AM-2 PM; Sunday closed.
+- Google rating copy: 4.2 based on 687 Google reviews.
+- Social `href="#"` values can be replaced when the official profiles are ready.
+- Some variant pages still use stylized map/photo placeholders because they are comparison builds.
+- Offer forms redirect to the Kiker's sell-a-vehicle flow; message forms use the configured email link.
 
-## SEO / structured data
-Every page includes JSON-LD (LocalBusiness/AutoDealer, BreadcrumbList, and FAQPage/Car where
-relevant). Keep the visible FAQ copy identical to the FAQ JSON-LD. Update the domain throughout.
-
-## Important content notes
-- **Cars for Sale** is intentionally gated "coming soon." Don't launch live vehicle sales until the
-  Florida dealer license is active and the FTC Buyers Guide / as-is disclosure process is in place.
-  Have the as-is sale process reviewed by counsel. Listings/prices shown are samples.
-- **Florida title/legal content** (on sell + local + cars pages) is summarized for guidance — verify
-  current forms/rules with FLHSMV, and confirm the salvage-dealer license is current before
-  publishing claims that rely on it.
-- **Inventory** cards (new arrivals, listings) are sample data; wire real inventory from
-  Crush/Checkmate.
+## Guardrails
+- Cars for Sale is gated "coming soon" — don't launch live sales until the FL dealer license + FTC
+  Buyers Guide/as-is process are in place (legal review). Listings are samples.
+- Florida legal copy is summarized — verify with FLHSMV; confirm the salvage-dealer license.
+- Inventory cards are sample data → wire real inventory from Crush/Checkmate.
 
 ## Editing
-- Global look (colors, fonts, spacing, components): edit `kikers.css` only.
-- Shared behavior: edit `kikers.js`.
-- Page content/structure: edit the individual `.html` file.
+Live pages: edit `kikers.css` (global look) / `kikers.js` (behavior) / the `.html` (content).
+Variants: self-contained — edit the CSS inside that file's `<style>`.
