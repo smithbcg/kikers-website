@@ -83,14 +83,16 @@ h1,h2,h3,h4{margin:0;font-family:var(--display);font-weight:800;letter-spacing:-
 .nav{position:sticky;top:0;z-index:60;height:66px;background:#fff;border-bottom:1px solid transparent;transition:border-color .2s,box-shadow .2s,backdrop-filter .2s}
 .nav.scrolled{border-bottom-color:var(--line);box-shadow:var(--e1);background:rgba(255,255,255,.95);backdrop-filter:blur(8px)}
 .nav .wrap{display:flex;align-items:center;height:66px;gap:18px}
-.brand{display:flex;align-items:center;gap:11px}
-.brand .shield{width:40px;height:40px;border-radius:var(--r-sm);background:var(--grad-red);display:grid;place-items:center;font-family:var(--display);font-style:italic;font-weight:800;color:#fff;font-size:23px;box-shadow:var(--e1)}
-.brand .wm{font-family:var(--display);font-style:italic;font-weight:800;font-size:20px;letter-spacing:-.02em;line-height:.92}
-.brand .wm span{display:block;font-size:9px;letter-spacing:.30em;font-style:normal;font-weight:700;color:var(--red)}
+.brand{display:inline-flex;align-items:center;line-height:0}
+.brand-logo{min-width:0}
+.nav .brand-logo{flex:0 0 168px;width:168px;max-width:44vw}
+.brand-logo-img{display:block;width:100%;height:auto;object-fit:contain}
 .nav .spacer{flex:1}.nav .links{display:none;align-items:center;gap:26px}
 .nav .links a{font-size:15px;font-weight:500;color:var(--text)}.nav .links a:hover{color:var(--red)}.nav .links a.cur{color:var(--red);font-weight:600}
 .nav .menu{background:none;border:1px solid var(--line-2);color:var(--text);width:42px;height:42px;border-radius:var(--r-md);font-size:18px;cursor:pointer;display:grid;place-items:center}
 @media(min-width:1040px){.nav .links{display:flex}.nav .menu{display:none}}
+@media(max-width:620px){.nav .wrap{gap:12px}.nav .wrap>.btn{display:none}.nav .brand-logo{flex-basis:150px;width:150px;max-width:50vw}}
+@media(max-width:380px){.nav .brand-logo{flex-basis:136px;width:136px}}
 .drawer{position:fixed;inset:0 0 0 auto;width:min(320px,86vw);background:#fff;z-index:90;transform:translateX(100%);transition:transform .24s cubic-bezier(.2,.8,.2,1);box-shadow:var(--e3);padding:24px;display:flex;flex-direction:column;gap:6px}
 .drawer.open{transform:translateX(0)}.drawer a{padding:13px 10px;border-bottom:1px solid var(--line);font-family:var(--display);font-style:italic;font-weight:700;text-transform:uppercase;font-size:16px}.drawer .btn{margin-top:16px}
 .scrim{position:fixed;inset:0;background:rgba(5,3,7,.5);z-index:85;opacity:0;visibility:hidden;transition:opacity .2s}.scrim.open{opacity:1;visibility:visible}
@@ -365,7 +367,7 @@ section{scroll-margin-top:80px}
 /* ===== FOOTER ===== */
 footer.ftr{background:var(--ink);color:rgba(255,255,255,.72);padding:54px 0 28px;font-size:14px}
 .ftr-grid{display:grid;grid-template-columns:1fr 2.2fr 1fr;gap:40px}
-.ftr .brand .wm{color:#fff}.ftr .brand .wm span{color:var(--amber-300)}
+.ftr .brand-logo{width:250px;max-width:100%;background:#fff;border-radius:var(--r-md);padding:8px 10px;box-shadow:0 10px 24px rgba(0,0,0,.18)}
 .ftr .fcol h5{font-family:var(--display);font-weight:700;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:14px}
 .ftr .fcol a,.ftr .fcol p{color:rgba(255,255,255,.74);margin:0 0 9px;display:block}.ftr .fcol a:hover{color:#fff}
 .ftr .sublinks{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}.ftr .about p{margin:14px 0 6px}.ftr .about .phone{color:#fff;font-weight:600}
