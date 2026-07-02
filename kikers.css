@@ -101,6 +101,7 @@ h1,h2,h3,h4{margin:0;font-family:var(--display);font-weight:800;letter-spacing:-
 /* ===== HERO ===== */
 .hero{position:relative;overflow:hidden;color:#fff;background:var(--grad-ink)}
 .hero .hero-photo{position:absolute;inset:0;z-index:0;background:linear-gradient(120deg,#211c24,#15121a 60%,#241b1d)}
+.hero .hero-photo--yard{background-image:url("assets/kikers-yard-hero.jpg");background-size:cover;background-position:center 42%;filter:saturate(.98) contrast(1.04)}
 .hero::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(11,6,17,.92),rgba(11,6,17,.74) 45%,rgba(11,6,17,.32)),radial-gradient(720px 380px at 92% -10%,rgba(220,22,31,.32),transparent 60%)}
 .hero .wrap{position:relative;z-index:2;padding:64px 24px 76px}
 .hero.compact .wrap{padding:50px 24px 56px}
@@ -122,7 +123,7 @@ h1,h2,h3,h4{margin:0;font-family:var(--display);font-weight:800;letter-spacing:-
 .offer-card input,.offer-card select{width:100%;height:46px;background:rgba(255,255,255,.07);border:1.5px solid rgba(255,255,255,.2);border-radius:var(--r-md);color:#fff;padding:0 12px;font-family:var(--body);font-size:14px;outline:none}
 .offer-card input::placeholder{color:rgba(255,255,255,.55)}.offer-card select{color:rgba(255,255,255,.6)}.offer-card option{color:#111}
 .offer-card input:focus,.offer-card select:focus{border-color:var(--amber)}.offer-card .fine{margin-top:10px;text-align:center;color:rgba(255,255,255,.55);font-size:12px}
-@media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:30px}.hero .wrap{padding:46px 24px 54px}.hero::after{background:linear-gradient(180deg,rgba(11,6,17,.72),rgba(11,6,17,.92)),radial-gradient(540px 300px at 50% -20%,rgba(220,22,31,.32),transparent 62%)}}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:30px}.hero .wrap{padding:46px 24px 54px}.hero .hero-photo--yard{background-position:center top}.hero::after{background:linear-gradient(180deg,rgba(11,6,17,.72),rgba(11,6,17,.92)),radial-gradient(540px 300px at 50% -20%,rgba(220,22,31,.32),transparent 62%)}}
 
 /* ===== SECTIONS ===== */
 section{scroll-margin-top:80px}
