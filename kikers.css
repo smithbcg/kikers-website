@@ -102,7 +102,7 @@ h1,h2,h3,h4{margin:0;font-family:var(--display);font-weight:800;letter-spacing:-
 .hero{position:relative;overflow:hidden;color:#fff;background:var(--grad-ink)}
 .hero .hero-photo{position:absolute;inset:0;z-index:0;background:linear-gradient(120deg,#211c24,#15121a 60%,#241b1d)}
 .hero .hero-photo--yard{background-image:url("assets/kikers-yard-hero.jpg");background-size:cover;background-position:center 42%;filter:saturate(.98) contrast(1.04)}
-.hero::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(11,6,17,.92),rgba(11,6,17,.74) 45%,rgba(11,6,17,.32)),radial-gradient(720px 380px at 92% -10%,rgba(220,22,31,.32),transparent 60%)}
+.hero::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(11,6,17,.92),rgba(11,6,17,.78) 45%,rgba(11,6,17,.48)),radial-gradient(720px 380px at 92% -10%,rgba(220,22,31,.32),transparent 60%)}
 .hero .wrap{position:relative;z-index:2;padding:64px 24px 76px}
 .hero.compact .wrap{padding:50px 24px 56px}
 .hero-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:48px;align-items:center}
