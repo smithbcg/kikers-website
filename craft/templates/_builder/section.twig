@@ -1,26 +1,9 @@
-{% set markup = section.sectionMarkup|default('') %}
-{% set contentItems = section.sectionContent.all() %}
-
-{% for item in contentItems %}
-  {% set key = item.contentKey|default('') %}
-  {% set kind = item.contentKind.value|default(item.contentKind|default('text')) %}
-  {% set value = item.contentValue|default('') %}
-  {% if kind == 'image' %}
-    {% set managedAsset = item.contentAsset.one() %}
-    {% if managedAsset %}{% set value = managedAsset.url %}{% endif %}
-  {% endif %}
-  {% set replacement = kind == 'text' ? value|e : value|e('html_attr') %}
-  {% if key %}
-    {% set token = '[[cms:' ~ key ~ ']]' %}
-    {% set encodedToken = '%5B%5Bcms:' ~ key ~ '%5D%5D' %}
-    {% set safeToken = 'CMS_TOKEN_' ~ key %}
-    {% set markup = markup|replace({
-      (token): replacement,
-      (encodedToken): replacement,
-      (safeToken): replacement
-    }) %}
-  {% endif %}
-{% endfor %}
+{% set markup = renderKikersSection(section) %}
+{% set visualPreview = craft.app.request.isPreview %}
+{% if visualPreview %}
+  {% set sectionMeta = kikersEditorMetadata(section, section.title, 'section') %}
+  <div class="kve-section" data-kve-section="{{ sectionMeta|json_encode|e('html_attr') }}">
+{% endif %}
 
 {% set theme = section.sectionTheme.value|default(section.sectionTheme|default('inherit')) %}
 {% set width = section.sectionWidth.value|default(section.sectionWidth|default('inherit')) %}
@@ -41,3 +24,5 @@
 {% else %}
   {{ markup|raw }}
 {% endif %}
+
+{% if visualPreview %}</div>{% endif %}

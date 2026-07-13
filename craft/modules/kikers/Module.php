@@ -3,6 +3,8 @@
 namespace kikers;
 
 use Craft;
+use kikers\twig\VisualEditorExtension;
+use kikers\web\assets\VisualEditorCpAsset;
 
 class Module extends \yii\base\Module
 {
@@ -17,5 +19,12 @@ class Module extends \yii\base\Module
         }
 
         parent::init();
+
+        Craft::$app->getView()->registerTwigExtension(new VisualEditorExtension());
+
+        $request = Craft::$app->getRequest();
+        if (!$request->getIsConsoleRequest() && $request->getIsCpRequest()) {
+            Craft::$app->getView()->registerAssetBundle(VisualEditorCpAsset::class);
+        }
     }
 }

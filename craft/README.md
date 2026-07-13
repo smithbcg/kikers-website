@@ -44,6 +44,19 @@ Stop the environment with `ddev stop`.
 5. Open a Section Content item to edit its text, button or link destination, form label, or managed image.
 6. Use **Preview**, then **Save** when the page is ready.
 
+### Visual editing
+
+The native **Preview** window includes a visual editing layer for Page Builder pages:
+
+1. Open an entry under **Entries > Pages** and choose **Preview**.
+2. Hover the rendered page to see editable text, buttons, links, images, and section boundaries.
+3. Click an outlined item to open its exact nested Craft entry in a slideout. When a button has both editable text and a destination, choose the value you want from the small menu.
+4. Use **Edit section** for the section theme, width, spacing, container, background image, overlay, anchor, content items, or enabled status.
+5. Use the **Page Builder** tab when you need to reorder, duplicate, or disable complete sections.
+6. Save the slideout, review the refreshed preview, then save the page entry.
+
+The editing controls are added only to a valid signed Craft preview. They are never included in public page responses, and all edits continue through Craft's normal permissions, drafts, revisions, and nested-entry workflow.
+
 The **Advanced** section tab and the page-level CSS/head/script fields preserve the approved layouts. They are available for developer-level changes; routine content and image edits should use the section controls and content items instead. The Content Key on nested items is an internal layout reference and should not be changed.
 
 Schema changes are stored in `config/project/`. Initial content is seeded by the timestamped files in `migrations/`.
