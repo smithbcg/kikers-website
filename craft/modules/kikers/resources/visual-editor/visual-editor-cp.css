@@ -1,0 +1,56 @@
+@media (max-width: 1399px) {
+  .lp-editor-container {
+    left: 0 !important;
+    z-index: 102 !important;
+    width: 0 !important;
+    min-width: 0 !important;
+    overflow: visible !important;
+    pointer-events: none !important;
+  }
+
+  .lp-editor-container .lp-editor-header {
+    width: 0 !important;
+    min-width: 0 !important;
+    overflow: visible !important;
+    border: 0 !important;
+    background: transparent !important;
+    pointer-events: none !important;
+  }
+
+  .lp-editor-container .lp-close-btn {
+    position: fixed !important;
+    z-index: 104 !important;
+    top: 5px !important;
+    left: 8px !important;
+    pointer-events: auto !important;
+  }
+
+  .lp-editor-container .lp-toolbar,
+  .lp-editor-container .lp-content,
+  .lp-editor-container > footer,
+  .lp-draghandle {
+    display: none !important;
+  }
+
+  .lp-preview-container {
+    left: 0 !important;
+    right: 0 !important;
+    width: 100vw !important;
+    min-width: 0 !important;
+  }
+
+  .lp-preview-header,
+  .lp-iframe-container,
+  .lp-device-preview-container,
+  .lp-preview {
+    left: 0 !important;
+    right: auto !important;
+    width: 100vw !important;
+    min-width: 0 !important;
+    max-width: none !important;
+  }
+
+  .lp-preview-header {
+    padding-left: 48px !important;
+  }
+}

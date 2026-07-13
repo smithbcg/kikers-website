@@ -13,6 +13,7 @@ class VisualEditorCpAsset extends AssetBundle
     {
         $this->sourcePath = '@kikers/resources/visual-editor';
         $this->depends = [CpAsset::class];
+        $this->css = ['visual-editor-cp.css'];
         $this->js = ['visual-editor-cp.js'];
         parent::init();
     }
