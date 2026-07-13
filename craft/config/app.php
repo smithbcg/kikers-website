@@ -21,7 +21,12 @@
  */
 
 use craft\helpers\App;
+use kikers\Module;
 
 return [
     'id' => App::env('CRAFT_APP_ID') ?: 'CraftCMS',
+    'modules' => [
+        'kikers' => Module::class,
+    ],
+    'bootstrap' => ['kikers'],
 ];

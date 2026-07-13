@@ -1,0 +1,50 @@
+{% set navActive = navActive|default('') %}
+{% set thirdNav = thirdNav|default('how') %}
+{% set thirdHref = thirdHref|default(url('home') ~ '#how') %}
+{% set ctaLabel = ctaLabel|default('') %}
+{% set ctaHref = ctaHref|default('') %}
+{% set drawerCtaLabel = drawerCtaLabel|default(ctaLabel) %}
+{% set phoneHref = 'tel:' ~ siteSettings.phoneNumber|replace({'-': '', ' ': '', '(': '', ')': ''}) %}
+{% set ctaHref = ctaHref == 'phone' ? phoneHref : ctaHref %}
+
+{% if showUtilityStrip|default(true) %}
+  <div class="ustrip"><div class="wrap">
+    <div class="u-left"><span class="addr">Pensacola, FL <span class="sep">&bull;</span></span><a href="{{ phoneHref }}">{{ siteSettings.phoneNumber }}</a></div>
+    <div class="u-right"><span><b id="openNow">Hours Today</b></span><span class="txt"><span class="sep">&bull;</span> {{ siteSettings.weekdayHours }}; {{ siteSettings.saturdayHours }}</span></div>
+  </div></div>
+{% endif %}
+
+<header class="nav" id="nav"><div class="wrap">
+  <a class="brand brand-logo" href="{{ url('home') }}" aria-label="Kiker's U-Pull-It home"><img class="brand-logo-img" src="{{ siteUrl }}assets/kikers-horizontal-logo.svg" alt="Kiker's U-Pull-It" width="1542" height="492"></a>
+  <span class="spacer"></span>
+  <nav class="links" aria-label="Primary navigation">
+    <a href="{{ url('sell-your-vehicle') }}"{{ navActive == 'sell' ? ' class="cur"' : '' }}>Sell Your Car</a>
+    <a href="{{ url('u-pull-parts') }}"{{ navActive == 'parts' ? ' class="cur"' : '' }}>Find a Part</a>
+    {% if thirdNav == 'cars' %}
+      <a href="{{ url('cars-for-sale') }}"{{ navActive == 'cars' ? ' class="cur"' : '' }}>Cars for Sale</a>
+    {% elseif thirdNav == 'request' %}
+      <a href="{{ thirdHref }}">Request a Part</a>
+    {% elseif thirdNav == 'how' %}
+      <a href="{{ thirdHref }}">How It Works</a>
+    {% endif %}
+    <a href="{{ url('about') }}"{{ navActive == 'story' ? ' class="cur"' : '' }}>Our Story</a>
+    <a href="{{ url('contact') }}"{{ navActive == 'visit' ? ' class="cur"' : '' }}>Visit</a>
+  </nav>
+  {% if ctaLabel and ctaHref %}<a class="btn btn--filled btn--sm" href="{{ ctaHref }}" style="margin-left:8px">{{ ctaLabel }}</a>{% endif %}
+  <button class="menu" id="menuBtn" type="button" aria-label="Open menu" aria-controls="drawer" aria-expanded="false">&#9776;</button>
+</div></header>
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="Mobile navigation">
+  <a href="{{ url('sell-your-vehicle') }}">Sell Your Car</a>
+  <a href="{{ url('u-pull-parts') }}">Find a Part</a>
+  {% if thirdNav == 'cars' %}
+    <a href="{{ url('cars-for-sale') }}">Cars for Sale</a>
+  {% elseif thirdNav == 'request' %}
+    <a href="{{ thirdHref }}">Request a Part</a>
+  {% elseif thirdNav == 'how' %}
+    <a href="{{ thirdHref }}">How It Works</a>
+  {% endif %}
+  <a href="{{ url('about') }}">Our Story</a>
+  <a href="{{ url('contact') }}">Visit</a>
+  {% if drawerCtaLabel and ctaHref %}<a class="btn btn--filled btn--block" href="{{ ctaHref }}">{{ drawerCtaLabel }}</a>{% endif %}
+</aside>

@@ -1,0 +1,17 @@
+defaultPlacement: end
+enableVersioning: false
+entryTypes:
+  -
+    uid: 7fbd3328-a565-4e0f-9c88-663a9de6d20c # Inquiry
+handle: inquiries
+maxAuthors: 0
+minAuthors: 0
+name: Inquiries
+propagationMethod: all
+siteSettings:
+  755ab51e-a556-4d88-9f13-0420d970c58b: # Kiker's U-Pull-It
+    enabledByDefault: true
+    hasUrls: false
+    template: null
+    uriFormat: null
+type: channel

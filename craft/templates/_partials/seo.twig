@@ -1,0 +1,11 @@
+{% set seoPage = entry ?? craft.entries().section('pages').legacyTemplate(legacyTemplate).status(null).one() %}
+{% set seoTitle = seoPage.seoTitle|default(seoPage.title|default("Kiker's U-Pull-It")) %}
+{% set seoDescription = seoPage.seoDescription|default('') %}
+<title>{{ seoTitle }}</title>
+{% if seoDescription %}<meta name="description" content="{{ seoDescription }}">{% endif %}
+<link rel="canonical" href="{{ seoPage.url|default(siteUrl) }}">
+<meta property="og:title" content="{{ seoTitle }}">
+{% if seoDescription %}<meta property="og:description" content="{{ seoDescription }}">{% endif %}
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ seoPage.url|default(siteUrl) }}">
+{% if noIndex|default(false) %}<meta name="robots" content="noindex, nofollow">{% endif %}

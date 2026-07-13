@@ -29,11 +29,14 @@ Stop the environment with `ddev stop`.
 ## Content model
 
 - **Pages** contains one entry for every migrated static page and concept route.
+- **Inquiries** stores vehicle offers and general website requests submitted from public forms.
 - **Globals > Site Settings** is the source for the business name, phone, address, hours, Google rating, review count, and directions URL.
 - Existing `.html` routes remain available while canonical extension-free Craft routes are introduced.
-- Each page currently points to its approved Twig migration template. Page families can be converted to fully structured fields without changing their URL.
+- Page SEO titles, descriptions, headings, and summaries are seeded as editable Craft fields while each entry continues to use its approved Twig migration template.
 
-Schema changes are stored in `config/project/`. Initial content is seeded by `migrations/m260713_133038_create_kikers_content_model.php`.
+Schema changes are stored in `config/project/`. Initial content is seeded by the timestamped files in `migrations/`.
+
+Public forms post through the `kikers` module, retain a normalized copy of every submitted field, and redirect to `/thank-you`. Set `KIKERS_NOTIFICATION_EMAIL` to choose the notification recipient. DDEV captures these messages in Mailpit; production must also be configured with a working Craft mail transport.
 
 ## Production requirements
 

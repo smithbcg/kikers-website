@@ -1,26 +1,39 @@
-dateModified: 1783949738
+dateModified: 1783950300
 email:
   fromEmail: admin@kikers.local
   fromName: "Kiker's U-Pull-It"
   transportType: craft\mail\transportadapters\Sendmail
 meta:
   __names__:
+    1b9da689-9595-4422-9757-6bbc111f6150: Vehicle # Vehicle
     1ca619b6-8fb9-4bca-8cd0-cd597a7021c3: 'Directions URL' # Directions URL
     1f2c57b2-d141-4ada-abb3-32f33cf8294e: 'Page Heading' # Page Heading
     6abdc73b-7453-4f2f-b512-b315aafce8d6: Pages # Pages
     7c43ddf9-0b09-4e5d-99cc-9cc25fee93bd: 'Phone Number' # Phone Number
+    7f4e7440-d21f-4922-84c8-de00233d368c: 'ZIP Code' # ZIP Code
+    7fbd3328-a565-4e0f-9c88-663a9de6d20c: Inquiry # Inquiry
     8c518020-699e-40fa-bca2-518ab7530518: "Kiker's U-Pull-It" # Kiker's U-Pull-It
+    8d0d8037-03ff-4720-b797-1116a49eeb7f: Phone # Phone
+    69a16738-7a80-4d84-9427-940c9f925c90: Email # Email
     97b1b729-8b05-438c-af51-eb0dad6f4b7e: 'SEO Description' # SEO Description
+    545a32c4-f564-4423-a711-58a3d5e35add: 'Subject or Part Needed' # Subject or Part Needed
     755ab51e-a556-4d88-9f13-0420d970c58b: "Kiker's U-Pull-It" # Kiker's U-Pull-It
     2040b384-0884-4c63-83ec-c185dd027653: 'Saturday Hours' # Saturday Hours
     4983c8df-a87e-4134-bca1-ff42ca8c7628: 'Weekday Hours' # Weekday Hours
     06287fe5-1e3a-458f-bb1e-aaebf199c94b: 'Google Rating' # Google Rating
     99736da3-f5ed-4f02-84b8-7b2c3ea4fd38: 'Site Settings' # Site Settings
+    776599d3-6bb0-49d4-b58a-ecff92ab83dd: 'Complete Submission' # Complete Submission
     7164911c-9ba5-44e0-9664-e99aa9d8cfc2: 'Google Review Count' # Google Review Count
+    90849714-c266-44a2-928b-7d00691014fe: Name # Name
     a4c1d13b-df7c-4e53-b188-708a20718a90: 'Page Summary' # Page Summary
+    a50cdc18-80c7-48fe-b473-f1026898f8b7: Condition # Condition
+    a58567a1-5756-4326-8783-8db1c0ed08df: Inquiries # Inquiries
     b0b69d85-b300-4d03-a6f6-5bee183a38ef: Page # Page
+    cbb84471-a1aa-45b9-84df-1ebab9ece4a1: 'Request Type' # Request Type
     d01c2dd2-e46d-47b8-a5fa-2c0dc5960d28: 'Page Type' # Page Type
+    d3fead23-46d6-494e-9342-eff0e98a3602: 'Source Page' # Source Page
     e9d94883-8c23-47a5-9a1e-f5c60c268201: 'Business Name' # Business Name
+    e12aa9db-f6bc-4035-ba64-408dd66eb3d9: Message # Message
     e160a67e-31fe-49b4-ae6b-b526dc8f9ad8: 'Migration Template' # Migration Template
     f86bda1e-c10b-414a-b6d7-fb44923f2326: 'Street Address' # Street Address
     f89783eb-d023-474c-abc2-3eda93569439: 'SEO Title' # SEO Title

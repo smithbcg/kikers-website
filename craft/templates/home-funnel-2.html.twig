@@ -3,12 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kiker's U-Pull-It — Cash for Cars &amp; Self-Service Parts | Pensacola, FL</title>
-<meta name="description" content="Get a cash offer for your car in Pensacola, FL — running or not. Fair offer fast, free towing, same-day pickup. Family-owned, 25 years. Or pull your own parts. Call {{ siteSettings.phoneNumber }}.">
-<link rel="canonical" href="https://smithbcg.github.io/kikers-website/">
+{% include '_partials/seo' with { legacyTemplate: 'home-funnel-2.html' } %}
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,500;0,600;0,700;0,800;1,600;1,700;1,800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="kikers.css?v=20260702-footerbtn">
+<link rel="stylesheet" href="kikers.css?v=20260713-craftcms3">
 <style>
 /* ===== FUNNEL STRUCTURE (modeled on the reference page, rebranded to Kiker) ===== */
 
@@ -93,20 +91,7 @@
 </head>
 <body id="top">
 
-<div class="ustrip"><div class="wrap">
-  <div class="u-left"><span class="addr">📍&nbsp; Pensacola, FL <span class="sep">•</span></span><a href="tel:{{ siteSettings.phoneNumber|replace({"-": ""}) }}">{{ siteSettings.phoneNumber }}</a></div>
-  <div class="u-right"><span><b id="openNow">Hours Today</b></span><span class="txt"><span class="sep">•</span> Mon-Fri, 9 AM-4:30 PM; Sat, 8 AM-2 PM</span></div>
-</div></div>
-
-<header class="nav" id="nav"><div class="wrap">
-  <a class="brand brand-logo" href="index.html" aria-label="Kiker's U-Pull-It home"><img class="brand-logo-img" src="assets/kikers-horizontal-logo.svg" alt="" width="1542" height="492"></a>
-  <span class="spacer"></span>
-  <nav class="links"><a href="sell-your-vehicle.html">Sell Your Car</a><a href="u-pull-parts.html">Find a Part</a><a href="cars-for-sale.html">Cars for Sale</a><a href="about.html">Our Story</a><a href="contact.html">Visit</a></nav>
-  <a class="btn btn--filled btn--sm" href="#offer" style="margin-left:8px">Get My Offer</a>
-  <button class="menu" id="menuBtn" aria-label="Open menu">☰</button>
-</div></header>
-<div class="scrim" id="scrim"></div>
-<aside class="drawer" id="drawer"><a href="sell-your-vehicle.html">Sell Your Car</a><a href="u-pull-parts.html">Find a Part</a><a href="cars-for-sale.html">Cars for Sale</a><a href="about.html">Our Story</a><a href="contact.html">Visit</a><a class="btn btn--filled btn--block" href="#offer">Get My Cash Offer</a></aside>
+{% include '_partials/site-header' with { thirdNav: 'cars', ctaLabel: 'Get My Offer', ctaHref: '#offer', drawerCtaLabel: 'Get My Cash Offer' } %}
 
 <!-- HERO (full-bleed photo, centered headline) -->
 <section class="phero">
@@ -211,30 +196,12 @@
   <div class="grp"><a class="btn btn--amber btn--lg" href="#offer"><span class="ic">⚡</span>Get My Cash Offer</a><a class="btn btn--outline-light btn--lg" href="tel:{{ siteSettings.phoneNumber|replace({"-": ""}) }}"><span class="ic">📞</span>Call {{ siteSettings.phoneNumber }}</a></div>
 </div></section>
 
-<footer class="ftr"><div class="wrap">
-  <div class="ftr-grid">
-    <div class="fcol about">
-      <a class="brand brand-logo" href="index.html" aria-label="Kiker's U-Pull-It home"><img class="brand-logo-img" src="assets/kikers-horizontal-logo.svg" alt="" width="1542" height="492"></a>
-      <p style="margin-top:14px">Self-Service Auto Parts &amp; Cash for Cars</p>
-      <p>{{ siteSettings.streetAddress }}</p>
-      <p><a class="phone" href="tel:{{ siteSettings.phoneNumber|replace({"-": ""}) }}">{{ siteSettings.phoneNumber }}</a></p>
-      <div class="social"><a href="https://www.facebook.com/kikersupullit/" aria-label="Facebook" target="_blank" rel="noopener">f</a></div>
-    </div>
-    <div class="fcol"><div class="sublinks">
-      <div><h5>Main</h5><a href="index.html">Home</a><a href="about.html">About</a><a href="contact.html">Contact &amp; Visit</a><a href="blog.html">Blog</a><a href="privacy.html">Privacy Policy</a></div>
-      <div><h5>Services</h5><a href="sell-your-vehicle.html">Sell Your Vehicle</a><a href="we-buy-cars-near-pensacola.html">We Buy Cars Near Pensacola</a><a href="u-pull-parts.html">Pull Your Own Parts</a><a href="full-service-parts.html">Full-Service Parts</a><a href="cars-for-sale.html">Cars for Sale</a><a href="cars-for-sale-vehicle.html">Vehicle Detail</a><a href="thank-you.html">Thank You</a></div>
-      <div><h5>Local Pages</h5><a href="sell-your-car-pensacola.html">Sell Your Car in Pensacola</a><a href="sell-your-car-pace.html">Sell Your Car in Pace</a><a href="sell-your-car-milton.html">Sell Your Car in Milton</a><a href="sell-your-car-cantonment.html">Sell Your Car in Cantonment</a></div>
-      <div><h5>Build Versions</h5><a href="home-funnel.html">Home Funnel</a><a href="home-funnel-2.html">Home Funnel 2</a><a href="Kikers-Home.html">Home Concept</a><a href="Kikers-Home-v2.html">Home V2</a><a href="Kikers-Home-with-Photos.html">Home with Photos</a><a href="Sell-Your-Vehicle-v2.html">Sell Vehicle V2</a><a href="Contact-Visit.html">Contact Visit Concept</a><a href="Icon-Comparison.html">Icon Comparison</a><a href="docs/component-kit.html">Component Kit</a></div>
-    </div></div>
-    <div class="fcol"><h5>Visit Us</h5><p class="mono" style="color:#fff">Mon-Fri, 9 AM-4:30 PM; Sat, 8 AM-2 PM<br>Sunday: Closed</p><a class="btn btn--outline-light btn--sm" href="contact.html#directions" style="margin-top:14px"><span class="ic">📍</span>Get Directions</a></div>
-  </div>
-  <div class="ftr-bottom"><span class="copy">© 2026 Kiker's U-Pull-It · Pensacola, FL</span><span class="vals">Own it · Do right · Outwork it · Back each other · Watch out</span></div>
-</div></footer>
+{% include '_partials/site-footer' %}
 
 <div class="toast-host" id="toastHost" aria-live="polite"></div>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"AutoDealer","name":"Kiker's U-Pull-It","description":"Family-owned, licensed Florida salvage yard in Pensacola that buys cars for cash (running or not) and sells used auto parts.","url":"https://smithbcg.github.io/kikers-website/","telephone":"+1-{{ siteSettings.phoneNumber }}","priceRange":"$$","foundingDate":"2001","address":{"@type":"PostalAddress","streetAddress":"3010 W. Fairfield Drive","addressLocality":"Pensacola","addressRegion":"FL","postalCode":"32505","addressCountry":"US"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"16:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Saturday"],"opens":"08:00","closes":"14:00"}]}
 </script>
-<script src="kikers.js" defer></script>
+<script src="kikers.js?v=20260713-craftcms3" defer></script>
 </body>
 </html>

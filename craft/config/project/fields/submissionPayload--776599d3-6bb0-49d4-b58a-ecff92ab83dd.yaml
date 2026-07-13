@@ -1,0 +1,16 @@
+columnSuffix: null
+handle: submissionPayload
+instructions: 'Raw normalized form values retained for reference.'
+name: 'Complete Submission'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: true
+  initialRows: 12
+  multiline: true
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText
