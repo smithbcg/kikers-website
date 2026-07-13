@@ -1,0 +1,26 @@
+columnSuffix: null
+handle: pageSections
+instructions: 'Reorder, disable, duplicate, or edit complete page sections.'
+name: 'Page Sections'
+searchable: false
+settings:
+  createButtonLabel: 'Add section'
+  defaultIndexViewMode: cards
+  enableVersioning: false
+  entryTypes:
+    -
+      __assoc__:
+        -
+          - uid
+          - 4040d468-9270-4983-9b23-a88ed2c49670 # Page Section
+  includeTableView: false
+  maxEntries: null
+  minEntries: null
+  pageSize: null
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: blocks
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

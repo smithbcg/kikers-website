@@ -1,42 +1,74 @@
-dateModified: 1783950300
+dateModified: 1783954011
 email:
   fromEmail: admin@kikers.local
   fromName: "Kiker's U-Pull-It"
   transportType: craft\mail\transportadapters\Sendmail
+fs:
+  siteAssetsFs:
+    hasUrls: true
+    name: 'Site Assets'
+    settings:
+      path: '@webroot/assets'
+    type: craft\fs\Local
+    url: '$PRIMARY_SITE_URL/assets'
 meta:
   __names__:
     1b9da689-9595-4422-9757-6bbc111f6150: Vehicle # Vehicle
     1ca619b6-8fb9-4bca-8cd0-cd597a7021c3: 'Directions URL' # Directions URL
     1f2c57b2-d141-4ada-abb3-32f33cf8294e: 'Page Heading' # Page Heading
+    3a31d08b-4f35-45a7-998f-fb105cc567ad: 'Section Type' # Section Type
     6abdc73b-7453-4f2f-b512-b315aafce8d6: Pages # Pages
+    6e702055-13ca-4620-81d7-6048448d28ff: 'Page Body Scripts' # Page Body Scripts
     7c43ddf9-0b09-4e5d-99cc-9cc25fee93bd: 'Phone Number' # Phone Number
     7f4e7440-d21f-4922-84c8-de00233d368c: 'ZIP Code' # ZIP Code
+    7f58d7fa-fed9-4394-872c-c28677d4b16c: 'Color Theme' # Color Theme
     7fbd3328-a565-4e0f-9c88-663a9de6d20c: Inquiry # Inquiry
     8c518020-699e-40fa-bca2-518ab7530518: "Kiker's U-Pull-It" # Kiker's U-Pull-It
     8d0d8037-03ff-4720-b797-1116a49eeb7f: Phone # Phone
+    22d5ca32-a653-4625-8c13-f4ca837b892e: 'Container Width' # Container Width
+    38f7d913-fa0a-42da-8666-48364e765e1f: 'Page Head HTML' # Page Head HTML
+    65fd40be-a48c-4041-8401-4d90f81cde97: 'Additional CSS Classes' # Additional CSS Classes
     69a16738-7a80-4d84-9427-940c9f925c90: Email # Email
+    71ee0961-b25c-4e42-a169-b8d39e815c65: 'Managed Image' # Managed Image
     97b1b729-8b05-438c-af51-eb0dad6f4b7e: 'SEO Description' # SEO Description
+    99e268a4-a373-4c91-b7a1-733980c42664: 'Site Assets' # Site Assets
     545a32c4-f564-4423-a711-58a3d5e35add: 'Subject or Part Needed' # Subject or Part Needed
+    727b166d-06a5-4452-b3b7-3ddd05a0927b: 'Background Overlay' # Background Overlay
     755ab51e-a556-4d88-9f13-0420d970c58b: "Kiker's U-Pull-It" # Kiker's U-Pull-It
+    794a3fbb-8bae-4e92-8c13-6136f8679171: 'Section Anchor' # Section Anchor
     2040b384-0884-4c63-83ec-c185dd027653: 'Saturday Hours' # Saturday Hours
+    4040d468-9270-4983-9b23-a88ed2c49670: 'Page Section' # Page Section
     4983c8df-a87e-4134-bca1-ff42ca8c7628: 'Weekday Hours' # Weekday Hours
     06287fe5-1e3a-458f-bb1e-aaebf199c94b: 'Google Rating' # Google Rating
     99736da3-f5ed-4f02-84b8-7b2c3ea4fd38: 'Site Settings' # Site Settings
+    110368e1-ee74-43be-a836-557c5705355c: 'Background Image' # Background Image
     776599d3-6bb0-49d4-b58a-ecff92ab83dd: 'Complete Submission' # Complete Submission
     7164911c-9ba5-44e0-9664-e99aa9d8cfc2: 'Google Review Count' # Google Review Count
     90849714-c266-44a2-928b-7d00691014fe: Name # Name
+    a02d35f4-b174-474d-9a40-2e963722259b: 'Add Layout Container' # Add Layout Container
     a4c1d13b-df7c-4e53-b188-708a20718a90: 'Page Summary' # Page Summary
     a50cdc18-80c7-48fe-b473-f1026898f8b7: Condition # Condition
+    a681f50a-242f-44df-b9cd-9f9d771daa26: 'Page-Specific CSS' # Page-Specific CSS
     a58567a1-5756-4326-8783-8db1c0ed08df: Inquiries # Inquiries
+    ae1303e0-4a10-49ad-a208-1614a9c5591c: 'Section Content Item' # Section Content Item
     b0b69d85-b300-4d03-a6f6-5bee183a38ef: Page # Page
+    b57b0743-872d-4647-a09c-856163bb98a2: 'Vertical Spacing' # Vertical Spacing
+    c809b123-0d98-4672-a82b-b653feee7e7c: 'Editor Label' # Editor Label
     cbb84471-a1aa-45b9-84df-1ebab9ece4a1: 'Request Type' # Request Type
+    cf768d91-0b69-4d4a-a0fd-b6d62e6cc944: 'Public Schema' # Public Schema
     d01c2dd2-e46d-47b8-a5fa-2c0dc5960d28: 'Page Type' # Page Type
     d3fead23-46d6-494e-9342-eff0e98a3602: 'Source Page' # Source Page
     e9d94883-8c23-47a5-9a1e-f5c60c268201: 'Business Name' # Business Name
     e12aa9db-f6bc-4035-ba64-408dd66eb3d9: Message # Message
+    e70fac97-a36a-4d38-9827-3af2a94d1ff3: 'Section Layout Markup' # Section Layout Markup
     e160a67e-31fe-49b4-ae6b-b526dc8f9ad8: 'Migration Template' # Migration Template
+    e97097e3-f2c6-40ac-981d-ccb61a556fe3: 'Page Sections' # Page Sections
+    eea08e80-f72f-4767-92c4-2c011dca6524: 'Content Type' # Content Type
+    f62d50be-11ce-472e-9e4d-bff3ae34f665: 'Content Key' # Content Key
+    f73d424c-5162-461a-9e68-5db893ff818c: 'Section Content' # Section Content
     f86bda1e-c10b-414a-b6d7-fb44923f2326: 'Street Address' # Street Address
     f89783eb-d023-474c-abc2-3eda93569439: 'SEO Title' # SEO Title
+    fca462b8-776d-4e8c-b8d1-a68e6b1eceb0: 'Content Value' # Content Value
 system:
   edition: solo
   live: true

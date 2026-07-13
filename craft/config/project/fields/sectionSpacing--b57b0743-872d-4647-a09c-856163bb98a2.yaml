@@ -1,0 +1,66 @@
+columnSuffix: null
+handle: sectionSpacing
+instructions: null
+name: 'Vertical Spacing'
+searchable: false
+settings:
+  customOptions: false
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Preserve current spacing'
+        -
+          - value
+          - inherit
+        -
+          - default
+          - true
+    -
+      __assoc__:
+        -
+          - label
+          - None
+        -
+          - value
+          - none
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - Compact
+        -
+          - value
+          - compact
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - Standard
+        -
+          - value
+          - standard
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - Spacious
+        -
+          - value
+          - spacious
+        -
+          - default
+          - false
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

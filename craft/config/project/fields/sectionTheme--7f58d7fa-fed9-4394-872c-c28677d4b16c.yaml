@@ -1,0 +1,66 @@
+columnSuffix: null
+handle: sectionTheme
+instructions: null
+name: 'Color Theme'
+searchable: false
+settings:
+  customOptions: false
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Preserve current colors'
+        -
+          - value
+          - inherit
+        -
+          - default
+          - true
+    -
+      __assoc__:
+        -
+          - label
+          - Light
+        -
+          - value
+          - light
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - 'Soft gray'
+        -
+          - value
+          - soft
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - Dark
+        -
+          - value
+          - dark
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - 'Kiker red'
+        -
+          - value
+          - red
+        -
+          - default
+          - false
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

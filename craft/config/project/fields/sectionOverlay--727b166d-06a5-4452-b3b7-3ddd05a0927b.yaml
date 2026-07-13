@@ -1,0 +1,14 @@
+columnSuffix: null
+handle: sectionOverlay
+instructions: 'Darkens the selected section background image.'
+name: 'Background Overlay'
+searchable: false
+settings:
+  defaultValue: 0
+  max: 90
+  min: 0
+  step: 5
+  suffix: '%'
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Range

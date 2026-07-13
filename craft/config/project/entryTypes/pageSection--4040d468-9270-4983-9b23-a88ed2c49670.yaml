@@ -1,8 +1,8 @@
 allowLineBreaksInTitles: false
 color: null
-description: 'A public Kiker website page.'
+description: 'A complete reorderable section of a public page.'
 fieldLayouts:
-  ab39d4a4-45f8-4f13-b77e-7ce97fc99531:
+  cc74a37d-a264-4b78-8b43-f3baef1966f3:
     cardThumbAlignment: end
     tabs:
       -
@@ -32,7 +32,7 @@ fieldLayouts:
             tip: null
             title: null
             type: craft\fieldlayoutelements\entries\EntryTitleField
-            uid: 9596df46-bf84-4bc8-a8dd-a254b8cb85b5
+            uid: 1282f44a-c7e6-48dd-9f0f-bd2b01573d3b
             userCondition: null
             warning: null
             width: 100
@@ -41,14 +41,14 @@ fieldLayouts:
             editCondition: null
             elementCondition: null
             elementEditCondition: null
-            fieldUid: d01c2dd2-e46d-47b8-a5fa-2c0dc5960d28 # Page Type
+            fieldUid: 3a31d08b-4f35-45a7-998f-fb105cc567ad # Section Type
             handle: null
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: b656ace7-6f8c-4c3c-b005-6bfb29e83ae5
+            uid: d75dbb60-ee83-4015-8485-82de3cfade2a
             userCondition: null
             warning: null
             width: 100
@@ -57,14 +57,14 @@ fieldLayouts:
             editCondition: null
             elementCondition: null
             elementEditCondition: null
-            fieldUid: 1f2c57b2-d141-4ada-abb3-32f33cf8294e # Page Heading
+            fieldUid: 7f58d7fa-fed9-4394-872c-c28677d4b16c # Color Theme
             handle: null
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: c6441f0d-11a9-4899-a2ea-072c6d1a2caf
+            uid: 6e78d2f2-ac48-4b8b-b8a5-041c56c1c32f
             userCondition: null
             warning: null
             width: 100
@@ -73,14 +73,14 @@ fieldLayouts:
             editCondition: null
             elementCondition: null
             elementEditCondition: null
-            fieldUid: a4c1d13b-df7c-4e53-b188-708a20718a90 # Page Summary
+            fieldUid: 22d5ca32-a653-4625-8c13-f4ca837b892e # Container Width
             handle: null
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: b730550b-d4af-4a78-87ff-2416131fd5c3
+            uid: 128cbfd1-50aa-429d-b6c0-645b3b323958
             userCondition: null
             warning: null
             width: 100
@@ -89,14 +89,14 @@ fieldLayouts:
             editCondition: null
             elementCondition: null
             elementEditCondition: null
-            fieldUid: f89783eb-d023-474c-abc2-3eda93569439 # SEO Title
+            fieldUid: b57b0743-872d-4647-a09c-856163bb98a2 # Vertical Spacing
             handle: null
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 4523b48e-b651-4444-a5cb-6623e93e8323
+            uid: 6640dc8e-07ac-4924-b8fe-9390ca62ac3d
             userCondition: null
             warning: null
             width: 100
@@ -105,14 +105,14 @@ fieldLayouts:
             editCondition: null
             elementCondition: null
             elementEditCondition: null
-            fieldUid: 97b1b729-8b05-438c-af51-eb0dad6f4b7e # SEO Description
+            fieldUid: a02d35f4-b174-474d-9a40-2e963722259b # Add Layout Container
             handle: null
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 375c0a50-297c-49e1-8816-f151d6f5a557
+            uid: 8de2d77f-3d46-48a0-b55e-a5c682a0d835
             userCondition: null
             warning: null
             width: 100
@@ -121,19 +121,67 @@ fieldLayouts:
             editCondition: null
             elementCondition: null
             elementEditCondition: null
-            fieldUid: e160a67e-31fe-49b4-ae6b-b526dc8f9ad8 # Migration Template
+            fieldUid: 110368e1-ee74-43be-a836-557c5705355c # Background Image
             handle: null
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 8b65281f-d2a0-4243-afdb-df1407660587
+            uid: bb329795-4cf9-4cfc-8811-2fc5b16efe99
             userCondition: null
             warning: null
             width: 100
-        name: Content
-        uid: 4153e7eb-ad93-40de-8c54-b8e0be7e6ed0
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 727b166d-06a5-4452-b3b7-3ddd05a0927b # Background Overlay
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 83b9a5e6-7728-44e0-b585-5fcd381a4194
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 794a3fbb-8bae-4e92-8c13-6136f8679171 # Section Anchor
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: fcc621ac-cfcd-4e6b-84bb-cbe864b9c6f8
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: f73d424c-5162-461a-9e68-5db893ff818c # Section Content
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: cfd700c7-1080-4c03-b213-9291f98938ea
+            userCondition: null
+            warning: null
+            width: 100
+        name: Section
+        uid: 5ef43bb1-a89f-4493-ab28-e18c0d92d05e
         userCondition: null
       -
         elementCondition: null
@@ -143,14 +191,14 @@ fieldLayouts:
             editCondition: null
             elementCondition: null
             elementEditCondition: null
-            fieldUid: e97097e3-f2c6-40ac-981d-ccb61a556fe3 # Page Sections
+            fieldUid: 65fd40be-a48c-4041-8401-4d90f81cde97 # Additional CSS Classes
             handle: null
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: b7aed79e-c011-4c9f-aecb-2775ec42abe4
+            uid: ceb97a37-b725-42a1-9066-59ae90864a00
             userCondition: null
             warning: null
             width: 100
@@ -159,57 +207,25 @@ fieldLayouts:
             editCondition: null
             elementCondition: null
             elementEditCondition: null
-            fieldUid: a681f50a-242f-44df-b9cd-9f9d771daa26 # Page-Specific CSS
+            fieldUid: e70fac97-a36a-4d38-9827-3af2a94d1ff3 # Section Layout Markup
             handle: null
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 52d1aa9e-d6c3-430f-94ad-c970b2b5776b
+            uid: ed392ad6-b6d0-434c-a9a7-15326294f52f
             userCondition: null
             warning: null
             width: 100
-          -
-            dateAdded: null
-            editCondition: null
-            elementCondition: null
-            elementEditCondition: null
-            fieldUid: 38f7d913-fa0a-42da-8666-48364e765e1f # Page Head HTML
-            handle: null
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 1be91827-36a4-4471-8740-a4b5709f9d86
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            dateAdded: null
-            editCondition: null
-            elementCondition: null
-            elementEditCondition: null
-            fieldUid: 6e702055-13ca-4620-81d7-6048448d28ff # Page Body Scripts
-            handle: null
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: f0989b8a-43fd-4dfc-8bcf-dfb2d7411a8f
-            userCondition: null
-            warning: null
-            width: 100
-        name: 'Page Builder'
-        uid: dce6ad84-de25-4ea3-b7ff-11ab95086e3e
+        name: Advanced
+        uid: f23fea7a-8114-41dd-bb6f-64deb8fa3a8a
         userCondition: null
     thumbFieldKey: null
-handle: page
+handle: pageSection
 hasTitleField: true
 icon: null
-name: Page
+name: 'Page Section'
 showSlugField: true
 showStatusField: true
 slugTranslationKeyFormat: null

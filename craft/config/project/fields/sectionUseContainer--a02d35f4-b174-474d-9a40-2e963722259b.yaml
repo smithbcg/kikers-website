@@ -1,0 +1,13 @@
+columnSuffix: null
+handle: sectionUseContainer
+instructions: 'Constrains newly-created section content to the selected width.'
+name: 'Add Layout Container'
+searchable: false
+settings:
+  default: false
+  offLabel: 'Use existing layout'
+  onLabel: Contained
+  showLabelsInCards: false
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

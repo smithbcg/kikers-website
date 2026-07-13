@@ -31,8 +31,20 @@ Stop the environment with `ddev stop`.
 - **Pages** contains one entry for every migrated static page and concept route.
 - **Inquiries** stores vehicle offers and general website requests submitted from public forms.
 - **Globals > Site Settings** is the source for the business name, phone, address, hours, Google rating, review count, and directions URL.
-- Existing `.html` routes remain available while canonical extension-free Craft routes are introduced.
-- Page SEO titles, descriptions, headings, and summaries are seeded as editable Craft fields while each entry continues to use its approved Twig migration template.
+- **Assets > Site Assets** contains the logo, hero image, and future page uploads.
+- Existing `.html` routes remain available alongside canonical extension-free Craft routes.
+- Page SEO fields and the complete front-end section tree are stored in Craft. The approved Twig templates remain only as a migration fallback.
+
+## Edit a page
+
+1. Open **Entries > Pages** and choose a page.
+2. Use **Content** for the title, SEO metadata, page heading, and summary.
+3. Open **Page Builder** to reorder, disable, duplicate, or edit complete page sections.
+4. Within a section, edit its type, color theme, width, spacing, container, background image, overlay, anchor, and **Section Content** items.
+5. Open a Section Content item to edit its text, button or link destination, form label, or managed image.
+6. Use **Preview**, then **Save** when the page is ready.
+
+The **Advanced** section tab and the page-level CSS/head/script fields preserve the approved layouts. They are available for developer-level changes; routine content and image edits should use the section controls and content items instead. The Content Key on nested items is an internal layout reference and should not be changed.
 
 Schema changes are stored in `config/project/`. Initial content is seeded by the timestamped files in `migrations/`.
 

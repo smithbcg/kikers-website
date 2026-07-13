@@ -10,5 +10,6 @@
  */
 
 return [
-    'index.html' => ['template' => 'index'],
+    '' => ['template' => 'pages/home'],
+    'index.html' => ['template' => 'pages/home'],
 ];
