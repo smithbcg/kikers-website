@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kiker's U-Pull-It — Icon Set Comparison</title>
+<link href="https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,600;0,700;0,800;1,700;1,800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<!-- Phosphor (regular + bold + fill) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/bold/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css">
+<!-- Tabler -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.24.0/dist/tabler-icons.min.css">
+<style>
+:root{
+  --red:#DC161F;--red-700:#B4101A;--amber:#F6A100;--amber-600:#D98200;--ink:#0B0611;
+  --bg:#F4F4F6;--surface-3:#EFEFF1;--text:#0B0611;--text-2:#55555B;--text-3:#86868D;
+  --line:#E5E5E8;--line-2:#D8D8DC;--green:#1E9E57;--green-700:#0F6E3B;--green-wash:#E4F5EC;--green-line:rgba(15,110,59,.22);
+  --grad-ink:linear-gradient(160deg,#0B0611,#1A1719);--grad-red:linear-gradient(135deg,#DC161F,#8C0C14);
+  --r-md:4px;--r-lg:6px;--r-pill:100px;--e1:0 1px 2px rgba(11,6,17,.08);--e2:0 8px 20px rgba(11,6,17,.10);
+  --display:'Saira',system-ui,sans-serif;--body:'Inter',system-ui,sans-serif;--mono:'JetBrains Mono',monospace;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--body);line-height:1.6}
+h1,h2,h3{margin:0;font-family:var(--display);font-weight:800;text-transform:uppercase;letter-spacing:-.01em;line-height:1.05}
+.wrap{max-width:1080px;margin:0 auto;padding:40px 24px}
+.eyebrow{font-family:var(--body);font-weight:600;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--red);display:inline-flex;align-items:center;gap:8px}
+.eyebrow::before{content:"";width:18px;height:2px;background:var(--red)}
+.lead{color:var(--text-2);max-width:64ch;margin:10px 0 0}
+.note{background:#FFF4DC;border:1px solid #FFC74D;border-left:4px solid var(--amber);border-radius:var(--r-md);padding:14px 16px;font-size:14px;margin:18px 0}
+.doc-h{border-left:4px solid var(--red);padding:4px 0 4px 16px;margin:46px 0 14px}
+.doc-h h2{font-style:italic;font-size:24px}.doc-h p{margin:4px 0 0;color:var(--text-2);font-size:14px}
+
+/* comparison grid */
+.cgrid{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden}
+.cgrid th,.cgrid td{padding:14px 12px;border-bottom:1px solid var(--line);text-align:center}
+.cgrid thead th{background:var(--ink);color:#fff;font-family:var(--display);font-style:italic;text-transform:uppercase;font-size:14px;letter-spacing:.03em}
+.cgrid tbody th{text-align:left;font-weight:600;font-size:14px;color:var(--text);background:var(--surface-3);width:200px}
+.cgrid .ico{font-size:30px;color:var(--ink);line-height:1}
+.cgrid svg.lucide{width:30px;height:30px;stroke:var(--ink);vertical-align:middle}
+.cgrid tr:last-child td,.cgrid tr:last-child th{border-bottom:none}
+.cap{font-family:var(--mono);font-size:11px;color:var(--text-3);margin-top:4px}
+
+/* weights */
+.weights{display:flex;gap:30px;flex-wrap:wrap;background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:24px}
+.weights .w{text-align:center}.weights .w .ico{font-size:40px;color:var(--ink)}.weights .w .l{font-family:var(--mono);font-size:11px;color:var(--text-3);margin-top:6px}
+
+/* in-context */
+.ctx-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px}
+.ctx{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden}
+.ctx .hd{background:var(--ink);color:#fff;font-family:var(--display);font-style:italic;text-transform:uppercase;font-size:13px;padding:10px 16px;text-align:center}
+.ctx .bd{padding:18px}
+.trust{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.trust .item{text-align:center}
+.trust .item .ico{font-size:26px;color:var(--red)}.trust .item svg.lucide{width:26px;height:26px;stroke:var(--red)}
+.trust .item .n{font-family:var(--display);font-style:italic;font-weight:800;font-size:15px;margin-top:4px}
+.trust .item .s{font-size:11px;color:var(--text-2)}
+.btn{margin-top:16px;width:100%;font-family:var(--display);font-weight:700;font-style:italic;text-transform:uppercase;letter-spacing:.04em;font-size:13px;display:inline-flex;align-items:center;justify-content:center;gap:8px;height:44px;border-radius:var(--r-md);border:none;background:var(--red);color:#fff;cursor:pointer}
+.btn .ico{font-size:17px}.btn svg.lucide{width:17px;height:17px;stroke:#fff}
+@media(max-width:820px){.ctx-grid{grid-template-columns:1fr}}
+
+/* color treatments */
+.swatches{display:flex;gap:14px;flex-wrap:wrap}
+.sw{width:78px;height:78px;border-radius:var(--r-lg);display:grid;place-items:center;font-size:34px;border:1px solid var(--line)}
+.sw.ink{background:#fff;color:var(--ink)}.sw.red{background:#fff;color:var(--red)}.sw.amber{background:#fff;color:var(--amber-600)}
+.sw.green{background:var(--green-wash);color:var(--green-700);border-color:var(--green-line)}
+.sw.ondark{background:var(--grad-ink);color:#fff}
+	.pick{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:18px 20px;margin-top:14px;font-size:14px}
+	code{font-family:var(--mono);font-size:12.5px;background:var(--surface-3);border:1px solid var(--line);border-radius:3px;padding:1px 5px}
+	.offline{display:none;background:#FDEDEE;border:1px solid #f5b5b8;color:#8C0C14;border-radius:var(--r-md);padding:12px 14px;font-size:13px;margin:14px 0}
+	.mini-footer{background:var(--ink);color:rgba(255,255,255,.74);margin-top:30px}
+	.mini-footer .wrap{padding-top:30px;padding-bottom:30px}
+	.mini-footer .footer-logo{display:inline-flex;background:#fff;border-radius:var(--r-md);padding:8px 10px;width:230px;max-width:100%;line-height:0;margin-bottom:18px}
+	.mini-footer .footer-logo img{display:block;width:100%;height:auto}
+	.mini-footer h2{font-size:18px;font-style:italic;color:#fff;margin-bottom:14px}
+	.mini-footer .links{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+	.mini-footer h3{font-size:11px;letter-spacing:.12em;color:rgba(255,255,255,.5);margin-bottom:10px}
+	.mini-footer a{display:block;color:rgba(255,255,255,.78);font-size:13px;margin-bottom:7px;text-decoration:none}
+	.mini-footer a:hover{color:#fff}
+
+/* ===== RESPONSIVE HARDENING (added) — desktop·laptop·tablet·mobile ===== */
+html{-webkit-text-size-adjust:100%}
+body{overflow-x:hidden}
+img,svg,video,iframe{max-width:100%;height:auto}
+.wrap{width:100%;padding-left:clamp(16px,4vw,24px);padding-right:clamp(16px,4vw,24px)}
+.mono,.meta,.stock,.km,.k,.row-tag,.a2{overflow-wrap:anywhere}
+table{max-width:100%}
+@media(max-width:1024px){.plates,.fcards,.cs-grid,.whygrid,.why-cards,.rcards,.methods,.bcards,.deals,.cards3,.cards-row{grid-template-columns:repeat(2,1fr)}.sec{padding:60px 0}}
+@media(max-width:768px){.hero-grid,.split2,.split2.top,.loc-grid,.area-grid,.svc-split,.prodgrid,.story-grid,.buy-grid,.owner,.paths,.vdp,.lead-grid,.embed .wrap,.contact-grid,.rules-grid,.buy-grid,.duo,.split,.cutaway{grid-template-columns:1fr}.cards-row,.cards3,.rcards,.methods,.bcards,.deals,.steps,.steps3,.tstats{grid-template-columns:1fr}.trustbar .wrap{grid-template-columns:repeat(2,1fr)}.buybox{position:static;top:auto}.finalcta .wrap{flex-direction:column;align-items:flex-start;text-align:left}.oways{flex-direction:column;align-items:flex-start;gap:10px}.sec{padding:48px 0}}
+	@media(max-width:560px){.fcards,.cs-grid,.whygrid,.why-cards,.rcards,.methods,.bcards,.deals,.cards3,.cards-row{grid-template-columns:1fr}.cta-row,.hero .cta-row,.grp,.finalcta .grp{flex-direction:column;align-items:stretch;width:100%}.cta-row>.btn,.grp>.btn,.finalcta .grp>.btn{width:100%}.qgrid{grid-template-columns:1fr}.qbar .qrow{flex-direction:column}.qbar .qrow .btn{width:100%}.gallery .thumbs{grid-template-columns:repeat(4,1fr)}}
+	@media(max-width:380px){.plates,.trustbar .wrap{grid-template-columns:1fr}}
+	@media(max-width:820px){.mini-footer .links{grid-template-columns:repeat(2,minmax(0,1fr))}}
+	@media(max-width:560px){.mini-footer .links{grid-template-columns:1fr}}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+  <span class="eyebrow">Kiker's U-Pull-It · Icon Picker</span>
+  <h1 style="font-style:italic;font-size:34px;margin:8px 0 4px">Pick the icon set</h1>
+  <p class="lead">Same Kiker's icons, three professional open-source sets, side by side and in real components. All are free for commercial use and theme to brand color via <code>currentColor</code>. Pick the feel that fits the yard — then I wire it into the kit, and your custom "hero" icons drop in over it later.</p>
+  <div class="offline" id="offline">⚠ Icons aren't loading — this page needs an internet connection to pull the icon sets from their CDNs. Reopen online.</div>
+  <div class="note"><b>My lean:</b> a bolder, slightly industrial set reads better with Saira + the steel/NASCAR feel than a thin, delicate line set. <b>Phosphor Bold</b> and <b>Tabler</b> tend to fit; <b>Lucide</b> is cleaner/lighter. Trust your eye — that's what this page is for.</div>
+
+  <div class="doc-h"><h2>Head to head</h2><p>Phosphor shown in its Bold weight.</p></div>
+  <table class="cgrid">
+    <thead><tr><th>Kiker's icon</th><th>Phosphor (Bold)</th><th>Tabler</th><th>Lucide</th></tr></thead>
+    <tbody id="grid"></tbody>
+  </table>
+
+  <div class="doc-h"><h2>Phosphor weights</h2><p>If we go Phosphor, we can dial the weight. Bold or Fill suit the rugged brand.</p></div>
+  <div class="weights">
+    <div class="w"><div class="ico"><i class="ph ph-truck"></i></div><div class="l">Regular</div></div>
+    <div class="w"><div class="ico"><i class="ph-bold ph-truck"></i></div><div class="l">Bold</div></div>
+    <div class="w"><div class="ico"><i class="ph-fill ph-truck"></i></div><div class="l">Fill</div></div>
+    <div class="w" style="margin-left:20px"><div class="ico"><i class="ph-bold ph-currency-dollar"></i></div><div class="l">Bold $</div></div>
+    <div class="w"><div class="ico"><i class="ph-fill ph-shield-check"></i></div><div class="l">Fill shield</div></div>
+    <div class="w"><div class="ico"><i class="ph-bold ph-wrench"></i></div><div class="l">Bold wrench</div></div>
+  </div>
+
+  <div class="doc-h"><h2>In context</h2><p>The same trust bar + button, built with each set and brand color.</p></div>
+  <div class="ctx-grid">
+    <div class="ctx"><div class="hd">Phosphor Bold</div><div class="bd">
+      <div class="trust">
+        <div class="item"><div class="ico"><i class="ph-bold ph-lightning"></i></div><div class="n">Same-Day</div><div class="s">Pickup &amp; Cash</div></div>
+        <div class="item"><div class="ico"><i class="ph-bold ph-truck"></i></div><div class="n">Free</div><div class="s">Towing</div></div>
+        <div class="item"><div class="ico"><i class="ph-bold ph-shield-check"></i></div><div class="n">Done Right</div><div class="s">Paperwork</div></div>
+        <div class="item"><div class="ico"><i class="ph-bold ph-recycle"></i></div><div class="n">Recycled</div><div class="s">Responsibly</div></div>
+      </div>
+      <button class="btn"><span class="ico"><i class="ph-bold ph-phone"></i></span>Call {{ siteSettings.phoneNumber }}</button>
+    </div></div>
+
+    <div class="ctx"><div class="hd">Tabler</div><div class="bd">
+      <div class="trust">
+        <div class="item"><div class="ico"><i class="ti ti-bolt"></i></div><div class="n">Same-Day</div><div class="s">Pickup &amp; Cash</div></div>
+        <div class="item"><div class="ico"><i class="ti ti-truck"></i></div><div class="n">Free</div><div class="s">Towing</div></div>
+        <div class="item"><div class="ico"><i class="ti ti-shield-check"></i></div><div class="n">Done Right</div><div class="s">Paperwork</div></div>
+        <div class="item"><div class="ico"><i class="ti ti-recycle"></i></div><div class="n">Recycled</div><div class="s">Responsibly</div></div>
+      </div>
+      <button class="btn"><span class="ico"><i class="ti ti-phone"></i></span>Call {{ siteSettings.phoneNumber }}</button>
+    </div></div>
+
+    <div class="ctx"><div class="hd">Lucide</div><div class="bd">
+      <div class="trust">
+        <div class="item"><div class="ico"><i data-lucide="zap"></i></div><div class="n">Same-Day</div><div class="s">Pickup &amp; Cash</div></div>
+        <div class="item"><div class="ico"><i data-lucide="truck"></i></div><div class="n">Free</div><div class="s">Towing</div></div>
+        <div class="item"><div class="ico"><i data-lucide="shield-check"></i></div><div class="n">Done Right</div><div class="s">Paperwork</div></div>
+        <div class="item"><div class="ico"><i data-lucide="recycle"></i></div><div class="n">Recycled</div><div class="s">Responsibly</div></div>
+      </div>
+      <button class="btn"><span class="ico"><i data-lucide="phone"></i></span>Call {{ siteSettings.phoneNumber }}</button>
+    </div></div>
+  </div>
+
+  <div class="doc-h"><h2>Brand-color treatments</h2><p>Any set takes brand color via <code>currentColor</code> — example with Phosphor Bold.</p></div>
+  <div class="swatches">
+    <div class="sw ink"><i class="ph-bold ph-wrench"></i></div>
+    <div class="sw red"><i class="ph-bold ph-wrench"></i></div>
+    <div class="sw amber"><i class="ph-bold ph-wrench"></i></div>
+    <div class="sw green"><i class="ph-bold ph-recycle"></i></div>
+    <div class="sw ondark"><i class="ph-bold ph-wrench"></i></div>
+  </div>
+
+  <div class="pick">
+    <b>Once you pick:</b> I replace every emoji across the pages with the chosen set, add it to the component kit as the official icon system (fixed size + <code>currentColor</code>), and set a drop-in convention so your custom hero icons (cash-for-cars, pull-parts, tow, recycle, done-right, 25-years) swap in 1:1 — no layout changes. Tell me the winner, or even mix: e.g., "Phosphor Bold everywhere."
+  </div>
+  <p style="margin-top:30px;color:var(--text-3);font-size:13px">Phosphor, Tabler, and Lucide are all open-source (MIT / ISC) and free for commercial use. Loaded from public CDNs for this preview only; the production site bundles just the chosen set.</p>
+</div>
+
+<footer class="mini-footer">
+  <div class="wrap">
+    <a class="footer-logo" href="index.html" aria-label="Kiker's U-Pull-It home"><img src="assets/kikers-horizontal-logo.svg" alt="" width="1542" height="492"></a>
+    <h2>Kiker's site pages</h2>
+    <div class="links">
+      <div><h3>Main</h3><a href="index.html">Home</a><a href="about.html">About</a><a href="contact.html">Contact &amp; Visit</a><a href="blog.html">Blog</a><a href="privacy.html">Privacy Policy</a></div>
+      <div><h3>Services</h3><a href="sell-your-vehicle.html">Sell Your Vehicle</a><a href="we-buy-cars-near-pensacola.html">We Buy Cars Near Pensacola</a><a href="u-pull-parts.html">Pull Your Own Parts</a><a href="full-service-parts.html">Full-Service Parts</a><a href="cars-for-sale.html">Cars for Sale</a><a href="cars-for-sale-vehicle.html">Vehicle Detail</a><a href="thank-you.html">Thank You</a></div>
+      <div><h3>Local Pages</h3><a href="sell-your-car-pensacola.html">Sell Your Car in Pensacola</a><a href="sell-your-car-pace.html">Sell Your Car in Pace</a><a href="sell-your-car-milton.html">Sell Your Car in Milton</a><a href="sell-your-car-cantonment.html">Sell Your Car in Cantonment</a></div>
+      <div><h3>Build Versions</h3><a href="home-funnel.html">Home Funnel</a><a href="home-funnel-2.html">Home Funnel 2</a><a href="Kikers-Home.html">Home Concept</a><a href="Kikers-Home-v2.html">Home V2</a><a href="Kikers-Home-with-Photos.html">Home with Photos</a><a href="Sell-Your-Vehicle-v2.html">Sell Vehicle V2</a><a href="Contact-Visit.html">Contact Visit Concept</a><a href="Icon-Comparison.html">Icon Comparison</a><a href="docs/component-kit.html">Component Kit</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js"></script>
+<script>
+var ICONS=[
+  {label:"Phone / call",ph:"phone",ti:"phone",lu:"phone"},
+  {label:"Speed / fast",ph:"lightning",ti:"bolt",lu:"zap"},
+  {label:"Tow truck",ph:"truck",ti:"truck",lu:"truck"},
+  {label:"Parts / wrench",ph:"wrench",ti:"tool",lu:"wrench"},
+  {label:"Cash / offer",ph:"currency-dollar",ti:"currency-dollar",lu:"badge-dollar-sign"},
+  {label:"Recycle",ph:"recycle",ti:"recycle",lu:"recycle"},
+  {label:"Done right / legit",ph:"shield-check",ti:"shield-check",lu:"shield-check"},
+  {label:"Hours / clock",ph:"clock",ti:"clock",lu:"clock"},
+  {label:"Location / map",ph:"map-pin",ti:"map-pin",lu:"map-pin"},
+  {label:"Car / vehicle",ph:"car",ti:"car",lu:"car"},
+  {label:"Check",ph:"check-circle",ti:"circle-check",lu:"circle-check"},
+  {label:"How it works / gear",ph:"gear",ti:"settings",lu:"settings"}
+];
+var tb=document.getElementById('grid');
+ICONS.forEach(function(o){
+  var tr=document.createElement('tr');
+  tr.innerHTML='<th>'+o.label+'</th>'+
+    '<td><span class="ico"><i class="ph-bold ph-'+o.ph+'"></i></span><div class="cap">ph-'+o.ph+'</div></td>'+
+    '<td><span class="ico"><i class="ti ti-'+o.ti+'"></i></span><div class="cap">ti-'+o.ti+'</div></td>'+
+    '<td><span class="ico"><i data-lucide="'+o.lu+'"></i></span><div class="cap">'+o.lu+'</div></td>';
+  tb.appendChild(tr);
+});
+if(window.lucide&&lucide.createIcons)lucide.createIcons();
+// offline hint: if Phosphor font didn't load, the glyph box width stays tiny
+setTimeout(function(){
+  var probe=document.querySelector('.cgrid .ph-phone, .cgrid [class*="ph-"]');
+  // best-effort; if lucide failed too, show note
+  if(!document.querySelector('svg.lucide')){document.getElementById('offline').style.display='block';}
+},1200);
+</script>
+</body>
+</html>

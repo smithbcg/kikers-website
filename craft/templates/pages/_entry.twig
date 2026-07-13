@@ -1,0 +1,11 @@
+{#
+  During migration, each Craft page entry points at its visually approved Twig
+  template. Page families will move to structured fields without changing URLs.
+#}
+{% set migratedTemplate = entry.legacyTemplate|default(null) %}
+
+{% if migratedTemplate %}
+  {% include migratedTemplate %}
+{% else %}
+  {% exit 404 %}
+{% endif %}

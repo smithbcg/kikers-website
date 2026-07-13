@@ -1,0 +1,24 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  -
+    uid: b0b69d85-b300-4d03-a6f6-5bee183a38ef # Page
+handle: pages
+maxAuthors: 1
+minAuthors: 1
+name: Pages
+previewTargets:
+  -
+    label: 'Primary page'
+    urlFormat: '{url}'
+propagationMethod: all
+siteSettings:
+  755ab51e-a556-4d88-9f13-0420d970c58b: # Kiker's U-Pull-It
+    enabledByDefault: true
+    hasUrls: true
+    template: pages/_entry
+    uriFormat: '{slug}'
+structure:
+  maxLevels: 2
+  uid: a1dc856c-2398-49b5-99c5-17043a9f9622
+type: structure

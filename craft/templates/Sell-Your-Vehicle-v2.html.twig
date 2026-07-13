@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sell Your Car for Cash in Pensacola, FL | Kiker's U-Pull-It — Cash for Cars, Junk &amp; Non-Running Vehicles</title>
+<meta name="description" content="Sell your car for cash in Pensacola, FL. Kiker's U-Pull-It buys cars, trucks, vans and SUVs — running or not, wrecked or junk — with a fair offer, free towing, same-day pickup, and the title paperwork handled. Serving Pensacola, Pace, Milton and Cantonment. Call {{ siteSettings.phoneNumber }}.">
+<link rel="canonical" href="https://smithbcg.github.io/kikers-website/Sell-Your-Vehicle-v2.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,500;0,600;0,700;0,800;1,600;1,700;1,800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+/* ===== DESIGN TOKENS (Kiker's Site Style Guide) ===== */
+:root{
+  --red:#DC161F;--red-700:#B4101A;--red-800:#8C0C14;--red-wash:#FDEDEE;
+  --amber:#F6A100;--amber-300:#FFC74D;--amber-600:#D98200;--amber-wash:#FFF4DC;
+  --ink:#0B0611;--white:#FFFFFF;
+  --bg:#F4F4F6;--surface-1:#FFFFFF;--surface-3:#EFEFF1;--blue-wash:#F0F4F8;
+  --text:#0B0611;--text-2:#55555B;--text-3:#86868D;
+  --line:#E5E5E8;--line-2:#D8D8DC;--line-strong:#BEBEC4;--steel-700:#72767B;
+  --green:#1E9E57;--green-600:#178A4A;--green-700:#0F6E3B;--green-on-wash:#0F6E3B;--green-wash:#E4F5EC;--green-line:rgba(15,110,59,.22);
+  --grad-ink:linear-gradient(160deg,#0B0611,#1A1719);--grad-red:linear-gradient(135deg,#DC161F,#8C0C14);--grad-chrome:linear-gradient(135deg,#E3E6E8,#9A9FA4 55%,#D7DBDE);
+  --r-xs:2px;--r-sm:3px;--r-md:4px;--r-lg:6px;--r-pill:100px;
+  --e1:0 1px 2px rgba(11,6,17,.08);--e2:0 8px 20px rgba(11,6,17,.10);--e3:0 20px 48px rgba(11,6,17,.16);--glow-red:0 0 0 1px rgba(220,22,31,.25),0 10px 28px rgba(220,22,31,.20);
+  --display:'Saira',system-ui,sans-serif;--body:'Inter',system-ui,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace;--maxw:1200px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}img,svg{max-width:100%}
+h1,h2,h3,h4{margin:0;font-family:var(--display);font-weight:800;letter-spacing:-.01em;line-height:1.05;text-transform:uppercase}
+:focus-visible{outline:2px solid var(--amber);outline-offset:2px;border-radius:var(--r-xs)}
+::selection{background:var(--red);color:#fff}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.eyebrow{font-family:var(--body);font-weight:600;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--red);display:inline-flex;align-items:center;gap:8px}
+.eyebrow::before{content:"";width:18px;height:2px;background:var(--red)}
+.eyebrow.on-ink{color:var(--amber-300)}.eyebrow.on-ink::before{background:var(--amber)}
+.mono{font-family:var(--mono)}
+.race-rule{height:14px;width:100%;background-color:#fff;background-image:linear-gradient(45deg,var(--ink) 25%,transparent 25%),linear-gradient(-45deg,var(--ink) 25%,transparent 25%),linear-gradient(45deg,transparent 75%,var(--ink) 75%),linear-gradient(-45deg,transparent 75%,var(--ink) 75%);background-size:14px 14px;background-position:0 0,0 7px,7px -7px,-7px 0;border-top:2px solid var(--red);border-bottom:2px solid var(--red)}
+
+/* photo placeholder */
+.ph{position:relative;border-radius:var(--r-lg);overflow:hidden;border:1.5px dashed var(--line-strong);background:repeating-linear-gradient(45deg,#fafafb 0 10px,#f1f1f4 10px 20px);display:grid;place-items:center;text-align:center}
+.ph--16x9{aspect-ratio:16/9}.ph--4x3{aspect-ratio:4/3}.ph--1x1{aspect-ratio:1/1}.ph--dark{border-color:rgba(255,255,255,.22);background:var(--grad-ink)}
+.ph-in{padding:16px;display:flex;flex-direction:column;gap:5px;align-items:center;max-width:94%}
+.ph-cam{font-size:22px;opacity:.85}.ph-kick{font-family:var(--mono);font-size:10px;letter-spacing:.16em;color:var(--amber-600)}.ph--dark .ph-kick{color:var(--amber-300)}
+.ph-desc{font-size:12.5px;color:var(--text-2);line-height:1.4;font-weight:500}.ph--dark .ph-desc{color:rgba(255,255,255,.86)}
+.ph-spec{font-family:var(--mono);font-size:10.5px;color:var(--text-3)}.ph--dark .ph-spec{color:rgba(255,255,255,.5)}
+.ph-tag{position:absolute;left:16px;bottom:16px;z-index:4;max-width:330px;text-align:left;background:rgba(11,6,17,.74);border:1.5px dashed rgba(255,255,255,.35);border-radius:var(--r-md);padding:9px 12px;color:#fff}
+.ph-tag .k{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--amber-300);margin-bottom:3px}
+.ph-tag .d{font-size:12px;line-height:1.4}.ph-tag .s{display:block;font-family:var(--mono);font-size:10px;color:rgba(255,255,255,.6);margin-top:4px}
+
+/* buttons */
+.btn{--bg:transparent;--fg:var(--text);--bd:transparent;font-family:var(--display);font-weight:700;font-style:italic;text-transform:uppercase;letter-spacing:.04em;font-size:14px;display:inline-flex;align-items:center;justify-content:center;gap:8px;cursor:pointer;padding:0 20px;height:48px;border-radius:var(--r-md);border:1.5px solid var(--bd);background:var(--bg);color:var(--fg);transition:transform .07s,background .15s,box-shadow .15s,border-color .15s;white-space:nowrap}
+.btn:active{transform:translateY(1px)}.btn .ic{font-style:normal;font-weight:700;font-size:16px;line-height:1}
+.btn--filled{--bg:var(--red);--fg:#fff;--bd:var(--red);box-shadow:var(--e1)}.btn--filled:hover{--bg:var(--red-700);--bd:var(--red-700);box-shadow:var(--glow-red)}
+.btn--amber{--bg:var(--amber);--fg:#3a2600;--bd:var(--amber)}.btn--amber:hover{--bg:var(--amber-600);--bd:var(--amber-600)}
+.btn--outline{--bg:transparent;--fg:var(--text);--bd:var(--line-strong)}.btn--outline:hover{--bd:var(--ink);--bg:rgba(11,6,17,.04)}
+.btn--outline-light{--bg:transparent;--fg:#fff;--bd:rgba(255,255,255,.55)}.btn--outline-light:hover{--bd:#fff;--bg:rgba(255,255,255,.08)}
+.btn--sm{height:40px;font-size:13px;padding:0 16px}.btn--lg{height:54px;font-size:15px;padding:0 28px}.btn--block{display:flex;width:100%}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 3px rgba(30,158,87,.22);flex:0 0 auto}
+.src{font-size:12px;color:var(--text-3)}.src a{color:var(--text-2);text-decoration:underline}.src a:hover{color:var(--red)}
+.tagph{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--amber-600);background:var(--amber-wash);border:1px solid var(--amber-300);border-radius:var(--r-xs);padding:2px 7px;vertical-align:middle}
+
+/* eco badge (reusable) */
+.ecobadge{display:inline-flex;align-items:center;gap:7px;font-weight:700;font-size:12px;color:var(--green-700);background:var(--green-wash);border:1px solid var(--green-line);border-radius:var(--r-pill);padding:5px 12px}
+.ecobadge.on-ink{background:rgba(30,158,87,.16);border-color:rgba(86,208,138,.4);color:#8fe3b3}
+.ecostrip{background:var(--green-wash);border-top:1px solid var(--green-line);border-bottom:1px solid var(--green-line)}
+.ecostrip .wrap{padding:16px 24px;display:flex;align-items:center;justify-content:center;gap:12px;text-align:center;flex-wrap:wrap}
+.ecostrip .ic{font-size:22px;color:var(--green-700)}.ecostrip .t{font-size:15px;color:var(--green-700);font-weight:600}
+
+/* utility strip + nav */
+.ustrip{background:var(--ink);color:rgba(255,255,255,.86);font-size:13px}
+.ustrip .wrap{display:flex;align-items:center;justify-content:space-between;height:38px;gap:16px}
+.ustrip a{color:#fff;font-weight:500}.ustrip .sep{opacity:.4;margin:0 10px}
+.ustrip .u-left,.ustrip .u-right{display:flex;align-items:center;white-space:nowrap}.ustrip .u-right{color:var(--amber-300)}
+@media(max-width:760px){.ustrip .u-left .addr,.ustrip .u-right .txt{display:none}.ustrip .wrap{justify-content:center;gap:8px}}
+.nav{position:sticky;top:0;z-index:60;height:66px;background:#fff;border-bottom:1px solid transparent;transition:border-color .2s,box-shadow .2s,backdrop-filter .2s}
+.nav.scrolled{border-bottom-color:var(--line);box-shadow:var(--e1);background:rgba(255,255,255,.95);backdrop-filter:blur(8px)}
+.nav .wrap{display:flex;align-items:center;height:66px;gap:18px}
+.brand{display:flex;align-items:center;gap:11px}
+.brand-logo{line-height:0;gap:0}
+.nav .brand-logo{width:168px;max-width:48vw}
+.brand-logo-img{display:block;width:100%;height:auto;object-fit:contain}
+.ftr .brand-logo{width:250px;max-width:100%;background:#fff;border-radius:12px;padding:8px 10px;box-shadow:0 10px 24px rgba(0,0,0,.18)}
+.brand .shield{width:40px;height:40px;border-radius:var(--r-sm);background:var(--grad-red);display:grid;place-items:center;font-family:var(--display);font-style:italic;font-weight:800;color:#fff;font-size:23px;box-shadow:var(--e1)}
+.brand .wm{font-family:var(--display);font-style:italic;font-weight:800;font-size:20px;letter-spacing:-.02em;line-height:.92}
+.brand .wm span{display:block;font-size:9px;letter-spacing:.30em;font-style:normal;font-weight:700;color:var(--red)}
+.nav .spacer{flex:1}.nav .links{display:none;align-items:center;gap:26px}
+.nav .links a{font-size:15px;font-weight:500;color:var(--text)}.nav .links a:hover{color:var(--red)}.nav .links a.cur{color:var(--red);font-weight:600}
+.nav .menu{background:none;border:1px solid var(--line-2);color:var(--text);width:42px;height:42px;border-radius:var(--r-md);font-size:18px;cursor:pointer;display:grid;place-items:center}
+@media(min-width:1040px){.nav .links{display:flex}.nav .menu{display:none}}
+.drawer{position:fixed;inset:0 0 0 auto;width:min(320px,86vw);background:#fff;z-index:90;transform:translateX(100%);transition:transform .24s cubic-bezier(.2,.8,.2,1);box-shadow:var(--e3);padding:24px;display:flex;flex-direction:column;gap:6px}
+.drawer.open{transform:translateX(0)}
+.drawer a{padding:13px 10px;border-bottom:1px solid var(--line);font-family:var(--display);font-style:italic;font-weight:700;text-transform:uppercase;font-size:16px}
+.drawer .btn{margin-top:16px}
+.scrim{position:fixed;inset:0;background:rgba(5,3,7,.5);z-index:85;opacity:0;visibility:hidden;transition:opacity .2s}.scrim.open{opacity:1;visibility:visible}
+.crumbs{background:#fff;border-bottom:1px solid var(--line)}.crumbs .wrap{padding:11px 24px;font-size:13px;color:var(--text-3)}.crumbs a{color:var(--text-2)}.crumbs a:hover{color:var(--red)}.crumbs .sep{margin:0 8px;color:var(--line-strong)}
+
+/* hero */
+.hero{position:relative;overflow:hidden;color:#fff;background:var(--grad-ink)}
+.hero .hero-photo{position:absolute;inset:0;z-index:0;background:linear-gradient(120deg,#211c24,#15121a 60%,#241b1d)}
+.hero::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(11,6,17,.92),rgba(11,6,17,.74) 45%,rgba(11,6,17,.32)),radial-gradient(700px 360px at 92% -10%,rgba(220,22,31,.30),transparent 60%)}
+.hero .wrap{position:relative;z-index:2;padding:58px 24px 70px}
+.hero-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:48px;align-items:center}
+.hero .h-tags{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:18px}
+.chiplet{font-family:var(--mono);font-size:12px;font-weight:500;color:rgba(255,255,255,.82);border:1px solid rgba(255,255,255,.2);padding:5px 11px;border-radius:var(--r-pill)}
+.hero h1{font-size:clamp(34px,5vw,56px);font-style:italic;line-height:.95;letter-spacing:-.5px}
+.hero h1 em{color:var(--red);font-style:italic}
+.hero .lede{max-width:54ch;color:rgba(255,255,255,.84);font-size:17px;margin:18px 0 24px}
+.hero .cta-row{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.hero .areas{margin-top:20px;font-size:13px;color:rgba(255,255,255,.66)}.hero .areas b{color:#fff}
+.offer-card{position:relative;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);border-radius:var(--r-lg);padding:24px;backdrop-filter:blur(6px)}
+.offer-card h2{font-style:italic;font-size:22px;color:#fff;margin-bottom:4px;text-transform:uppercase}
+.offer-card .sub{color:rgba(255,255,255,.72);font-size:13px;margin-bottom:16px}
+.offer-card .qf{display:grid;grid-template-columns:1fr 1fr;gap:12px}.offer-card .qf .full{grid-column:1 / -1}
+.offer-card label{font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:rgba(255,255,255,.66);margin-bottom:5px;display:block}
+.offer-card input,.offer-card select{width:100%;height:46px;background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.2);border-radius:var(--r-md);color:#fff;padding:0 12px;font-family:var(--body);font-size:14px;outline:none}
+.offer-card input::placeholder{color:rgba(255,255,255,.55)}.offer-card select{color:rgba(255,255,255,.62)}.offer-card option{color:#111}
+.offer-card input:focus,.offer-card select:focus{border-color:var(--amber)}.offer-card .btn{margin-top:6px}.offer-card .fine{margin-top:10px;text-align:center;color:rgba(255,255,255,.58);font-size:12px}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:32px}.hero .wrap{padding:42px 24px 50px}.hero::after{background:linear-gradient(180deg,rgba(11,6,17,.72),rgba(11,6,17,.92)),radial-gradient(540px 300px at 50% -20%,rgba(220,22,31,.32),transparent 62%)}}
+
+/* trust bar */
+.trustbar{background:var(--surface-3);border-bottom:1px solid var(--line)}
+.trustbar .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding:24px}
+.trustbar .item{text-align:center;display:flex;flex-direction:column;align-items:center;gap:3px}
+.trustbar .item .ic{font-size:22px;margin-bottom:3px}
+.trustbar .item .n{font-family:var(--display);font-style:italic;font-weight:800;font-size:20px}
+.trustbar .item .l{font-size:12.5px;color:var(--text-2)}
+@media(max-width:680px){.trustbar .wrap{grid-template-columns:repeat(2,1fr);gap:22px;padding:28px 24px}}
+
+/* sections */
+section{scroll-margin-top:80px}
+.sec{padding:64px 0}
+.sec-head{margin-bottom:28px}
+.sec-head.center{text-align:center;display:flex;flex-direction:column;align-items:center}
+.sec-head h2{font-size:clamp(24px,3.1vw,33px);margin:8px 0}
+.sec-head p{margin:0;max-width:64ch;color:var(--text-2);font-size:17px}.sec-head.center p{margin:0 auto}
+.lead-p{font-size:17px;color:var(--text-2);max-width:68ch}.lead-p b{color:var(--text)}
+
+/* what we buy */
+.buy-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.taglist{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+.tag{display:inline-flex;align-items:center;gap:7px;font-weight:600;font-size:13.5px;padding:7px 14px;border:1.5px solid var(--line-2);border-radius:var(--r-sm);background:#fff}.tag .c{color:var(--green);font-weight:700}
+.note-card{background:var(--green-wash);border:1px solid var(--green-line);border-left:4px solid var(--green);border-radius:var(--r-lg);padding:18px 20px;margin-top:20px}.note-card b{color:var(--green-700)}
+@media(max-width:820px){.buy-grid{grid-template-columns:1fr;gap:28px}}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:8px}
+.stepc{text-align:center;display:flex;flex-direction:column;align-items:center;position:relative}
+.stepc::before{content:"";position:absolute;top:32px;right:50%;width:100%;height:2px;border-top:2px dashed var(--line-2);z-index:0}
+.stepc:first-child::before{display:none}
+.stepc .node{width:64px;height:64px;border-radius:50%;background:var(--grad-red);color:#fff;display:grid;place-items:center;font-family:var(--display);font-style:italic;font-weight:800;font-size:26px;position:relative;z-index:1;box-shadow:var(--e1)}
+.stepc h3{font-style:italic;font-size:19px;margin:16px 0 8px}.stepc p{margin:0;max-width:32ch;color:var(--text-2);font-size:14.5px}
+@media(max-width:760px){.steps{grid-template-columns:1fr;gap:22px;max-width:440px;margin:8px auto 0}.stepc{flex-direction:row;text-align:left;gap:18px;align-items:flex-start}.stepc::before{display:none}.stepc .node{flex:0 0 auto;width:54px;height:54px;font-size:22px}.stepc p{max-width:none}}
+
+/* offer calc + scrap + checklist */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.flist{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:12px}
+.flist li{display:flex;gap:12px;font-size:15px}.flist .n{font-family:var(--display);font-style:italic;font-weight:800;color:var(--red);flex:0 0 auto;font-size:16px}
+.checklist{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--e1);padding:26px}
+.checklist h3{font-style:italic;font-size:20px;margin-bottom:6px}.checklist .subc{color:var(--text-2);font-size:14px;margin-bottom:16px}
+.checklist ul{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.checklist li{display:flex;gap:11px;font-size:15px;align-items:flex-start}
+.checklist .ck{width:22px;height:22px;border-radius:var(--r-xs);border:2px solid var(--green);color:var(--green);display:grid;place-items:center;font-size:13px;font-weight:700;flex:0 0 auto;margin-top:1px}
+.checklist .btn{margin-top:20px}
+@media(max-width:820px){.split{grid-template-columns:1fr;gap:28px}}
+.scrap{background:var(--ink);color:#fff;border-radius:var(--r-lg);padding:26px;box-shadow:var(--e2)}
+.scrap h3{font-style:italic;font-size:20px;color:#fff}.scrap .subc{color:rgba(255,255,255,.66);font-size:13.5px;margin:4px 0 18px}
+.tick{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.chip{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);border-radius:var(--r-md);padding:14px}
+.chip .m{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.6)}
+.chip .v{font-family:var(--display);font-style:italic;font-weight:800;font-size:24px;margin:4px 0 2px}
+.chip .t{font-size:11.5px;font-family:var(--mono)}.chip .up{color:#56d08a}.chip .flat{color:var(--amber-300)}
+.scrap .foot{margin-top:16px;font-size:12px;color:rgba(255,255,255,.5)}.scrap .foot a{color:rgba(255,255,255,.75);text-decoration:underline}
+@media(max-width:620px){.tick{grid-template-columns:1fr}}
+
+/* embedded form band */
+.embed{background:var(--ink);color:#fff}
+.embed.light{background:var(--blue-wash);color:var(--text)}
+.embed .wrap{padding:42px 24px;display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center}
+.embed h3{font-style:italic;font-size:clamp(22px,2.6vw,28px);color:#fff}.embed.light h3{color:var(--text)}
+.embed .ec p{color:rgba(255,255,255,.74);font-size:15px;margin:8px 0 0}.embed.light .ec p{color:var(--text-2)}
+.embed form{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.embed .full{grid-column:1/-1}
+.embed input,.embed select{height:48px;background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.2);border-radius:var(--r-md);color:#fff;padding:0 13px;font-family:var(--body);font-size:14px;outline:none}
+.embed.light input,.embed.light select{background:#fff;border-color:var(--line-2);color:var(--text)}
+.embed input::placeholder{color:rgba(255,255,255,.55)}.embed.light input::placeholder{color:var(--text-3)}
+.embed select{color:rgba(255,255,255,.62)}.embed.light select{color:var(--text-3)}.embed option{color:#111}
+.embed input:focus,.embed select:focus{border-color:var(--amber)}
+@media(max-width:780px){.embed .wrap{grid-template-columns:1fr;gap:22px}}
+
+/* recently bought */
+.deals{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.deal{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--e1);overflow:hidden;display:flex;flex-direction:column}
+.deal .ph{border-radius:0;border-left:none;border-right:none;border-top:none}
+.deal .ph .badge{position:absolute;top:10px;left:10px;z-index:3;background:var(--ink);color:#fff;font-family:var(--body);font-weight:700;font-size:10.5px;letter-spacing:.04em;padding:4px 9px;border-radius:var(--r-sm)}
+.deal .db{padding:18px 20px;display:flex;flex-direction:column;gap:6px}
+.deal h4{font-style:italic;font-size:18px}
+.deal .cond{font-size:13px;color:var(--text-2)}
+@media(max-width:820px){.deals{grid-template-columns:1fr}}
+
+/* vehicle-mix chart */
+.mix{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--e1);padding:26px;position:relative}
+.mix .watermark{position:absolute;top:16px;right:16px}
+.bar{display:grid;grid-template-columns:130px 1fr 56px;gap:12px;align-items:center;margin-bottom:12px;font-size:14px}
+.bar .lab{font-weight:600}
+.bar .track{height:18px;background:var(--surface-3);border-radius:var(--r-pill);overflow:hidden}
+.bar .fill{height:100%;background:var(--grad-red);border-radius:var(--r-pill)}
+.bar .pct{font-family:var(--mono);font-size:13px;color:var(--text-2);text-align:right}
+@media(max-width:560px){.bar{grid-template-columns:96px 1fr 44px;gap:8px}}
+
+/* Florida legal */
+.fl{background:var(--blue-wash)}
+.fl-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.fl-card{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--e1);padding:26px}
+.fl-card .flag{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:13px;color:var(--red);text-transform:uppercase;letter-spacing:.04em;margin-bottom:10px}
+.fl-card h3{font-style:italic;font-size:20px;margin-bottom:12px}
+.fl-list{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.fl-list li{display:flex;gap:11px;font-size:14.5px;color:var(--text-2)}
+.fl-list .ck{color:var(--green);font-weight:700;flex:0 0 auto}.fl-list b{color:var(--text)}
+.fl-card .src{margin-top:14px}
+.callout{background:var(--amber-wash);border:1px solid var(--amber-300);border-left:4px solid var(--amber);border-radius:var(--r-md);padding:12px 14px;font-size:13.5px;margin-top:14px}
+@media(max-width:820px){.fl-grid{grid-template-columns:1fr}}
+
+/* service area */
+.area{background:var(--surface-3)}
+.area-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.area .townlist{display:grid;grid-template-columns:1fr 1fr;gap:10px 24px;margin:18px 0 22px}
+.area .townlist a{display:flex;align-items:center;gap:9px;font-weight:600;font-size:15px;padding:6px 0;border-bottom:1px solid var(--line)}
+.area .townlist a .p{color:var(--red)}.area .townlist a:hover{color:var(--red)}
+.mapwrap{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--e1);padding:14px}
+@media(max-width:820px){.area-grid{grid-template-columns:1fr;gap:30px}.area .townlist{grid-template-columns:1fr}}
+
+/* owner */
+.owner{display:grid;grid-template-columns:.8fr 1.2fr;gap:40px;align-items:center}
+.owner .ph{aspect-ratio:1/1}
+.owner h2{font-size:clamp(24px,3vw,32px);margin:8px 0 12px;font-style:italic}
+.owner .quote{font-size:18px;color:var(--text);border-left:3px solid var(--red);padding-left:16px;margin:16px 0;font-style:italic}
+.owner .sig{font-family:var(--display);font-style:italic;font-weight:800;font-size:17px;margin-top:6px}
+.owner .role{font-size:13px;color:var(--text-3)}
+@media(max-width:820px){.owner{grid-template-columns:1fr;gap:26px}}
+
+/* reviews */
+.rcards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.rcard{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--e1);padding:24px}
+.rcard .stars{color:var(--amber);font-size:14px;letter-spacing:1px}.rcard p{margin:12px 0 16px;font-size:14.5px}
+.rcard .who{display:flex;align-items:center;justify-content:space-between;font-size:13px}
+.rcard .who .name{font-weight:600;display:flex;align-items:center;gap:8px}
+.rcard .g{width:18px;height:18px;border-radius:50%;background:#fff;border:1px solid var(--line-2);display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:12px;color:#4285F4}
+.rcard .date{color:var(--text-3)}
+@media(max-width:820px){.rcards{grid-template-columns:1fr}}
+
+/* faq */
+.faq{max-width:820px;margin:0 auto}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--e1);margin-bottom:12px;overflow:hidden}
+.faq summary{list-style:none;cursor:pointer;padding:18px 22px;font-family:var(--display);font-style:italic;font-weight:700;font-size:17px;text-transform:uppercase;display:flex;justify-content:space-between;gap:16px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary .pm{color:var(--red);font-size:22px;flex:0 0 auto;transition:transform .2s}
+.faq details[open] summary .pm{transform:rotate(45deg)}
+.faq .ans{padding:0 22px 20px;color:var(--text-2);font-size:15px}.faq .ans b{color:var(--text)}
+
+/* sources */
+.sources{background:var(--surface-3)}
+.sources .wrap{padding:34px 24px}
+.sources h3{font-size:16px;text-transform:uppercase;font-style:italic;margin-bottom:12px}
+.sources ol{margin:0;padding-left:20px;color:var(--text-2);font-size:13.5px}.sources li{margin-bottom:7px}.sources a{color:var(--text-2);text-decoration:underline}.sources a:hover{color:var(--red)}
+.sources .disc{margin-top:14px;font-size:12.5px;color:var(--text-3)}
+
+/* final cta + footer */
+.finalcta{background:var(--red);color:#fff}
+.finalcta .wrap{padding:54px 24px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.finalcta h2{font-style:italic;font-size:clamp(24px,3vw,34px);color:#fff}.finalcta p{margin:8px 0 0;color:rgba(255,255,255,.92);font-size:16px}.finalcta .grp{display:flex;gap:12px;flex-wrap:wrap}
+footer.ftr{background:var(--ink);color:rgba(255,255,255,.72);padding:54px 0 28px;font-size:14px}
+.ftr-grid{display:grid;grid-template-columns:1.2fr 1.6fr 1fr;gap:40px}
+.ftr .brand .wm{color:#fff}.ftr .brand .wm span{color:var(--amber-300)}
+.ftr .fcol h5{font-family:var(--display);font-weight:700;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:14px}
+.ftr .fcol a,.ftr .fcol p{color:rgba(255,255,255,.74);margin:0 0 9px;display:block}.ftr .fcol a:hover{color:#fff}
+.ftr .fcol a.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:42px;min-height:42px;padding:0 18px;margin:14px 0 0;color:var(--fg);font-size:13px;line-height:1;text-align:center;white-space:nowrap}.ftr .fcol a.btn--outline-light{--bg:var(--amber);--fg:#3a2600;--bd:var(--amber);box-shadow:0 10px 24px rgba(246,161,0,.18)}.ftr .fcol a.btn--outline-light:hover{--bg:var(--amber-300);--bd:var(--amber-300);color:#2a1d00}
+.ftr .sublinks{display:grid;grid-template-columns:1fr 1fr;gap:24px}.ftr .about p{margin:14px 0 6px}.ftr .about .phone{color:#fff;font-weight:600}
+.ftr .social{display:flex;gap:10px;margin-top:14px}.ftr .social a{width:36px;height:36px;border:1px solid rgba(255,255,255,.2);border-radius:var(--r-sm);display:grid;place-items:center;color:#fff;font-size:15px}
+.ftr-bottom{border-top:1px solid rgba(255,255,255,.1);margin-top:36px;padding-top:18px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:center}
+.ftr-bottom .vals{font-family:var(--display);font-style:italic;font-weight:700;text-transform:uppercase;font-size:12px;letter-spacing:.04em;color:var(--amber-300)}.ftr-bottom .copy{font-size:13px;color:rgba(255,255,255,.5)}
+@media(max-width:820px){.ftr-grid{grid-template-columns:1fr;gap:32px}}
+.toast-host{position:fixed;z-index:120;left:50%;bottom:26px;transform:translateX(-50%);display:flex;flex-direction:column;gap:10px;align-items:center;pointer-events:none}
+.toast{display:flex;align-items:center;gap:12px;background:var(--ink);border:1px solid #2a2930;border-left:4px solid var(--green);color:#f4f4f5;padding:13px 18px;border-radius:var(--r-md);box-shadow:var(--e3);font-size:14px;min-width:280px;animation:toastin .22s ease}
+.toast .ic{color:var(--green);font-size:18px}
+@keyframes toastin{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+
+/* ===== RESPONSIVE HARDENING (added) — desktop·laptop·tablet·mobile ===== */
+html{-webkit-text-size-adjust:100%}
+body{overflow-x:hidden}
+img,svg,video,iframe{max-width:100%;height:auto}
+.wrap{width:100%;padding-left:clamp(16px,4vw,24px);padding-right:clamp(16px,4vw,24px)}
+.mono,.meta,.stock,.km,.k,.row-tag,.a2{overflow-wrap:anywhere}
+table{max-width:100%}
+@media(max-width:1024px){.plates,.fcards,.cs-grid,.whygrid,.why-cards,.rcards,.methods,.bcards,.deals,.cards3,.cards-row{grid-template-columns:repeat(2,1fr)}.sec{padding:60px 0}}
+@media(max-width:768px){.hero-grid,.split2,.split2.top,.loc-grid,.area-grid,.svc-split,.prodgrid,.story-grid,.buy-grid,.owner,.paths,.vdp,.lead-grid,.embed .wrap,.contact-grid,.rules-grid,.buy-grid,.duo,.split,.cutaway{grid-template-columns:1fr}.cards-row,.cards3,.rcards,.methods,.bcards,.deals,.steps,.steps3,.tstats{grid-template-columns:1fr}.trustbar .wrap{grid-template-columns:repeat(2,1fr)}.buybox{position:static;top:auto}.finalcta .wrap{flex-direction:column;align-items:flex-start;text-align:left}.oways{flex-direction:column;align-items:flex-start;gap:10px}.sec{padding:48px 0}}
+@media(max-width:560px){.fcards,.cs-grid,.whygrid,.why-cards,.rcards,.methods,.bcards,.deals,.cards3,.cards-row{grid-template-columns:1fr}.cta-row,.hero .cta-row,.grp,.finalcta .grp{flex-direction:column;align-items:stretch;width:100%}.cta-row>.btn,.grp>.btn,.finalcta .grp>.btn{width:100%}.grid2,.offer-card .qf .grid2,.cform .grid2,.embed form{grid-template-columns:1fr}.qgrid{grid-template-columns:1fr}.qbar .qrow{flex-direction:column}.qbar .qrow .btn{width:100%}.gallery .thumbs{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:380px){.plates,.trustbar .wrap{grid-template-columns:1fr}}
+
+</style>
+</head>
+<body id="top">
+
+<!-- UTILITY STRIP -->
+<div class="ustrip"><div class="wrap">
+  <div class="u-left"><span class="addr">📍&nbsp; Pensacola, FL <span class="sep">•</span></span><a href="tel:{{ siteSettings.phoneNumber|replace({"-": ""}) }}">📞&nbsp; {{ siteSettings.phoneNumber }}</a></div>
+  <div class="u-right"><span>🕒&nbsp; <b id="openNow">Hours Today</b></span><span class="txt"><span class="sep">•</span> Mon-Fri, 9 AM-4:30 PM; Sat, 8 AM-2 PM</span></div>
+</div></div>
+
+<!-- NAV -->
+<header class="nav" id="nav"><div class="wrap">
+  <a class="brand brand-logo" href="index.html" aria-label="Kiker's U-Pull-It home"><img class="brand-logo-img" src="assets/kikers-horizontal-logo.svg" alt="" width="1542" height="492"></a>
+  <span class="spacer"></span>
+  <nav class="links"><a href="sell-your-vehicle.html" class="cur">Sell Your Car</a><a href="#">Find a Part</a><a href="#how">How It Works</a><a href="#owner">About</a><a href="#visit">Visit</a></nav>
+  <a class="btn btn--filled btn--sm" href="#offer" style="margin-left:8px"><span class="ic">⚡</span>Get My Offer</a>
+  <button class="menu" id="menuBtn" aria-label="Open menu">☰</button>
+</div></header>
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="Mobile navigation">
+  <a href="sell-your-vehicle.html">Sell Your Car</a><a href="#">Find a Part</a><a href="#how">How It Works</a><a href="#owner">About</a><a href="#visit">Visit</a>
+  <a class="btn btn--filled btn--block" href="#offer"><span class="ic">⚡</span>Get My Cash Offer</a>
+</aside>
+
+<!-- BREADCRUMB -->
+<nav class="crumbs" aria-label="Breadcrumb"><div class="wrap"><a href="index.html">Home</a><span class="sep">›</span><span>Sell Your Vehicle</span></div></nav>
+
+<!-- HERO -->
+<section class="hero" id="offer">
+  <div class="hero-photo ph ph--dark"><div class="ph-tag"><span class="k">📷 HERO BACKGROUND</span><span class="d">Flatbed tow truck loading a car at the Kiker's yard, or a wide row of vehicles — daylight, blue Florida sky.</span><span class="s">landscape · full-bleed</span></div></div>
+  <div class="wrap"><div class="hero-grid">
+    <div>
+      <div class="h-tags"><span class="eyebrow on-ink">Cash for Cars · Pensacola, FL</span><span class="chiplet">Running or not</span><span class="ecobadge on-ink">♻ Recycled responsibly</span></div>
+      <h1>Sell your car for cash <em>in Pensacola.</em></h1>
+      <p class="lede">Kiker's U-Pull-It pays cash for cars, trucks, vans, and SUVs in Pensacola — running or not. You get a fair offer, free towing, and we handle the Florida title paperwork. Same-day or scheduled pickup, Monday through Saturday. Call <a href="tel:{{ siteSettings.phoneNumber|replace({"-": ""}) }}" style="color:#fff;text-decoration:underline">{{ siteSettings.phoneNumber }}</a> or get an offer below.</p>
+      <div class="cta-row"><a class="btn btn--amber btn--lg" href="tel:{{ siteSettings.phoneNumber|replace({"-": ""}) }}"><span class="ic">📞</span>Call {{ siteSettings.phoneNumber }}</a><a class="btn btn--outline-light btn--lg" href="#how">How It Works</a></div>
+      <div class="areas">We buy in <b>Pensacola, Pace, Milton &amp; East Milton, Cantonment</b> and nearby.</div>
+    </div>
+    <div class="offer-card">
+      <h2>Get a cash offer</h2>
+      <div class="sub">A few quick details — that's it. No haggling.</div>
+      <form class="qf" onsubmit="return submitOffer(event)">
+        <div class="full"><label>Year, make &amp; model</label><input type="text" placeholder="2012 Honda Civic" required></div>
+        <div><label>Condition</label><select required><option value="" selected disabled>Select…</option><option>Runs &amp; drives</option><option>Starts only</option><option>Won't start</option><option>Wrecked / junk</option></select></div>
+        <div><label>Your name</label><input type="text" placeholder="First name" required></div>
+        <div class="full"><label>Phone</label><input type="tel" placeholder="(850) 000-0000" required></div>
+        <button class="btn btn--filled btn--block full btn--lg" type="submit"><span class="ic">⚡</span>Get My Cash Offer</button>
+      </form>
+      <div class="fine">Free &amp; no obligation · We'll text or call you back fast</div>
+    </div>
+  </div></div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trustbar"><div class="wrap">
+  <div class="item"><span class="ic">⚡</span><span class="n">Same-Day</span><span class="l">Pickup &amp; Cash</span></div>
+  <div class="item"><span class="ic">🚚</span><span class="n">Free</span><span class="l">Towing Included</span></div>
+  <div class="item"><span class="ic">📋</span><span class="n">Handled</span><span class="l">Title Paperwork</span></div>
+  <div class="item"><span class="ic">🏁</span><span class="n">25 Years</span><span class="l">Local &amp; Family-Owned</span></div>
+</div></div>
+
+<!-- WHAT WE BUY -->
+<section class="sec">
+  <div class="wrap"><div class="buy-grid">
+    <div>
+      <span class="eyebrow">What We Buy</span>
+      <h2 style="font-size:clamp(24px,3.1vw,33px);margin:8px 0 14px">Any car, any condition</h2>
+      <p class="lead-p">If it has four wheels, we want it — and it <b>doesn't have to run</b>. Cars, trucks, big SUVs, vans, and vehicles that haven't started in years. We see a lot of trucks and SUVs on the Gulf Coast, and those are often worth more than people expect.</p>
+      <div class="taglist">
+        <span class="tag"><span class="c">✓</span> Cars &amp; sedans</span><span class="tag"><span class="c">✓</span> Trucks</span><span class="tag"><span class="c">✓</span> SUVs</span><span class="tag"><span class="c">✓</span> Vans</span><span class="tag"><span class="c">✓</span> Non-running</span><span class="tag"><span class="c">✓</span> Wrecked / damaged</span><span class="tag"><span class="c">✓</span> Blown engine or transmission</span><span class="tag"><span class="c">✓</span> Flood &amp; storm</span><span class="tag"><span class="c">✓</span> Junk &amp; scrap</span>
+      </div>
+      <div class="note-card"><b>Still runs?</b> Even better — tell us. A running vehicle is usually worth more than a junk-only offer.</div>
+    </div>
+    <div class="ph ph--4x3"><div class="ph-in"><span class="ph-cam">📷</span><span class="ph-kick">PHOTO — VEHICLES</span><span class="ph-desc">A mix of vehicles at the yard — truck, SUV, sedan — showing you buy all types, running or not.</span><span class="ph-spec">4:3</span></div></div>
+  </div></div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="sec how" id="how" style="background:var(--surface-3)">
+  <div class="wrap">
+    <div class="sec-head center"><span class="eyebrow">How It Works</span><h2>Sell your car in three steps</h2><p>You reach out, we move. Most sellers are done the same day.</p></div>
+    <div class="steps">
+      <div class="stepc"><div class="node">1</div><h3>Tell Us About It</h3><p>Call or fill out the form with your year, make, model and condition. About a minute.</p></div>
+      <div class="stepc"><div class="node">2</div><h3>Get a Fair Offer</h3><p>We give you a real cash number fast. No haggling, no runaround.</p></div>
+      <div class="stepc"><div class="node">3</div><h3>We Tow It &amp; Pay You</h3><p>Same-day or scheduled pickup. We tow it, handle the paperwork, and pay you cash.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW YOUR OFFER IS CALCULATED (moved up, right after the steps) -->
+<section class="sec">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <span class="eyebrow">What Sets the Price</span>
+        <h2 style="font-size:clamp(23px,3vw,31px);margin:8px 0 6px">How we figure your offer</h2>
+        <p class="lead-p">Every vehicle is different, so there's no single price. A handful of things decide the number:</p>
+        <ol class="flist">
+          <li><span class="n">1</span><span><b>Year, make &amp; model</b> — and how much its parts are in demand.</span></li>
+          <li><span class="n">2</span><span><b>Does it run and drive?</b> A running vehicle is usually worth more.</span></li>
+          <li><span class="n">3</span><span><b>What's still on it</b> — engine, transmission, converter, wheels, panels.</span></li>
+          <li><span class="n">4</span><span><b>Condition &amp; damage</b> — wrecked, rusted, flooded, or solid.</span></li>
+          <li><span class="n">5</span><span><b>Scrap &amp; metal prices</b> — these move with the market (snapshot at right).</span></li>
+          <li><span class="n">6</span><span><b>Where it is</b> — we tow free across the Pensacola area.</span></li>
+        </ol>
+      </div>
+      <div>
+        <div class="scrap">
+          <h3>Scrap market snapshot</h3>
+          <div class="subc">Metal prices set the floor on a junk vehicle. A rough read right now:</div>
+          <div class="tick">
+            <div class="chip"><div class="m">Copper</div><div class="v">~$6.51<span style="font-size:13px">/lb</span></div><div class="t up">▲ strong demand</div></div>
+            <div class="chip"><div class="m">Auto steel</div><div class="v">Steady</div><div class="t flat">▬ holding</div></div>
+            <div class="chip"><div class="m">Aluminum</div><div class="v">~$0.60–.75<span style="font-size:13px">/lb</span></div><div class="t up">▲ firm</div></div>
+          </div>
+          <div class="foot">Indicative U.S. figures, June 2026 — prices change constantly. Source: <a href="https://www.indexbox.io/blog/daily-scrap-metal-price-report-copper-and-brass-decline-on-june-4-2026/" target="_blank" rel="noopener">IndexBox scrap reports</a>.</div>
+        </div>
+        <div class="checklist" style="margin-top:24px">
+          <h3>What to have handy</h3>
+          <div class="subc">Have these ready and we can quote you faster.</div>
+          <ul>
+            <li><span class="ck">✓</span><span>Year, make &amp; model</span></li>
+            <li><span class="ck">✓</span><span>Whether you have the title (if not, just tell us)</span></li>
+            <li><span class="ck">✓</span><span>Where it's parked</span></li>
+            <li><span class="ck">✓</span><span>Condition — runs, won't start, or wrecked</span></li>
+            <li><span class="ck">✓</span><span>A phone number to reach you</span></li>
+          </ul>
+          <a class="btn btn--filled btn--block" href="#offer"><span class="ic">⚡</span>Start My Offer</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EMBEDDED FORM #2 (ink) -->
+<section class="embed">
+  <div class="wrap">
+    <div class="ec"><h3>Got a minute? Get your offer now.</h3><p>Two details and a phone number — we'll get right back to you.</p></div>
+    <form onsubmit="return submitOffer(event)">
+      <div class="full"><input type="text" placeholder="Year, make &amp; model (e.g. 2017 Nissan Altima)" required></div>
+      <select required><option value="" selected disabled>Condition</option><option>Runs &amp; drives</option><option>Starts only</option><option>Won't start</option><option>Wrecked / junk</option></select>
+      <input type="tel" placeholder="Phone" required>
+      <button class="btn btn--amber btn--block full" type="submit"><span class="ic">⚡</span>Get My Cash Offer</button>
+    </form>
+  </div>
+</section>
+
+<!-- RECENTLY BOUGHT (no prices) -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">Recently at the Yard</span><h2>Vehicles we've bought lately</h2><p>A sample of what's come in. Every vehicle's worth depends on its own year and condition — yours is its own deal. <span class="tagph">swap in Hunter's real recent buys + photos</span></p></div>
+    <div class="deals">
+      <div class="deal">
+        <div class="ph ph--16x9"><span class="badge">Bought this month</span><div class="ph-in"><span class="ph-cam">📷</span><span class="ph-kick">VEHICLE PHOTO</span><span class="ph-desc">The Camaro on the lot.</span></div></div>
+        <div class="db"><h4>2022 Chevy Camaro</h4><span class="cond">Front-end damage · bought to flip</span><span class="ecobadge">♻ Recycled responsibly</span></div>
+      </div>
+      <div class="deal">
+        <div class="ph ph--16x9"><span class="badge">Bought this week</span><div class="ph-in"><span class="ph-cam">📷</span><span class="ph-kick">VEHICLE PHOTO</span><span class="ph-desc">A clean Altima sedan.</span></div></div>
+        <div class="db"><h4>2017 Nissan Altima</h4><span class="cond">Runs &amp; drives</span><span class="ecobadge">♻ Recycled responsibly</span></div>
+      </div>
+      <div class="deal">
+        <div class="ph ph--16x9"><span class="badge">Recently bought</span><div class="ph-in"><span class="ph-cam">📷</span><span class="ph-kick">VEHICLE PHOTO</span><span class="ph-desc">A full-size Suburban SUV.</span></div></div>
+        <div class="db"><h4>2020 Chevy Suburban</h4><span class="cond">High mileage · drove in</span><span class="ecobadge">♻ Recycled responsibly</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCAL VEHICLE MIX (placeholder data) -->
+<section class="sec" style="background:var(--surface-3)">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">What We See Most</span><h2>Common vehicles in the Pensacola area</h2><p>Trucks and SUVs lead the Gulf Coast — which is why we don't lowball them.</p></div>
+    <div class="mix">
+      <span class="tagph watermark">Sample — Hunter to confirm from dashboard</span>
+      <div class="bar"><span class="lab">Ford F-150</span><span class="track"><span class="fill" style="width:100%"></span></span><span class="pct">~18%</span></div>
+      <div class="bar"><span class="lab">Chevy Silverado</span><span class="track"><span class="fill" style="width:78%"></span></span><span class="pct">~14%</span></div>
+      <div class="bar"><span class="lab">Toyota Camry</span><span class="track"><span class="fill" style="width:61%"></span></span><span class="pct">~11%</span></div>
+      <div class="bar"><span class="lab">Honda Civic/Accord</span><span class="track"><span class="fill" style="width:55%"></span></span><span class="pct">~10%</span></div>
+      <div class="bar"><span class="lab">Chevy Tahoe/Suburban</span><span class="track"><span class="fill" style="width:44%"></span></span><span class="pct">~8%</span></div>
+      <div class="bar" style="margin-bottom:0"><span class="lab">Everything else</span><span class="track"><span class="fill" style="width:67%;background:var(--steel-700)"></span></span><span class="pct">~39%</span></div>
+    </div>
+    <p class="src" style="margin-top:12px">Placeholder figures. Once Hunter's KPI dashboard / Checkmate data is connected, this becomes real Kiker's numbers — content no other yard can copy.</p>
+  </div>
+</section>
+
+<!-- SELLING IN FLORIDA (accurate: certificate of destruction + derelict cert) -->
+<section class="sec fl">
+  <div class="wrap">
+    <div class="sec-head center"><span class="eyebrow">Selling a Car in Florida</span><h2>With a title — or without one</h2><p>Most buyers won't explain this part. Here's how it actually works when you sell a junk or end-of-life vehicle to a licensed yard like ours.</p></div>
+    <div class="fl-grid">
+      <div class="fl-card">
+        <span class="flag">📋 If you have the title</span>
+        <h3>Sign it over — we do the rest</h3>
+        <ul class="fl-list">
+          <li><span class="ck">✓</span><span>You sign the title over to us. Because the vehicle is headed for dismantling, it's processed for a <b>Certificate of Destruction</b> (Form HSMV 82363).</span></li>
+          <li><span class="ck">✓</span><span>Your title record is then marked <b>"Cancelled (Junked)"</b> — so the vehicle can't come back on you and can never be re-titled.</span></li>
+          <li><span class="ck">✓</span><span><b>Keep your license plate.</b> In Florida the plate stays with you, the seller.</span></li>
+          <li><span class="ck">✓</span><span>As a <b>licensed Florida salvage dealer</b>, we handle the form and the filing for you.</span></li>
+        </ul>
+        <div class="src">Source: FLHSMV <a href="https://www.flhsmv.gov/pdf/forms/82363.pdf" target="_blank" rel="noopener">Form 82363</a>; Fla. Stat. <a href="https://www.flsenate.gov/laws/statutes/2023/319.30" target="_blank" rel="noopener">§ 319.30</a>.</div>
+      </div>
+      <div class="fl-card">
+        <span class="flag">🔑 No title? You still have options</span>
+        <h3>Florida's derelict-vehicle pathway</h3>
+        <ul class="fl-list">
+          <li><span class="ck">✓</span><span>When a title isn't available, Florida lets a <b>licensed salvage dealer</b> (that's us) take the vehicle on a <b>Derelict Motor Vehicle Certificate</b>.</span></li>
+          <li><span class="ck">✓</span><span>It applies to vehicles <b>worth under $1,000</b> and <b>at least 10 model years old</b>. The form can be signed by the owner or whoever lawfully has the vehicle.</span></li>
+          <li><span class="ck">✓</span><span>There's a short holding period (about <b>3 business days</b>) before it's dismantled, and it can never be titled again.</span></li>
+          <li><span class="ck">✓</span><span>It's the legal way to handle a no-title junk car — done by the book.</span></li>
+        </ul>
+        <div class="src">Source: FLHSMV <a href="https://www.flhsmv.gov/motor-vehicles-tags-titles/junk-vehicle-tag-title/" target="_blank" rel="noopener">Junk a Vehicle</a>; <a href="https://www.flhsmv.gov/pdf/forms/82137.pdf" target="_blank" rel="noopener">Form 82137</a>.</div>
+      </div>
+    </div>
+    <div class="callout" style="max-width:760px;margin:22px auto 0;text-align:center">Not sure what you've got? <a href="tel:{{ siteSettings.phoneNumber|replace({"-": ""}) }}"><b>Call {{ siteSettings.phoneNumber }}</b></a> and we'll tell you exactly what applies to your vehicle.</div>
+  </div>
+</section>
+
+<!-- SERVICE AREA -->
+<section class="sec area" id="visit">
+  <div class="wrap"><div class="area-grid">
+    <div>
+      <span class="eyebrow">Service Area</span>
+      <h2 style="font-size:clamp(23px,3vw,31px);margin:8px 0 10px">Where we buy</h2>
+      <p class="lead-p">We're in Pensacola and buy vehicles across <b>Escambia and Santa Rosa counties</b> — with free towing. Pick your town to see how it works near you:</p>
+      <div class="townlist">
+        <a href="#"><span class="p">📍</span> We Buy Cars Near Pensacola</a>
+        <a href="#"><span class="p">📍</span> Sell Your Car in Pensacola</a>
+        <a href="#"><span class="p">📍</span> Sell Your Car in Pace</a>
+        <a href="#"><span class="p">📍</span> Sell Your Car in Milton / East Milton</a>
+        <a href="#"><span class="p">📍</span> Sell Your Car in Cantonment</a>
+        <a href="#"><span class="p">📍</span> Nearby Gulf Coast areas</a>
+      </div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap"><a class="btn btn--filled" href="tel:{{ siteSettings.phoneNumber|replace({"-": ""}) }}"><span class="ic">📞</span>Call the Yard</a><a class="btn btn--outline" href="#offer">Get an Offer Online</a></div>
+    </div>
+    <div class="mapwrap">
+      <svg viewBox="0 0 420 320" role="img" aria-label="Stylized map of Kiker's service area across Escambia and Santa Rosa counties" style="width:100%;height:auto;border-radius:4px">
+        <rect width="420" height="320" fill="#eaf0f4"/>
+        <rect x="0" y="250" width="420" height="70" fill="#cfe0ea"/>
+        <text x="210" y="296" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#7a93a3">GULF OF MEXICO</text>
+        <path d="M30 40 L250 36 L390 60 L392 250 L20 250 Z" fill="#e7ece4" stroke="#cdd6c8" stroke-width="2"/>
+        <path d="M205 38 L215 250" stroke="#c2cbbb" stroke-width="2" stroke-dasharray="5 5"/>
+        <text x="110" y="70" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#9aa39a" letter-spacing="1">ESCAMBIA CO.</text>
+        <text x="305" y="70" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#9aa39a" letter-spacing="1">SANTA ROSA CO.</text>
+        <circle cx="150" cy="170" r="118" fill="rgba(220,22,31,.06)" stroke="rgba(220,22,31,.35)" stroke-width="1.5" stroke-dasharray="6 5"/>
+        <text x="150" y="66" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#DC161F">FREE TOWING RADIUS</text>
+        <g font-family="Inter, sans-serif" font-size="11" fill="#0B0611">
+          <circle cx="150" cy="170" r="9" fill="#DC161F"/><circle cx="150" cy="170" r="4" fill="#fff"/>
+          <text x="150" y="194" text-anchor="middle" font-weight="700">Pensacola ★</text>
+          <circle cx="120" cy="120" r="5" fill="#0B0611"/><text x="120" y="110" text-anchor="middle">Cantonment</text>
+          <circle cx="232" cy="150" r="5" fill="#0B0611"/><text x="232" y="140" text-anchor="middle">Pace</text>
+          <circle cx="285" cy="135" r="5" fill="#0B0611"/><text x="285" y="125" text-anchor="middle">Milton</text>
+          <circle cx="318" cy="135" r="4" fill="#0B0611"/><text x="330" y="150" text-anchor="middle">E. Milton</text>
+          <circle cx="186" cy="218" r="5" fill="#0B0611"/><text x="186" y="236" text-anchor="middle">Gulf Breeze</text>
+        </g>
+      </svg>
+      <p class="src" style="margin-top:10px;padding:0 4px">Stylized for now — a live Google Map embeds here on the built site.</p>
+    </div>
+  </div></div>
+</section>
+
+<!-- ECO STRIP (badge, repeatable) -->
+<div class="ecostrip"><div class="wrap">
+  <span class="ic">♻️</span>
+  <span class="t">Every vehicle is recycled the right way — good parts reused, metals recovered, fluids handled properly.</span>
+</div></div>
+
+<!-- OWNER / PENSACOLA FAMILY (toward bottom) -->
+<section class="sec" id="owner">
+  <div class="wrap"><div class="owner">
+    <div class="ph ph--1x1"><div class="ph-in"><span class="ph-cam">📷</span><span class="ph-kick">PHOTO — HUNTER (OWNER)</span><span class="ph-desc">Hunter on the lot — third-generation owner, hands-on. A real face for the business.</span><span class="ph-spec">1:1 portrait</span></div></div>
+    <div>
+      <span class="eyebrow">A Pensacola Family</span>
+      <h2>Three generations on the same ground</h2>
+      <p class="lead-p">Kiker's isn't a faceless online buyer. The property's been in the family since 1972, reopened as Kiker's U-Pull-It in 2001, and Hunter — third generation — has worked it since he was 13. Twenty-five years in Pensacola, and he stands behind every offer.</p>
+      <p class="quote">"We make it simple and we do it right — fair cash, paperwork handled, the car recycled the proper way."</p>
+      <div class="sig">Hunter Kiker</div>
+      <div class="role">Owner · Kiker's U-Pull-It · Licensed Florida salvage dealer</div>
+    </div>
+  </div></div>
+</section>
+
+<!-- REVIEWS -->
+<section class="sec" style="background:var(--surface-3)">
+  <div class="wrap">
+    <div class="sec-head center"><span class="eyebrow">From Sellers Like You</span><h2>{{ siteSettings.googleRating }}★ based on {{ siteSettings.googleReviewCount }} Google reviews</h2></div>
+    <div class="rcards">
+      <div class="rcard"><div class="stars">★★★★★</div><p>"Called in the morning, fair price over the phone, picked it up that same afternoon. Cash in hand, no runaround."</p><div class="who"><span class="name"><span class="g">G</span>Marcus T. · Pensacola</span><span class="date">2 wks ago</span></div></div>
+      <div class="rcard"><div class="stars">★★★★★</div><p>"My car hadn't run in two years. They still gave me a fair offer, towed it free, and handled all the paperwork."</p><div class="who"><span class="name"><span class="g">G</span>Renee B. · Pace</span><span class="date">3 wks ago</span></div></div>
+      <div class="rcard"><div class="stars">★★★★★</div><p>"It was my late husband's car. They were kind, handled everything, and I felt good knowing it'd be recycled right."</p><div class="who"><span class="name"><span class="g">G</span>Patricia L. · Milton</span><span class="date">1 mo ago</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head center"><span class="eyebrow">Questions, Answered</span><h2>Selling your car in Florida: FAQ</h2></div>
+    <div class="faq">
+      <details open><summary>How do I sell my car to Kiker's? <span class="pm">+</span></summary><div class="ans">Call <b>{{ siteSettings.phoneNumber }}</b> or fill out the form with your vehicle's year, make, model, and condition. We give you a fair cash offer fast, schedule a same-day or convenient pickup, tow it free, handle the paperwork, and pay you on the spot.</div></details>
+      <details><summary>Do you buy cars that don't run? <span class="pm">+</span></summary><div class="ans">Yes. We buy <b>running and non-running vehicles</b> — wrecked, flooded, blown engine or transmission, or just worn out. It doesn't have to start, and it doesn't have to be pretty.</div></details>
+      <details><summary>Can I sell my car without a title in Florida? <span class="pm">+</span></summary><div class="ans">Often, yes. When a title isn't available, Florida lets a <b>licensed salvage dealer</b> like Kiker's take the vehicle on a <b>Derelict Motor Vehicle Certificate</b> — generally for vehicles worth under $1,000 and at least 10 model years old. Call us and we'll tell you what applies.</div></details>
+      <details><summary>Do I keep my license plate when I sell? <span class="pm">+</span></summary><div class="ans">Yes. In Florida the <b>license plate stays with you, the seller</b>, not the vehicle. Pull it before the car leaves.</div></details>
+      <details><summary>Will the car still be in my name after I sell it? <span class="pm">+</span></summary><div class="ans">No. For a junked vehicle, the title is processed for a <b>Certificate of Destruction</b> and marked "Cancelled (Junked)," so it's permanently off your name and can't be re-titled. We handle that filing as a licensed Florida salvage dealer.</div></details>
+      <details><summary>How much is my car worth? <span class="pm">+</span></summary><div class="ans">It depends on the year, make and model, whether it runs, what parts are still on it, the condition, and <b>current scrap and metal prices</b>. We give you a fair, no-haggle offer for your specific vehicle.</div></details>
+      <details><summary>Do scrap prices really affect my offer? <span class="pm">+</span></summary><div class="ans">Yes. Metals like <b>copper, steel, and aluminum</b> set the floor on a junk vehicle's value, and those prices move daily. When copper is strong, wiring and components are worth more.</div></details>
+      <details><summary>How fast can you pick up my vehicle? <span class="pm">+</span></summary><div class="ans">Often the <b>same day</b>. Or pick a time that works for you — you're in control of the schedule. Towing is <b>free</b> across the Pensacola area.</div></details>
+      <details><summary>What areas do you serve? <span class="pm">+</span></summary><div class="ans">We buy vehicles in <b>Pensacola, Pace, Milton and East Milton, Cantonment</b>, and nearby — across Escambia and Santa Rosa counties.</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- EMBEDDED FORM #3 (light) -->
+<section class="embed light">
+  <div class="wrap">
+    <div class="ec"><h3>Ready when you are.</h3><p>Tell us about your vehicle and we'll get you a cash number fast.</p></div>
+    <form onsubmit="return submitOffer(event)">
+      <div class="full"><input type="text" placeholder="Year, make &amp; model" required></div>
+      <input type="text" placeholder="Your name" required>
+      <input type="tel" placeholder="Phone" required>
+      <button class="btn btn--filled btn--block full" type="submit"><span class="ic">⚡</span>Get My Cash Offer</button>
+    </form>
+  </div>
+</section>
+
+<!-- SOURCES -->
+<section class="sources">
+  <div class="wrap">
+    <h3>Sources &amp; references</h3>
+    <ol>
+      <li>Florida Department of Highway Safety and Motor Vehicles — <a href="https://www.flhsmv.gov/pdf/forms/82363.pdf" target="_blank" rel="noopener">Application for Salvage Title or Certificate of Destruction (Form 82363)</a> and <a href="https://www.flhsmv.gov/motor-vehicles-tags-titles/junk-vehicle-tag-title/" target="_blank" rel="noopener">Junk a Vehicle (Tag &amp; Title)</a>.</li>
+      <li>FLHSMV <a href="https://www.flhsmv.gov/pdf/forms/82137.pdf" target="_blank" rel="noopener">Derelict Motor Vehicle Certificate (Form 82137)</a>; Florida Statutes <a href="https://www.flsenate.gov/laws/statutes/2023/319.30" target="_blank" rel="noopener">§ 319.30</a>.</li>
+      <li>Scrap market figures (June 2026, indicative) — <a href="https://www.indexbox.io/blog/daily-scrap-metal-price-report-copper-and-brass-decline-on-june-4-2026/" target="_blank" rel="noopener">IndexBox daily scrap metal price reports</a>.</li>
+    </ol>
+    <p class="disc">Florida title rules are summarized for general guidance and can change — confirm current forms and requirements with FLHSMV. Kiker's salvage-dealer license status should be verified before publishing. Scrap prices fluctuate; figures shown are indicative, not an offer. Vehicle examples and the vehicle-mix chart are placeholders pending Kiker's verified data.</p>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<div class="race-rule"></div>
+<section class="finalcta"><div class="wrap">
+  <div><h2>Ready to sell? Let's get you paid.</h2><p>Fair offer, free towing, same-day pickup, cash in hand. Pensacola's yard for 25 years.</p></div>
+  <div class="grp"><a class="btn btn--amber btn--lg" href="tel:{{ siteSettings.phoneNumber|replace({"-": ""}) }}"><span class="ic">📞</span>Call {{ siteSettings.phoneNumber }}</a><a class="btn btn--outline-light btn--lg" href="#offer">Get an Offer Online</a></div>
+</div></section>
+
+<!-- FOOTER -->
+<footer class="ftr"><div class="wrap">
+  <div class="ftr-grid">
+    <div class="fcol about">
+      <a class="brand brand-logo" href="index.html"><img class="brand-logo-img" src="assets/kikers-horizontal-logo.svg" alt="" width="1542" height="492"></a>
+      <p style="margin-top:14px">Self-Service Auto Parts &amp; Cash for Cars</p>
+      <p>{{ siteSettings.streetAddress }}</p>
+      <p><a class="phone" href="tel:{{ siteSettings.phoneNumber|replace({"-": ""}) }}">{{ siteSettings.phoneNumber }}</a></p>
+      <div class="social"><a href="#" aria-label="Facebook">f</a><a href="#" aria-label="Instagram">◎</a></div>
+    </div>
+    <div class="fcol"><div class="sublinks">
+      <div><h5>Main</h5><a href="index.html">Home</a><a href="about.html">About</a><a href="contact.html">Contact &amp; Visit</a><a href="blog.html">Blog</a><a href="privacy.html">Privacy Policy</a></div>
+      <div><h5>Services</h5><a href="sell-your-vehicle.html">Sell Your Vehicle</a><a href="we-buy-cars-near-pensacola.html">We Buy Cars Near Pensacola</a><a href="u-pull-parts.html">Pull Your Own Parts</a><a href="full-service-parts.html">Full-Service Parts</a><a href="cars-for-sale.html">Cars for Sale</a><a href="cars-for-sale-vehicle.html">Vehicle Detail</a><a href="thank-you.html">Thank You</a></div>
+      <div><h5>Local Pages</h5><a href="sell-your-car-pensacola.html">Sell Your Car in Pensacola</a><a href="sell-your-car-pace.html">Sell Your Car in Pace</a><a href="sell-your-car-milton.html">Sell Your Car in Milton</a><a href="sell-your-car-cantonment.html">Sell Your Car in Cantonment</a></div>
+      <div><h5>Build Versions</h5><a href="home-funnel.html">Home Funnel</a><a href="home-funnel-2.html">Home Funnel 2</a><a href="Kikers-Home.html">Home Concept</a><a href="Kikers-Home-v2.html">Home V2</a><a href="Kikers-Home-with-Photos.html">Home with Photos</a><a href="Sell-Your-Vehicle-v2.html">Sell Vehicle V2</a><a href="Contact-Visit.html">Contact Visit Concept</a><a href="Icon-Comparison.html">Icon Comparison</a><a href="docs/component-kit.html">Component Kit</a></div>
+    </div></div>
+    <div class="fcol"><h5>Visit Us</h5><p class="mono" style="color:#fff">Mon-Fri, 9 AM-4:30 PM<br>Saturday: 8 AM-2 PM<br>Sunday: Closed</p><a class="btn btn--outline-light btn--sm" href="#visit" style="margin-top:14px">Service Area</a></div>
+  </div>
+  <div class="ftr-bottom"><span class="copy">© 2026 Kiker's U-Pull-It · Pensacola, FL</span><span class="vals">Own it · Do right · Outwork it · Back each other · Watch out</span></div>
+</div></footer>
+
+<div class="toast-host" id="toastHost" aria-live="polite"></div>
+
+<!-- STRUCTURED DATA -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"AutoDealer","@id":"https://smithbcg.github.io/kikers-website/#business","name":"Kiker's U-Pull-It","description":"Family-owned, licensed Florida salvage yard in Pensacola that buys cars, trucks, vans and SUVs for cash (running or not) and sells used auto parts.","url":"https://smithbcg.github.io/kikers-website/Sell-Your-Vehicle-v2.html","telephone":"+1-{{ siteSettings.phoneNumber }}","priceRange":"$$","foundingDate":"2001","address":{"@type":"PostalAddress","streetAddress":"3010 W. Fairfield Drive","addressLocality":"Pensacola","addressRegion":"FL","postalCode":"32505","addressCountry":"US"},"geo":{"@type":"GeoCoordinates","latitude":"30.42","longitude":"-87.21"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"16:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Saturday"],"opens":"08:00","closes":"14:00"}],"areaServed":[{"@type":"City","name":"Pensacola"},{"@type":"City","name":"Pace"},{"@type":"City","name":"Milton"},{"@type":"City","name":"East Milton"},{"@type":"City","name":"Cantonment"},{"@type":"AdministrativeArea","name":"Escambia County"},{"@type":"AdministrativeArea","name":"Santa Rosa County"}],"makesOffer":{"@type":"Offer","itemOffered":{"@type":"Service","name":"Cash for Cars — Vehicle Buying","description":"We buy cars, trucks, vans and SUVs for cash, running or not, with free towing and same-day or scheduled pickup."}}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://smithbcg.github.io/kikers-website/"},{"@type":"ListItem","position":2,"name":"Sell Your Vehicle","item":"https://smithbcg.github.io/kikers-website/Sell-Your-Vehicle-v2.html"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"How do I sell my car to Kiker's?","acceptedAnswer":{"@type":"Answer","text":"Call {{ siteSettings.phoneNumber }} or fill out the form with your vehicle's year, make, model, and condition. We give you a fair cash offer fast, schedule a same-day or convenient pickup, tow it free, handle the paperwork, and pay you on the spot."}},
+{"@type":"Question","name":"Do you buy cars that don't run?","acceptedAnswer":{"@type":"Answer","text":"Yes. We buy running and non-running vehicles — wrecked, flooded, blown engine or transmission, or just worn out. It doesn't have to start, and it doesn't have to be pretty."}},
+{"@type":"Question","name":"Can I sell my car without a title in Florida?","acceptedAnswer":{"@type":"Answer","text":"Often, yes. When a title isn't available, Florida lets a licensed salvage dealer like Kiker's take the vehicle on a Derelict Motor Vehicle Certificate — generally for vehicles worth under $1,000 and at least 10 model years old. Call us and we'll tell you what applies."}},
+{"@type":"Question","name":"Do I keep my license plate when I sell?","acceptedAnswer":{"@type":"Answer","text":"Yes. In Florida the license plate stays with you, the seller, not the vehicle. Pull it before the car leaves."}},
+{"@type":"Question","name":"Will the car still be in my name after I sell it?","acceptedAnswer":{"@type":"Answer","text":"No. For a junked vehicle, the title is processed for a Certificate of Destruction and marked Cancelled (Junked), so it's permanently off your name and can't be re-titled. We handle that filing as a licensed Florida salvage dealer."}},
+{"@type":"Question","name":"How much is my car worth?","acceptedAnswer":{"@type":"Answer","text":"It depends on the year, make and model, whether it runs, what parts are still on it, the condition, and current scrap and metal prices. We give you a fair, no-haggle offer for your specific vehicle."}},
+{"@type":"Question","name":"Do scrap prices really affect my offer?","acceptedAnswer":{"@type":"Answer","text":"Yes. Metals like copper, steel, and aluminum set the floor on a junk vehicle's value, and those prices move daily. When copper is strong, wiring and components are worth more."}},
+{"@type":"Question","name":"How fast can you pick up my vehicle?","acceptedAnswer":{"@type":"Answer","text":"Often the same day. Or pick a time that works for you. Towing is free across the Pensacola area."}},
+{"@type":"Question","name":"What areas do you serve?","acceptedAnswer":{"@type":"Answer","text":"We buy vehicles in Pensacola, Pace, Milton and East Milton, Cantonment, and nearby across Escambia and Santa Rosa counties."}}
+]}
+</script>
+
+<script>
+var nav=document.getElementById('nav');
+function onScroll(){nav.classList.toggle('scrolled',window.scrollY>40);}
+window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+var drawer=document.getElementById('drawer'),scrim=document.getElementById('scrim');
+function openNav(){drawer.classList.add('open');scrim.classList.add('open');}
+function closeNav(){drawer.classList.remove('open');scrim.classList.remove('open');}
+document.getElementById('menuBtn').onclick=openNav;scrim.onclick=closeNav;
+drawer.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeNav);});
+(function(){var d=new Date().getDay();var now=new Date();var m=now.getHours()*60+now.getMinutes();var weekday=d>=1&&d<=5,sat=d===6;var open=(weekday&&m>=540&&m<990)||(sat&&m>=480&&m<840);var el=document.getElementById('openNow');if(el)el.textContent=open?'Open Today '+(sat?'8-2':'9-4:30'):(d===0?'Closed Sunday':'Closed - see posted hours');})();
+function submitOffer(e){e.preventDefault();window.location.href='https://www.kikersautoparts.com/sell-a-vehicle';return false;}
+var tHost=document.getElementById('toastHost');
+function toast(msg){var t=document.createElement('div');t.className='toast';t.innerHTML='<span class="ic">✓</span>'+msg;tHost.appendChild(t);setTimeout(function(){t.style.opacity='0';t.style.transform='translateY(8px)';t.style.transition='opacity .2s,transform .2s';setTimeout(function(){t.remove();},220);},3400);}
+</script>
+</body>
+</html>

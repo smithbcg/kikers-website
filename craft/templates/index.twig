@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kiker's U-Pull-It — Cash for Cars &amp; Self-Service Auto Parts in Pensacola, FL</title>
+<meta name="description" content="Kiker's U-Pull-It is a family-owned self-service salvage yard in Pensacola, FL. We buy cars for cash (running or not), and you can pull your own parts and save. Three generations, 25 years. Open Mon-Fri, 9 AM-4:30 PM; Sat, 8 AM-2 PM. Call {{ siteSettings.phoneNumber }}.">
+<link rel="canonical" href="https://smithbcg.github.io/kikers-website/">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,500;0,600;0,700;0,800;1,600;1,700;1,800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/kikers-yard-hero.jpg">
+<link rel="stylesheet" href="kikers.css?v=20260702-footerbtn">
+</head>
+<body id="top">
+
+<div class="ustrip"><div class="wrap">
+  <div class="u-left"><span class="addr">📍&nbsp; Pensacola, FL <span class="sep">•</span></span><a href="tel:{{ siteSettings.phoneNumber|replace({"-": ""}) }}">{{ siteSettings.phoneNumber }}</a></div>
+  <div class="u-right"><span><b id="openNow">Hours Today</b></span><span class="txt"><span class="sep">•</span> Mon-Fri, 9 AM-4:30 PM; Sat, 8 AM-2 PM</span></div>
+</div></div>
+
+<header class="nav" id="nav"><div class="wrap">
+  <a class="brand brand-logo" href="index.html" aria-label="Kiker's U-Pull-It home"><img class="brand-logo-img" src="assets/kikers-horizontal-logo.svg" alt="" width="1542" height="492"></a>
+  <span class="spacer"></span>
+  <nav class="links"><a href="sell-your-vehicle.html">Sell Your Car</a><a href="u-pull-parts.html">Find a Part</a><a href="index.html#how">How It Works</a><a href="about.html">Our Story</a><a href="contact.html">Visit</a></nav>
+  <a class="btn btn--filled btn--sm" href="#offer-form" style="margin-left:8px">Get My Offer</a>
+  <button class="menu" id="menuBtn" aria-label="Open menu">☰</button>
+</div></header>
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer"><a href="sell-your-vehicle.html">Sell Your Car</a><a href="u-pull-parts.html">Find a Part</a><a href="index.html#how">How It Works</a><a href="about.html">Our Story</a><a href="contact.html">Visit</a><a class="btn btn--filled btn--block" href="#offer-form">Get My Cash Offer</a></aside>
+
+<!-- HERO -->
+<section class="hero" id="offer">
+  <div class="hero-photo hero-photo--yard" aria-hidden="true"></div>
+  <div class="wrap"><div class="hero-grid">
+    <div>
+      <div class="h-tags"><span class="eyebrow on-ink">Pensacola, FL</span><span class="chiplet">Est. 2001 · 3rd generation</span><span class="chiplet">Open Mon-Fri 9-4:30; Sat 8-2</span></div>
+      <h1>Built in the <em>yard.</em></h1>
+      <p class="lede">Three generations on the same Pensacola ground since 1972. We buy your car for cash — running or not — handle the towing and the paperwork, and report it to the state. Done by the book. Or bring your tools and pull your own parts.</p>
+      <div class="cta-row"><a class="btn btn--amber btn--lg" href="#offer-form"><span class="ic">⚡</span>Get a Cash Offer</a><a class="btn btn--outline-light btn--lg" href="u-pull-parts.html">Find a Part</a></div>
+    </div>
+    <div class="offer-card" id="offer-form">
+      <div class="ohead"><h2>Cash for your car</h2><span class="avail"><span class="dot pulse"></span>Fast</span></div>
+      <div class="sub">A few details — no haggling.</div>
+      <form class="qf" onsubmit="return submitOffer(event)">
+        <input type="text" placeholder="Year, make &amp; model" required>
+        <select required><option value="" selected disabled>Condition</option><option>Runs &amp; drives</option><option>Starts only</option><option>Won't start</option><option>Wrecked / junk</option></select>
+        <input type="tel" placeholder="Phone" required>
+        <button class="btn btn--filled btn--block" type="submit"><span class="ic">⚡</span>Get My Cash Offer</button>
+      </form>
+      <div class="fine">Free &amp; no obligation</div>
+    </div>
+  </div></div>
+</section>
+<div class="hazard"></div>
+
+<!-- CHROME STAT PLATES -->
+<section class="sec tight">
+  <div class="wrap"><div class="plates">
+    <div class="plate"><div><div class="n" style="color:var(--red)">25</div><div class="l">Years Serving</div></div></div>
+    <div class="plate"><div><div class="n" style="color:var(--ink)">3</div><div class="l">Generations</div></div></div>
+    <div class="plate"><div><div class="n" style="color:var(--ink)">Free</div><div class="l">Towing</div></div></div>
+    <div class="plate"><div><div class="n" style="color:var(--amber)">6<span>days</span></div><div class="l">Open Each Week</div></div></div>
+  </div></div>
+</section>
+
+<!-- SERVICES -->
+<section class="sec" style="padding-top:24px">
+  <div class="wrap">
+    <div class="sec-head center"><span class="eyebrow">More Than a Junkyard</span><h2>What we do</h2></div>
+    <div class="cards-row">
+      <div class="card card--elevated"><div class="c-body"><span class="ic">💵</span><h4>Cash for cars</h4><p>Fast cash, pickup on your schedule, paperwork handled. Running or not.</p></div><div class="c-foot"><span class="k">SELL TO US</span><a class="btn btn--text btn--sm" href="sell-your-vehicle.html">Start →</a></div></div>
+      <div class="card card--filled"><div class="c-body"><span class="ic">🔧</span><h4>Self-serve yard</h4><p>Bring your tools, pull your own parts, pay at the counter. Organized by row.</p></div><div class="c-foot"><span class="k">PULL PARTS</span><a class="btn btn--text btn--sm" href="u-pull-parts.html">Hours →</a></div></div>
+      <div class="card"><div class="c-body"><span class="ic">🏷️</span><h4>Used parts</h4><p>Pulled, priced and ready. Engines to electrical, flat-rate pricing.</p></div><div class="c-foot"><span class="k">FIND A PART</span><a class="btn btn--text btn--sm" href="u-pull-parts.html">Search →</a></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- LEAD FORM -->
+<section class="sec lead">
+  <div class="wrap"><div class="split2">
+    <div>
+      <span class="eyebrow">Cash for Cars</span>
+      <h2 style="font-size:clamp(26px,3.4vw,36px);margin:8px 0;font-style:italic">Sell your vehicle for cash</h2>
+      <p style="color:var(--text-2);font-size:17px;margin:0 0 24px;max-width:48ch">Any make, model, or condition. Fair offer fast, free towing, and we handle the title paperwork — reported to the state, done by the book.</p>
+      <div class="form-card">
+        <form onsubmit="return submitOffer(event)">
+          <div class="grid2" style="margin-bottom:16px"><div class="field"><label>Year</label><input placeholder="2012" required></div><div class="field"><label>Make</label><input placeholder="Honda" required></div></div>
+          <div class="grid2" style="margin-bottom:16px"><div class="field"><label>Model</label><input placeholder="Civic" required></div><div class="field"><label>Condition</label><select required><option value="" selected disabled>Select…</option><option>Runs &amp; drives</option><option>Starts only</option><option>Won't start</option><option>Wrecked</option></select></div></div>
+          <div class="grid2" style="margin-bottom:20px"><div class="field"><label>Name</label><input placeholder="First &amp; last" required></div><div class="field"><label>Phone</label><input type="tel" placeholder="(850) 000-0000" required></div></div>
+          <button class="btn btn--filled btn--block btn--lg" type="submit"><span class="ic">⚡</span>Get My Cash Offer</button>
+        </form>
+      </div>
+    </div>
+    <aside class="lead-aside">
+      <div class="ph ph--4x5 ph--dark"><div class="ph-in"><span class="ph-cam">📷</span><span class="ph-kick">PHOTO — THE HANDOFF</span><span class="ph-desc">Keys handed over, a tow truck loading, or cash in hand. Real, daylight.</span></div></div>
+      <ul class="verified">
+        <li><span class="vc">✓</span><span><b>Same-day or scheduled pickup</b> — you choose the time.</span></li>
+        <li><span class="vc">✓</span><span><b>Free towing &amp; paperwork handled</b> — reported to the state.</span></li>
+        <li><span class="vc">✓</span><span><b>Recycled the right way</b> — parts reused, metals recovered.</span></li>
+      </ul>
+    </aside>
+  </div></div>
+</section>
+
+<!-- NEW ARRIVALS -->
+<section class="sec" id="inventory">
+  <div class="wrap">
+    <div class="sec-head"><div class="row-between"><div><span class="eyebrow">Just In</span><h2 style="font-style:italic">This week in the yard</h2></div><a class="btn btn--text" href="u-pull-parts.html">View all inventory →</a></div></div>
+    <div class="fcards">
+      <div class="feature-card"><div class="img"><span class="ph-mini">PHOTO: F-150</span></div><span class="flag">JUST IN</span><div class="fc-txt"><span class="avail" style="margin-bottom:8px"><span class="dot pulse"></span>In the yard now</span><h4>2011 Ford F-150</h4><span class="km">ROW 22 · ARRIVED TODAY</span></div></div>
+      <div class="feature-card"><div class="img"><span class="ph-mini">PHOTO: Civic</span></div><span class="flag">JUST IN</span><div class="fc-txt"><h4>2012 Honda Civic</h4><span class="km">ROW 14 · 1.8L · AUTO</span></div></div>
+      <div class="feature-card"><div class="img"><span class="ph-mini">PHOTO: Silverado</span></div><span class="flag">HOT PART</span><div class="fc-txt"><span class="km">ENGINE · 5.3L V8</span><h4>'08 Silverado</h4></div></div>
+      <div class="feature-card"><div class="img"><span class="ph-mini">PHOTO: cash</span></div><span class="flag amber">CASH</span><div class="fc-txt"><span class="km">PENSACOLA · 850</span><h4>We buy your ride today</h4></div></div>
+    </div>
+    <div class="inventory-detail">
+      <div class="list">
+        <div class="li"><div class="av">F</div><div class="tx"><div class="t1">2011 Ford F-150</div><div class="t2">Arrived today · Crew cab</div></div><div class="meta">ROW 22</div></div>
+        <div class="li"><div class="av steel">H</div><div class="tx"><div class="t1">2012 Honda Civic</div><div class="t2">Engine pulled · 1.8L</div></div><div class="meta">ROW 14</div></div>
+        <div class="li"><div class="av">C</div><div class="tx"><div class="t1">2008 Chevy Silverado</div><div class="t2">Body straight · 5.3L V8</div></div><div class="meta">ROW 07</div></div>
+        <div class="li"><div class="av steel">T</div><div class="tx"><div class="t1">2010 Toyota Sequoia</div><div class="t2">4WD · 4.7L V8</div></div><div class="meta">ROW 31</div></div>
+      </div>
+      <div class="spec-card" style="max-width:560px">
+        <div class="sc-top"><div><h4>2012 Honda Civic LX</h4><span class="avail" style="margin-top:6px"><span class="dot"></span>Available now</span></div><span class="row-tag">ROW 14</span></div>
+        <div class="spec-grid">
+          <div class="cell"><div class="ic">⛽</div><span class="lab">Engine</span><span class="val">1.8L</span></div>
+          <div class="cell"><div class="ic">⏱</div><span class="lab">Mileage</span><span class="val">112k</span></div>
+          <div class="cell"><div class="ic">⚙</div><span class="lab">Trans</span><span class="val">Auto</span></div>
+          <div class="cell"><div class="ic">📅</div><span class="lab">Arrived</span><span class="val">Jun 12</span></div>
+        </div>
+        <div class="sc-foot"><span class="hint">Parts priced in-yard</span><a class="btn btn--amber btn--sm" href="contact.html">Get directions</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="race-rule"></div>
+
+<!-- HOW IT WORKS -->
+<section class="sec" id="how" style="background:var(--surface-3)">
+  <div class="wrap">
+    <div class="sec-head center"><span class="eyebrow">How It Works</span><h2>Cash for cars in four steps</h2><p>Whoever responds first usually wins — so when you reach out, we move.</p></div>
+    <div class="stepper">
+      <div class="step done"><div class="node">1</div><div class="lab">Details</div><div class="sub">Call or send your vehicle info.</div></div>
+      <div class="step done"><div class="node">2</div><div class="lab">Offer</div><div class="sub">A fair cash number, fast.</div></div>
+      <div class="step done"><div class="node">3</div><div class="lab">Pickup</div><div class="sub">Same-day or on your schedule.</div></div>
+      <div class="step"><div class="node">4</div><div class="lab">Paid</div><div class="sub">Cash in hand, paperwork handled.</div></div>
+    </div>
+    <div style="text-align:center;margin-top:38px"><a class="btn btn--filled btn--lg" href="#offer-form"><span class="ic">⚡</span>Get My Cash Offer</a></div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="sec story" id="story">
+  <div class="wrap"><div class="story-grid">
+    <div>
+      <span class="eyebrow on-ink">Our Story</span>
+      <h2>25 years. <em>Three generations.</em></h2>
+      <p class="lede">The property's been in the family since 1972. We reopened as Kiker's U-Pull-It in 2001 — Hunter was 13, out in the yard breaking down wheels. We've been through the hard times and come back stronger. That history is our edge; nobody around here has it.</p>
+      <p class="body">Sell us your car and it's not the end of the road. Good parts keep another local family driving, the metal gets recycled the right way, and you get a fair deal for it.</p>
+      <a class="btn btn--outline-light" href="about.html" style="margin-top:6px">Read our story →</a>
+    </div>
+    <div class="plates">
+      <div class="plate dark"><div><div class="n">1972</div><div class="l">Land Bought</div></div></div>
+      <div class="plate dark"><div><div class="n">2001</div><div class="l">Reopened</div></div></div>
+      <div class="plate dark"><div><div class="n" style="color:var(--amber)">3rd</div><div class="l">Generation</div></div></div>
+      <div class="plate dark"><div><div class="n" style="color:var(--red)">25</div><div class="l">Years</div></div></div>
+    </div>
+  </div></div>
+</section>
+
+<!-- REVIEWS -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head center"><span class="eyebrow">What Customers Say</span><div class="agg"><span class="score">{{ siteSettings.googleRating }}</span><span class="stars">★★★★☆</span><span class="from">based on {{ siteSettings.googleReviewCount }} Google reviews</span></div></div>
+    <div class="rcards">
+      <div class="rcard"><div class="stars">★★★★★</div><p>"Called in the morning, fair price over the phone, picked it up that same afternoon. Cash in hand, no runaround."</p><div class="who"><span class="name">Marcus T. · Pensacola</span><span class="date">2 WKS</span></div></div>
+      <div class="rcard"><div class="stars">★★★★★</div><p>"Yard's organized by rows so I found my part fast. Way cheaper than new, and the staff knew their stuff."</p><div class="who"><span class="name">Dana R. · Pace</span><span class="date">1 MO</span></div></div>
+      <div class="rcard"><div class="stars">★★★★★</div><p>"It was my late husband's car. They were kind, handled everything, and I felt good knowing it'd be recycled right."</p><div class="who"><span class="name">Patricia L. · Milton</span><span class="date">1 MO</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section class="sec" id="visit" style="background:var(--surface-3)">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">Visit the Yard</span><h2 style="font-style:italic">Location &amp; hours</h2></div>
+    <div class="loc-grid">
+      <div>
+        <div class="map"><iframe title="Map to Kiker's U-Pull-It" src="https://www.google.com/maps?q=3010%20W%20Fairfield%20Dr%2C%20Pensacola%2C%20FL%2032505&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+        <div class="addr-row"><div class="a1">{{ siteSettings.streetAddress }}</div><a class="a2" href="tel:{{ siteSettings.phoneNumber|replace({"-": ""}) }}">{{ siteSettings.phoneNumber }}</a>
+          <div class="visit-actions"><a class="btn btn--filled" href="contact.html"><span class="ic">📍</span>Get Directions</a><a class="btn btn--outline" href="tel:{{ siteSettings.phoneNumber|replace({"-": ""}) }}">Call the Yard</a></div>
+        </div>
+      </div>
+      <div class="hours">
+        <h3>Hours</h3>
+        <table class="htable" id="htable">
+          <tr data-d="1"><td class="day">Monday</td><td class="hrs">9:00 – 4:30</td></tr>
+          <tr data-d="2"><td class="day">Tuesday</td><td class="hrs">9:00 – 4:30</td></tr>
+          <tr data-d="3"><td class="day">Wednesday</td><td class="hrs">9:00 – 4:30</td></tr>
+          <tr data-d="4"><td class="day">Thursday</td><td class="hrs">9:00 – 4:30</td></tr>
+          <tr data-d="5"><td class="day">Friday</td><td class="hrs">9:00 – 4:30</td></tr>
+          <tr data-d="6"><td class="day">Saturday</td><td class="hrs">8:00 – 2:00</td></tr>
+          <tr data-d="0"><td class="day">Sunday</td><td class="hrs">Closed</td></tr>
+        </table>
+        <div class="last">Last admission 30 minutes before close.</div>
+        <div class="policies"><ul>
+          <li>🧰 Bring your own tools and gloves — it's self-serve.</li>
+          <li>👟 Closed-toe shoes required; 16 and up on the yard.</li>
+          <li>🏷️ Parts priced at the counter.</li>
+        </ul></div>
+        <div class="pays"><span class="pc">VISA</span><span class="pc">MC</span><span class="pc">AMEX</span><span class="pc">DISC</span><span class="pc">CASH</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="race-rule"></div>
+<section class="finalcta"><div class="wrap">
+  <div><h2>Got a car to sell? Let's get you paid.</h2><p>Fair offer, free towing, same-day pickup. Pensacola's yard for 25 years.</p></div>
+  <div class="grp"><a class="btn btn--amber btn--lg" href="tel:{{ siteSettings.phoneNumber|replace({"-": ""}) }}"><span class="ic">📞</span>Call {{ siteSettings.phoneNumber }}</a><a class="btn btn--outline-light btn--lg" href="#offer-form">Get an Offer</a></div>
+</div></section>
+
+<footer class="ftr"><div class="wrap">
+  <div class="ftr-grid">
+    <div class="fcol about">
+      <a class="brand brand-logo" href="index.html" aria-label="Kiker's U-Pull-It home"><img class="brand-logo-img" src="assets/kikers-horizontal-logo.svg" alt="" width="1542" height="492"></a>
+      <p style="margin-top:14px">Self-Service Auto Parts &amp; Cash for Cars</p>
+      <p>{{ siteSettings.streetAddress }}</p>
+      <p><a class="phone" href="tel:{{ siteSettings.phoneNumber|replace({"-": ""}) }}">{{ siteSettings.phoneNumber }}</a></p>
+      <div class="social"><a href="https://www.facebook.com/kikersupullit/" aria-label="Facebook" target="_blank" rel="noopener">f</a></div>
+    </div>
+    <div class="fcol"><div class="sublinks">
+      <div><h5>Main</h5><a href="index.html">Home</a><a href="about.html">About</a><a href="contact.html">Contact &amp; Visit</a><a href="blog.html">Blog</a><a href="privacy.html">Privacy Policy</a></div>
+      <div><h5>Services</h5><a href="sell-your-vehicle.html">Sell Your Vehicle</a><a href="we-buy-cars-near-pensacola.html">We Buy Cars Near Pensacola</a><a href="u-pull-parts.html">Pull Your Own Parts</a><a href="full-service-parts.html">Full-Service Parts</a><a href="cars-for-sale.html">Cars for Sale</a><a href="cars-for-sale-vehicle.html">Vehicle Detail</a><a href="thank-you.html">Thank You</a></div>
+      <div><h5>Local Pages</h5><a href="sell-your-car-pensacola.html">Sell Your Car in Pensacola</a><a href="sell-your-car-pace.html">Sell Your Car in Pace</a><a href="sell-your-car-milton.html">Sell Your Car in Milton</a><a href="sell-your-car-cantonment.html">Sell Your Car in Cantonment</a></div>
+      <div><h5>Build Versions</h5><a href="home-funnel.html">Home Funnel</a><a href="home-funnel-2.html">Home Funnel 2</a><a href="Kikers-Home.html">Home Concept</a><a href="Kikers-Home-v2.html">Home V2</a><a href="Kikers-Home-with-Photos.html">Home with Photos</a><a href="Sell-Your-Vehicle-v2.html">Sell Vehicle V2</a><a href="Contact-Visit.html">Contact Visit Concept</a><a href="Icon-Comparison.html">Icon Comparison</a><a href="docs/component-kit.html">Component Kit</a></div>
+    </div></div>
+    <div class="fcol"><h5>Visit Us</h5><p class="mono" style="color:#fff">Mon-Fri, 9 AM-4:30 PM; Sat, 8 AM-2 PM<br>Sunday: Closed</p><a class="btn btn--outline-light btn--sm" href="contact.html#directions" style="margin-top:14px"><span class="ic">📍</span>Get Directions</a></div>
+  </div>
+  <div class="ftr-bottom"><span class="copy">© 2026 Kiker's U-Pull-It · Pensacola, FL</span><span class="vals">Own it · Do right · Outwork it · Back each other · Watch out</span></div>
+</div></footer>
+
+<div class="toast-host" id="toastHost" aria-live="polite"></div>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"AutoDealer","@id":"https://smithbcg.github.io/kikers-website/#business","name":"Kiker's U-Pull-It","description":"Family-owned, licensed Florida salvage yard in Pensacola that buys cars for cash (running or not) and sells used auto parts.","url":"https://smithbcg.github.io/kikers-website/","telephone":"+1-{{ siteSettings.phoneNumber }}","priceRange":"$$","foundingDate":"2001","address":{"@type":"PostalAddress","streetAddress":"3010 W. Fairfield Drive","addressLocality":"Pensacola","addressRegion":"FL","postalCode":"32505","addressCountry":"US"},"geo":{"@type":"GeoCoordinates","latitude":"30.42","longitude":"-87.21"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"16:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Saturday"],"opens":"08:00","closes":"14:00"}],"areaServed":[{"@type":"City","name":"Pensacola"},{"@type":"City","name":"Pace"},{"@type":"City","name":"Milton"},{"@type":"City","name":"Cantonment"}]}
+</script>
+<script src="kikers.js" defer></script>
+</body>
+</html>

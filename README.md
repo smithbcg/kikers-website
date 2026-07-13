@@ -1,6 +1,16 @@
 # Kiker's U-Pull-It — Website (full set)
 
-Static HTML site. No build step, no framework. Fully responsive (desktop / laptop / tablet / mobile).
+The currently published build remains static HTML. A Craft CMS 5 migration now lives in `craft/` and runs locally through DDEV on OrbStack. The static files remain in place as the approved visual reference until the Craft build is ready for production hosting.
+
+## Craft CMS migration
+
+- Local site: `http://kikers-craft.ddev.site`
+- Control panel: `http://kikers-craft.ddev.site/admin`
+- Public document root for production: `craft/web`
+- Local runtime: OrbStack + DDEV, PHP 8.3, MySQL 8.0
+- Content: 26 seeded page entries plus editable global business details
+
+See `craft/README.md` for setup, editing, and deployment instructions.
 
 ## Page groups
 **Live site** (link the shared `kikers.css` + `kikers.js`; these are the primary launch pages):

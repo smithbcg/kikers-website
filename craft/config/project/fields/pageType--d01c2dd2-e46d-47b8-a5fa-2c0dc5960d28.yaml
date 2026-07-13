@@ -1,0 +1,88 @@
+columnSuffix: null
+handle: pageType
+instructions: null
+name: 'Page Type'
+searchable: false
+settings:
+  customOptions: false
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - Standard
+        -
+          - value
+          - standard
+        -
+          - default
+          - true
+    -
+      __assoc__:
+        -
+          - label
+          - Service
+        -
+          - value
+          - service
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - Location
+        -
+          - value
+          - location
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - Vehicle
+        -
+          - value
+          - vehicle
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - Article
+        -
+          - value
+          - article
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - Concept
+        -
+          - value
+          - concept
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - Utility
+        -
+          - value
+          - utility
+        -
+          - default
+          - false
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

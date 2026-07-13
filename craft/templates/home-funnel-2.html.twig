@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kiker's U-Pull-It — Cash for Cars &amp; Self-Service Parts | Pensacola, FL</title>
+<meta name="description" content="Get a cash offer for your car in Pensacola, FL — running or not. Fair offer fast, free towing, same-day pickup. Family-owned, 25 years. Or pull your own parts. Call {{ siteSettings.phoneNumber }}.">
+<link rel="canonical" href="https://smithbcg.github.io/kikers-website/">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,500;0,600;0,700;0,800;1,600;1,700;1,800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="kikers.css?v=20260702-footerbtn">
+<style>
+/* ===== FUNNEL STRUCTURE (modeled on the reference page, rebranded to Kiker) ===== */
+
+/* hero: full-bleed photo, centered eyebrow + headline */
+.phero{position:relative;overflow:hidden;color:#fff;text-align:center;padding:78px 24px 150px}
+.phero .bg{position:absolute;inset:0;z-index:0;background:linear-gradient(180deg,rgba(11,6,17,.5),rgba(11,6,17,.72)),linear-gradient(120deg,#2a242c,#15121a 60%,#2a1d1f)}
+.phero .bg .tag{position:absolute;left:18px;top:18px;font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:rgba(255,255,255,.45)}
+.phero .pin{position:relative;z-index:2;max-width:880px;margin:0 auto}
+.phero .eyebrow{justify-content:center;color:var(--amber-300);margin-bottom:14px}
+.phero .eyebrow::before{background:var(--amber)}
+.phero h1{font-family:var(--display);font-weight:800;font-style:italic;text-transform:uppercase;font-size:clamp(40px,6.4vw,76px);line-height:.92;letter-spacing:-.01em}
+.phero h1 em{color:var(--red);font-style:italic}
+.phero .sub{max-width:54ch;margin:18px auto 0;color:rgba(255,255,255,.84);font-size:18px}
+
+/* quote bar straddling the hero bottom */
+.qbar{position:relative;z-index:5;max-width:1080px;margin:-104px auto 0;background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--e3);display:grid;grid-template-columns:1.05fr .95fr}
+.qbar .qcol{padding:26px 28px}
+.qbar .qleft{border-right:1px solid var(--line)}
+.qbar .qhd{display:flex;align-items:center;gap:10px;font-family:var(--display);font-style:italic;font-weight:800;text-transform:uppercase;font-size:18px}
+.qbar .qhd .ic{width:34px;height:34px;border-radius:var(--r-sm);background:var(--grad-red);color:#fff;display:grid;place-items:center;font-size:17px;font-style:normal}
+.qbar .qsub{font-size:13px;color:var(--text-2);margin:6px 0 16px}
+.qbar .qrow{display:flex;gap:10px}
+.qbar .qrow .field{flex:1}
+.qbar .qrow input{width:100%;height:52px;border:1.5px solid var(--line-2);border-radius:var(--r-md);padding:0 14px;font-family:var(--body);font-size:15px;outline:none}
+.qbar .qrow input:focus{border-color:var(--red)}
+.qbar .qrow .btn{height:52px;flex:0 0 auto}
+.qbar .qnote{font-size:12px;color:var(--text-3);margin-top:10px}.qbar .qnote a{color:var(--red);text-decoration:underline}
+.qbar .qcaps{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3);margin-bottom:14px}
+.qgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.qtile{display:flex;align-items:center;gap:10px;border:1.5px solid var(--line-2);border-radius:var(--r-md);padding:12px 14px;font-weight:600;font-size:14px;color:var(--text);transition:border-color .14s,background .14s}
+.qtile:hover{border-color:var(--red);background:var(--red-wash)}
+.qtile .ic{font-size:18px}
+@media(max-width:760px){.qbar{grid-template-columns:1fr;margin-top:-80px}.qbar .qleft{border-right:none;border-bottom:1px solid var(--line)}.phero{padding-bottom:120px}}
+
+/* other ways pill bar */
+.oways{max-width:1080px;margin:16px auto 0;background:var(--surface-3);border:1px solid var(--line);border-radius:var(--r-md);display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 22px;flex-wrap:wrap}
+.oways .lab{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3)}
+.oways .lks{display:flex;gap:22px;flex-wrap:wrap}
+.oways a{font-weight:600;font-size:14px;color:var(--red);display:inline-flex;align-items:center;gap:6px}
+
+/* trust band with bracket-topped stats */
+.tband{padding:72px 24px 64px;text-align:center}
+.tband h2{font-family:var(--display);font-style:italic;font-weight:700;font-size:clamp(26px,3.4vw,38px);text-transform:uppercase}
+.tband .lead{max-width:62ch;margin:14px auto 0;color:var(--text-2);font-size:16px}.tband .lead a{color:var(--red);text-decoration:underline}
+.tstats{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:980px;margin:48px auto 0}
+.tstat{display:flex;flex-direction:column;align-items:center}
+.bracket{width:64%;max-width:220px;height:34px;border:3px solid var(--red);border-bottom:none;border-radius:5px 5px 0 0}
+.tstat.b2 .bracket{border-color:var(--ink)}.tstat.b3 .bracket{border-color:var(--amber)}
+.tstat .cap{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3);margin-top:24px}
+.tstat .num{font-family:var(--display);font-style:italic;font-weight:800;font-size:clamp(34px,4.4vw,46px);line-height:1;margin-top:8px}
+.tstat .uline{width:34px;height:3px;background:var(--line-2);margin:12px 0}
+.tstat .desc{max-width:26ch;color:var(--text-2);font-size:14px}
+@media(max-width:760px){.tstats{grid-template-columns:1fr;gap:40px}}
+
+/* products: heading + [illustration | list] + CTA */
+.prodsec{padding:72px 24px;text-align:center}
+.prodsec h2{font-family:var(--display);font-style:italic;font-weight:700;font-size:clamp(26px,3.4vw,38px);text-transform:uppercase}
+.prodsec .lead{max-width:60ch;margin:14px auto 0;color:var(--text-2);font-size:16px}
+.prodgrid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;max-width:1080px;margin:44px auto 0;text-align:left}
+.prodillus{aspect-ratio:4/3;border-radius:var(--r-lg);overflow:hidden;border:1.5px dashed var(--line-strong);background:repeating-linear-gradient(45deg,#fafafb 0 10px,#f1f1f4 10px 20px);display:grid;place-items:center;text-align:center}
+.prodlist .pitem{padding:18px 0;border-bottom:1px solid var(--line)}
+.prodlist .pitem:first-child{padding-top:0}
+.prodlist .pitem a{font-family:var(--display);font-style:italic;font-weight:800;text-transform:uppercase;font-size:18px;display:inline-flex;align-items:center;gap:8px}
+.prodlist .pitem a .x{color:var(--red)}
+.prodlist .pitem:hover a{color:var(--red)}
+.prodlist .pitem p{margin:4px 0 0;color:var(--text-2);font-size:14px}
+.prodcta{max-width:1080px;margin:30px auto 0;text-align:left}
+@media(max-width:860px){.prodgrid{grid-template-columns:1fr;gap:28px}.prodcta{text-align:center}}
+
+/* why photo cards w/ underline accent */
+.why{padding:72px 24px;text-align:center;background:var(--surface-3)}
+.why h2{font-family:var(--display);font-style:italic;font-weight:700;font-size:clamp(26px,3.4vw,38px);text-transform:uppercase}
+.why .lead{max-width:56ch;margin:14px auto 0;color:var(--text-2);font-size:16px}
+.whygrid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;max-width:1100px;margin:44px auto 0;text-align:left}
+.wcard .img{aspect-ratio:16/11;border-radius:var(--r-md);overflow:hidden;border:1.5px dashed var(--line-strong);background:repeating-linear-gradient(45deg,#fafafb 0 10px,#f1f1f4 10px 20px);display:grid;place-items:center;text-align:center;margin-bottom:14px}
+.wcard h4{font-style:italic;font-size:17px;margin-bottom:8px}
+.wcard .acc{width:30px;height:3px;background:var(--red);margin-bottom:10px}
+.wcard p{margin:0;color:var(--text-2);font-size:14px}
+@media(max-width:900px){.whygrid{grid-template-columns:repeat(2,1fr)}}@media(max-width:520px){.whygrid{grid-template-columns:1fr}}
+.phlbl{font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--amber-600)}
+</style>
+</head>
+<body id="top">
+
+<div class="ustrip"><div class="wrap">
+  <div class="u-left"><span class="addr">📍&nbsp; Pensacola, FL <span class="sep">•</span></span><a href="tel:{{ siteSettings.phoneNumber|replace({"-": ""}) }}">{{ siteSettings.phoneNumber }}</a></div>
+  <div class="u-right"><span><b id="openNow">Hours Today</b></span><span class="txt"><span class="sep">•</span> Mon-Fri, 9 AM-4:30 PM; Sat, 8 AM-2 PM</span></div>
+</div></div>
+
+<header class="nav" id="nav"><div class="wrap">
+  <a class="brand brand-logo" href="index.html" aria-label="Kiker's U-Pull-It home"><img class="brand-logo-img" src="assets/kikers-horizontal-logo.svg" alt="" width="1542" height="492"></a>
+  <span class="spacer"></span>
+  <nav class="links"><a href="sell-your-vehicle.html">Sell Your Car</a><a href="u-pull-parts.html">Find a Part</a><a href="cars-for-sale.html">Cars for Sale</a><a href="about.html">Our Story</a><a href="contact.html">Visit</a></nav>
+  <a class="btn btn--filled btn--sm" href="#offer" style="margin-left:8px">Get My Offer</a>
+  <button class="menu" id="menuBtn" aria-label="Open menu">☰</button>
+</div></header>
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer"><a href="sell-your-vehicle.html">Sell Your Car</a><a href="u-pull-parts.html">Find a Part</a><a href="cars-for-sale.html">Cars for Sale</a><a href="about.html">Our Story</a><a href="contact.html">Visit</a><a class="btn btn--filled btn--block" href="#offer">Get My Cash Offer</a></aside>
+
+<!-- HERO (full-bleed photo, centered headline) -->
+<section class="phero">
+  <div class="bg"><span class="tag">📷 HERO PHOTO: wide daylight shot down a clean row of the yard, blue Florida sky</span></div>
+  <div class="pin">
+    <span class="eyebrow">Welcome to Kiker's U-Pull-It</span>
+    <h1>Cash for your car <em>starts here.</em></h1>
+    <p class="sub">Running or not — a fair offer, free towing, and same-day cash. Pensacola's family-owned yard for 25 years.</p>
+  </div>
+</section>
+
+<!-- QUOTE BAR straddling the hero -->
+<div class="wrap" id="offer">
+  <div class="qbar">
+    <div class="qcol qleft">
+      <div class="qhd"><span class="ic">⚡</span>Get a cash offer</div>
+      <div class="qsub">Tell us your vehicle — we'll text or call a real number, fast.</div>
+      <form class="qrow" onsubmit="return submitOffer(event)">
+        <div class="field"><input type="text" placeholder="Year, make &amp; model" aria-label="Year, make and model" required></div>
+        <button class="btn btn--filled" type="submit">Get my offer</button>
+      </form>
+      <div class="qnote">Free &amp; no obligation. Prefer to talk? <a href="tel:{{ siteSettings.phoneNumber|replace({"-": ""}) }}">Call {{ siteSettings.phoneNumber }}</a>.</div>
+    </div>
+    <div class="qcol qright">
+      <div class="qcaps">Or — what brings you in?</div>
+      <div class="qgrid">
+        <a class="qtile" href="sell-your-vehicle.html"><span class="ic">💵</span> Sell my car</a>
+        <a class="qtile" href="u-pull-parts.html"><span class="ic">🔧</span> Pull my own parts</a>
+        <a class="qtile" href="u-pull-parts.html"><span class="ic">🏷️</span> Buy used parts</a>
+        <a class="qtile" href="cars-for-sale.html"><span class="ic">🚗</span> Browse cars for sale</a>
+      </div>
+    </div>
+  </div>
+  <!-- other ways -->
+  <div class="oways">
+    <span class="lab">Other ways to reach us</span>
+    <div class="lks"><a href="tel:{{ siteSettings.phoneNumber|replace({"-": ""}) }}">Call {{ siteSettings.phoneNumber }} ›</a><a href="contact.html">Get directions ›</a><a href="contact.html#message">Send a message ›</a></div>
+  </div>
+</div>
+
+<!-- TRUST BAND (bracket-topped stats) -->
+<section class="tband">
+  <div class="wrap">
+    <h2>Pensacola's yard, family-owned since 2001</h2>
+    <p class="lead">Three generations on the same ground since 1972. We buy your car for <a href="sell-your-vehicle.html">cash</a>, handle the towing and the paperwork, and report it to the state — done by the book.</p>
+    <div class="tstats">
+      <div class="tstat b1"><div class="bracket"></div><div class="cap">Heritage</div><div class="num">25 Years</div><div class="uline"></div><div class="desc">Three generations serving Pensacola, since 1972.</div></div>
+      <div class="tstat b2"><div class="bracket"></div><div class="cap">Speed</div><div class="num">Same-Day</div><div class="uline"></div><div class="desc">Cash and pickup on your schedule — most sellers done today.</div></div>
+      <div class="tstat b3"><div class="bracket"></div><div class="cap">No Cost</div><div class="num">Free Towing</div><div class="uline"></div><div class="desc">We come to you across the Pensacola area, no charge.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS (heading + illustration | list + CTA) -->
+<section class="prodsec" style="background:var(--surface-3)">
+  <div class="wrap">
+    <h2>Everything the yard does</h2>
+    <p class="lead">We built the business around what you actually need — sell a car, pull a part, or find a project. Here's the full lot.</p>
+    <div class="prodgrid">
+      <div class="prodillus"><div><div style="font-size:40px">🏭</div><div class="phlbl" style="margin-top:8px">PHOTO / GRAPHIC</div><div style="font-size:12px;color:var(--text-2);max-width:30ch;margin:6px auto 0">Drone aerial of the yard, or a branded yard-map graphic.</div></div></div>
+      <div class="prodlist">
+        <div class="pitem"><a href="sell-your-vehicle.html">Cash for Cars <span class="x">›</span></a><p>Fair cash for any vehicle, running or not — free towing, paperwork handled.</p></div>
+        <div class="pitem"><a href="u-pull-parts.html">Pull Your Own Parts <span class="x">›</span></a><p>Self-serve yard by section and row. Bring your tools and save big.</p></div>
+        <div class="pitem"><a href="u-pull-parts.html">Used Parts &amp; Prices <span class="x">›</span></a><p>Quality used and OEM parts, pulled and priced flat-rate.</p></div>
+        <div class="pitem"><a href="cars-for-sale.html">Cars for Sale <span class="x">›</span></a><p>Yard-priced mechanic specials and fixable vehicles, sold as-is.</p></div>
+        <div class="pitem"><a href="full-service-parts.html">Full-Service Parts <span class="x">›</span></a><p>Don't want to pull it yourself? Tell us the part and we'll find it.</p></div>
+      </div>
+    </div>
+    <div class="prodcta"><a class="btn btn--outline" href="u-pull-parts.html">Explore the yard</a></div>
+  </div>
+</section>
+
+<!-- WHY (4 photo cards w/ underline accent) -->
+<section class="why">
+  <div class="wrap">
+    <h2>See why it's the smart choice</h2>
+    <p class="lead">Yes, we're a salvage yard — but here's what makes Kiker's different.</p>
+    <div class="whygrid">
+      <div class="wcard"><div class="img"><div><span class="phlbl">DONE RIGHT</span><div style="font-size:24px">🛡️</div></div></div><h4>Done Right &amp; Legal</h4><div class="acc"></div><p>Paperwork handled, sale reported to the state. By the book, every time.</p></div>
+      <div class="wcard"><div class="img"><div><span class="phlbl">RECYCLED</span><div style="font-size:24px">♻️</div></div></div><h4>Recycled Responsibly</h4><div class="acc"></div><p>Good parts reused, metals recovered, fluids handled the right way.</p></div>
+      <div class="wcard"><div class="img"><div><span class="phlbl">LOCAL FAMILY</span><div style="font-size:24px">🏁</div></div></div><h4>Local Family · 25 Years</h4><div class="acc"></div><p>Third generation on the same Pensacola ground — people you actually know.</p></div>
+      <div class="wcard"><div class="img"><div><span class="phlbl">THE TEAM</span><div style="font-size:24px">🤝</div></div></div><h4>Friendly &amp; Knowledgeable</h4><div class="acc"></div><p>Straight answers and a fair deal, whether you're selling or pulling parts.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head center"><span class="eyebrow">What Customers Say</span><div class="agg"><span class="score">{{ siteSettings.googleRating }}</span><span class="stars">★★★★☆</span><span class="from">based on {{ siteSettings.googleReviewCount }} Google reviews</span></div></div>
+    <div class="rcards">
+      <div class="rcard"><div class="stars">★★★★★</div><p>"Called in the morning, fair price over the phone, picked it up that same afternoon. Cash in hand, no runaround."</p><div class="who"><span class="name">Marcus T. · Pensacola</span><span class="date">2 WKS</span></div></div>
+      <div class="rcard"><div class="stars">★★★★★</div><p>"My car hadn't run in two years. They still gave me a fair offer, towed it free, and handled all the paperwork."</p><div class="who"><span class="name">Renee B. · Pace</span><span class="date">3 WKS</span></div></div>
+      <div class="rcard"><div class="stars">★★★★★</div><p>"It was my late husband's car. They were kind, handled everything, and I felt good knowing it'd be recycled right."</p><div class="who"><span class="name">Patricia L. · Milton</span><span class="date">1 MO</span></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="race-rule"></div>
+<section class="finalcta"><div class="wrap">
+  <div><h2>Got a car to sell? Start your offer.</h2><p>Fair offer, free towing, same-day cash. Pensacola's yard for 25 years.</p></div>
+  <div class="grp"><a class="btn btn--amber btn--lg" href="#offer"><span class="ic">⚡</span>Get My Cash Offer</a><a class="btn btn--outline-light btn--lg" href="tel:{{ siteSettings.phoneNumber|replace({"-": ""}) }}"><span class="ic">📞</span>Call {{ siteSettings.phoneNumber }}</a></div>
+</div></section>
+
+<footer class="ftr"><div class="wrap">
+  <div class="ftr-grid">
+    <div class="fcol about">
+      <a class="brand brand-logo" href="index.html" aria-label="Kiker's U-Pull-It home"><img class="brand-logo-img" src="assets/kikers-horizontal-logo.svg" alt="" width="1542" height="492"></a>
+      <p style="margin-top:14px">Self-Service Auto Parts &amp; Cash for Cars</p>
+      <p>{{ siteSettings.streetAddress }}</p>
+      <p><a class="phone" href="tel:{{ siteSettings.phoneNumber|replace({"-": ""}) }}">{{ siteSettings.phoneNumber }}</a></p>
+      <div class="social"><a href="https://www.facebook.com/kikersupullit/" aria-label="Facebook" target="_blank" rel="noopener">f</a></div>
+    </div>
+    <div class="fcol"><div class="sublinks">
+      <div><h5>Main</h5><a href="index.html">Home</a><a href="about.html">About</a><a href="contact.html">Contact &amp; Visit</a><a href="blog.html">Blog</a><a href="privacy.html">Privacy Policy</a></div>
+      <div><h5>Services</h5><a href="sell-your-vehicle.html">Sell Your Vehicle</a><a href="we-buy-cars-near-pensacola.html">We Buy Cars Near Pensacola</a><a href="u-pull-parts.html">Pull Your Own Parts</a><a href="full-service-parts.html">Full-Service Parts</a><a href="cars-for-sale.html">Cars for Sale</a><a href="cars-for-sale-vehicle.html">Vehicle Detail</a><a href="thank-you.html">Thank You</a></div>
+      <div><h5>Local Pages</h5><a href="sell-your-car-pensacola.html">Sell Your Car in Pensacola</a><a href="sell-your-car-pace.html">Sell Your Car in Pace</a><a href="sell-your-car-milton.html">Sell Your Car in Milton</a><a href="sell-your-car-cantonment.html">Sell Your Car in Cantonment</a></div>
+      <div><h5>Build Versions</h5><a href="home-funnel.html">Home Funnel</a><a href="home-funnel-2.html">Home Funnel 2</a><a href="Kikers-Home.html">Home Concept</a><a href="Kikers-Home-v2.html">Home V2</a><a href="Kikers-Home-with-Photos.html">Home with Photos</a><a href="Sell-Your-Vehicle-v2.html">Sell Vehicle V2</a><a href="Contact-Visit.html">Contact Visit Concept</a><a href="Icon-Comparison.html">Icon Comparison</a><a href="docs/component-kit.html">Component Kit</a></div>
+    </div></div>
+    <div class="fcol"><h5>Visit Us</h5><p class="mono" style="color:#fff">Mon-Fri, 9 AM-4:30 PM; Sat, 8 AM-2 PM<br>Sunday: Closed</p><a class="btn btn--outline-light btn--sm" href="contact.html#directions" style="margin-top:14px"><span class="ic">📍</span>Get Directions</a></div>
+  </div>
+  <div class="ftr-bottom"><span class="copy">© 2026 Kiker's U-Pull-It · Pensacola, FL</span><span class="vals">Own it · Do right · Outwork it · Back each other · Watch out</span></div>
+</div></footer>
+
+<div class="toast-host" id="toastHost" aria-live="polite"></div>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"AutoDealer","name":"Kiker's U-Pull-It","description":"Family-owned, licensed Florida salvage yard in Pensacola that buys cars for cash (running or not) and sells used auto parts.","url":"https://smithbcg.github.io/kikers-website/","telephone":"+1-{{ siteSettings.phoneNumber }}","priceRange":"$$","foundingDate":"2001","address":{"@type":"PostalAddress","streetAddress":"3010 W. Fairfield Drive","addressLocality":"Pensacola","addressRegion":"FL","postalCode":"32505","addressCountry":"US"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"16:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Saturday"],"opens":"08:00","closes":"14:00"}]}
+</script>
+<script src="kikers.js" defer></script>
+</body>
+</html>
