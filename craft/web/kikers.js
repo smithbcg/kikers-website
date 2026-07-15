@@ -32,6 +32,14 @@
   var st=document.getElementById('statusText');if(st)st.textContent=open?'Open now - until '+closeLabel+' today':(d===0?'Closed today (Sunday)':'Closed now - opens '+openLabel);
   // chip toggles (inventory filters)
   document.querySelectorAll('.chip[aria-pressed]').forEach(function(c){c.addEventListener('click',function(){c.setAttribute('aria-pressed',c.getAttribute('aria-pressed')==='true'?'false':'true');});});
+  // leadership profiles: hover/focus works in CSS; the button provides an explicit touch toggle
+  document.querySelectorAll('.leader-card').forEach(function(card){
+    var toggle=card.querySelector('.leader-card__toggle');
+    if(!toggle)return;
+    function setProfile(open){card.classList.toggle('is-open',open);toggle.setAttribute('aria-expanded',String(open));}
+    toggle.addEventListener('click',function(){setProfile(!card.classList.contains('is-open'));});
+    card.addEventListener('keydown',function(e){if(e.key==='Escape'){setProfile(false);toggle.focus();}});
+  });
   // restrained section reveals; content remains visible when JS is unavailable
   var revealTargets=document.querySelectorAll('.cms-page main > section');
   if('IntersectionObserver' in window&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches){

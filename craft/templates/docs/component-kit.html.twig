@@ -138,6 +138,45 @@ code{font-family:var(--mono);font-size:12.5px;background:#fff;border:1px solid v
   <div class="use"><b>Use when</b> presenting parallel options/services. <span class="no">Don't</span> force three when the page only has two real ones — a filler third card is the #1 boilerplate tell.</div>
   <div class="demo" style="display:grid;grid-template-columns:1fr 1fr;gap:16px"><div class="card"><h3>Cash for Cars</h3><p>Fair offer, free towing, same-day pickup.</p></div><div class="card"><h3>Pull Your Own Parts</h3><p>Bring tools, pull parts, pay at the counter.</p></div></div>
 
+  <div class="doc-h"><h2>Leadership portrait</h2></div>
+  <div class="use"><b>Use for</b> owners and senior leaders whose personal story strengthens trust. Keep the name and role visible at rest; reveal the short profile on hover, keyboard focus, or tap. <span class="no">Don't</span> hide essential contact information or use long biographies inside the card.</div>
+  <div class="demo leader-demo">
+    <article class="leader-card" aria-labelledby="hunter-kiker-name">
+      <div class="leader-card__media leader-card__placeholder" aria-label="Portrait slot for Hunter Kiker">
+        <span class="leader-card__shot-label">Approved portrait goes here</span>
+        <span class="leader-card__initials" aria-hidden="true">HK</span>
+      </div>
+      <div class="leader-card__identity">
+        <h3 id="hunter-kiker-name">Hunter Kiker</h3>
+        <p>Owner · Third generation</p>
+      </div>
+      <button class="leader-card__toggle" type="button" aria-expanded="false" aria-controls="hunter-kiker-profile" title="View Hunter Kiker profile"><i data-lucide="info" aria-hidden="true"></i><span class="sr-only">View Hunter Kiker profile</span></button>
+      <div class="leader-card__overlay" id="hunter-kiker-profile">
+        <span class="eyebrow">Leadership</span>
+        <h3>Hunter Kiker</h3>
+        <p class="leader-card__role">Owner · Third generation</p>
+        <p class="leader-card__bio">A short, first-person profile belongs here: what Hunter is responsible for, what he believes customers deserve, and what carrying the Kiker name means to him.</p>
+        <dl class="leader-card__facts">
+          <div class="leader-card__fact"><dt>Generation</dt><dd>3rd</dd></div>
+          <div class="leader-card__fact"><dt>Role</dt><dd>Owner</dd></div>
+        </dl>
+        <span class="leader-card__value">Own it · Do right</span>
+      </div>
+    </article>
+    <div class="leader-guidance">
+      <span class="eyebrow">Portrait direction</span>
+      <h3>Real people. Same visual system.</h3>
+      <p>The final image should feel like Kiker's, not a corporate headshot: direct, capable, and comfortable in the yard.</p>
+      <ul>
+        <li>Waist-up or three-quarter crop on a clean, neutral background.</li>
+        <li>Transparent PNG/WebP preferred so the steel panel remains consistent.</li>
+        <li>Natural daylight, work shirt, relaxed posture, and direct eye contact.</li>
+        <li>Use one crop, one background color, and one camera height for the full team.</li>
+        <li>Keep profile copy to roughly 35–55 words and two verified facts.</li>
+      </ul>
+    </div>
+  </div>
+
   <div class="doc-h"><h2>FAQ (+ FAQPage schema)</h2></div>
   <div class="use"><b>Use when</b> the page answers real, repeated questions — great for users AND AI citation. The visible Q&amp;A must match the JSON-LD FAQPage 1:1, or Google ignores it.</div>
   <div class="demo"><div class="faq"><details open><summary>Do you buy cars that don't run? <span class="pm">+</span></summary><div class="ans">Yes — running or not, wrecked or junk.</div></details></div></div>
