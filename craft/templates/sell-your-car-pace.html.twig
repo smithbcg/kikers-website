@@ -21,7 +21,7 @@
     <div>
       <div class="h-tags"><span class="eyebrow on-ink">Cash for Cars · Pace, FL</span><span class="chiplet">Santa Rosa County</span><span class="chiplet">Free towing to Pace</span></div>
       <h1>Sell your car for cash <em>in Pace.</em></h1>
-      <p class="lede">Just east of Pensacola in Santa Rosa County — and we come to you. Sell your car, truck, or SUV for cash, running or not. Fair offer, free towing to Pace, same-day pickup, and the Florida title paperwork handled. Call <a href="tel:{{ siteSettings.phoneNumber|replace({"-": ""}) }}" style="color:#fff;text-decoration:underline">{{ siteSettings.phoneNumber }}</a> or get an offer.</p>
+      <p class="lede">Just east of Pensacola in Santa Rosa County — and we come to you. Sell your car, truck, or SUV for cash, running or not. Fair offer, free towing to Pace, same-day pickup, and the paperwork and required reporting handled. Call <a href="tel:{{ siteSettings.phoneNumber|replace({"-": ""}) }}" style="color:#fff;text-decoration:underline">{{ siteSettings.phoneNumber }}</a> or get an offer.</p>
       <div class="cta-row"><a class="btn btn--amber btn--lg" href="tel:{{ siteSettings.phoneNumber|replace({"-": ""}) }}"><span class="ic">📞</span>Call {{ siteSettings.phoneNumber }}</a><a class="btn btn--outline-light btn--lg" href="#how">How It Works</a></div>
     </div>
     <div class="offer-card" id="offer-form">
@@ -29,7 +29,7 @@
       <div class="sub">A few details — no haggling.</div>
       <form class="qf" onsubmit="return submitOffer(event)">
         <input type="text" placeholder="Year, make &amp; model" required>
-        <div class="grid2"><select required><option value="" selected disabled>Condition</option><option>Runs &amp; drives</option><option>Starts only</option><option>Won't start</option><option>Wrecked / junk</option></select><input type="text" inputmode="numeric" placeholder="ZIP" required></div>
+        <div class="grid2"><select required><option value="" selected disabled>Condition</option><option>Runs &amp; drives</option><option>Starts only</option><option>Won't start</option><option>Inoperable</option><option>Wrecked / junk</option></select><input type="text" inputmode="numeric" placeholder="ZIP" required></div>
         <input type="text" placeholder="Your name" required>
         <input type="tel" placeholder="Phone" required>
         <button class="btn btn--filled btn--block" type="submit"><span class="ic">⚡</span>Get My Cash Offer</button>
@@ -45,7 +45,7 @@
   <div class="wrap"><div class="plates">
     <div class="plate"><div><div class="n" style="color:var(--red)">Same-Day</div><div class="l">Pickup in Pace</div></div></div>
     <div class="plate"><div><div class="n" style="color:var(--ink)">Free</div><div class="l">Towing</div></div></div>
-    <div class="plate"><div><div class="n" style="color:var(--ink)">Handled</div><div class="l">Title Paperwork</div></div></div>
+    <div class="plate"><div><div class="n" style="color:var(--ink)">Handled</div><div class="l">Required Paperwork</div></div></div>
     <div class="plate"><div><div class="n" style="color:var(--amber)">Local</div><div class="l">25 Years · Pensacola</div></div></div>
   </div></div>
 </section>
@@ -113,7 +113,7 @@
     <div class="ec"><h3>Selling a car in Pace? Get your offer.</h3><p>Two details and a phone number — we'll get right back to you.</p></div>
     <form onsubmit="return submitOffer(event)">
       <div class="full"><input type="text" placeholder="Year, make &amp; model" required></div>
-      <select required><option value="" selected disabled>Condition</option><option>Runs &amp; drives</option><option>Starts only</option><option>Won't start</option><option>Wrecked / junk</option></select>
+      <select required><option value="" selected disabled>Condition</option><option>Runs &amp; drives</option><option>Starts only</option><option>Won't start</option><option>Inoperable</option><option>Wrecked / junk</option></select>
       <input type="tel" placeholder="Phone" required>
       <button class="btn btn--amber btn--block full" type="submit"><span class="ic">⚡</span>Get My Cash Offer</button>
     </form>

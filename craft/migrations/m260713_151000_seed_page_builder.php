@@ -82,6 +82,30 @@ class m260713_151000_seed_page_builder extends Migration
         return false;
     }
 
+    /** @param Entry[] $pages
+     *  @return array{array<string, mixed>, string, string, string}
+     */
+    public function buildPage(Entry $page, array $pages): array
+    {
+        $this->internalUrls = $this->internalUrlMap($pages);
+
+        $template = trim((string)$page->getFieldValue('legacyTemplate'));
+        if ($template === '') {
+            throw new RuntimeException("No legacy template is set for {$page->title}.");
+        }
+
+        $view = Craft::$app->getView();
+        $originalMode = $view->getTemplateMode();
+        $view->setTemplateMode(View::TEMPLATE_MODE_SITE);
+        try {
+            $html = $view->renderTemplate($template, ['entry' => $page]);
+        } finally {
+            $view->setTemplateMode($originalMode);
+        }
+
+        return $this->convertPage($html, $page);
+    }
+
     /** @param Entry[] $pages */
     private function internalUrlMap(array $pages): array
     {

@@ -331,7 +331,7 @@ table{max-width:100%}
     <div>
       <div class="h-tags"><span class="eyebrow on-ink">Cash for Cars · Pensacola, FL</span><span class="chiplet">Running or not</span><span class="ecobadge on-ink">♻ Recycled responsibly</span></div>
       <h1>Sell your car for cash <em>in Pensacola.</em></h1>
-      <p class="lede">Kiker's U-Pull-It pays cash for cars, trucks, vans, and SUVs in Pensacola — running or not. You get a fair offer, free towing, and we handle the Florida title paperwork. Same-day or scheduled pickup, Monday through Saturday. Call <a href="tel:{{ siteSettings.phoneNumber|replace({"-": ""}) }}" style="color:#fff;text-decoration:underline">{{ siteSettings.phoneNumber }}</a> or get an offer below.</p>
+      <p class="lede">Kiker's U-Pull-It pays cash for cars, trucks, vans, and SUVs in Pensacola — running or not. You get a fair offer, free towing, and we handle the paperwork and required reporting. Same-day or scheduled pickup, Monday through Saturday. Call <a href="tel:{{ siteSettings.phoneNumber|replace({"-": ""}) }}" style="color:#fff;text-decoration:underline">{{ siteSettings.phoneNumber }}</a> or get an offer below.</p>
       <div class="cta-row"><a class="btn btn--amber btn--lg" href="tel:{{ siteSettings.phoneNumber|replace({"-": ""}) }}"><span class="ic">📞</span>Call {{ siteSettings.phoneNumber }}</a><a class="btn btn--outline-light btn--lg" href="#how">How It Works</a></div>
       <div class="areas">We buy in <b>Pensacola, Pace, Milton &amp; East Milton, Cantonment</b> and nearby.</div>
     </div>
@@ -340,7 +340,7 @@ table{max-width:100%}
       <div class="sub">A few quick details — that's it. No haggling.</div>
       <form class="qf" onsubmit="return submitOffer(event)">
         <div class="full"><label>Year, make &amp; model</label><input type="text" placeholder="2012 Honda Civic" required></div>
-        <div><label>Condition</label><select required><option value="" selected disabled>Select…</option><option>Runs &amp; drives</option><option>Starts only</option><option>Won't start</option><option>Wrecked / junk</option></select></div>
+        <div><label>Condition</label><select required><option value="" selected disabled>Select…</option><option>Runs &amp; drives</option><option>Starts only</option><option>Won't start</option><option>Inoperable</option><option>Wrecked / junk</option></select></div>
         <div><label>Your name</label><input type="text" placeholder="First name" required></div>
         <div class="full"><label>Phone</label><input type="tel" placeholder="(850) 000-0000" required></div>
         <button class="btn btn--filled btn--block full btn--lg" type="submit"><span class="ic">⚡</span>Get My Cash Offer</button>
@@ -354,7 +354,7 @@ table{max-width:100%}
 <div class="trustbar"><div class="wrap">
   <div class="item"><span class="ic">⚡</span><span class="n">Same-Day</span><span class="l">Pickup &amp; Cash</span></div>
   <div class="item"><span class="ic">🚚</span><span class="n">Free</span><span class="l">Towing Included</span></div>
-  <div class="item"><span class="ic">📋</span><span class="n">Handled</span><span class="l">Title Paperwork</span></div>
+  <div class="item"><span class="ic">📋</span><span class="n">Handled</span><span class="l">Required Paperwork</span></div>
   <div class="item"><span class="ic">🏁</span><span class="n">25 Years</span><span class="l">Local &amp; Family-Owned</span></div>
 </div></div>
 
@@ -398,7 +398,7 @@ table{max-width:100%}
           <li><span class="n">1</span><span><b>Year, make &amp; model</b> — and how much its parts are in demand.</span></li>
           <li><span class="n">2</span><span><b>Does it run and drive?</b> A running vehicle is usually worth more.</span></li>
           <li><span class="n">3</span><span><b>What's still on it</b> — engine, transmission, converter, wheels, panels.</span></li>
-          <li><span class="n">4</span><span><b>Condition &amp; damage</b> — wrecked, rusted, flooded, or solid.</span></li>
+          <li><span class="n">4</span><span><b>Condition &amp; damage</b> — running, inoperable, wrecked, rusted, flooded, or solid.</span></li>
           <li><span class="n">5</span><span><b>Scrap &amp; metal prices</b> — these move with the market (snapshot at right).</span></li>
           <li><span class="n">6</span><span><b>Where it is</b> — we tow free across the Pensacola area.</span></li>
         </ol>
@@ -421,7 +421,7 @@ table{max-width:100%}
             <li><span class="ck">✓</span><span>Year, make &amp; model</span></li>
             <li><span class="ck">✓</span><span>Whether you have the title (if not, just tell us)</span></li>
             <li><span class="ck">✓</span><span>Where it's parked</span></li>
-            <li><span class="ck">✓</span><span>Condition — runs, won't start, or wrecked</span></li>
+            <li><span class="ck">✓</span><span>Condition — runs, won't start, inoperable, or wrecked</span></li>
             <li><span class="ck">✓</span><span>A phone number to reach you</span></li>
           </ul>
           <a class="btn btn--filled btn--block" href="#offer"><span class="ic">⚡</span>Start My Offer</a>
@@ -437,7 +437,7 @@ table{max-width:100%}
     <div class="ec"><h3>Got a minute? Get your offer now.</h3><p>Two details and a phone number — we'll get right back to you.</p></div>
     <form onsubmit="return submitOffer(event)">
       <div class="full"><input type="text" placeholder="Year, make &amp; model (e.g. 2017 Nissan Altima)" required></div>
-      <select required><option value="" selected disabled>Condition</option><option>Runs &amp; drives</option><option>Starts only</option><option>Won't start</option><option>Wrecked / junk</option></select>
+      <select required><option value="" selected disabled>Condition</option><option>Runs &amp; drives</option><option>Starts only</option><option>Won't start</option><option>Inoperable</option><option>Wrecked / junk</option></select>
       <input type="tel" placeholder="Phone" required>
       <button class="btn btn--amber btn--block full" type="submit"><span class="ic">⚡</span>Get My Cash Offer</button>
     </form>
@@ -570,7 +570,7 @@ table{max-width:100%}
     <div>
       <span class="eyebrow">A Pensacola Family</span>
       <h2>Three generations on the same ground</h2>
-      <p class="lead-p">Kiker's isn't a faceless online buyer. The property's been in the family since 1972, reopened as Kiker's U-Pull-It in 2001, and Hunter — third generation — has worked it since he was 13. Twenty-five years in Pensacola, and he stands behind every offer.</p>
+      <p class="lead-p">Kiker's isn't a faceless online buyer. The property's been in the family since 1972, reopened as Kiker's U-Pull-It in 2001, and Hunter — third generation — has worked it since he was 14. Twenty-five years in Pensacola, and he stands behind every offer.</p>
       <p class="quote">"We make it simple and we do it right — fair cash, paperwork handled, the car recycled the proper way."</p>
       <div class="sig">Hunter Kiker</div>
       <div class="role">Owner · Kiker's U-Pull-It · Licensed Florida salvage dealer</div>

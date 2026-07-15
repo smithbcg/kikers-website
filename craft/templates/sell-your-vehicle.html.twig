@@ -21,7 +21,7 @@
     <div>
       <div class="h-tags"><span class="eyebrow on-ink">Cash for Cars · Pensacola</span><span class="chiplet">Running or not</span><span class="ecobadge on-ink">♻ Recycled responsibly</span></div>
       <h1>Sell your car for cash <em>in Pensacola.</em></h1>
-      <p class="lede">We pay cash for cars, trucks, vans, and SUVs — running or not. You get a fair offer, free towing, and we handle the Florida title paperwork. Same-day or scheduled pickup, Monday through Saturday. Call <a href="tel:{{ siteSettings.phoneNumber|replace({"-": ""}) }}" style="color:#fff;text-decoration:underline">{{ siteSettings.phoneNumber }}</a> or get an offer.</p>
+      <p class="lede">We pay cash for cars, trucks, vans, and SUVs — running or not. You get a fair offer, free towing, and we handle the paperwork and required reporting. Same-day or scheduled pickup, Monday through Saturday. Call <a href="tel:{{ siteSettings.phoneNumber|replace({"-": ""}) }}" style="color:#fff;text-decoration:underline">{{ siteSettings.phoneNumber }}</a> or get an offer.</p>
       <div class="cta-row"><a class="btn btn--amber btn--lg" href="tel:{{ siteSettings.phoneNumber|replace({"-": ""}) }}"><span class="ic">📞</span>Call {{ siteSettings.phoneNumber }}</a><a class="btn btn--outline-light btn--lg" href="#how">How It Works</a></div>
     </div>
     <div class="offer-card" id="offer-form">
@@ -29,7 +29,7 @@
       <div class="sub">A few details — no haggling.</div>
       <form class="qf" onsubmit="return submitOffer(event)">
         <input type="text" placeholder="Year, make &amp; model" required>
-        <div class="grid2"><select required><option value="" selected disabled>Condition</option><option>Runs &amp; drives</option><option>Starts only</option><option>Won't start</option><option>Wrecked / junk</option></select><input type="text" inputmode="numeric" placeholder="ZIP" required></div>
+        <div class="grid2"><select required><option value="" selected disabled>Condition</option><option>Runs &amp; drives</option><option>Starts only</option><option>Won't start</option><option>Inoperable</option><option>Wrecked / junk</option></select><input type="text" inputmode="numeric" placeholder="ZIP" required></div>
         <input type="text" placeholder="Your name" required>
         <input type="tel" placeholder="Phone" required>
         <button class="btn btn--filled btn--block" type="submit"><span class="ic">⚡</span>Get My Cash Offer</button>
@@ -45,7 +45,7 @@
   <div class="wrap"><div class="plates">
     <div class="plate"><div><div class="n" style="color:var(--red)">Same-Day</div><div class="l">Pickup &amp; Cash</div></div></div>
     <div class="plate"><div><div class="n" style="color:var(--ink)">Free</div><div class="l">Towing</div></div></div>
-    <div class="plate"><div><div class="n" style="color:var(--ink)">Handled</div><div class="l">Title Paperwork</div></div></div>
+    <div class="plate"><div><div class="n" style="color:var(--ink)">Handled</div><div class="l">Required Paperwork</div></div></div>
     <div class="plate"><div><div class="n" style="color:var(--amber)">25</div><div class="l">Years · Family-Owned</div></div></div>
   </div></div>
 </section>
@@ -90,7 +90,7 @@
         <li><span class="n">1</span><span><b>Year, make &amp; model</b> — and how much its parts are in demand.</span></li>
         <li><span class="n">2</span><span><b>Does it run and drive?</b> A running vehicle is usually worth more.</span></li>
         <li><span class="n">3</span><span><b>What's still on it</b> — engine, transmission, converter, wheels, panels.</span></li>
-        <li><span class="n">4</span><span><b>Condition &amp; damage</b> — wrecked, rusted, flooded, or solid.</span></li>
+        <li><span class="n">4</span><span><b>Condition &amp; damage</b> — running, inoperable, wrecked, rusted, flooded, or solid.</span></li>
         <li><span class="n">5</span><span><b>Scrap &amp; metal prices</b> — these move with the market (snapshot at right).</span></li>
         <li><span class="n">6</span><span><b>Where it is</b> — we tow free across the Pensacola area.</span></li>
       </ol>
@@ -113,7 +113,7 @@
           <li><span class="ck">✓</span><span>Year, make &amp; model</span></li>
           <li><span class="ck">✓</span><span>Whether you have the title (if not, just tell us)</span></li>
           <li><span class="ck">✓</span><span>Where it's parked</span></li>
-          <li><span class="ck">✓</span><span>Condition — runs, won't start, or wrecked</span></li>
+          <li><span class="ck">✓</span><span>Condition — runs, won't start, inoperable, or wrecked</span></li>
           <li><span class="ck">✓</span><span>A phone number to reach you</span></li>
         </ul>
         <a class="btn btn--filled btn--block" href="#offer-form"><span class="ic">⚡</span>Start My Offer</a>
@@ -128,7 +128,7 @@
     <div class="ec"><h3>Got a minute? Get your offer now.</h3><p>Two details and a phone number — we'll get right back to you.</p></div>
     <form onsubmit="return submitOffer(event)">
       <div class="full"><input type="text" placeholder="Year, make &amp; model (e.g. 2017 Nissan Altima)" required></div>
-      <select required><option value="" selected disabled>Condition</option><option>Runs &amp; drives</option><option>Starts only</option><option>Won't start</option><option>Wrecked / junk</option></select>
+      <select required><option value="" selected disabled>Condition</option><option>Runs &amp; drives</option><option>Starts only</option><option>Won't start</option><option>Inoperable</option><option>Wrecked / junk</option></select>
       <input type="tel" placeholder="Phone" required>
       <button class="btn btn--amber btn--block full" type="submit"><span class="ic">⚡</span>Get My Cash Offer</button>
     </form>
