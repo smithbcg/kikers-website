@@ -16,7 +16,7 @@
 
 <!-- HERO -->
 <section class="hero compact" id="top-hero">
-  <div class="hero-photo ph ph--dark"><div class="ph-tag"><span class="kk">📷 HERO BACKGROUND</span><span class="d">Staff at the counter pulling/handing over a part — friendly, daylight.</span></div></div>
+  <div class="hero-photo hero-photo--yard hero-photo--detail" aria-hidden="true"></div>
   <div class="wrap"><div class="hero-grid">
     <div>
       <div class="h-tags"><span class="eyebrow on-ink">Full-Service Parts</span><span class="chiplet">We pull it for you</span></div>
@@ -30,6 +30,7 @@
       <form class="qf" onsubmit="return submitMsg(event)">
         <input type="text" placeholder="Year, make &amp; model" required>
         <input type="text" placeholder="Part needed (e.g. alternator)" required>
+        <select aria-label="Pickup or shipping" required><option value="" selected disabled>Pickup or shipping?</option><option>Pickup at the yard</option><option>Ship it to me</option></select>
         <input type="tel" placeholder="Phone" required>
         <button class="btn btn--filled btn--block" type="submit"><span class="ic">→</span>Send Request</button>
       </form>
@@ -44,7 +45,7 @@
   <div class="wrap">
     <div class="sec-head center"><span class="eyebrow">Two Ways to Get Your Part</span><h2 style="font-style:italic">Pull it yourself, or let us</h2><p>Same yard, same savings — your call on who does the wrenching.</p></div>
     <div class="paths">
-      <div class="path">
+      <div class="path path--quiet">
         <div class="ph ph--16x9"><div class="ph-in"><span class="ph-cam">📷</span><span class="ph-kick">PHOTO — SELF-SERVE</span><span class="ph-desc">Customer pulling a part with their own tools in a row.</span></div></div>
         <div class="pbody">
           <div class="ic">🔧</div><h3>Self-Serve (U-Pull)</h3>
@@ -53,7 +54,7 @@
           <a class="btn btn--ink btn--block" href="u-pull-parts.html" style="margin-top:auto"><span class="ic">→</span>Search the Yard</a>
         </div>
       </div>
-      <div class="path">
+      <div class="path path--featured">
         <div class="ph ph--16x9"><div class="ph-in"><span class="ph-cam">📷</span><span class="ph-kick">PHOTO — FULL-SERVICE</span><span class="ph-desc">A pulled, vetted part on the counter ready for pickup.</span></div></div>
         <div class="pbody">
           <div class="ic">📦</div><h3>Full-Service</h3>
@@ -63,13 +64,18 @@
         </div>
       </div>
     </div>
+    <div class="fulfillment-status" aria-label="Full-service part status">
+      <div class="status-item"><i data-lucide="search" aria-hidden="true"></i><span><b>Located</b><span>Our yard or nationwide network</span></span></div>
+      <div class="status-item"><i data-lucide="badge-check" aria-hidden="true"></i><span><b>Vetted</b><span>Using all available vehicle information</span></span></div>
+      <div class="status-item"><i data-lucide="package-check" aria-hidden="true"></i><span><b>Ready</b><span>Counter pickup or shipping</span></span></div>
+    </div>
   </div>
 </section>
 
 <!-- HOW IT WORKS -->
 <section class="sec" style="background:var(--surface-3)">
   <div class="wrap">
-    <div class="sec-head center"><span class="eyebrow">How It Works</span><h2>Tell us · We find it · You pick up</h2></div>
+    <div class="sec-head center"><span class="eyebrow">How It Works</span><h2>Tell us · We find it · You choose delivery</h2></div>
     <div class="steps3">
       <div class="stepc"><div class="node">1</div><h3>Tell Us the Part</h3><p>Year, make, model and the part you need. Call or send the form.</p></div>
       <div class="stepc"><div class="node">2</div><h3>We Track It Down</h3><p>We check our yard first, then the nationwide used-parts network if needed.</p></div>
@@ -91,6 +97,7 @@
     <form class="form-card" onsubmit="return submitMsg(event)">
       <div class="grid2" style="margin-bottom:16px"><div class="field"><label>Year</label><input placeholder="2012" required></div><div class="field"><label>Make</label><input placeholder="Honda" required></div></div>
       <div class="grid2" style="margin-bottom:16px"><div class="field"><label>Model</label><input placeholder="Civic" required></div><div class="field"><label>Part needed</label><input placeholder="Alternator" required></div></div>
+      <div class="grid2" style="margin-bottom:16px"><div class="field"><label>How do you want it?</label><select required><option value="" selected disabled>Choose one</option><option>Pickup at the yard</option><option>Ship it to me</option></select></div><div class="field"><label>Shipping ZIP (if needed)</label><input type="text" inputmode="numeric" placeholder="32501"></div></div>
       <div class="grid2" style="margin-bottom:16px"><div class="field"><label>Name</label><input placeholder="First &amp; last" required></div><div class="field"><label>Phone</label><input type="tel" placeholder="(850) 000-0000" required></div></div>
       <div class="field" style="margin-bottom:18px"><label>Details (optional)</label><textarea placeholder="Trim, engine size, part number, anything that helps…"></textarea></div>
       <button class="btn btn--filled btn--block btn--lg" type="submit"><span class="ic">→</span>Send My Part Request</button>

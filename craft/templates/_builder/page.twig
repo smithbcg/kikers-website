@@ -7,10 +7,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,500;0,600;0,700;0,800;1,600;1,700;1,800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{{ siteUrl }}kikers.css?v=20260713-builder1">
-  <link rel="stylesheet" href="{{ siteUrl }}page-builder.css?v=20260713-builder1">
+  <link rel="stylesheet" href="{{ siteUrl }}kikers.css?v=20260715-design3">
+  <link rel="stylesheet" href="{{ siteUrl }}page-builder.css?v=20260715-design3">
   {{ entry.pageHeadHtml|raw }}
   {% if entry.pageCustomCss %}<style>{{ entry.pageCustomCss|raw }}</style>{% endif %}
+  <style>.cms-page h1,.cms-page h2,.cms-page h3,.cms-page h4{letter-spacing:0}</style>
 </head>
 {% set slug = entry.slug %}
 {% set isSell = slug starts with 'sell-your-' or slug == 'we-buy-cars-near-pensacola' %}
@@ -38,8 +39,15 @@
   </main>
 
   {% include '_partials/site-footer' %}
+  {% set isVehicleDetail = slug == 'cars-for-sale-vehicle' %}
+  {% set mobilePrimaryLabel = isParts ? (slug == 'u-pull-parts' ? 'Search Inventory' : 'Request a Part') : (isVehicleDetail ? 'Ask About This' : (slug == 'cars-for-sale' ? 'Notify Me' : (slug in ['about', 'contact', 'contact-visit'] ? 'Visit the Yard' : 'Get My Offer'))) %}
+  {% set mobilePrimaryHref = isParts ? (slug == 'u-pull-parts' ? '#search' : '#request') : (isVehicleDetail ? '#ask' : (slug == 'cars-for-sale' ? '#wishlist' : (slug in ['about', 'contact', 'contact-visit'] ? url('contact') : '#offer-form'))) %}
+  <nav class="mobile-action-bar" aria-label="Quick actions">
+    <a class="btn btn--outline" href="tel:{{ siteSettings.phoneNumber|replace({'-': ''}) }}"><i data-lucide="phone" aria-hidden="true"></i>Call</a>
+    <a class="btn btn--filled" href="{{ mobilePrimaryHref }}"><i data-lucide="{{ isParts ? 'package-search' : (isVehicleDetail ? 'message-square-text' : (slug == 'cars-for-sale' ? 'bell' : (slug in ['about', 'contact', 'contact-visit'] ? 'map-pin' : 'badge-dollar-sign'))) }}" aria-hidden="true"></i>{{ mobilePrimaryLabel }}</a>
+  </nav>
   <div class="toast-host" id="toastHost" aria-live="polite"></div>
   {{ entry.pageBodyScripts|raw }}
-  <script src="{{ siteUrl }}kikers.js?v=20260713-builder1" defer></script>
+  <script src="{{ siteUrl }}kikers.js?v=20260715-design3" defer></script>
 </body>
 </html>

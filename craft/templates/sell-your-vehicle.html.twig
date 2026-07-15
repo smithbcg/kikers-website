@@ -16,7 +16,7 @@
 
 <!-- HERO -->
 <section class="hero" id="offer">
-  <div class="hero-photo ph ph--dark"><div class="ph-tag"><span class="kk">📷 HERO BACKGROUND</span><span class="d">Flatbed tow truck loading a car at the yard — daylight, blue Florida sky.</span></div></div>
+  <div class="hero-photo hero-photo--yard hero-photo--local" aria-hidden="true"></div>
   <div class="wrap"><div class="hero-grid">
     <div>
       <div class="h-tags"><span class="eyebrow on-ink">Cash for Cars · Pensacola</span><span class="chiplet">Running or not</span><span class="ecobadge on-ink">♻ Recycled responsibly</span></div>
@@ -62,7 +62,7 @@
       </div>
       <div class="note-card" style="margin-top:20px"><b>Still runs?</b> Even better — tell us. A running vehicle is usually worth more than a junk-only offer.</div>
     </div>
-    <div class="ph ph--4x3"><div class="ph-in"><span class="ph-cam">📷</span><span class="ph-kick">PHOTO — VEHICLES</span><span class="ph-desc">A mix at the yard — truck, SUV, sedan — running or not.</span><span class="ph-spec">4:3</span></div></div>
+    <figure class="local-proof-photo"><img src="assets/kikers-yard-hero.jpg" alt="Rows of cars, trucks, and SUVs at Kiker's U-Pull-It in Pensacola"><figcaption><i data-lucide="map-pin" aria-hidden="true"></i>Our Pensacola yard — cars, trucks, vans, and SUVs in every condition.</figcaption></figure>
   </div></div>
 </section>
 
@@ -91,20 +91,18 @@
         <li><span class="n">2</span><span><b>Does it run and drive?</b> A running vehicle is usually worth more.</span></li>
         <li><span class="n">3</span><span><b>What's still on it</b> — engine, transmission, converter, wheels, panels.</span></li>
         <li><span class="n">4</span><span><b>Condition &amp; damage</b> — running, inoperable, wrecked, rusted, flooded, or solid.</span></li>
-        <li><span class="n">5</span><span><b>Scrap &amp; metal prices</b> — these move with the market (snapshot at right).</span></li>
+        <li><span class="n">5</span><span><b>Current demand</b> — for the vehicle's parts and recoverable materials.</span></li>
         <li><span class="n">6</span><span><b>Where it is</b> — we tow free across the Pensacola area.</span></li>
       </ol>
     </div>
     <div>
-      <div class="scrap">
-        <h3>Scrap market snapshot</h3>
-        <div class="subc">Metal prices set the floor on a junk vehicle. A rough read right now:</div>
-        <div class="tick">
-          <div class="tchip"><div class="m">Copper</div><div class="v">~$6.51<span style="font-size:13px">/lb</span></div><div class="t up">▲ strong demand</div></div>
-          <div class="tchip"><div class="m">Auto steel</div><div class="v">Steady</div><div class="t flat">▬ holding</div></div>
-          <div class="tchip"><div class="m">Aluminum</div><div class="v">~$0.60–.75<span style="font-size:13px">/lb</span></div><div class="t up">▲ firm</div></div>
-        </div>
-        <div class="foot">Indicative U.S. figures, June 2026 — prices change constantly. Source: <a href="https://www.indexbox.io/blog/daily-scrap-metal-price-report-copper-and-brass-decline-on-june-4-2026/" target="_blank" rel="noopener">IndexBox scrap reports</a>.</div>
+      <div class="offer-proof">
+        <h3>We price the whole vehicle</h3>
+        <p>Your offer is based on what is actually sitting in front of us — not a generic online ticker.</p>
+        <div class="offer-factor"><span class="factor-icon"><i data-lucide="car-front" aria-hidden="true"></i></span><span><b>Vehicle &amp; parts demand</b><span>Year, model, drivetrain, and what local buyers need.</span></span><span class="weight">Biggest factor</span></div>
+        <div class="offer-factor"><span class="factor-icon"><i data-lucide="gauge" aria-hidden="true"></i></span><span><b>Running condition</b><span>Runs, starts, inoperable, or damaged — tell us what you know.</span></span><span class="weight">Vehicle-specific</span></div>
+        <div class="offer-factor"><span class="factor-icon"><i data-lucide="boxes" aria-hidden="true"></i></span><span><b>What's still there</b><span>Engine, transmission, converter, wheels, panels, and electronics.</span></span><span class="weight">Parts value</span></div>
+        <div class="proof-note">Metal markets matter, but they are only one part of the number. Hunter's team looks at the complete vehicle before making the offer.</div>
       </div>
       <div class="checklist" style="margin-top:24px">
         <h3>What to have handy</h3>
@@ -206,10 +204,10 @@
       <p class="lead-p">We're in Pensacola and buy across <b>Escambia and Santa Rosa counties</b> — with free towing. Pick your town to see how it works near you:</p>
       <div class="townlist">
         <a href="we-buy-cars-near-pensacola.html"><span class="p">📍</span> We Buy Cars Near Pensacola</a>
-        <a href="we-buy-cars-near-pensacola.html"><span class="p">📍</span> Sell Your Car in Pensacola</a>
-        <a href="we-buy-cars-near-pensacola.html"><span class="p">📍</span> Sell Your Car in Pace</a>
-        <a href="we-buy-cars-near-pensacola.html"><span class="p">📍</span> Milton / East Milton</a>
-        <a href="we-buy-cars-near-pensacola.html"><span class="p">📍</span> Cantonment</a>
+        <a href="sell-your-car-pensacola.html"><span class="p">📍</span> Sell Your Car in Pensacola</a>
+        <a href="sell-your-car-pace.html"><span class="p">📍</span> Sell Your Car in Pace</a>
+        <a href="sell-your-car-milton.html"><span class="p">📍</span> Milton / East Milton</a>
+        <a href="sell-your-car-cantonment.html"><span class="p">📍</span> Cantonment</a>
         <a href="we-buy-cars-near-pensacola.html"><span class="p">📍</span> Nearby Gulf Coast</a>
       </div>
       <div style="display:flex;gap:12px;flex-wrap:wrap"><a class="btn btn--filled" href="tel:{{ siteSettings.phoneNumber|replace({"-": ""}) }}"><span class="ic">📞</span>Call the Yard</a><a class="btn btn--outline" href="#offer-form">Get an Offer</a></div>
@@ -275,9 +273,8 @@
     <ol>
       <li>FLHSMV — <a href="https://www.flhsmv.gov/pdf/forms/82363.pdf" target="_blank" rel="noopener">Salvage Title / Certificate of Destruction (Form 82363)</a> and <a href="https://www.flhsmv.gov/motor-vehicles-tags-titles/junk-vehicle-tag-title/" target="_blank" rel="noopener">Junk a Vehicle</a>.</li>
       <li>FLHSMV <a href="https://www.flhsmv.gov/pdf/forms/82137.pdf" target="_blank" rel="noopener">Derelict Motor Vehicle Certificate (Form 82137)</a>; Fla. Stat. <a href="https://www.flsenate.gov/laws/statutes/2023/319.30" target="_blank" rel="noopener">§ 319.30</a>.</li>
-      <li>Scrap figures (June 2026, indicative) — <a href="https://www.indexbox.io/blog/daily-scrap-metal-price-report-copper-and-brass-decline-on-june-4-2026/" target="_blank" rel="noopener">IndexBox</a>.</li>
     </ol>
-    <p class="disc">Florida rules are summarized for general guidance and can change — confirm current forms with FLHSMV, and verify Kiker's salvage-dealer license is current before publishing. Scrap prices fluctuate; figures are indicative, not an offer. Vehicle examples and the mix chart are placeholders pending Kiker's verified data.</p>
+    <p class="disc">Florida rules are summarized for general guidance and can change — confirm current forms with FLHSMV, and verify Kiker's salvage-dealer license is current before publishing. Vehicle examples and the mix chart are placeholders pending Kiker's verified data.</p>
   </div>
 </section>
 

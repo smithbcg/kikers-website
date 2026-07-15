@@ -23,7 +23,7 @@ html{scroll-behavior:smooth}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
 body{margin:0;background:var(--bg);color:var(--text);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}img,svg{max-width:100%}
-h1,h2,h3,h4{margin:0;font-family:var(--display);font-weight:800;letter-spacing:-.01em;line-height:1.05;text-transform:uppercase}
+h1,h2,h3,h4{margin:0;font-family:var(--display);font-weight:800;letter-spacing:0;line-height:1.05;text-transform:uppercase}
 :focus-visible{outline:2px solid var(--amber);outline-offset:2px;border-radius:var(--r-xs)}
 ::selection{background:var(--red);color:#fff}
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
@@ -108,7 +108,7 @@ h1,h2,h3,h4{margin:0;font-family:var(--display);font-weight:800;letter-spacing:-
 .hero-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:48px;align-items:center}
 .hero .h-tags{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:18px}
 .chiplet{font-family:var(--mono);font-size:12px;font-weight:500;color:rgba(255,255,255,.82);border:1px solid rgba(255,255,255,.2);padding:5px 11px;border-radius:var(--r-pill)}
-.hero h1{font-family:var(--display);font-weight:800;font-style:italic;text-transform:uppercase;font-size:clamp(40px,6vw,72px);line-height:.92;letter-spacing:-.01em}
+.hero h1{font-family:var(--display);font-weight:800;font-style:italic;text-transform:uppercase;font-size:clamp(40px,6vw,72px);line-height:.92;letter-spacing:0}
 .hero.compact h1{font-size:clamp(32px,4.6vw,52px);line-height:.96}
 .hero h1 em{color:var(--red);font-style:italic}
 .hero .lede{max-width:54ch;color:rgba(255,255,255,.84);font-size:18px;margin:18px 0 26px}
@@ -574,4 +574,128 @@ table{max-width:100%}
 }
 @media(max-width:380px){
   .plates{grid-template-columns:1fr}
+}
+
+/* ===== 2026 DESIGN PASS ===== */
+.lucide{width:1.1em;height:1.1em;stroke-width:2.25;flex:0 0 auto}
+.btn .lucide{width:17px;height:17px}
+.hero-photo--detail{background-position:center 46%;filter:saturate(.72) contrast(1.08)}
+.hero-photo--local{background-position:center 50%;filter:saturate(.82) contrast(1.06)}
+
+/* Core values are a compact operating standard, not another card deck. */
+.values-band{padding:38px 0;background:#fff;border-block:1px solid var(--line)}
+.values-layout{display:grid;grid-template-columns:210px 1fr;gap:34px;align-items:center}
+.values-layout h2{font-size:25px;font-style:italic;margin-top:8px}
+.values-grid{display:grid;grid-template-columns:repeat(5,1fr);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;background:var(--surface-3)}
+.value-item{min-width:0;padding:18px 16px;background:#fff;border-right:1px solid var(--line)}
+.value-item:last-child{border-right:0}
+.value-item .lucide{width:21px;height:21px;color:var(--red);margin-bottom:10px}
+.value-item b{display:block;font-family:var(--display);font-style:italic;text-transform:uppercase;font-size:15px;line-height:1.1}
+.value-item span{display:block;color:var(--text-2);font-size:12px;line-height:1.4;margin-top:5px}
+
+/* Home service decision: one primary conversion path, two quieter alternatives. */
+.service-focus{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(300px,.65fr);gap:18px;align-items:stretch}
+.service-primary,.service-secondary{border-radius:var(--r-lg);position:relative;overflow:hidden}
+.service-primary{background:#fff;border:1px solid var(--line);border-top:5px solid var(--red);box-shadow:var(--e2);padding:34px;display:grid;grid-template-columns:auto 1fr;gap:22px}
+.service-primary::after{content:"CASH";position:absolute;right:-10px;bottom:-34px;font-family:var(--display);font-size:118px;font-weight:800;font-style:italic;color:rgba(220,22,31,.045);pointer-events:none}
+.service-primary .service-icon{width:54px;height:54px;background:var(--red);color:#fff;border-radius:var(--r-md);display:grid;place-items:center;position:relative;z-index:1}
+.service-primary .service-icon .lucide{width:28px;height:28px}
+.service-primary h3{font-size:clamp(26px,3vw,38px);font-style:italic;margin:7px 0 10px;position:relative;z-index:1}
+.service-primary p{color:var(--text-2);font-size:16px;max-width:54ch;margin:0;position:relative;z-index:1}
+.service-primary .btn{margin-top:22px;position:relative;z-index:1}
+.service-points{display:flex;gap:8px 18px;flex-wrap:wrap;list-style:none;padding:0;margin:18px 0 0;position:relative;z-index:1}
+.service-points li{display:flex;align-items:center;gap:7px;font-size:13px;font-weight:600;color:var(--text-2)}
+.service-points .lucide{width:15px;height:15px;color:var(--green)}
+.service-secondary-stack{display:grid;grid-template-rows:1fr 1fr;gap:18px}
+.service-secondary{background:var(--surface-3);border:1px solid var(--line);padding:22px;display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start;transition:background .18s,border-color .18s,transform .18s}
+.service-secondary:hover{background:#fff;border-color:var(--line-strong);transform:translateY(-2px)}
+.service-secondary .service-icon{width:42px;height:42px;background:var(--ink);color:#fff;border-radius:var(--r-md);display:grid;place-items:center}
+.service-secondary h3{font-size:18px;font-style:italic;margin-bottom:5px}
+.service-secondary p{font-size:13.5px;color:var(--text-2);margin:0 0 12px}
+.service-secondary .arrow{font-size:13px}
+
+/* Vehicle offer explanation replaces the volatile market ticker. */
+.offer-proof{background:var(--ink);color:#fff;border-radius:var(--r-lg);padding:28px;box-shadow:var(--e2);border-top:4px solid var(--amber)}
+.offer-proof h3{font-size:22px;font-style:italic;color:#fff}
+.offer-proof>p{color:rgba(255,255,255,.68);font-size:14px;margin:6px 0 20px}
+.offer-factor{display:grid;grid-template-columns:42px 1fr auto;gap:13px;align-items:center;padding:14px 0;border-top:1px solid rgba(255,255,255,.12)}
+.offer-factor .factor-icon{width:42px;height:42px;border-radius:var(--r-md);background:rgba(255,255,255,.08);display:grid;place-items:center;color:var(--amber-300)}
+.offer-factor b{display:block;font-size:14px}.offer-factor span{display:block;color:rgba(255,255,255,.6);font-size:12px;line-height:1.35}
+.offer-factor .weight{font-family:var(--mono);font-size:10px;color:var(--amber-300);text-transform:uppercase;white-space:nowrap}
+.offer-proof .proof-note{background:rgba(255,255,255,.07);border-left:3px solid var(--red);padding:12px 14px;margin-top:16px;font-size:13px;color:rgba(255,255,255,.78)}
+
+/* Full-service choice and fulfillment status. */
+.path--quiet{background:var(--surface-3);box-shadow:none}
+.path--featured{border-color:rgba(220,22,31,.35);box-shadow:var(--e2);position:relative}
+.path--featured::before{content:"WE DO THE WRENCHING";position:absolute;z-index:4;top:12px;left:12px;background:var(--red);color:#fff;font-family:var(--mono);font-size:9px;letter-spacing:.08em;padding:5px 9px;border-radius:var(--r-sm)}
+.fulfillment-status{display:grid;grid-template-columns:repeat(3,1fr);margin-top:24px;border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;background:#fff}
+.fulfillment-status .status-item{display:flex;align-items:center;gap:12px;padding:16px 18px;border-right:1px solid var(--line)}
+.fulfillment-status .status-item:last-child{border-right:0}
+.fulfillment-status .lucide{color:var(--red)}
+.fulfillment-status b{display:block;font-family:var(--display);font-style:italic;text-transform:uppercase;font-size:14px}
+.fulfillment-status span{display:block;color:var(--text-3);font-size:11.5px}
+.field select{width:100%;height:48px;border:1.5px solid var(--line-2);border-radius:var(--r-md);background:#fff;color:var(--text);padding:0 12px;font:14px var(--body);outline:none}
+.field select:focus{border-color:var(--red);box-shadow:0 0 0 3px rgba(220,22,31,.08)}
+
+/* Cars for sale: disclosure is part of every listing, not buried below it. */
+.buyer-promise{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;background:#fff;box-shadow:var(--e1)}
+.buyer-promise .promise{display:flex;gap:13px;padding:18px 20px;border-right:1px solid var(--line);align-items:flex-start}
+.buyer-promise .promise:last-child{border-right:0}
+.buyer-promise .lucide{color:var(--red);margin-top:2px}
+.buyer-promise b{display:block;font-family:var(--display);font-style:italic;text-transform:uppercase;font-size:15px}
+.buyer-promise span{display:block;font-size:12.5px;color:var(--text-2);margin-top:3px;line-height:1.4}
+.known-issues{border-left:3px solid var(--amber);background:var(--amber-wash);padding:8px 10px;display:flex;justify-content:space-between;gap:10px;align-items:center}
+.known-issues span{font-family:var(--mono);font-size:9.5px;text-transform:uppercase;color:var(--amber-600)}
+.known-issues b{font-size:11.5px;text-align:right;color:var(--text);line-height:1.25}
+.scard-sale .condtag{background:var(--surface-3);padding:6px 8px;border-radius:var(--r-sm);align-self:flex-start}
+.title-key{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:12px 0 18px}
+.title-key>span:first-child{font-family:var(--mono);font-size:10px;text-transform:uppercase;color:var(--text-3);margin-right:2px}
+.cms-page--cars-for-sale .embed{background:var(--ink);position:relative;overflow:hidden}
+.cms-page--cars-for-sale .embed::after{content:"MATCH";position:absolute;right:-20px;bottom:-60px;font-family:var(--display);font-size:150px;font-style:italic;font-weight:800;color:rgba(255,255,255,.035);pointer-events:none}
+.cms-page--cars-for-sale .embed .wrap{position:relative;z-index:1}
+
+/* Local pages use the real yard as proof while location-specific photos are gathered. */
+.local-proof-photo{margin:0;background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--e1)}
+.local-proof-photo img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;object-position:center 48%}
+.local-proof-photo figcaption{display:flex;align-items:center;gap:9px;padding:12px 14px;font-size:12.5px;color:var(--text-2);border-top:1px solid var(--line)}
+.local-proof-photo figcaption .lucide{color:var(--red)}
+.cms-page--sell-your-car-pensacola .tag,.cms-page--sell-your-car-pace .tag,.cms-page--sell-your-car-milton .tag,.cms-page--sell-your-car-cantonment .tag,.cms-page--we-buy-cars-near-pensacola .tag{background:#fff}
+
+/* Empty CMS photo slots use the real yard as an honest public fallback. */
+.cms-page .ph{border-style:solid;border-color:var(--line);background-image:linear-gradient(180deg,rgba(11,6,17,.05),rgba(11,6,17,.34)),url("assets/kikers-yard-hero.jpg");background-size:cover;background-position:center 48%}
+.cms-page .ph--dark{border-color:rgba(255,255,255,.18)}
+.cms-page .ph-in{display:none}
+.cms-page .feature-card .img{background-image:linear-gradient(180deg,rgba(11,6,17,.12) 10%,rgba(11,6,17,.94) 100%),url("assets/kikers-yard-hero.jpg");background-size:cover;background-position:center 48%;opacity:1}
+.cms-page .feature-card .img .ph-mini{display:none}
+.cms-page .feature-card:nth-child(2n) .img,.cms-page .scard-sale:nth-child(2n) .ph{background-position:38% 46%}
+.cms-page .feature-card:nth-child(3n) .img,.cms-page .scard-sale:nth-child(3n) .ph{background-position:68% 52%}
+
+/* Sticky mobile actions keep the current page's main job within thumb reach. */
+.mobile-action-bar{display:none}
+@media(max-width:760px){
+  body.cms-page{padding-bottom:74px}
+  .mobile-action-bar{position:fixed;z-index:78;left:0;right:0;bottom:0;display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:8px;padding:9px max(12px,env(safe-area-inset-left)) calc(9px + env(safe-area-inset-bottom));background:rgba(255,255,255,.96);border-top:1px solid var(--line);box-shadow:0 -8px 24px rgba(11,6,17,.1);backdrop-filter:blur(12px)}
+  .mobile-action-bar .btn{height:48px;padding:0 12px;font-size:12px;min-width:0}
+  .values-layout{grid-template-columns:1fr;gap:20px}
+  .values-grid{grid-template-columns:1fr 1fr}
+  .value-item{border-bottom:1px solid var(--line)}
+  .value-item:nth-child(2n){border-right:0}
+  .value-item:last-child{grid-column:1/-1;border-bottom:0}
+  .service-focus{grid-template-columns:1fr}
+  .service-primary{padding:26px;grid-template-columns:1fr}
+  .service-primary .service-icon{width:48px;height:48px}
+  .service-secondary-stack{grid-template-rows:auto}
+  .buyer-promise,.fulfillment-status{grid-template-columns:1fr}
+  .buyer-promise .promise,.fulfillment-status .status-item{border-right:0;border-bottom:1px solid var(--line)}
+  .buyer-promise .promise:last-child,.fulfillment-status .status-item:last-child{border-bottom:0}
+  .offer-factor{grid-template-columns:42px 1fr}.offer-factor .weight{grid-column:2}
+  .cms-page--cars-for-sale .filters{display:grid;grid-template-columns:1fr 1fr;align-items:stretch}
+  .cms-page--cars-for-sale .filters select{width:100%;min-width:0}
+  .cms-page--cars-for-sale .filters .res{grid-column:1/-1;margin-left:0}
+}
+
+/* Motion is progressive enhancement and respects reduced-motion preferences. */
+@media(prefers-reduced-motion:no-preference){
+  html.motion-ready .reveal-section{opacity:0;transform:translateY(14px);transition:opacity .45s ease,transform .45s ease}
+  html.motion-ready .reveal-section.is-visible{opacity:1;transform:none}
 }
