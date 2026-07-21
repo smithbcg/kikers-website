@@ -149,6 +149,8 @@ section{scroll-margin-top:80px}
 .plate .n{font-family:var(--display);font-style:italic;font-weight:800;font-size:38px;line-height:1}.plate .n span{font-size:18px}
 .plate .l{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-2);margin-top:8px}
 .plate.dark>div{background:#15131a}.plate.dark .l{color:rgba(255,255,255,.6)}.plate.dark .n{color:#fff}
+.story .plate.dark{padding:1.5px 1.5px 18px}
+.story .plate.dark .l{white-space:nowrap}
 @media(max-width:680px){.plates{grid-template-columns:repeat(2,1fr)}}
 
 /* ===== BASE CARDS ===== */
