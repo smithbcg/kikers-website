@@ -592,16 +592,28 @@ table{max-width:100%}
 .hero-photo--detail{background-position:center 46%;filter:saturate(.72) contrast(1.08)}
 .hero-photo--local{background-position:center 50%;filter:saturate(.82) contrast(1.06)}
 
-/* Core values are a compact operating standard, not another card deck. */
-.values-band{padding:38px 0;background:#fff;border-block:1px solid var(--line)}
-.values-layout{display:grid;grid-template-columns:210px 1fr;gap:34px;align-items:center}
-.values-layout h2{font-size:25px;font-style:italic;margin-top:8px}
-.values-grid{display:grid;grid-template-columns:repeat(5,1fr);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;background:var(--surface-3)}
-.value-item{min-width:0;padding:18px 16px;background:#fff;border-right:1px solid var(--line)}
-.value-item:last-child{border-right:0}
-.value-item .lucide{width:21px;height:21px;color:var(--red);margin-bottom:10px}
-.value-item b{display:block;font-family:var(--display);font-style:italic;text-transform:uppercase;font-size:15px;line-height:1.1}
-.value-item span{display:block;color:var(--text-2);font-size:12px;line-height:1.4;margin-top:5px}
+/* The Yard Code: Kiker's operating values presented like a shop-floor manifesto. */
+.values-band{position:relative;isolation:isolate;overflow:hidden;padding:66px 0;background:var(--ink);color:#fff;border-block:1px solid rgba(255,255,255,.1)}
+.values-band::before{content:"";position:absolute;z-index:-2;inset:0;background:url("assets/photos/parts-warehouse-panorama.jpg") center 48%/cover no-repeat;filter:saturate(.35) contrast(1.12)}
+.values-band::after{content:"";position:absolute;z-index:-1;inset:0;background:linear-gradient(90deg,rgba(11,6,17,.98) 0%,rgba(11,6,17,.94) 27%,rgba(11,6,17,.8) 100%)}
+.values-layout{display:grid;grid-template-columns:minmax(210px,260px) 1fr;gap:52px;align-items:start}
+.values-layout>div:first-child{position:sticky;top:112px;padding-top:8px}
+.values-layout>div:first-child::after{content:"";display:block;width:78px;height:7px;margin-top:24px;background:repeating-linear-gradient(135deg,var(--amber) 0 9px,var(--ink) 9px 18px);border:1px solid rgba(255,255,255,.24)}
+.values-layout .eyebrow{color:var(--amber-300)}
+.values-layout .eyebrow::before{background:var(--amber)}
+.values-layout h2{max-width:8ch;font-size:clamp(31px,3vw,45px);line-height:.95;font-style:italic;text-transform:uppercase;color:#fff;margin-top:12px}
+.values-grid{counter-reset:yard-value;display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+.value-item{counter-increment:yard-value;position:relative;min-width:0;min-height:184px;grid-column:span 2;display:flex;flex-direction:column;justify-content:flex-end;padding:56px 20px 20px;background:rgba(255,255,255,.075);border:1px solid rgba(255,255,255,.18);border-top:3px solid var(--red);border-radius:var(--r-md);overflow:hidden;backdrop-filter:blur(7px);transition:transform .18s ease,background .18s ease,border-color .18s ease}
+.value-item:nth-child(4),.value-item:nth-child(5){grid-column:span 3}
+.value-item::before{content:counter(yard-value,decimal-leading-zero);position:absolute;right:14px;top:6px;font-family:var(--display);font-size:64px;font-weight:800;font-style:italic;line-height:1;color:rgba(255,255,255,.075)}
+.value-item:nth-child(3),.value-item:nth-child(5){border-top-color:var(--amber)}
+.value-item:hover{transform:translateY(-3px);background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.34);border-top-color:var(--red)}
+.value-item:nth-child(3):hover,.value-item:nth-child(5):hover{border-top-color:var(--amber)}
+.value-item .lucide{position:absolute;left:18px;top:18px;width:27px;height:27px;color:var(--red);transition:transform .18s ease}
+.value-item:nth-child(3) .lucide,.value-item:nth-child(5) .lucide{color:var(--amber)}
+.value-item:hover .lucide{transform:translateX(3px)}
+.value-item b{position:relative;display:block;font-family:var(--display);font-style:italic;text-transform:uppercase;font-size:21px;line-height:1.05;color:#fff}
+.value-item span{position:relative;display:block;color:rgba(255,255,255,.67);font-size:13px;line-height:1.45;margin-top:7px}
 
 /* Home service decision: one primary conversion path, two quieter alternatives. */
 .service-focus{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(300px,.65fr);gap:18px;align-items:stretch}
@@ -740,11 +752,21 @@ table{max-width:100%}
   body.cms-page{padding-bottom:74px}
   .mobile-action-bar{position:fixed;z-index:78;left:0;right:0;bottom:0;display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:8px;padding:9px max(12px,env(safe-area-inset-left)) calc(9px + env(safe-area-inset-bottom));background:rgba(255,255,255,.96);border-top:1px solid var(--line);box-shadow:0 -8px 24px rgba(11,6,17,.1);backdrop-filter:blur(12px)}
   .mobile-action-bar .btn{height:48px;padding:0 12px;font-size:12px;min-width:0}
-  .values-layout{grid-template-columns:1fr;gap:20px}
-  .values-grid{grid-template-columns:1fr 1fr}
-  .value-item{border-bottom:1px solid var(--line)}
-  .value-item:nth-child(2n){border-right:0}
-  .value-item:last-child{grid-column:1/-1;border-bottom:0}
+  .values-band{padding:50px 0}
+  .values-band::after{background:rgba(11,6,17,.88)}
+  .values-layout{grid-template-columns:1fr;gap:26px}
+  .values-layout>div:first-child{position:static;padding-top:0}
+  .values-layout h2{max-width:11ch;font-size:34px}
+  .values-layout>div:first-child::after{margin-top:18px}
+  .values-grid{grid-template-columns:1fr;gap:10px}
+  .value-item,.value-item:nth-child(4),.value-item:nth-child(5){grid-column:1;min-height:0;padding:21px 58px 21px 62px;justify-content:center;border-top-width:1px;border-left:3px solid var(--red)}
+  .value-item:nth-child(3),.value-item:nth-child(5){border-left-color:var(--amber)}
+  .value-item::before{top:50%;right:14px;transform:translateY(-50%);font-size:45px}
+  .value-item .lucide{left:19px;top:50%;width:25px;height:25px;transform:translateY(-50%)}
+  .value-item:hover{transform:none}
+  .value-item:hover .lucide{transform:translate(3px,-50%)}
+  .value-item b{font-size:18px}
+  .value-item span{font-size:12.5px;margin-top:4px}
   .service-focus{grid-template-columns:1fr}
   .service-primary{padding:26px;grid-template-columns:1fr}
   .service-primary .service-icon{width:48px;height:48px}
