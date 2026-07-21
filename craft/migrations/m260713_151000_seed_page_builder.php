@@ -355,11 +355,31 @@ class m260713_151000_seed_page_builder extends Migration
     private function addEditableHeroImage(DOMElement $root, array &$items, int &$counter): void
     {
         $hero = null;
+        $heroImage = '/assets/kikers-yard-hero.jpg';
+        $heroImages = [
+            'hero-photo--aerial' => '/assets/photos/yard-aerial.jpg',
+            'hero-photo--team' => '/assets/photos/kikers-team.jpg',
+            'hero-photo--sell' => '/assets/photos/cash-handoff-wide.jpg',
+            'hero-photo--upull' => '/assets/photos/customer-pulled-part.jpg',
+            'hero-photo--warehouse' => '/assets/photos/parts-warehouse-panorama.jpg',
+            'hero-photo--storefront' => '/assets/photos/yard-storefront.jpg',
+        ];
         foreach ($root->getElementsByTagName('div') as $div) {
-            if ($div instanceof DOMElement && str_contains(' ' . $div->getAttribute('class') . ' ', ' hero-photo--yard ')) {
-                $hero = $div;
-                break;
+            if (!$div instanceof DOMElement) {
+                continue;
             }
+            $classes = ' ' . $div->getAttribute('class') . ' ';
+            if (!str_contains($classes, ' hero-photo ')) {
+                continue;
+            }
+            $hero = $div;
+            foreach ($heroImages as $class => $image) {
+                if (str_contains($classes, " $class ")) {
+                    $heroImage = $image;
+                    break;
+                }
+            }
+            break;
         }
         if (!$hero) {
             return;
@@ -370,7 +390,7 @@ class m260713_151000_seed_page_builder extends Migration
             $counter,
             'Hero background image',
             'image',
-            '/assets/kikers-yard-hero.jpg',
+            $heroImage,
         );
         $style = trim($hero->getAttribute('style'));
         $style .= ($style !== '' && !str_ends_with($style, ';') ? ';' : '') . "background-image:url('CMS_TOKEN_$key')";

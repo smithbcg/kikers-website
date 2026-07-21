@@ -102,6 +102,12 @@ h1,h2,h3,h4{margin:0;font-family:var(--display);font-weight:800;letter-spacing:0
 .hero{position:relative;overflow:hidden;color:#fff;background:var(--grad-ink)}
 .hero .hero-photo{position:absolute;inset:0;z-index:0;background:linear-gradient(120deg,#211c24,#15121a 60%,#241b1d)}
 .hero .hero-photo--yard{background-image:url("assets/kikers-yard-hero.jpg");background-size:cover;background-position:center 42%;filter:saturate(.98) contrast(1.04)}
+.hero .hero-photo--aerial{background-image:url("assets/photos/yard-aerial.jpg");background-size:cover;background-position:center 44%;filter:saturate(.98) contrast(1.04)}
+.hero .hero-photo--team{background-image:url("assets/photos/kikers-team.jpg");background-size:cover;background-position:center 43%;filter:saturate(.82) contrast(1.05)}
+.hero .hero-photo--sell{background-image:url("assets/photos/cash-handoff-wide.jpg");background-size:cover;background-position:center 48%;filter:saturate(.86) contrast(1.06)}
+.hero .hero-photo--upull{background-image:url("assets/photos/customer-pulled-part.jpg");background-size:cover;background-position:center 45%;filter:saturate(.86) contrast(1.06)}
+.hero .hero-photo--warehouse{background-image:url("assets/photos/parts-warehouse-panorama.jpg");background-size:cover;background-position:center 48%;filter:saturate(.82) contrast(1.06)}
+.hero .hero-photo--storefront{background-image:url("assets/photos/yard-storefront.jpg");background-size:cover;background-position:center 48%;filter:saturate(.88) contrast(1.06)}
 .hero::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(11,6,17,.92),rgba(11,6,17,.78) 45%,rgba(11,6,17,.48)),radial-gradient(720px 380px at 92% -10%,rgba(220,22,31,.32),transparent 60%)}
 .hero .wrap{position:relative;z-index:2;padding:64px 24px 76px}
 .hero.compact .wrap{padding:50px 24px 56px}
@@ -124,7 +130,7 @@ h1,h2,h3,h4{margin:0;font-family:var(--display);font-weight:800;letter-spacing:0
 .offer-card input,.offer-card select{width:100%;height:46px;background:rgba(255,255,255,.07);border:1.5px solid rgba(255,255,255,.2);border-radius:var(--r-md);color:#fff;padding:0 12px;font-family:var(--body);font-size:14px;outline:none}
 .offer-card input::placeholder{color:rgba(255,255,255,.55)}.offer-card select{color:rgba(255,255,255,.6)}.offer-card option{color:#111}
 .offer-card input:focus,.offer-card select:focus{border-color:var(--amber)}.offer-card .fine{margin-top:10px;text-align:center;color:rgba(255,255,255,.55);font-size:12px}
-@media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:30px}.hero .wrap{padding:46px 24px 54px}.hero .hero-photo--yard{background-position:center top}.hero::after{background:linear-gradient(180deg,rgba(11,6,17,.72),rgba(11,6,17,.92)),radial-gradient(540px 300px at 50% -20%,rgba(220,22,31,.32),transparent 62%)}}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:30px}.hero .wrap{padding:46px 24px 54px}.hero .hero-photo--yard,.hero .hero-photo--aerial{background-position:center top}.hero .hero-photo--team{background-position:center 35%}.hero .hero-photo--sell{background-position:45% center}.hero .hero-photo--upull{background-position:58% center}.hero .hero-photo--warehouse{background-position:60% center}.hero .hero-photo--storefront{background-position:center center}.hero::after{background:linear-gradient(180deg,rgba(11,6,17,.72),rgba(11,6,17,.92)),radial-gradient(540px 300px at 50% -20%,rgba(220,22,31,.32),transparent 62%)}}
 
 /* ===== SECTIONS ===== */
 section{scroll-margin-top:80px}
@@ -160,6 +166,7 @@ section{scroll-margin-top:80px}
 .feature-card{position:relative;border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line);min-height:230px;display:flex;flex-direction:column;justify-content:flex-end;background-image:var(--grad-ink);cursor:pointer;transition:transform .18s ease,box-shadow .18s ease}
 .feature-card:hover{transform:translateY(-3px);box-shadow:var(--e2)}
 .feature-card .img{position:absolute;inset:0;background:linear-gradient(200deg,#3a3137,#16131a);opacity:.92}
+.feature-card .img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
 .feature-card .img .ph-mini{position:absolute;top:14px;right:14px;font-family:var(--mono);font-size:9px;color:rgba(255,255,255,.45);letter-spacing:.1em}
 .feature-card .img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(11,6,17,.92))}
 .feature-card .flag{position:absolute;top:12px;left:12px;z-index:2;font-family:var(--display);font-weight:800;font-style:italic;font-size:11px;letter-spacing:.06em;color:#fff;background:var(--red);padding:4px 10px;border-radius:var(--r-sm)}
@@ -226,7 +233,7 @@ section{scroll-margin-top:80px}
 @media(max-width:860px){.split2{grid-template-columns:1fr;gap:30px}}
 .lead{background:var(--blue-wash)}
 .lead-aside .ph .hazard{position:absolute;left:0;right:0;bottom:0;z-index:3}
-@media(max-width:860px){.lead-aside .ph{display:none}.lead-aside .verified{margin-top:0}}
+@media(max-width:860px){.lead-aside .verified{margin-top:0}}
 .embed{background:var(--ink);color:#fff}.embed.light{background:var(--blue-wash);color:var(--text)}
 .embed .wrap{padding:42px 24px;display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center}
 .embed h3{font-style:italic;font-size:clamp(22px,2.6vw,28px);color:#fff}.embed.light h3{color:var(--text)}
@@ -662,6 +669,26 @@ table{max-width:100%}
 .local-proof-photo figcaption .lucide{color:var(--red)}
 .cms-page--sell-your-car-pensacola .tag,.cms-page--sell-your-car-pace .tag,.cms-page--sell-your-car-milton .tag,.cms-page--sell-your-car-cantonment .tag,.cms-page--we-buy-cars-near-pensacola .tag{background:#fff}
 
+/* Real Kiker photography. */
+.site-photo{margin:0;background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--e1)}
+.site-photo img{display:block;width:100%;height:auto;object-fit:cover}
+.site-photo--landscape img{aspect-ratio:4/3}.site-photo--wide img{aspect-ratio:16/9}.site-photo--portrait img{aspect-ratio:4/5}.site-photo--square img{aspect-ratio:1/1}
+.site-photo figcaption{display:flex;align-items:center;gap:8px;padding:11px 13px;border-top:1px solid var(--line);font-family:var(--mono);font-size:10px;text-transform:uppercase;color:var(--text-2);background:#fff}
+.site-photo figcaption .lucide{width:14px;height:14px;color:var(--red)}
+.photo-object-top img{object-position:center top}.photo-object-right img{object-position:72% center}.photo-object-left img{object-position:28% center}
+.path-photo{margin:0;aspect-ratio:16/9;overflow:hidden;background:var(--surface-3);border-bottom:1px solid var(--line)}
+.path-photo img{display:block;width:100%;height:100%;object-fit:cover}
+.photo-duo{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px}
+.photo-story-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.photo-story-card{margin:0;background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--e1)}
+.photo-story-card img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover}
+.photo-story-card figcaption{padding:13px 15px;font-size:12.5px;color:var(--text-2);border-top:1px solid var(--line)}
+.about-photo-pair{display:grid;grid-template-columns:.75fr 1.25fr;gap:18px;margin-top:24px}
+.about-photo-pair .site-photo{min-height:0}
+.contact-team-photo{margin-bottom:22px}.contact-team-photo img{object-position:center 34%}
+.owner .site-photo{aspect-ratio:1/1}.owner .site-photo img{object-position:72% center}
+.story .site-photo{border-color:rgba(255,255,255,.16);box-shadow:none}
+
 /* Empty CMS photo slots use the real yard as an honest public fallback. */
 .cms-page .ph{border-style:solid;border-color:var(--line);background-image:linear-gradient(180deg,rgba(11,6,17,.05),rgba(11,6,17,.34)),url("assets/kikers-yard-hero.jpg");background-size:cover;background-position:center 48%}
 .cms-page .ph--dark{border-color:rgba(255,255,255,.18)}
@@ -729,6 +756,8 @@ table{max-width:100%}
   .cms-page--cars-for-sale .filters .res{grid-column:1/-1;margin-left:0}
   .leader-demo{grid-template-columns:1fr}
   .leader-card{width:min(100%,360px)}
+  .photo-duo,.about-photo-pair{grid-template-columns:1fr}
+  .photo-story-grid{grid-template-columns:1fr}
 }
 
 /* Motion is progressive enhancement and respects reduced-motion preferences. */
