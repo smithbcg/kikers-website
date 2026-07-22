@@ -65,9 +65,9 @@
       </div>
     </div>
     <div class="fulfillment-status" aria-label="Full-service part status">
-      <div class="status-item"><i data-lucide="search" aria-hidden="true"></i><span><b>Located</b><span>Our yard or nationwide network</span></span></div>
-      <div class="status-item"><i data-lucide="badge-check" aria-hidden="true"></i><span><b>Vetted</b><span>Using all available vehicle information</span></span></div>
-      <div class="status-item"><i data-lucide="package-check" aria-hidden="true"></i><span><b>Ready</b><span>Counter pickup or shipping</span></span></div>
+      <div class="status-item">{% include '_partials/kiker-icon' with { name: 'location' } only %}<span><b>Located</b><span>Our yard or nationwide network</span></span></div>
+      <div class="status-item">{% include '_partials/kiker-icon' with { name: 'inspection' } only %}<span><b>Vetted</b><span>Using all available vehicle information</span></span></div>
+      <div class="status-item">{% include '_partials/kiker-icon' with { name: 'fulfillment' } only %}<span><b>Ready</b><span>Counter pickup or shipping</span></span></div>
     </div>
   </div>
 </section>

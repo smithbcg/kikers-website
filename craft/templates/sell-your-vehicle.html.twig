@@ -99,9 +99,9 @@
       <div class="offer-proof">
         <h3>We price the whole vehicle</h3>
         <p>Your offer is based on what is actually sitting in front of us — not a generic online ticker.</p>
-        <div class="offer-factor"><span class="factor-icon"><i data-lucide="car-front" aria-hidden="true"></i></span><span><b>Vehicle &amp; parts demand</b><span>Year, model, drivetrain, and what local buyers need.</span></span><span class="weight">Biggest factor</span></div>
-        <div class="offer-factor"><span class="factor-icon"><i data-lucide="gauge" aria-hidden="true"></i></span><span><b>Running condition</b><span>Runs, starts, inoperable, or damaged — tell us what you know.</span></span><span class="weight">Vehicle-specific</span></div>
-        <div class="offer-factor"><span class="factor-icon"><i data-lucide="boxes" aria-hidden="true"></i></span><span><b>What's still there</b><span>Engine, transmission, converter, wheels, panels, and electronics.</span></span><span class="weight">Parts value</span></div>
+        <div class="offer-factor"><span class="factor-icon">{% include '_partials/kiker-icon' with { name: 'cash-vehicle' } only %}</span><span><b>Vehicle &amp; parts demand</b><span>Year, model, drivetrain, and what local buyers need.</span></span><span class="weight">Biggest factor</span></div>
+        <div class="offer-factor"><span class="factor-icon">{% include '_partials/kiker-icon' with { name: 'engine' } only %}</span><span><b>Running condition</b><span>Runs, starts, inoperable, or damaged — tell us what you know.</span></span><span class="weight">Vehicle-specific</span></div>
+        <div class="offer-factor"><span class="factor-icon">{% include '_partials/kiker-icon' with { name: 'part' } only %}</span><span><b>What's still there</b><span>Engine, transmission, converter, wheels, panels, and electronics.</span></span><span class="weight">Parts value</span></div>
         <div class="proof-note">Metal markets matter, but they are only one part of the number. Hunter's team looks at the complete vehicle before making the offer.</div>
       </div>
       <div class="checklist" style="margin-top:24px">
