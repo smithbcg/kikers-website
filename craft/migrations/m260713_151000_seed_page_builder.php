@@ -38,6 +38,10 @@ class m260713_151000_seed_page_builder extends Migration
         $this->internalUrls = $this->internalUrlMap($pages);
 
         foreach ($pages as $page) {
+            if (in_array((string)$page->slug, ['home-funnel', 'contact-visit', 'icon-comparison'], true)) {
+                continue;
+            }
+
             $existing = $page->getFieldValue('pageSections');
             if ($existing && $existing->status(null)->count() > 0) {
                 continue;
