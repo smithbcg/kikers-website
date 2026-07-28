@@ -211,26 +211,32 @@ class m260713_150000_create_page_builder extends Migration
             ['label' => 'HTML attribute', 'value' => 'attribute', 'default' => false],
         ]);
 
-        $fields['sectionUseContainer'] = $this->field(new Lightswitch([
-            'name' => 'Add Layout Container',
-            'handle' => 'sectionUseContainer',
-            'instructions' => 'Constrains newly-created section content to the selected width.',
-            'default' => false,
-            'onLabel' => 'Contained',
-            'offLabel' => 'Use existing layout',
-            'translationMethod' => 'none',
-        ]));
-        $fields['sectionOverlay'] = $this->field(new Range([
-            'name' => 'Background Overlay',
-            'handle' => 'sectionOverlay',
-            'instructions' => 'Darkens the selected section background image.',
-            'min' => 0,
-            'max' => 90,
-            'step' => 5,
-            'defaultValue' => 0,
-            'suffix' => '%',
-            'translationMethod' => 'none',
-        ]));
+        $existingUseContainer = Craft::$app->getFields()->getFieldByHandle('sectionUseContainer');
+        $fields['sectionUseContainer'] = $existingUseContainer instanceof Lightswitch
+            ? $existingUseContainer
+            : $this->field(new Lightswitch([
+                'name' => 'Add Layout Container',
+                'handle' => 'sectionUseContainer',
+                'instructions' => 'Constrains newly-created section content to the selected width.',
+                'default' => false,
+                'onLabel' => 'Contained',
+                'offLabel' => 'Use existing layout',
+                'translationMethod' => 'none',
+            ]));
+        $existingOverlay = Craft::$app->getFields()->getFieldByHandle('sectionOverlay');
+        $fields['sectionOverlay'] = $existingOverlay instanceof Range
+            ? $existingOverlay
+            : $this->field(new Range([
+                'name' => 'Background Overlay',
+                'handle' => 'sectionOverlay',
+                'instructions' => 'Darkens the selected section background image.',
+                'min' => 0,
+                'max' => 90,
+                'step' => 5,
+                'defaultValue' => 0,
+                'suffix' => '%',
+                'translationMethod' => 'none',
+            ]));
         $fields['sectionBackground'] = $this->assetField(
             'Background Image',
             'sectionBackground',
