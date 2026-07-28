@@ -10,8 +10,30 @@
     });
   };
 
-  window.addEventListener('message', (event) => {
+  window.addEventListener('message', async (event) => {
     if (event.origin !== window.location.origin || event.data?.source !== source) return;
+    if (event.data.action === 'inlineSave' && event.data.element?.elementId) {
+      const frame = event.source;
+      try {
+        await Craft.sendActionRequest('POST', 'kikers/inline-editor/save', {
+          data: {
+            elementId: Number(event.data.element.elementId),
+            siteId: Number(event.data.element.siteId || Craft.siteId),
+            value: String(event.data.value ?? ''),
+          },
+        });
+        frame?.postMessage({source, action: 'inlineSaved'}, window.location.origin);
+        refreshPreview();
+      } catch (error) {
+        frame?.postMessage({
+          source,
+          action: 'inlineError',
+          message: error?.response?.data?.message || error?.message || 'The text could not be saved.',
+        }, window.location.origin);
+      }
+      return;
+    }
+
     if (event.data.action !== 'edit' || !event.data.element?.elementId) return;
 
     const element = event.data.element;

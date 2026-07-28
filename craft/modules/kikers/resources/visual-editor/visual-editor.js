@@ -4,6 +4,18 @@
   let hovered = null;
   let activeSection = null;
   let chooser = null;
+  let inlineTarget = null;
+  let inlineOriginal = '';
+  let inlineToolbar = null;
+  const handleInlineKeydown = (event) => {
+    if (event.key === 'Escape') {
+      event.preventDefault();
+      closeInline(true);
+    } else if (event.key === 'Enter' && !event.shiftKey) {
+      event.preventDefault();
+      saveInline();
+    }
+  };
 
   const parse = (value) => {
     try {
@@ -19,7 +31,7 @@
 
   const mode = document.createElement('div');
   mode.className = 'kve-mode';
-  mode.innerHTML = '<span class="kve-mode__dot"></span><span>Visual editing: click any outlined item</span>';
+  mode.innerHTML = '<span class="kve-mode__dot"></span><span>Visual editing: click text to type, click media to replace</span>';
   document.body.appendChild(mode);
 
   const label = document.createElement('div');
@@ -114,6 +126,68 @@
     return Array.from(items.values());
   };
 
+  const closeInline = (restore = false) => {
+    if (!inlineTarget) return;
+    if (restore) inlineTarget.textContent = inlineOriginal;
+    inlineTarget.removeEventListener('keydown', handleInlineKeydown);
+    inlineTarget.removeAttribute('contenteditable');
+    inlineTarget.classList.remove('kve-is-editing');
+    inlineToolbar?.remove();
+    inlineToolbar = null;
+    inlineTarget = null;
+    inlineOriginal = '';
+  };
+
+  const positionInlineToolbar = () => {
+    if (!inlineTarget || !inlineToolbar) return;
+    const rect = inlineTarget.getBoundingClientRect();
+    const toolbarRect = inlineToolbar.getBoundingClientRect();
+    inlineToolbar.style.left = `${Math.max(8, Math.min(rect.left, window.innerWidth - toolbarRect.width - 8))}px`;
+    inlineToolbar.style.top = `${Math.max(8, rect.bottom + 7)}px`;
+  };
+
+  const saveInline = () => {
+    if (!inlineTarget || !inlineToolbar) return;
+    const item = parse(inlineTarget.dataset.kveItems)[0];
+    if (!item) return;
+    const value = inlineTarget.textContent ?? '';
+    inlineToolbar.querySelectorAll('button').forEach((button) => {
+      button.disabled = true;
+    });
+    inlineToolbar.querySelector('[data-kve-save]').textContent = 'Saving…';
+    window.parent.postMessage({source, action: 'inlineSave', element: item, value}, window.location.origin);
+  };
+
+  const startInline = (target) => {
+    const item = parse(target.dataset.kveItems)[0];
+    if (!item || item.kind !== 'text') return false;
+    closeInline(false);
+    hideChooser();
+    inlineTarget = target;
+    inlineOriginal = target.textContent ?? '';
+    inlineTarget.setAttribute('contenteditable', 'plaintext-only');
+    inlineTarget.classList.add('kve-is-editing');
+    inlineToolbar = document.createElement('div');
+    inlineToolbar.className = 'kve-inline-toolbar';
+    inlineToolbar.innerHTML = '<button type="button" data-kve-save>Save</button><button type="button" data-kve-cancel>Cancel</button><button type="button" data-kve-fields>All fields</button>';
+    document.body.appendChild(inlineToolbar);
+    inlineToolbar.querySelector('[data-kve-save]').addEventListener('click', saveInline);
+    inlineToolbar.querySelector('[data-kve-cancel]').addEventListener('click', () => closeInline(true));
+    inlineToolbar.querySelector('[data-kve-fields]').addEventListener('click', () => {
+      const items = candidatesFor(target);
+      closeInline(false);
+      if (items.length === 1) sendEdit(items[0]);
+      else showChooser(items, Math.max(12, target.getBoundingClientRect().left), Math.max(12, target.getBoundingClientRect().bottom + 8));
+    });
+    inlineTarget.addEventListener('keydown', handleInlineKeydown);
+    inlineTarget.focus();
+    const selection = window.getSelection();
+    selection?.selectAllChildren(inlineTarget);
+    selection?.collapseToEnd();
+    positionInlineToolbar();
+    return true;
+  };
+
   document.addEventListener('pointerover', (event) => {
     const target = event.target instanceof Element ? event.target.closest('[data-kve-items]') : null;
     if (hovered !== target) {
@@ -139,6 +213,7 @@
   }, true);
 
   document.addEventListener('click', (event) => {
+    if (inlineToolbar?.contains(event.target) || inlineTarget?.contains(event.target)) return;
     if (chooser && !chooser.contains(event.target)) hideChooser();
     const target = event.target instanceof Element ? event.target.closest('[data-kve-items]') : null;
     if (!target) return;
@@ -146,6 +221,11 @@
     if (!items.length) return;
     event.preventDefault();
     event.stopPropagation();
+    const directItems = parse(target.dataset.kveItems);
+    if (target.classList.contains('kve-editable-text') && directItems.length === 1 && directItems[0].kind === 'text' && !event.altKey) {
+      startInline(target);
+      return;
+    }
     if (items.length === 1) {
       sendEdit(items[0]);
     } else {
@@ -161,10 +241,29 @@
     if (meta.elementId) sendEdit(meta);
   });
 
-  window.addEventListener('scroll', positionSectionTools, {passive: true});
-  window.addEventListener('resize', positionSectionTools);
+  window.addEventListener('scroll', () => {
+    positionSectionTools();
+    positionInlineToolbar();
+  }, {passive: true});
+  window.addEventListener('resize', () => {
+    positionSectionTools();
+    positionInlineToolbar();
+  });
   window.addEventListener('message', (event) => {
     if (event.origin !== window.location.origin || event.data?.source !== source) return;
     if (event.data.action === 'refresh') window.location.reload();
+    if (event.data.action === 'inlineSaved') {
+      closeInline(false);
+      window.location.reload();
+    }
+    if (event.data.action === 'inlineError') {
+      const message = event.data.message || 'The text could not be saved.';
+      inlineToolbar?.querySelectorAll('button').forEach((button) => {
+        button.disabled = false;
+      });
+      const saveButton = inlineToolbar?.querySelector('[data-kve-save]');
+      if (saveButton) saveButton.textContent = 'Try again';
+      window.alert(message);
+    }
   });
 })();

@@ -1,4 +1,4 @@
-dateModified: 1783954011
+dateModified: 1785272148
 email:
   fromEmail: admin@kikers.local
   fromName: "Kiker's U-Pull-It"
@@ -10,7 +10,7 @@ fs:
     settings:
       path: '@webroot/assets'
     type: craft\fs\Local
-    url: '$PRIMARY_SITE_URL/assets'
+    url: $PRIMARY_SITE_URL/assets
 meta:
   __names__:
     1b9da689-9595-4422-9757-6bbc111f6150: Vehicle # Vehicle
@@ -48,10 +48,12 @@ meta:
     a02d35f4-b174-474d-9a40-2e963722259b: 'Add Layout Container' # Add Layout Container
     a4c1d13b-df7c-4e53-b188-708a20718a90: 'Page Summary' # Page Summary
     a50cdc18-80c7-48fe-b473-f1026898f8b7: Condition # Condition
+    a588d2ac-ba69-4cf3-a48b-913b98dccae5: 'Footer Logo' # Footer Logo
     a681f50a-242f-44df-b9cd-9f9d771daa26: 'Page-Specific CSS' # Page-Specific CSS
     a58567a1-5756-4326-8783-8db1c0ed08df: Inquiries # Inquiries
     ae1303e0-4a10-49ad-a208-1614a9c5591c: 'Section Content Item' # Section Content Item
     b0b69d85-b300-4d03-a6f6-5bee183a38ef: Page # Page
+    b1a1ef5d-7afc-451f-a59d-06508bca05e7: 'Footer Links' # Footer Links
     b57b0743-872d-4647-a09c-856163bb98a2: 'Vertical Spacing' # Vertical Spacing
     c809b123-0d98-4672-a82b-b653feee7e7c: 'Editor Label' # Editor Label
     cbb84471-a1aa-45b9-84df-1ebab9ece4a1: 'Request Type' # Request Type

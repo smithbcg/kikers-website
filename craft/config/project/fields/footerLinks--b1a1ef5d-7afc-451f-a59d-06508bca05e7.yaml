@@ -1,0 +1,54 @@
+columnSuffix: null
+handle: footerLinks
+instructions: 'Add, remove, rename, reorder, or regroup footer links. Keep rows with the same group name together.'
+name: 'Footer Links'
+searchable: false
+settings:
+  addRowLabel: 'Add a footer link'
+  columns:
+    __assoc__:
+      -
+        - col1
+        -
+          __assoc__:
+            -
+              - heading
+              - Group
+            -
+              - handle
+              - group
+            -
+              - type
+              - singleline
+      -
+        - col2
+        -
+          __assoc__:
+            -
+              - heading
+              - 'Link label'
+            -
+              - handle
+              - label
+            -
+              - type
+              - singleline
+      -
+        - col3
+        -
+          __assoc__:
+            -
+              - heading
+              - URL
+            -
+              - handle
+              - url
+            -
+              - type
+              - singleline
+  maxRows: null
+  minRows: 0
+  staticRows: false
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Table

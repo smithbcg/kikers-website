@@ -1,0 +1,215 @@
+<svg xmlns="http://www.w3.org/2000/svg" data-yard-map="1" viewBox="0 0 1920 1080" width="1920" height="1080" style="display:block" role="img" aria-label="Kiker's U-Pull-It yard map showing pull sections 1 through 5, the processing area, office, shop, vehicle dismantling area, customer parking and the customer drive route">
+    <defs>
+      <linearGradient id="ymRed" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#DC161F"></stop>
+        <stop offset="1" stop-color="#8C0C14"></stop>
+      </linearGradient>
+      <pattern id="ymHazard" width="34" height="34" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
+        <rect width="34" height="34" fill="#0B0611"></rect>
+        <rect width="17" height="34" fill="#F6A100"></rect>
+      </pattern>
+      <pattern id="ymHazardLo" width="26" height="26" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
+        <rect width="26" height="26" fill="transparent"></rect>
+        <rect width="13" height="26" fill="#F6A100" opacity="0.13"></rect>
+      </pattern>
+      <pattern id="ymRowsH" width="38" height="26" patternUnits="userSpaceOnUse">
+        <rect x="3" y="7" width="32" height="11" rx="2" fill="#FFFFFF" opacity="0.07"></rect>
+      </pattern>
+      <pattern id="ymRowsV" width="26" height="38" patternUnits="userSpaceOnUse">
+        <rect x="7" y="3" width="11" height="32" rx="2" fill="#FFFFFF" opacity="0.07"></rect>
+      </pattern>
+      <marker id="ymArrow" viewBox="0 0 12 12" refX="9" refY="6" markerWidth="7" markerHeight="7" orient="auto">
+        <path d="M1 1 L11 6 L1 11 z" fill="#F6A100"></path>
+      </marker>
+    </defs>
+
+    <rect x="0" y="0" width="1920" height="12" fill="url(#ymHazard)"></rect>
+
+    <g data-label="1">
+      <svg x="40" y="20" width="199" height="64" viewBox="0 0 1010 325" overflow="visible">
+        <path d="M176.11,253.16l-5.89,17.04c0,.3-.47.46-.77.46l-121.65-10.37c-.77,0-.77-1.23,0-1.39l127.7-6.65c.47,0,.77.46.63.93h0l-.02-.02Z" fill="#DC161F"></path>
+        <path d="M313.7,256.58h33.79c.77,0,1.4.93,1.09,1.56l-4.49,13c-.16.63-.77.93-1.23.93h-33.79c-.77,0-1.4-.77-1.09-1.56l4.49-13c.16-.63.77-.93,1.4-.93h-.16Z" fill="#FFFFFF"></path>
+        <path d="M666.08,256.42h33.79c.77,0,1.4.93,1.09,1.56l-4.49,13c-.16.63-.77.93-1.23.93h-33.79c-.77,0-1.4-.77-1.09-1.56l4.49-13c.16-.63.77-.93,1.4-.93h-.16Z" fill="#FFFFFF"></path>
+        <path d="M1000.2,260.44l-131.1,10.07c-.63,0-1.09-.63-.93-1.23l6.51-16.58c0-.3.47-.63.77-.63l124.44,6.51c1.09,0,1.09,1.7,0,1.7l.3.16h0Z" fill="#DC161F"></path>
+        <path d="M873.14,213.06H167.91c-.47,0-.77.63-.47,1.09v-.16l29.76,37.32c.3.63.63,1.39.3,2.16l-21.69,62.4c-.47,1.23.47,2.63,1.86,2.63h652.39c.77,0,1.56-.46,1.86-1.23l41.53-103.74c.16-.16,0-.46-.3-.46h-.02ZM863.98,220.34l-36.42,90.89c-.16.46-.77.77-1.23.77H185.56c-.63,0-1.23-.63-.93-1.39l19.99-57.59c.3-.93,0-1.86-.47-2.63l-23.08-30.2c-.3-.3-.3-.63,0-.93v.16c.16-.16.47-.3.93-.3h681.22c.63,0,1.09.63.77,1.23Z" fill="#DC161F"></path>
+        <path d="M305.34,26.63h50.05l-63.22,160.41h-50.05l63.22-160.41h0Z" fill="#FFFFFF"></path>
+        <path d="M371.36,26.63h50.05l-23.87,61.94,69.11-61.01h57.03l-88.49,75.87,42.14,83.61h-61.52l-30.69-67.98-26.34,67.98h-50.68l63.22-160.41h.04Z" fill="#FFFFFF"></path>
+        <path d="M535.77,27.56h136.68l-14.26,37.48h-85.7l-8.84,22.6h63.69l-13.47,37.32h-63.69l-8.68,23.85h88.49l-15.5,38.25h-122.72c-2.02.77-8.37-8.51-7.91-16.58l51.75-142.92h.16,0Z" fill="#FFFFFF"></path>
+        <path d="M688.26,27.56h112.34c20.61,0,28.51,9.44,25.11,21.99l-20.92,61.01c-3.1,7.28-11.01,14.39-18.75,15.79l-18.29,1.09,25.27,58.06-.3,1.39h-56.1l-23.71-64.57,8.98-28.48h38.9l10.38-29.27h-46.49l-43.86,122.32h-49.89l57.17-159.48.16.16v-.02Z" fill="#FFFFFF"></path>
+        <path d="M805.86,187.2l19.68-53.43h46.49l-6.05,16.58h46.79l7.28-14.86-68.04-30.97c-6.98-3.42-11.31-14.39-9.31-21.67l11.77-31.27c3.42-12.86,21.08-26.79,41.68-26.79h108.32c.3,0,.63.16.47.46l-18.43,51.87h-46.96l5.42-16.25h-43.86l-4.03,13.16,65.55,32.06c12.54,6.51,11.77,15.48,9.77,22.76l-13.33,36.39c-5.73,15.02-22.48,23.07-44.93,22.14h-108.32v-.16l.02-.02Z" fill="#FFFFFF"></path>
+        <path d="M91.5,31.12L49.5,8.06c-.47-.3-.3-1.09.3-1.09h111.88c.47,0,.63.3.47.63l-31.46,72.15c-.16.63.47,1.09.93.63,27.9-23.85,55.47-49.39,83.37-73.4h92.98c.63,0,.63.93.16,1.09,0,0-104.13,72.61-132.03,94.45-.16.16-.3.46,0,.77l59.66,97.56c.16.3,0,.93-.47.93h-76.86c-.16,0-.47,0-.47-.3l-41.07-82.68c-.3-.46-.77-.3-1.09,0l-29.9,76.49s0,.16-.3.3L5.8,236.28c-.47.3-.93-.16-.77-.77L91.5,31.59c0-.3,0-.46-.16-.63l.16.16Z" fill="#FFFFFF"></path>
+        <path d="M377.41,231.03c.3-.77.93-1.23,1.7-1.23h50.52c9.61,0,12.24,6.35,9.77,14.25l-9.14,25.25c-2.95,7.58-12.87,10.07-21.69,9.91h-23.71c-.63-.16-1.23.16-1.4.77l-7.59,21.67c-.16.63-.77.93-1.4.93h-20.92c-.47,0-.77-.46-.63-.93l24.48-70.61h0ZM409.47,261.37l4.8-13.63c.63-1.7-.63-3.56-2.63-3.56h-15.8c-.3,0-.63.16-.63.46l-5.89,16.88c-.16.46.16.93.63.93h17.82c.77,0,1.4-.46,1.56-1.09h.16-.02Z" fill="#FFFFFF"></path>
+        <path d="M732.88,229.78h20.29c.3,0,.63.46.47.77l-24.8,71.38c0,.3-.47.63-.77.63h-20.92c-.47,0-.77-.46-.63-.77l24.48-70.61c.3-.77,1.09-1.23,1.86-1.23v-.16h.02Z" fill="#FFFFFF"></path>
+        <path d="M783.24,244.33h-18.13c-.63,0-1.09-.63-.77-1.09l4.03-11.46c.3-1.09,1.4-1.86,2.49-1.86h60.29c.63,0,1.09.63.77,1.23l-4.8,12.7c0,.46-.47.63-.93.63h-18.59c-.3,0-.77.16-.93.63l-19.22,55.59c-.3,1.09-1.4,1.7-2.49,1.7h-19.36c-.63,0-1.09-.63-.93-1.23l19.36-55.59c.16-.46-.16-1.09-.77-1.09v-.16l-.02.02Z" fill="#FFFFFF"></path>
+        <path d="M439.23,290.64l20.92-59.92c.16-.63.77-.93,1.4-.93h20.76c.3,0,.63.46.47.77l-18.59,53.43c-.47,1.56.63,3.09,2.17,3.09h15.03c1.86,0,3.56-1.39,4.33-3.09l18.13-52.96c.3-.77.93-1.23,1.7-1.23h20.45c.63,0,1.09.46.77,1.09l-21.55,62.1c-3.26,8.21-11.15,9.6-20.76,9.6h-35.65c-9.31,0-11.01-6.19-9.31-11.93h-.3l.04-.02Z" fill="#FFFFFF"></path>
+        <path d="M217.16,290.48l20.92-59.92c.16-.63.77-.93,1.4-.93h20.76c.3,0,.63.46.47.77l-18.59,53.43c-.47,1.56.63,3.09,2.17,3.09h15.03c1.86,0,3.56-1.39,4.33-3.09l18.13-52.96c.3-.77.93-1.23,1.7-1.23h20.45c.63,0,1.09.46.77,1.09l-21.55,62.1c-3.26,8.21-11.15,9.6-20.76,9.6h-35.65c-9.31,0-11.01-6.19-9.31-11.93h-.3l.04-.02Z" fill="#FFFFFF"></path>
+        <path d="M615.26,229.94h20.61c.63,0,.93.63.77,1.09l-19.06,55.13c0,.46.16.93.63.93h28.36c.47,0,.93.46.77.77l-4.8,14.09c0,.3-.47.46-.77.46h-51.14c-.47,0-.93-.63-.77-.93l24.64-71.08c0-.3.47-.63.77-.63v.16h-.02Z" fill="#FFFFFF"></path>
+        <path d="M546.3,229.78h20.61c.63,0,.93.63.77,1.09l-19.06,55.13c0,.46.16.93.63.93h28.36c.47,0,.93.46.77.77l-4.8,14.09c0,.3-.47.46-.77.46h-51.14c-.47,0-.93-.63-.77-.93l24.64-71.08c0-.3.47-.63.77-.63v.16h-.02Z" fill="#FFFFFF"></path>
+        <path d="M846.62,6.5h30.06c.47,0,.63.46.3.77l-41.68,50.01c-.3.3-.93,0-.77-.46l11.61-50.01c0-.16.3-.3.47-.3h0Z" fill="#FFFFFF"></path>
+      </svg>
+      <line x1="268" y1="26" x2="268" y2="84" stroke="#2A2731" stroke-width="2"></line>
+      <text x="296" y="42" style="font-family:'Inter',system-ui,sans-serif;font-weight:600;font-size:13px;letter-spacing:.2em" fill="#DC161F">SELF-SERVICE AUTO RECYCLING</text>
+      <text x="296" y="80" style="font-family:'Saira',system-ui,sans-serif;font-weight:800;font-style:italic;font-size:40px;letter-spacing:-.01em" fill="#FFFFFF">YARD MAP</text>
+      <text x="1880" y="52" text-anchor="end" style="font-family:'JetBrains Mono',ui-monospace,monospace;font-weight:500;font-size:15px" fill="#86868D">NOT TO SCALE</text>
+      <text x="1880" y="80" text-anchor="end" style="font-family:'JetBrains Mono',ui-monospace,monospace;font-weight:700;font-size:22px" fill="#FFFFFF">850-435-7630</text>
+    </g>
+
+    <text x="700" y="98" text-anchor="middle" style="font-family:'JetBrains Mono',ui-monospace,monospace;font-weight:700;font-size:15px;letter-spacing:.3em;word-spacing:18px" fill="#86868D">DELANO ST</text>
+
+    <g data-draw="1">
+      <rect x="40" y="108" width="1840" height="812" rx="6" fill="#14121A" stroke="#2A2731" stroke-width="2"></rect>
+    </g>
+
+    <g data-draw="1">
+      <rect x="60" y="128" width="186" height="606" rx="3" fill="url(#ymHazardLo)" stroke="#D98200" stroke-width="3"></rect>
+      <rect x="620" y="742" width="272" height="100" rx="3" fill="url(#ymHazardLo)" stroke="#D98200" stroke-width="3"></rect>
+    </g>
+
+    <g data-draw="1" fill="none">
+      <rect x="120" y="742" width="212" height="100" rx="3" fill="#1C1A23" stroke="#72767B" stroke-width="2.5"></rect>
+      <rect x="350" y="742" width="250" height="100" rx="3" fill="#1C1A23" stroke="#A6ABB0" stroke-width="2.5"></rect>
+      <rect x="120" y="852" width="480" height="60" rx="3" fill="#17151E" stroke="#72767B" stroke-width="2.5" stroke-dasharray="10 8"></rect>
+    </g>
+
+    <g data-draw="1" fill="none">
+      <rect x="262" y="131" width="210" height="502" rx="3" fill="rgba(220,22,31,.10)" stroke="#DC161F" stroke-width="3"></rect>
+      <rect x="492" y="128" width="372" height="521" rx="3" fill="rgba(220,22,31,.10)" stroke="#DC161F" stroke-width="3"></rect>
+      <rect x="914" y="128" width="280" height="308" rx="3" fill="rgba(220,22,31,.10)" stroke="#DC161F" stroke-width="3"></rect>
+      <rect x="1244" y="128" width="389" height="308" rx="3" fill="rgba(220,22,31,.10)" stroke="#DC161F" stroke-width="3"></rect>
+      <rect x="921" y="495" width="239" height="275" rx="3" fill="rgba(220,22,31,.10)" stroke="#DC161F" stroke-width="3"></rect>
+    </g>
+
+
+      <g>
+        <rect x="66" y="134" width="174" height="594" fill="url(#ymRowsH)"></rect>
+        <rect x="268" y="137" width="198" height="490" fill="url(#ymRowsH)"></rect>
+        <rect x="498" y="134" width="360" height="509" fill="url(#ymRowsH)"></rect>
+        <rect x="920" y="134" width="268" height="296" fill="url(#ymRowsV)"></rect>
+        <rect x="1250" y="134" width="377" height="296" fill="url(#ymRowsV)"></rect>
+        <rect x="927" y="501" width="227" height="263" fill="url(#ymRowsH)"></rect>
+      </g>
+
+
+    <g data-road="1" fill="none">
+      <path d="M262 678 H864 L893 637 V492 L922 465 H1633" stroke="#3A3742" stroke-width="41" stroke-linejoin="round" stroke-linecap="butt"></path>
+      <path d="M262 678 H864 L893 637 V492 L922 465 H1633" stroke="#0B0611" stroke-width="35" stroke-linejoin="round" stroke-linecap="butt"></path>
+      <path d="M262 678 H864 L893 637 V492 L922 465 H1633" stroke="#FFFFFF" stroke-opacity="0.16" stroke-width="2" stroke-dasharray="16 14" stroke-linejoin="round"></path>
+    </g>
+
+
+      <g data-flow="1" stroke="#F6A100" stroke-width="4" stroke-linecap="round" marker-end="url(#ymArrow)">
+        <line x1="520" y1="740" x2="520" y2="706"></line>
+        <line x1="590" y1="678" x2="652" y2="678"></line>
+        <line x1="780" y1="678" x2="842" y2="678"></line>
+        <line x1="893" y1="600" x2="893" y2="542"></line>
+        <line x1="950" y1="465" x2="1012" y2="465"></line>
+        <line x1="1140" y1="465" x2="1202" y2="465"></line>
+        <line x1="1330" y1="465" x2="1392" y2="465"></line>
+        <line x1="1520" y1="465" x2="1582" y2="465"></line>
+      </g>
+
+
+    <g data-label="1">
+      <text x="140" y="443" text-anchor="middle" transform="rotate(-90 140 431)" style="font-family:'Saira',system-ui,sans-serif;font-weight:800;font-style:italic;font-size:34px;letter-spacing:.04em" fill="#F6A100">PROCESSING</text>
+      <text x="176" y="437" text-anchor="middle" transform="rotate(-90 176 431)" style="font-family:'Inter',system-ui,sans-serif;font-weight:600;font-size:17px;letter-spacing:.16em" fill="#D98200">STAFF ONLY</text>
+      <text x="756" y="786" text-anchor="middle" style="font-family:'Saira',system-ui,sans-serif;font-weight:800;font-style:italic;font-size:22px;letter-spacing:.03em" fill="#F6A100">VEHICLE DISMANTLING</text>
+      <text x="756" y="818" text-anchor="middle" style="font-family:'Inter',system-ui,sans-serif;font-weight:600;font-size:16px;letter-spacing:.16em" fill="#D98200">EMPLOYEES ONLY</text>
+      <text x="226" y="801" text-anchor="middle" style="font-family:'Saira',system-ui,sans-serif;font-weight:700;font-style:italic;font-size:26px;letter-spacing:.06em" fill="#A6ABB0">SHOP</text>
+      <text x="520" y="802" text-anchor="middle" style="font-family:'Saira',system-ui,sans-serif;font-weight:800;font-style:italic;font-size:28px;letter-spacing:.04em" fill="#FFFFFF">OFFICE</text>
+      <text x="360" y="891" text-anchor="middle" style="font-family:'Saira',system-ui,sans-serif;font-weight:700;font-style:italic;font-size:26px;letter-spacing:.16em" fill="#A6ABB0">CUSTOMER PARKING</text>
+      <path d="M1740 232 L1740 286" stroke="#72767B" stroke-width="2.5"></path>
+      <path d="M1740 212 L1751 240 L1729 240 z" fill="#DC161F"></path>
+      <text x="1740" y="320" text-anchor="middle" style="font-family:'JetBrains Mono',ui-monospace,monospace;font-weight:700;font-size:20px" fill="#A6ABB0">N</text>
+      <text x="520" y="686" text-anchor="middle" style="font-family:'Saira',system-ui,sans-serif;font-weight:800;font-style:italic;font-size:22px;letter-spacing:.1em" fill="#F6A100">ENTER</text>
+    </g>
+
+    <g data-label="1">
+      <text x="367" y="404" text-anchor="middle" style="font-family:'Saira',system-ui,sans-serif;font-weight:800;font-style:italic;font-size:34px;letter-spacing:.02em" fill="#FFFFFF">TRUCKS</text>
+      <text x="367" y="444" text-anchor="middle" style="font-family:'Saira',system-ui,sans-serif;font-weight:800;font-style:italic;font-size:34px;letter-spacing:.02em" fill="#FFFFFF">&amp; SUV'S</text>
+      <text x="678" y="394" text-anchor="middle" style="font-family:'Saira',system-ui,sans-serif;font-weight:800;font-style:italic;font-size:52px;letter-spacing:.02em" fill="#FFFFFF">DODGE</text>
+      <text x="678" y="450" text-anchor="middle" style="font-family:'Saira',system-ui,sans-serif;font-weight:800;font-style:italic;font-size:52px;letter-spacing:.02em" fill="#FFFFFF">&amp; GM</text>
+      <text x="1054" y="322" text-anchor="middle" style="font-family:'Saira',system-ui,sans-serif;font-weight:800;font-style:italic;font-size:48px;letter-spacing:.02em" fill="#FFFFFF">FORD</text>
+      <text x="1438" y="322" text-anchor="middle" style="font-family:'Saira',system-ui,sans-serif;font-weight:800;font-style:italic;font-size:46px;letter-spacing:.02em" fill="#FFFFFF">IMPORTS</text>
+      <text x="1040" y="660" text-anchor="middle" style="font-family:'Saira',system-ui,sans-serif;font-weight:800;font-style:italic;font-size:40px;letter-spacing:.02em" fill="#FFFFFF">TRUCKS</text>
+      <text x="1040" y="706" text-anchor="middle" style="font-family:'Saira',system-ui,sans-serif;font-weight:800;font-style:italic;font-size:40px;letter-spacing:.02em" fill="#FFFFFF">&amp; SUV'S</text>
+    </g>
+
+    <g data-label="1">
+      <circle cx="367" cy="312" r="30" fill="#DC161F"></circle>
+      <text x="367" y="325" text-anchor="middle" style="font-family:'Saira',system-ui,sans-serif;font-weight:800;font-style:italic;font-size:34px" fill="#FFFFFF">1</text>
+      <circle cx="678" cy="302" r="34" fill="#DC161F"></circle>
+      <text x="678" y="316" text-anchor="middle" style="font-family:'Saira',system-ui,sans-serif;font-weight:800;font-style:italic;font-size:38px" fill="#FFFFFF">2</text>
+      <circle cx="1054" cy="236" r="32" fill="#DC161F"></circle>
+      <text x="1054" y="250" text-anchor="middle" style="font-family:'Saira',system-ui,sans-serif;font-weight:800;font-style:italic;font-size:36px" fill="#FFFFFF">3</text>
+      <circle cx="1438" cy="236" r="32" fill="#DC161F"></circle>
+      <text x="1438" y="250" text-anchor="middle" style="font-family:'Saira',system-ui,sans-serif;font-weight:800;font-style:italic;font-size:36px" fill="#FFFFFF">5</text>
+      <circle cx="1040" cy="570" r="30" fill="#DC161F"></circle>
+      <text x="1040" y="583" text-anchor="middle" style="font-family:'Saira',system-ui,sans-serif;font-weight:800;font-style:italic;font-size:34px" fill="#FFFFFF">4</text>
+    </g>
+
+    <g data-here="1">
+      <circle data-pulse="1" cx="408" cy="792" r="40" fill="none" stroke="#DC161F" stroke-width="3"></circle>
+      <circle cx="408" cy="792" r="40" fill="#DC161F"></circle>
+      <text x="408" y="779" text-anchor="middle" style="font-family:'Saira',system-ui,sans-serif;font-weight:800;font-style:italic;font-size:16px;letter-spacing:.03em" fill="#FFFFFF">YOU</text>
+      <text x="408" y="798" text-anchor="middle" style="font-family:'Saira',system-ui,sans-serif;font-weight:800;font-style:italic;font-size:16px;letter-spacing:.03em" fill="#FFFFFF">ARE</text>
+      <text x="408" y="817" text-anchor="middle" style="font-family:'Saira',system-ui,sans-serif;font-weight:800;font-style:italic;font-size:16px;letter-spacing:.03em" fill="#FFFFFF">HERE</text>
+    </g>
+
+    <g data-label="1">
+      <rect x="1180" y="528" width="660" height="372" rx="6" fill="#16141C" stroke="#2A2731" stroke-width="2"></rect>
+
+      <text x="1212" y="574" style="font-family:'Saira',system-ui,sans-serif;font-weight:800;font-style:italic;font-size:24px;letter-spacing:.04em" fill="#FFFFFF">PULL SECTIONS</text>
+      <line x1="1212" y1="592" x2="1494" y2="592" stroke="#DC161F" stroke-width="3"></line>
+
+      <circle cx="1229" cy="632" r="17" fill="#DC161F"></circle>
+      <text x="1229" y="640" text-anchor="middle" style="font-family:'Saira',system-ui,sans-serif;font-weight:800;font-style:italic;font-size:20px" fill="#FFFFFF">1</text>
+      <text x="1261" y="641" style="font-family:'Saira',system-ui,sans-serif;font-weight:800;font-style:italic;font-size:22px;letter-spacing:.02em" fill="#FFFFFF">TRUCKS &amp; SUV'S</text>
+
+      <circle cx="1229" cy="682" r="17" fill="#DC161F"></circle>
+      <text x="1229" y="690" text-anchor="middle" style="font-family:'Saira',system-ui,sans-serif;font-weight:800;font-style:italic;font-size:20px" fill="#FFFFFF">2</text>
+      <text x="1261" y="691" style="font-family:'Saira',system-ui,sans-serif;font-weight:800;font-style:italic;font-size:22px;letter-spacing:.02em" fill="#FFFFFF">DODGE &amp; GM</text>
+
+      <circle cx="1229" cy="732" r="17" fill="#DC161F"></circle>
+      <text x="1229" y="740" text-anchor="middle" style="font-family:'Saira',system-ui,sans-serif;font-weight:800;font-style:italic;font-size:20px" fill="#FFFFFF">3</text>
+      <text x="1261" y="741" style="font-family:'Saira',system-ui,sans-serif;font-weight:800;font-style:italic;font-size:22px;letter-spacing:.02em" fill="#FFFFFF">FORD</text>
+
+      <circle cx="1229" cy="782" r="17" fill="#DC161F"></circle>
+      <text x="1229" y="790" text-anchor="middle" style="font-family:'Saira',system-ui,sans-serif;font-weight:800;font-style:italic;font-size:20px" fill="#FFFFFF">4</text>
+      <text x="1261" y="791" style="font-family:'Saira',system-ui,sans-serif;font-weight:800;font-style:italic;font-size:22px;letter-spacing:.02em" fill="#FFFFFF">TRUCKS &amp; SUV'S</text>
+
+      <circle cx="1229" cy="832" r="17" fill="#DC161F"></circle>
+      <text x="1229" y="840" text-anchor="middle" style="font-family:'Saira',system-ui,sans-serif;font-weight:800;font-style:italic;font-size:20px" fill="#FFFFFF">5</text>
+      <text x="1261" y="841" style="font-family:'Saira',system-ui,sans-serif;font-weight:800;font-style:italic;font-size:22px;letter-spacing:.02em" fill="#FFFFFF">IMPORTS</text>
+
+      <line x1="1530" y1="560" x2="1530" y2="868" stroke="#2A2731" stroke-width="2"></line>
+
+      <text x="1562" y="574" style="font-family:'Saira',system-ui,sans-serif;font-weight:800;font-style:italic;font-size:19px;letter-spacing:.1em" fill="#A6ABB0">FACILITIES</text>
+      <rect x="1564" y="596" width="22" height="22" rx="2" fill="#1C1A23" stroke="#A6ABB0" stroke-width="2"></rect>
+      <text x="1602" y="614" style="font-family:'Inter',system-ui,sans-serif;font-weight:600;font-size:18px" fill="#FFFFFF">Office &amp; check-in</text>
+      <rect x="1564" y="634" width="22" height="22" rx="2" fill="#1C1A23" stroke="#72767B" stroke-width="2"></rect>
+      <text x="1602" y="652" style="font-family:'Inter',system-ui,sans-serif;font-weight:600;font-size:18px" fill="#FFFFFF">Shop</text>
+      <rect x="1564" y="672" width="22" height="22" rx="2" fill="#17151E" stroke="#72767B" stroke-width="2" stroke-dasharray="5 4"></rect>
+      <text x="1602" y="690" style="font-family:'Inter',system-ui,sans-serif;font-weight:600;font-size:18px" fill="#FFFFFF">Customer parking</text>
+      <rect x="1564" y="710" width="22" height="22" rx="2" fill="#0B0611" stroke="#3A3742" stroke-width="2"></rect>
+      <text x="1602" y="728" style="font-family:'Inter',system-ui,sans-serif;font-weight:600;font-size:18px" fill="#FFFFFF">Customer drive route</text>
+
+      <text x="1562" y="782" style="font-family:'Saira',system-ui,sans-serif;font-weight:800;font-style:italic;font-size:19px;letter-spacing:.1em" fill="#F6A100">RESTRICTED</text>
+      <rect x="1564" y="804" width="22" height="22" rx="2" fill="url(#ymHazardLo)" stroke="#D98200" stroke-width="2"></rect>
+      <text x="1602" y="822" style="font-family:'Inter',system-ui,sans-serif;font-weight:600;font-size:18px" fill="#FFFFFF">Processing — staff only</text>
+      <rect x="1564" y="842" width="22" height="22" rx="2" fill="url(#ymHazardLo)" stroke="#D98200" stroke-width="2"></rect>
+      <text x="1602" y="860" style="font-family:'Inter',system-ui,sans-serif;font-weight:600;font-size:18px" fill="#FFFFFF">Dismantling — staff only</text>
+
+    </g>
+
+    <g data-label="1">
+      <rect x="40" y="940" width="1840" height="112" rx="6" fill="#16141C" stroke="#2A2731" stroke-width="2"></rect>
+      <text x="72" y="982" style="font-family:'Saira',system-ui,sans-serif;font-weight:800;font-style:italic;font-size:22px;letter-spacing:.04em" fill="#FFFFFF">KIKER'S U-PULL-IT</text>
+      <text x="72" y="1018" style="font-family:'JetBrains Mono',ui-monospace,monospace;font-weight:500;font-size:17px" fill="#86868D">3010 W. FAIRFIELD DR · PENSACOLA, FL 32505</text>
+      <line x1="700" y1="960" x2="700" y2="1032" stroke="#2A2731" stroke-width="2"></line>
+      <text x="736" y="982" style="font-family:'Saira',system-ui,sans-serif;font-weight:800;font-style:italic;font-size:22px;letter-spacing:.04em" fill="#F6A100">HOURS</text>
+      <text x="736" y="1018" style="font-family:'JetBrains Mono',ui-monospace,monospace;font-weight:500;font-size:17px" fill="#BEBEC4">MON–FRI 9–4:30 · SAT 8–2</text>
+      <line x1="1120" y1="960" x2="1120" y2="1032" stroke="#2A2731" stroke-width="2"></line>
+      <text x="1156" y="982" style="font-family:'Saira',system-ui,sans-serif;font-weight:800;font-style:italic;font-size:22px;letter-spacing:.04em" fill="#DC161F">YARD RULES</text>
+      <text x="1156" y="1018" style="font-family:'Inter',system-ui,sans-serif;font-weight:500;font-size:17px" fill="#BEBEC4">Bring your own tools and gloves · 16 and up on the yard · Everybody goes home safe</text>
+    </g>
+  </svg>

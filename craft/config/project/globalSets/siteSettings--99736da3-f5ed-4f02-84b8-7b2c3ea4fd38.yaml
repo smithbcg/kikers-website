@@ -136,6 +136,44 @@ fieldLayouts:
         name: 'Business Details'
         uid: 9c0d2dba-2847-450e-8a17-83b0893f62dc
         userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: a588d2ac-ba69-4cf3-a48b-913b98dccae5 # Footer Logo
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: dfcbfcea-1e54-404f-bb08-7122673afbfe
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: b1a1ef5d-7afc-451f-a59d-06508bca05e7 # Footer Links
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 075e61e1-8d0d-458f-9b8f-2d039111d642
+            userCondition: null
+            warning: null
+            width: 100
+        name: Footer
+        uid: 61478a04-73e4-455b-8e64-2a13bb0198a8
+        userCondition: null
     thumbFieldKey: null
 handle: siteSettings
 name: 'Site Settings'

@@ -1,2 +1,8 @@
 {% set extraClass = extraClass|default('') %}
-<span class="kiker-icon kiker-icon--{{ name }}{% if extraClass %} {{ extraClass }}{% endif %}" aria-hidden="true"></span>
+<img
+  class="kiker-icon kiker-icon--{{ name }}{% if extraClass %} {{ extraClass }}{% endif %}"
+  src="{{ siteUrl }}assets/icons/kiker-{{ name }}.svg"
+  alt=""
+  aria-hidden="true"
+  loading="lazy"
+>

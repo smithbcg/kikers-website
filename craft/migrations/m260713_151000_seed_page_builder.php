@@ -182,6 +182,7 @@ class m260713_151000_seed_page_builder extends Migration
             $contentItems = [];
             $contentCounter = 0;
 
+            $this->normalizeEditableIcons($node, $document);
             $this->tokenizeAttributes($node, $contentItems, $contentCounter);
             $this->tokenizeText($node, $contentItems, $contentCounter);
             $this->addEditableHeroImage($node, $contentItems, $contentCounter);
@@ -238,6 +239,149 @@ class m260713_151000_seed_page_builder extends Migration
     {
         $src = $node->getAttribute('src');
         return $src !== '' && str_contains($src, 'kikers.js');
+    }
+
+    private function normalizeEditableIcons(DOMElement $root, DOMDocument $document): void
+    {
+        $lucideMap = [
+            'badge-dollar-sign' => 'cash-offer',
+            'bell' => 'fast-response',
+            'camera' => 'inspection',
+            'car-front' => 'cash-vehicle',
+            'check' => 'verified',
+            'clipboard-check' => 'paperwork',
+            'clipboard-list' => 'paperwork',
+            'history' => 'hours',
+            'info' => 'verified',
+            'map-pin' => 'location',
+            'message-square-text' => 'connection',
+            'package-search' => 'warehouse',
+            'phone' => 'fast-response',
+            'recycle' => 'recycle',
+            'search-check' => 'part',
+            'shield-check' => 'safety',
+            'truck' => 'towing',
+            'users' => 'teamwork',
+            'zap' => 'cash-offer',
+        ];
+        $glyphMap = [
+            '⚡' => 'cash-offer',
+            '🚚' => 'towing',
+            '🛡️' => 'safety',
+            '🤝' => 'teamwork',
+            '💵' => 'cash-vehicle',
+            '🔧' => 'wrench',
+            '🏷️' => 'part',
+            '📦' => 'warehouse',
+            '📍' => 'location',
+            '📞' => 'fast-response',
+            '✓' => 'verified',
+            '♻️' => 'recycle',
+            '♻' => 'recycle',
+            '⛽' => 'engine',
+            '⏱' => 'hours',
+            '⚙' => 'gears',
+            '📅' => 'hours',
+            '✉️' => 'connection',
+            '💬' => 'connection',
+            '🧰' => 'tool-kit',
+            '👟' => 'safety',
+            '⚠️' => 'safety',
+            '🎟️' => 'cash-offer',
+            '🔞' => 'safety',
+            '🚧' => 'safety',
+            '🛞' => 'wheel',
+            '🌐' => 'connection',
+            '📋' => 'paperwork',
+            '🏁' => 'fast-work',
+            '🔑' => 'verified',
+            '⌕' => 'part',
+        ];
+
+        $elements = [$root];
+        foreach ($root->getElementsByTagName('*') as $element) {
+            if ($element instanceof DOMElement) {
+                $elements[] = $element;
+            }
+        }
+
+        foreach (array_values($elements) as $element) {
+            if (!$element->parentNode && $element !== $root) {
+                continue;
+            }
+            $lucide = $element->getAttribute('data-lucide');
+            if ($lucide !== '' && $element->parentNode) {
+                $icon = $lucideMap[$lucide] ?? 'part';
+                $element->parentNode->replaceChild($this->iconImage($document, $icon, $element->getAttribute('class')), $element);
+                continue;
+            }
+
+            $classes = preg_split('/\s+/', trim($element->getAttribute('class'))) ?: [];
+            if (array_intersect($classes, ['ic', 'c', 'ck', 'vc']) === []) {
+                continue;
+            }
+            $glyph = trim($element->textContent);
+            if (!isset($glyphMap[$glyph]) || !$element->parentNode) {
+                continue;
+            }
+            $element->parentNode->replaceChild(
+                $this->iconImage($document, $glyphMap[$glyph], $element->getAttribute('class')),
+                $element,
+            );
+        }
+
+        $this->normalizeGlyphText($root, $document, $glyphMap);
+    }
+
+    /** @param array<string,string> $glyphMap */
+    private function normalizeGlyphText(DOMNode $node, DOMDocument $document, array $glyphMap): void
+    {
+        if ($node instanceof DOMElement && in_array(strtolower($node->tagName), ['script', 'style', 'textarea'], true)) {
+            return;
+        }
+
+        foreach (iterator_to_array($node->childNodes) as $child) {
+            if ($child instanceof DOMText) {
+                $value = $child->nodeValue ?? '';
+                $matched = false;
+                foreach ($glyphMap as $glyph => $icon) {
+                    if (str_contains($value, $glyph)) {
+                        $matched = true;
+                        break;
+                    }
+                }
+                if (!$matched || !$child->parentNode) {
+                    continue;
+                }
+
+                $pattern = '/(' . implode('|', array_map('preg_quote', array_keys($glyphMap))) . ')/u';
+                $parts = preg_split($pattern, $value, -1, PREG_SPLIT_DELIM_CAPTURE);
+                if ($parts === false) {
+                    continue;
+                }
+                foreach ($parts as $part) {
+                    if (isset($glyphMap[$part])) {
+                        $child->parentNode->insertBefore($this->iconImage($document, $glyphMap[$part]), $child);
+                    } elseif ($part !== '') {
+                        $child->parentNode->insertBefore($document->createTextNode($part), $child);
+                    }
+                }
+                $child->parentNode->removeChild($child);
+                continue;
+            }
+            $this->normalizeGlyphText($child, $document, $glyphMap);
+        }
+    }
+
+    private function iconImage(DOMDocument $document, string $name, string $extraClass = ''): DOMElement
+    {
+        $image = $document->createElement('img');
+        $image->setAttribute('src', "/assets/icons/kiker-$name.svg");
+        $image->setAttribute('alt', '');
+        $image->setAttribute('aria-hidden', 'true');
+        $classes = trim("$extraClass legacy-inline-icon kiker-icon kiker-icon--$name");
+        $image->setAttribute('class', implode(' ', array_unique(preg_split('/\s+/', $classes) ?: [])));
+        return $image;
     }
 
     /** @param array<int, array<string, mixed>> $items */
