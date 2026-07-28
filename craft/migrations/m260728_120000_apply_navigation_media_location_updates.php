@@ -9,32 +9,33 @@ use craft\db\Migration;
 use craft\elements\Entry;
 use RuntimeException;
 
-/** Applies Hunter Kiker's approved copy changes to editable page-builder content. */
-class m260715_180000_apply_owner_copy_feedback extends Migration
+/**
+ * Applies the approved navigation, photography, funnel, and location-page updates.
+ */
+class m260728_120000_apply_navigation_media_location_updates extends Migration
 {
     public function safeUp(): bool
     {
         require_once __DIR__ . '/m260713_151000_seed_page_builder.php';
+        require_once __DIR__ . '/m260721_160000_add_site_photography.php';
+
+        m260721_160000_add_site_photography::indexSiteAssets();
+        $this->removeRetiredPages();
 
         $templates = [
             'index',
             'about.html',
             'contact.html',
             'full-service-parts.html',
-            'cars-for-sale.html',
+            'u-pull-parts.html',
             'sell-your-vehicle.html',
-            'Sell-Your-Vehicle-v2.html',
-            'we-buy-cars-near-pensacola.html',
             'sell-your-car-pensacola.html',
-            'sell-your-car-pace.html',
             'sell-your-car-milton.html',
+            'sell-your-car-pace.html',
             'sell-your-car-cantonment.html',
-            'Kikers-Home.html',
-            'Kikers-Home-v2.html',
-            'Kikers-Home-with-Photos.html',
+            'we-buy-cars-near-pensacola.html',
             'home-funnel-2.html',
         ];
-
         $pages = Entry::find()
             ->section('pages')
             ->status(null)
@@ -42,9 +43,6 @@ class m260715_180000_apply_owner_copy_feedback extends Migration
             ->revisions(false)
             ->orderBy(['lft' => SORT_ASC])
             ->all();
-
-        $seedPath = Craft::getAlias('@config/page-seeds.json');
-        $seeds = json_decode((string)file_get_contents($seedPath), true, flags: JSON_THROW_ON_ERROR);
         $builder = new m260713_151000_seed_page_builder();
 
         foreach ($pages as $page) {
@@ -58,17 +56,12 @@ class m260715_180000_apply_owner_copy_feedback extends Migration
                 throw new RuntimeException("No editable sections were found for {$page->title}.");
             }
 
-            $values = [
+            $page->setFieldValues([
                 'pageSections' => $sections,
                 'pageCustomCss' => $customCss,
                 'pageHeadHtml' => $headHtml,
                 'pageBodyScripts' => $bodyScripts,
-            ];
-            if (isset($seeds[$template])) {
-                $values = array_merge($values, $seeds[$template]);
-            }
-            $page->setFieldValues($values);
-
+            ]);
             if (!Craft::$app->getElements()->saveElement($page)) {
                 $errors = implode('; ', $page->getErrorSummary(true));
                 throw new RuntimeException("Unable to update {$page->title}: $errors");
@@ -80,7 +73,25 @@ class m260715_180000_apply_owner_copy_feedback extends Migration
 
     public function safeDown(): bool
     {
-        echo "Owner-approved copy changes cannot be safely reverted.\n";
+        echo "Retired pages and rebuilt editor content cannot be safely restored.\n";
         return false;
+    }
+
+    private function removeRetiredPages(): void
+    {
+        $retiredSlugs = ['home-funnel', 'contact-visit', 'icon-comparison'];
+        $entries = Entry::find()
+            ->section('pages')
+            ->slug($retiredSlugs)
+            ->status(null)
+            ->drafts(false)
+            ->revisions(false)
+            ->all();
+
+        foreach ($entries as $entry) {
+            if (!Craft::$app->getElements()->deleteElement($entry, true)) {
+                throw new RuntimeException("Unable to remove the retired page {$entry->title}.");
+            }
+        }
     }
 }

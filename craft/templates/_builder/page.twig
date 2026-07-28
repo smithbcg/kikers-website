@@ -17,11 +17,11 @@
 {% set isSell = slug starts with 'sell-your-' or slug == 'we-buy-cars-near-pensacola' %}
 {% set isParts = slug in ['u-pull-parts', 'full-service-parts'] %}
 {% set isCars = slug starts with 'cars-for-sale' %}
-{% set navActive = isSell ? 'sell' : (isParts ? 'parts' : (isCars ? 'cars' : (slug == 'about' ? 'story' : (slug in ['contact', 'contact-visit'] ? 'visit' : '')))) %}
-{% set thirdNav = isCars ? 'cars' : (slug == 'full-service-parts' ? 'request' : 'how') %}
+{% set navActive = isSell ? 'sell' : (isParts ? 'parts' : (slug == 'about' ? 'story' : (slug == 'contact' ? 'visit' : ''))) %}
+{% set thirdNav = slug == 'full-service-parts' ? 'request' : 'how' %}
 {% set thirdHref = slug == 'full-service-parts' ? '#request' : (url(entry.uri) ~ '#how') %}
-{% set ctaLabel = isParts ? (slug == 'u-pull-parts' ? 'Search Inventory' : 'Request a Part') : (isCars ? 'Call the Yard' : (slug in ['about', 'contact', 'contact-visit'] ? 'Call Us' : 'Get My Offer')) %}
-{% set ctaHref = isParts ? (slug == 'u-pull-parts' ? '#search' : '#request') : (isCars or slug in ['about', 'contact', 'contact-visit'] ? 'phone' : '#offer-form') %}
+{% set ctaLabel = isParts ? (slug == 'u-pull-parts' ? 'Search Inventory' : 'Request a Part') : (isCars ? 'Call the Yard' : (slug in ['about', 'contact'] ? 'Call Us' : 'Get My Offer')) %}
+{% set ctaHref = isParts ? (slug == 'u-pull-parts' ? '#search' : '#request') : (isCars or slug in ['about', 'contact'] ? 'phone' : '#offer-form') %}
 <body id="top" class="cms-page cms-page--{{ slug }}">
   {% include '_partials/site-header' with {
     navActive: navActive,
@@ -40,11 +40,11 @@
 
   {% include '_partials/site-footer' %}
   {% set isVehicleDetail = slug == 'cars-for-sale-vehicle' %}
-  {% set mobilePrimaryLabel = isParts ? (slug == 'u-pull-parts' ? 'Search Inventory' : 'Request a Part') : (isVehicleDetail ? 'Ask About This' : (slug == 'cars-for-sale' ? 'Notify Me' : (slug in ['about', 'contact', 'contact-visit'] ? 'Visit the Yard' : 'Get My Offer'))) %}
-  {% set mobilePrimaryHref = isParts ? (slug == 'u-pull-parts' ? '#search' : '#request') : (isVehicleDetail ? '#ask' : (slug == 'cars-for-sale' ? '#wishlist' : (slug in ['about', 'contact', 'contact-visit'] ? url('contact') : '#offer-form'))) %}
+  {% set mobilePrimaryLabel = isParts ? (slug == 'u-pull-parts' ? 'Search Inventory' : 'Request a Part') : (isVehicleDetail ? 'Ask About This' : (slug == 'cars-for-sale' ? 'Notify Me' : (slug in ['about', 'contact'] ? 'Visit the Yard' : 'Get My Offer'))) %}
+  {% set mobilePrimaryHref = isParts ? (slug == 'u-pull-parts' ? '#search' : '#request') : (isVehicleDetail ? '#ask' : (slug == 'cars-for-sale' ? '#wishlist' : (slug in ['about', 'contact'] ? url('contact') : '#offer-form'))) %}
   <nav class="mobile-action-bar" aria-label="Quick actions">
     <a class="btn btn--outline" href="tel:{{ siteSettings.phoneNumber|replace({'-': ''}) }}"><i data-lucide="phone" aria-hidden="true"></i>Call</a>
-    <a class="btn btn--filled" href="{{ mobilePrimaryHref }}"><i data-lucide="{{ isParts ? 'package-search' : (isVehicleDetail ? 'message-square-text' : (slug == 'cars-for-sale' ? 'bell' : (slug in ['about', 'contact', 'contact-visit'] ? 'map-pin' : 'badge-dollar-sign'))) }}" aria-hidden="true"></i>{{ mobilePrimaryLabel }}</a>
+    <a class="btn btn--filled" href="{{ mobilePrimaryHref }}"><i data-lucide="{{ isParts ? 'package-search' : (isVehicleDetail ? 'message-square-text' : (slug == 'cars-for-sale' ? 'bell' : (slug in ['about', 'contact'] ? 'map-pin' : 'badge-dollar-sign'))) }}" aria-hidden="true"></i>{{ mobilePrimaryLabel }}</a>
   </nav>
   <div class="toast-host" id="toastHost" aria-live="polite"></div>
   {{ entry.pageBodyScripts|raw }}

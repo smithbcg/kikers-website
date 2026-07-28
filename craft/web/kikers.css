@@ -108,6 +108,11 @@ h1,h2,h3,h4{margin:0;font-family:var(--display);font-weight:800;letter-spacing:0
 .hero .hero-photo--upull{background-image:url("assets/photos/customer-pulled-part.jpg");background-size:cover;background-position:center 45%;filter:saturate(.86) contrast(1.06)}
 .hero .hero-photo--warehouse{background-image:url("assets/photos/parts-warehouse-panorama.jpg");background-size:cover;background-position:center 48%;filter:saturate(.82) contrast(1.06)}
 .hero .hero-photo--storefront{background-image:url("assets/photos/yard-storefront.jpg");background-size:cover;background-position:center 48%;filter:saturate(.88) contrast(1.06)}
+.hero .hero-photo--pensacola{background-image:url("assets/photos/originals/Kiker's Building 1.jpeg");background-size:cover;background-position:center 52%;filter:saturate(.84) contrast(1.08)}
+.hero .hero-photo--milton{background-image:url("assets/photos/originals/Kiker Yard Exterior 2.jpg");background-size:cover;background-position:center 48%;filter:saturate(.9) contrast(1.06)}
+.hero .hero-photo--pace{background-image:url("assets/photos/originals/1000103847.JPG");background-size:cover;background-position:center 43%;filter:saturate(.82) contrast(1.08)}
+.hero .hero-photo--cantonment{background-image:url("assets/photos/originals/Kiker Yard Exterior 1.jpg");background-size:cover;background-position:center 42%;filter:saturate(.9) contrast(1.06)}
+.hero .hero-photo--gulfcoast{background-image:url("assets/photos/originals/1000103848.JPG");background-size:cover;background-position:center 42%;filter:saturate(.82) contrast(1.08)}
 .hero::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(11,6,17,.92),rgba(11,6,17,.78) 45%,rgba(11,6,17,.48)),radial-gradient(720px 380px at 92% -10%,rgba(220,22,31,.32),transparent 60%)}
 .hero .wrap{position:relative;z-index:2;padding:64px 24px 76px}
 .hero.compact .wrap{padding:50px 24px 56px}
@@ -251,8 +256,8 @@ section{scroll-margin-top:80px}
 /* ===== STEPPER ===== */
 .stepper{display:flex;align-items:flex-start;max-width:760px;margin:0 auto}
 .step{flex:1;display:flex;flex-direction:column;align-items:center;text-align:center;position:relative}
-.step::before{content:"";position:absolute;top:24px;right:50%;width:100%;height:2px;background:var(--line)}
-.step:first-child::before{display:none}.step.done::before{background:var(--green)}
+.step::before{content:"";position:absolute;top:24px;right:50%;width:100%;height:3px;background:var(--green)}
+.step:first-child::before{display:none}
 .step .node{width:50px;height:50px;border-radius:50%;display:grid;place-items:center;background:var(--grad-red);font-family:var(--display);font-style:italic;font-weight:800;font-size:20px;color:#fff;position:relative;z-index:1;box-shadow:var(--e1)}
 .step .lab{font-size:14px;margin-top:12px;color:var(--text);font-weight:600;font-family:var(--display);font-style:italic;text-transform:uppercase}
 .step .sub{font-size:13px;color:var(--text-2);margin-top:4px;max-width:22ch}
@@ -614,6 +619,17 @@ table{max-width:100%}
 .kiker-icon--connection{background-image:url("assets/icons/kiker-connection.svg")}
 .kiker-icon--hard-hat{background-image:url("assets/icons/kiker-hard-hat.svg")}
 .kiker-icon--safety{background-image:url("assets/icons/kiker-safety.svg")}
+.ic.kiker-icon,.c.kiker-icon,.ck.kiker-icon,.vc.kiker-icon{display:inline-block;width:1.35em;height:1.35em;font-size:inherit;color:transparent;background-color:transparent;border:0;border-radius:0;line-height:1;margin-bottom:0}
+.btn .ic.kiker-icon{width:1.35em;height:1.35em}
+.mcard>.ic.kiker-icon,.path .pbody>.ic.kiker-icon,.spec-grid .cell .ic.kiker-icon{width:38px;height:38px}
+.tag .c.kiker-icon,.fl-list .ck.kiker-icon,.path li .c.kiker-icon{width:20px;height:20px}
+.ecostrip .ic.kiker-icon{width:32px;height:32px}
+.toast .ic.kiker-icon{width:24px;height:24px}
+.legacy-inline-icon{display:inline-block;width:1.15em;height:1.15em;vertical-align:-.18em;margin-right:.28em}
+.yard-map-photo{margin:0;overflow:hidden;border-radius:var(--r-md);background:var(--ink)}
+.yard-map-photo img{display:block;width:100%;aspect-ratio:16/8.5;object-fit:cover}
+.yard-map-photo figcaption{display:flex;align-items:center;gap:10px;padding:13px 16px;color:#fff;font-size:13px}
+.yard-map-photo figcaption .kiker-icon{width:26px;height:26px}
 .sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
 .hero-photo--detail{background-position:center 46%;filter:saturate(.72) contrast(1.08)}
 .hero-photo--local{background-position:center 50%;filter:saturate(.82) contrast(1.06)}

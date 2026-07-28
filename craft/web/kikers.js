@@ -1,7 +1,72 @@
 /* Kiker's U-Pull-It — shared behavior (every page loads this) */
 (function(){
   document.documentElement.classList.add('motion-ready');
-  if(window.lucide){window.lucide.createIcons();}
+  // Normalize all legacy glyphs and Lucide placeholders to the approved
+  // custom Kiker icon artwork. This keeps older CMS-authored sections on the
+  // same icon system without making editors rebuild each block by hand.
+  var iconNames={
+    camera:'inspection','car-front':'cash-vehicle',check:'verified',
+    'clipboard-check':'paperwork','clipboard-list':'paperwork',history:'hours',
+    info:'verified','map-pin':'location',phone:'fast-response',recycle:'recycle',
+    'search-check':'part','shield-check':'safety',truck:'towing',users:'teamwork',
+    zap:'cash-offer','package-search':'warehouse','message-square-text':'connection',
+    bell:'fast-response','badge-dollar-sign':'cash-offer'
+  };
+  var legacyGlyphs={
+    '⚡':'cash-offer','🚚':'towing','🛡️':'safety','🤝':'teamwork','💵':'cash-vehicle',
+    '🔧':'wrench','🏷️':'part','📦':'warehouse','📍':'location','📞':'fast-response',
+    '✓':'verified','♻️':'recycle','♻':'recycle','⛽':'engine','⏱':'hours',
+    '⚙':'gears','📅':'hours','✉️':'connection','💬':'connection','🧰':'tool-kit',
+    '👟':'safety','⚠️':'safety','🎟️':'cash-offer','🔞':'safety','🚧':'safety',
+    '🛞':'wheel','🌐':'connection','📋':'paperwork','🏁':'fast-work','🔑':'verified',
+    '⌕':'part'
+  };
+  function applyKikerIcon(el,name){
+    if(!name)return;
+    el.removeAttribute('data-lucide');
+    el.classList.add('kiker-icon','kiker-icon--'+name);
+    el.setAttribute('aria-hidden','true');
+    el.textContent='';
+  }
+  document.querySelectorAll('[data-lucide]').forEach(function(el){
+    applyKikerIcon(el,iconNames[el.getAttribute('data-lucide')]||'part');
+  });
+  document.querySelectorAll('.ic,.c,.ck,.vc').forEach(function(el){
+    applyKikerIcon(el,legacyGlyphs[el.textContent.trim()]);
+  });
+  // A few legacy templates placed glyphs directly in list items, badges, and
+  // utility text. Replace those text-node occurrences as well so no emoji icon
+  // survives outside the standard icon wrappers.
+  var glyphKeys=Object.keys(legacyGlyphs).sort(function(a,b){return b.length-a.length;});
+  var walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{
+    acceptNode:function(node){
+      var parent=node.parentElement;
+      if(!parent||parent.closest('script,style,noscript,textarea'))return NodeFilter.FILTER_REJECT;
+      return glyphKeys.some(function(glyph){return node.nodeValue.indexOf(glyph)!==-1;})
+        ? NodeFilter.FILTER_ACCEPT
+        : NodeFilter.FILTER_REJECT;
+    }
+  });
+  var glyphTextNodes=[],glyphNode;
+  while((glyphNode=walker.nextNode()))glyphTextNodes.push(glyphNode);
+  glyphTextNodes.forEach(function(node){
+    var remaining=node.nodeValue,fragment=document.createDocumentFragment();
+    while(remaining){
+      var match=null,index=-1;
+      glyphKeys.forEach(function(glyph){
+        var candidate=remaining.indexOf(glyph);
+        if(candidate!==-1&&(index===-1||candidate<index)){match=glyph;index=candidate;}
+      });
+      if(index===-1){fragment.appendChild(document.createTextNode(remaining));break;}
+      if(index>0)fragment.appendChild(document.createTextNode(remaining.slice(0,index)));
+      var icon=document.createElement('span');
+      icon.className='legacy-inline-icon kiker-icon kiker-icon--'+legacyGlyphs[match];
+      icon.setAttribute('aria-hidden','true');
+      fragment.appendChild(icon);
+      remaining=remaining.slice(index+match.length);
+    }
+    node.parentNode.replaceChild(fragment,node);
+  });
   // sticky nav border on scroll
   var nav=document.getElementById('nav');
   if(nav){var onScroll=function(){nav.classList.toggle('scrolled',window.scrollY>40);};window.addEventListener('scroll',onScroll,{passive:true});onScroll();}
@@ -48,7 +113,7 @@
   }else{revealTargets.forEach(function(el){el.classList.add('is-visible');});}
   // toast
   var tHost=document.getElementById('toastHost');
-  window.toast=function(msg){if(!tHost)return;var t=document.createElement('div');t.className='toast';t.innerHTML='<span class="ic">✓</span>'+msg;tHost.appendChild(t);setTimeout(function(){t.style.opacity='0';t.style.transform='translateY(8px)';t.style.transition='opacity .2s,transform .2s';setTimeout(function(){t.remove();},220);},3400);};
+  window.toast=function(msg){if(!tHost)return;var t=document.createElement('div');t.className='toast';t.innerHTML='<span class="ic kiker-icon kiker-icon--verified" aria-hidden="true"></span>'+msg;tHost.appendChild(t);setTimeout(function(){t.style.opacity='0';t.style.transform='translateY(8px)';t.style.transition='opacity .2s,transform .2s';setTimeout(function(){t.remove();},220);},3400);};
   function formPayload(form){
     var payload={rows:[]},vehicleParts={};
     Array.prototype.forEach.call(form.elements,function(el){

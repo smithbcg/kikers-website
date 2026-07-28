@@ -20,9 +20,7 @@
   <nav class="links" aria-label="Primary navigation">
     <a href="{{ url('sell-your-vehicle') }}"{{ navActive == 'sell' ? ' class="cur"' : '' }}>Sell Your Car</a>
     <a href="{{ url('u-pull-parts') }}"{{ navActive == 'parts' ? ' class="cur"' : '' }}>Find a Part</a>
-    {% if thirdNav == 'cars' %}
-      <a href="{{ url('cars-for-sale') }}"{{ navActive == 'cars' ? ' class="cur"' : '' }}>Cars for Sale</a>
-    {% elseif thirdNav == 'request' %}
+    {% if thirdNav == 'request' %}
       <a href="{{ thirdHref }}">Request a Part</a>
     {% elseif thirdNav == 'how' %}
       <a href="{{ thirdHref }}">How It Works</a>
@@ -37,9 +35,7 @@
 <aside class="drawer" id="drawer" aria-label="Mobile navigation">
   <a href="{{ url('sell-your-vehicle') }}">Sell Your Car</a>
   <a href="{{ url('u-pull-parts') }}">Find a Part</a>
-  {% if thirdNav == 'cars' %}
-    <a href="{{ url('cars-for-sale') }}">Cars for Sale</a>
-  {% elseif thirdNav == 'request' %}
+  {% if thirdNav == 'request' %}
     <a href="{{ thirdHref }}">Request a Part</a>
   {% elseif thirdNav == 'how' %}
     <a href="{{ thirdHref }}">How It Works</a>

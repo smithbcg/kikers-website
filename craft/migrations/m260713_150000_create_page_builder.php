@@ -427,7 +427,7 @@ class m260713_150000_create_page_builder extends Migration
     private function field(Field $field): Field
     {
         if (!Craft::$app->getFields()->saveField($field)) {
-            $error = $field->getFirstError() ?: 'Unknown validation error.';
+            $error = implode('; ', $field->getErrorSummary(true)) ?: 'Unknown validation error.';
             throw new RuntimeException("Unable to create {$field->handle}: $error");
         }
         return $field;

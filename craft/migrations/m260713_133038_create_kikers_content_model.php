@@ -228,7 +228,6 @@ class m260713_133038_create_kikers_content_model extends Migration
             ['Cars for Sale', 'cars-for-sale', 'cars-for-sale.html', 'vehicle'],
             ['2018 Honda Civic LX', 'cars-for-sale-vehicle', 'cars-for-sale-vehicle.html', 'vehicle'],
             ['Contact & Visit', 'contact', 'contact.html', 'standard'],
-            ['Contact & Visit Concept', 'contact-visit', 'Contact-Visit.html', 'concept'],
             ['Full-Service Parts', 'full-service-parts', 'full-service-parts.html', 'service'],
             ['Pull Your Own Parts', 'u-pull-parts', 'u-pull-parts.html', 'service'],
             ['Sell Your Vehicle', 'sell-your-vehicle', 'sell-your-vehicle.html', 'service'],
@@ -244,9 +243,7 @@ class m260713_133038_create_kikers_content_model extends Migration
             ['Homepage Concept', 'kikers-home', 'Kikers-Home.html', 'concept'],
             ['Homepage Concept V2', 'kikers-home-v2', 'Kikers-Home-v2.html', 'concept'],
             ['Homepage with Photos', 'kikers-home-with-photos', 'Kikers-Home-with-Photos.html', 'concept'],
-            ['Homepage Funnel', 'home-funnel', 'home-funnel.html', 'concept'],
             ['Homepage Funnel V2', 'home-funnel-2', 'home-funnel-2.html', 'concept'],
-            ['Icon Comparison', 'icon-comparison', 'Icon-Comparison.html', 'concept'],
             ['Component Kit', 'component-kit', 'docs/component-kit.html', 'concept'],
         ];
 

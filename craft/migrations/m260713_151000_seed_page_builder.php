@@ -363,6 +363,11 @@ class m260713_151000_seed_page_builder extends Migration
             'hero-photo--upull' => '/assets/photos/customer-pulled-part.jpg',
             'hero-photo--warehouse' => '/assets/photos/parts-warehouse-panorama.jpg',
             'hero-photo--storefront' => '/assets/photos/yard-storefront.jpg',
+            'hero-photo--pensacola' => "/assets/photos/originals/Kiker's Building 1.jpeg",
+            'hero-photo--milton' => '/assets/photos/originals/Kiker Yard Exterior 2.jpg',
+            'hero-photo--pace' => '/assets/photos/originals/1000103847.JPG',
+            'hero-photo--cantonment' => '/assets/photos/originals/Kiker Yard Exterior 1.jpg',
+            'hero-photo--gulfcoast' => '/assets/photos/originals/1000103848.JPG',
         ];
         foreach ($root->getElementsByTagName('div') as $div) {
             if (!$div instanceof DOMElement) {
