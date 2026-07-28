@@ -49,15 +49,47 @@
 </section>
 
 <!-- VALUES -->
-<section class="values-band">
-  <div class="wrap"><div class="values-layout">
-    <div><span class="eyebrow">How We Work</span><h2>Built into every deal</h2></div>
-    <div class="values-grid">
-      <div class="value-item">{% include '_partials/kiker-icon' with { name: 'wrench' } only %}<b>Own It</b><span>See it. Handle it.</span></div>
-      <div class="value-item">{% include '_partials/kiker-icon' with { name: 'paperwork' } only %}<b>Do Right</b><span>Fair and by the book.</span></div>
-      <div class="value-item">{% include '_partials/kiker-icon' with { name: 'fast-work' } only %}<b>Outwork It</b><span>Move when it matters.</span></div>
-      <div class="value-item">{% include '_partials/kiker-icon' with { name: 'teamwork' } only %}<b>Back Each Other</b><span>Family, crew, community.</span></div>
-      <div class="value-item">{% include '_partials/kiker-icon' with { name: 'hard-hat' } only %}<b>Watch Out</b><span>Everyone goes home safe.</span></div>
+<section class="values-showcase" aria-labelledby="home-values-title">
+  <img class="values-showcase__background" src="assets/photos/originals/Screenshot 2026-07-21 at 3.04.35 PM.png" alt="" width="2880" height="1440" loading="lazy">
+  <div class="values-showcase__scrim" aria-hidden="true"></div>
+  <div class="wrap"><div class="values-showcase__layout">
+    <header class="values-showcase__intro">
+      <span class="eyebrow on-ink">Our Values</span>
+      <h2 id="home-values-title">Five Values You Can Count On</h2>
+      <p>These are the standards we live by so you can count on a better experience every time.</p>
+      <div class="values-showcase__hazard" aria-hidden="true"></div>
+    </header>
+    <div class="values-showcase__grid">
+      <article class="value-promise">
+        <div class="value-promise__icon">{% include '_partials/kiker-icon' with { name: 'wrench' } only %}</div>
+        <h3>Own It</h3>
+        <p class="value-promise__line">Take responsibility.<br>Fix problems.</p>
+        <p>We correct our mistakes, keep the yard in order, and do not leave issues for someone else to handle.</p>
+      </article>
+      <article class="value-promise">
+        <div class="value-promise__icon">{% include '_partials/kiker-icon' with { name: 'paperwork' } only %}</div>
+        <h3>Do Right</h3>
+        <p class="value-promise__line">Tell the truth.<br>Be fair.</p>
+        <p>We give customers honest information, charge fair prices, and do the job properly, even when no one is watching.</p>
+      </article>
+      <article class="value-promise">
+        <div class="value-promise__icon">{% include '_partials/kiker-icon' with { name: 'fast-work' } only %}</div>
+        <h3>Outwork It</h3>
+        <p class="value-promise__line">Find solutions.<br>Follow through.</p>
+        <p>We put in the effort required to solve problems, complete the work, and provide the help our customers need.</p>
+      </article>
+      <article class="value-promise">
+        <div class="value-promise__icon">{% include '_partials/kiker-icon' with { name: 'teamwork' } only %}</div>
+        <h3>Back Each Other</h3>
+        <p class="value-promise__line">Work as<br>a team.</p>
+        <p>We step in, help each other, and get the job done as a team. That means better communication, more consistent service, and fewer delays for our customers.</p>
+      </article>
+      <article class="value-promise">
+        <div class="value-promise__icon">{% include '_partials/kiker-icon' with { name: 'hard-hat' } only %}</div>
+        <h3>Watch Out</h3>
+        <p class="value-promise__line">Be safe.<br>Protect others.</p>
+        <p>We do not take shortcuts at the expense of safety, and we expect every employee to take reasonable precautions to protect customers, employees, and everyone in the yard.</p>
+      </article>
     </div>
   </div></div>
 </section>
@@ -218,6 +250,11 @@
         <div class="pays"><span class="pc">VISA</span><span class="pc">MC</span><span class="pc">AMEX</span><span class="pc">DISC</span><span class="pc">CASH</span></div>
       </div>
     </div>
+    {% include '_partials/yard-map' with {
+      compact: true,
+      mapHeading: 'Know the yard before you arrive',
+      mapCopy: 'Use the visitor map to find customer parking, the front office, and the self-service vehicle rows.'
+    } %}
   </div>
 </section>
 

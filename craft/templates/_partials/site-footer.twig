@@ -1,7 +1,18 @@
 {% set phoneHref = 'tel:' ~ siteSettings.phoneNumber|replace({'-': '', ' ': '', '(': '', ')': ''}) %}
 {% set managedFooterLogo = siteSettings.footerLogo is defined ? siteSettings.footerLogo.one() : null %}
 {% set footerLogoUrl = managedFooterLogo ? managedFooterLogo.url : siteUrl ~ 'assets/logos/kikers-horizontal-white.svg' %}
-{% set footerLinks = siteSettings.footerLinks is defined ? siteSettings.footerLinks : [] %}
+{% set configuredFooterLinks = siteSettings.footerLinks is defined ? siteSettings.footerLinks : [] %}
+{% set retiredFooterUrls = ['/blog', '/tips-guides', '/kikers-home', '/kikers-home-with-photos'] %}
+{% set retiredFooterLabels = ['blog', 'tips & guides', 'tips and guides', 'home concept', 'homepage concept', 'home with photos', 'homepage with photos'] %}
+{% set footerLinks = [] %}
+{% for footerLink in configuredFooterLinks %}
+  {% set itemUrl = footerLink.url|default('')|lower|trim|trim('/') %}
+  {% set normalizedUrl = itemUrl ? '/' ~ itemUrl : '' %}
+  {% set itemLabel = footerLink.label|default('')|lower|trim %}
+  {% if normalizedUrl not in retiredFooterUrls and itemLabel not in retiredFooterLabels %}
+    {% set footerLinks = footerLinks|merge([footerLink]) %}
+  {% endif %}
+{% endfor %}
 {% set footerGroups = [] %}
 {% for footerLink in footerLinks %}
   {% set footerGroup = footerLink.group|default('Links')|trim ?: 'Links' %}

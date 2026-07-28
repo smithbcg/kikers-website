@@ -102,12 +102,10 @@
 <section class="sec" style="background:var(--surface-3)">
   <div class="wrap">
     <div class="sec-head center"><span class="eyebrow">Find Your Way</span><h2 style="font-style:italic">Yard map</h2><p>Sorted by manufacturer into clean rows, so you know right where to head.</p></div>
-    <div class="mapwrap" style="max-width:900px;margin:0 auto">
-      <figure class="yard-map-photo yard-map-photo--diagram">
-        <img src="assets/maps/kikers-yard-map.svg" alt="Kiker's yard map showing customer parking, office, vehicle sections, drive route, and restricted areas" width="1920" height="1080" loading="lazy">
-        <figcaption>{% include '_partials/kiker-icon' with { name: 'location' } only %}<span>Check in at the front office, then follow the marked route to the correct pull section.</span></figcaption>
-      </figure>
-    </div>
+    {% include '_partials/yard-map' with {
+      mapHeading: 'Find your section faster',
+      mapCopy: 'The self-service yard is organized by manufacturer. Check in at the office, then follow the marked route to the pull rows.'
+    } %}
   </div>
 </section>
 
