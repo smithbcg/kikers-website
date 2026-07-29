@@ -68,6 +68,14 @@
         loading="lazy"
         referrerpolicy="strict-origin-when-cross-origin"></iframe>
     </div>
+    <div class="inventory-preview">
+      {% include '_partials/kiker-icon' with { name: 'warehouse' } only %}
+      <div>
+        <h3>Live inventory opens in AutoRecycler</h3>
+        <p>This preview domain is not authorized to display AutoRecycler inside the page. The production Kiker's domains are authorized; use the direct inventory link here while reviewing the site.</p>
+      </div>
+      <a class="btn btn--filled" href="https://ario.autorecycler.io/yard/kikers-u-pull-it?yard=2c06fa04-9b26-4b8e-b0e8-ac36d7a1b829" target="_blank" rel="noopener">Open Live Inventory →</a>
+    </div>
     <div class="inventory-fallback">
       <p>If the inventory does not load, <a href="https://ario.autorecycler.io/yard/kikers-u-pull-it?yard=2c06fa04-9b26-4b8e-b0e8-ac36d7a1b829" target="_blank" rel="noopener">open the live inventory directly</a> or call <a href="tel:{{ siteSettings.phoneNumber|replace({"-": "", " ": "", "(": "", ")": ""}) }}">{{ siteSettings.phoneNumber }}</a>.</p>
     </div>

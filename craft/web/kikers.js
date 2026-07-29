@@ -1,6 +1,10 @@
 /* Kiker's U-Pull-It — shared behavior (every page loads this) */
 (function(){
   document.documentElement.classList.add('motion-ready');
+  var arioEmbedHosts=['kikersautoparts.com','www.kikersautoparts.com','kikersupullit.com','www.kikersupullit.com'];
+  if(arioEmbedHosts.indexOf(window.location.hostname.toLowerCase())===-1){
+    document.documentElement.classList.add('ario-embed-disabled');
+  }
   // Normalize all legacy glyphs and Lucide placeholders to the approved
   // custom Kiker icon artwork. This keeps older CMS-authored sections on the
   // same icon system without making editors rebuild each block by hand.
@@ -114,6 +118,29 @@
   // toast
   var tHost=document.getElementById('toastHost');
   window.toast=function(msg){if(!tHost)return;var t=document.createElement('div');t.className='toast';t.innerHTML='<span class="ic kiker-icon kiker-icon--verified" aria-hidden="true"></span>'+msg;tHost.appendChild(t);setTimeout(function(){t.style.opacity='0';t.style.transform='translateY(8px)';t.style.transition='opacity .2s,transform .2s';setTimeout(function(){t.remove();},220);},3400);};
+  // Legacy CMS forms were authored with visible placeholders but, in several
+  // blocks, without programmatic labels or field names. Preserve the visual
+  // design while making every control understandable to assistive technology
+  // and giving the submission endpoint stable payload keys.
+  document.querySelectorAll('form').forEach(function(form){
+    var usedNames={};
+    form.querySelectorAll('input:not([type="hidden"]):not([type="submit"]),select,textarea').forEach(function(el,index){
+      var nearbyLabel=el.parentElement?el.parentElement.querySelector('label'):null;
+      var visibleLabel=el.labels&&el.labels.length
+        ?el.labels[0].textContent.trim()
+        :(nearbyLabel?nearbyLabel.textContent.trim():'');
+      var selectLabel=el.tagName==='SELECT'&&el.options.length?el.options[0].textContent.trim():'';
+      var label=visibleLabel||el.getAttribute('aria-label')||el.placeholder||selectLabel||('Field '+(index+1));
+      if(!(el.labels&&el.labels.length)&&!el.getAttribute('aria-label'))el.setAttribute('aria-label',label);
+      if(!el.name){
+        var base=label.toLowerCase().replace(/[^a-z0-9]+/g,'_').replace(/^_|_$/g,'')||('field_'+(index+1));
+        var name=base,suffix=2;
+        while(usedNames[name])name=base+'_'+suffix++;
+        el.name=name;
+      }
+      usedNames[el.name]=true;
+    });
+  });
   function formPayload(form){
     var payload={rows:[]},vehicleParts={};
     Array.prototype.forEach.call(form.elements,function(el){

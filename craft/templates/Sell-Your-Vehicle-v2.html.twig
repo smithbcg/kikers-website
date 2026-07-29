@@ -522,12 +522,12 @@ table{max-width:100%}
       <h2 style="font-size:clamp(23px,3vw,31px);margin:8px 0 10px">Where we buy</h2>
       <p class="lead-p">We're in Pensacola and buy vehicles across <b>Escambia and Santa Rosa counties</b> — with free towing. Pick your town to see how it works near you:</p>
       <div class="townlist">
-        <a href="#"><span class="p">📍</span> We Buy Cars Near Pensacola</a>
-        <a href="#"><span class="p">📍</span> Sell Your Car in Pensacola</a>
-        <a href="#"><span class="p">📍</span> Sell Your Car in Pace</a>
-        <a href="#"><span class="p">📍</span> Sell Your Car in Milton / East Milton</a>
-        <a href="#"><span class="p">📍</span> Sell Your Car in Cantonment</a>
-        <a href="#"><span class="p">📍</span> Nearby Gulf Coast areas</a>
+        <a href="{{ url('we-buy-cars-near-pensacola') }}"><span class="p">📍</span> We Buy Cars Near Pensacola</a>
+        <a href="{{ url('sell-your-car-pensacola') }}"><span class="p">📍</span> Sell Your Car in Pensacola</a>
+        <a href="{{ url('sell-your-car-pace') }}"><span class="p">📍</span> Sell Your Car in Pace</a>
+        <a href="{{ url('sell-your-car-milton') }}"><span class="p">📍</span> Sell Your Car in Milton / East Milton</a>
+        <a href="{{ url('sell-your-car-cantonment') }}"><span class="p">📍</span> Sell Your Car in Cantonment</a>
+        <a href="{{ url('contact') }}"><span class="p">📍</span> Nearby Gulf Coast areas</a>
       </div>
       <div style="display:flex;gap:12px;flex-wrap:wrap"><a class="btn btn--filled" href="tel:{{ siteSettings.phoneNumber|replace({"-": ""}) }}"><span class="ic">📞</span>Call the Yard</a><a class="btn btn--outline" href="#offer">Get an Offer Online</a></div>
     </div>
