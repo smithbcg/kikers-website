@@ -75,3 +75,13 @@ php craft up --interactive=0
 ```
 
 Keep `.env` out of Git. Set `CRAFT_ALLOW_ADMIN_CHANGES=false` in production and make database backups before deployments.
+
+Before handing the control panel to the business owner:
+
+1. Create a named Craft user for the owner with their real email address.
+2. Require that user to choose their own password; do not reuse the local `admin` password.
+3. Confirm the owner can sign in, edit a page, replace an asset, update the universal footer, and view Inquiries.
+4. Retain a separate named technical administrator for deployment support.
+5. Disable or remove temporary shared administrator accounts after the owner confirms access.
+
+Production SMTP is configured through `CRAFT_SYSTEM_EMAIL`, `SMTP_HOST`, `SMTP_PORT`, `SMTP_USE_AUTHENTICATION`, `SMTP_USERNAME`, and `SMTP_PASSWORD`. Run Craft's email settings test and submit the public contact form before DNS cutover.

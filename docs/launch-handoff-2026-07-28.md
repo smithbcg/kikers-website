@@ -17,6 +17,8 @@
 
 The repository identifies `cars@kikersautoparts.com` as both notification recipient and sender. Before DNS cutover, configure and test a production mail transport that is authorized to send for `kikersautoparts.com` (SMTP or a transactional mail provider). Do not assume a production server's local Sendmail transport will deliver reliably.
 
+The production `.env` needs real values for `SMTP_HOST`, `SMTP_PORT`, `SMTP_USE_AUTHENTICATION`, `SMTP_USERNAME`, and `SMTP_PASSWORD`. The repository intentionally does not contain those credentials.
+
 Required smoke test:
 
 1. Submit the public contact form.
@@ -32,6 +34,10 @@ Required smoke test:
 4. Confirm the call appears in WhatConverts with the expected source.
 
 Never hardcode `850-257-7292`; it is a dynamic pool number. The permanent number in Craft must remain `850-435-7630`.
+
+## Owner access requirement
+
+Create Hunter's named Craft account only after receiving his preferred email address and username. Give the account the permissions needed to edit pages, assets, icons, navigation/footer settings, and inquiries. Have Hunter set his own password, confirm access, and then remove or disable any temporary shared administrator account.
 
 ## U-Pull inventory vendor action
 
@@ -68,5 +74,11 @@ Do not ask Car-Part to change DNS until all items below are known:
 - WhatConverts call test completed;
 - AutoRecycler embed tested on the production hostname;
 - current DNS records and TTL exported before changes.
+
+Three external inputs are still required before the cutover can be executed:
+
+1. the production hosting provider or server login, including the exact A/AAAA and/or CNAME targets;
+2. production SMTP credentials authorized for `kikersautoparts.com`;
+3. Hunter's preferred email address and Craft username.
 
 After cutover, verify `/home`, `/sell-your-vehicle`, `/u-pull-parts`, `/full-service-parts`, `/contact`, the four location pages, robots/sitemap behavior, and a representative 404.

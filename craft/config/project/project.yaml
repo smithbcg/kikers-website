@@ -1,8 +1,14 @@
 dateModified: 1785272148
 email:
-  fromEmail: cars@kikersautoparts.com
+  fromEmail: $CRAFT_SYSTEM_EMAIL
   fromName: "Kiker's U-Pull-It"
-  transportType: craft\mail\transportadapters\Sendmail
+  transportSettings:
+    host: $SMTP_HOST
+    password: $SMTP_PASSWORD
+    port: $SMTP_PORT
+    useAuthentication: $SMTP_USE_AUTHENTICATION
+    username: $SMTP_USERNAME
+  transportType: craft\mail\transportadapters\Smtp
 fs:
   siteAssetsFs:
     hasUrls: true
