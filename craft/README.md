@@ -78,10 +78,11 @@ Keep `.env` out of Git. Set `CRAFT_ALLOW_ADMIN_CHANGES=false` in production and 
 
 Before handing the control panel to the business owner:
 
-1. Create a named Craft user for the owner with their real email address.
-2. Require that user to choose their own password; do not reuse the local `admin` password.
-3. Confirm the owner can sign in, edit a page, replace an asset, update the universal footer, and view Inquiries.
-4. Retain a separate named technical administrator for deployment support.
-5. Disable or remove temporary shared administrator accounts after the owner confirms access.
+1. Decide whether to keep Craft Solo or upgrade to Craft Team/Pro. Solo permits only one user.
+2. If staying on Solo, transfer the existing sole administrator to the owner by replacing the local placeholder username/email with the owner's real details.
+3. Require the owner to choose a new password; do not reuse the local `admin` password.
+4. Confirm the owner can sign in, edit a page, replace an asset, update the universal footer, and view Inquiries.
+5. A separate named technical administrator can be retained only after upgrading to an edition that supports multiple users.
+6. Disable any temporary shared credentials after the owner confirms access.
 
 Production SMTP is configured through `CRAFT_SYSTEM_EMAIL`, `SMTP_HOST`, `SMTP_PORT`, `SMTP_USE_AUTHENTICATION`, `SMTP_USERNAME`, and `SMTP_PASSWORD`. Run Craft's email settings test and submit the public contact form before DNS cutover.

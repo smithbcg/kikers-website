@@ -22,6 +22,7 @@ Public assets live under `craft/web/assets`; uploaded Craft assets use the Site 
 
 - PHP 8.2+ and MySQL 8.0.17+ are required.
 - The public web root must be `craft/web`.
+- The project is currently configured for Craft Solo, which allows one control-panel user.
 - Create `craft/.env` from `craft/.env.example.production`.
 - Configure production SMTP before accepting inquiries.
 - Deploy with `composer install --no-dev --optimize-autoloader` and `php craft up --interactive=0`.

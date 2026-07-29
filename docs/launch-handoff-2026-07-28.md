@@ -13,6 +13,12 @@
 - The U-Pull page uses the live AutoRecycler yard search with a full-screen fallback.
 - Retired pages return 404: Home Funnel, Contact Visit, Icon Comparison, Homepage Concept, Homepage Concept V2, and Homepage with Photos.
 
+## Legacy Webflow tracking verification
+
+The current Webflow source places the supplied WhatConverts bootstrap and profile `165238` loader together in the document `<head>`. Representative checks of the live homepage, Sell a Vehicle page, and Inventory page each returned exactly one loader. The visible/source phone remains `850-435-7630`.
+
+Craft mirrors that placement through the shared `_partials/seo.twig` include. Representative checks of the Craft homepage, Sell Your Vehicle page, and U-Pull Parts page also returned exactly one loader each. Do not paste the script into individual Craft entries or page-builder sections; that would create duplicate sessions and attribution errors.
+
 ## Production mail requirement
 
 The repository identifies `cars@kikersautoparts.com` as both notification recipient and sender. Before DNS cutover, configure and test a production mail transport that is authorized to send for `kikersautoparts.com` (SMTP or a transactional mail provider). Do not assume a production server's local Sendmail transport will deliver reliably.
@@ -37,7 +43,14 @@ Never hardcode `850-257-7292`; it is a dynamic pool number. The permanent number
 
 ## Owner access requirement
 
-Create Hunter's named Craft account only after receiving his preferred email address and username. Give the account the permissions needed to edit pages, assets, icons, navigation/footer settings, and inquiries. Have Hunter set his own password, confirm access, and then remove or disable any temporary shared administrator account.
+The project is configured as Craft Solo and currently has one administrator: the local placeholder `admin@kikers.local`. Solo allows only one user.
+
+Choose one of these handoff paths:
+
+1. Stay on Solo and transfer the existing sole administrator to Hunter after receiving his preferred email address and username. Have Hunter set his own password, confirm access to pages, assets, icons, navigation/footer settings, and inquiries, and invalidate the temporary local credentials.
+2. Upgrade to Craft Team/Pro, then create Hunter's named owner account and retain a separate named technical administrator.
+
+Do not create or guess an owner identity before Hunter's real account details are supplied.
 
 ## U-Pull inventory vendor action
 
@@ -79,6 +92,30 @@ Three external inputs are still required before the cutover can be executed:
 
 1. the production hosting provider or server login, including the exact A/AAAA and/or CNAME targets;
 2. production SMTP credentials authorized for `kikersautoparts.com`;
-3. Hunter's preferred email address and Craft username.
+3. Hunter's preferred email address and Craft username, plus a decision to transfer the sole Solo account or upgrade for multiple users.
 
 After cutover, verify `/home`, `/sell-your-vehicle`, `/u-pull-parts`, `/full-service-parts`, `/contact`, the four location pages, robots/sitemap behavior, and a representative 404.
+
+Run the repository smoke test once DNS resolves to production:
+
+```bash
+./scripts/production-smoke-test.sh https://www.kikersautoparts.com
+```
+
+## Current external state
+
+The domain is still pointed at Webflow and its authoritative DNS is managed by Car-Part/PhoneWare:
+
+- apex `A`: `198.202.211.1` (TTL 86400);
+- `www` `CNAME`: `cdn.webflow.com.` (TTL 86400);
+- authoritative SOA: `ns0.phoneware.com`;
+- authoritative nameservers: `ns1.phoneware.com`, `ns2.phoneware.com`, and `ns3` through `ns8.car-part.com`;
+- MX: `defenderMX00.Car-Part.com`, `defenderMX01.Car-Part.com`, and `defenderMX02.Car-Part.com`;
+- SPF: `v=spf1 mx a ip4:69.24.30.0/24 ip4:69.24.29.0/24 ?all`;
+- no DMARC TXT record was returned at `_dmarc.kikersautoparts.com`.
+
+The 86400-second TTL means some visitors can remain on the old Webflow destination for up to 24 hours after a DNS change. Ask Car-Part to lower the apex and `www` TTLs immediately; lowering a TTL only becomes fully effective after the old 24-hour TTL has expired.
+
+GitHub Pages is enabled from `main`, but it is only a historical static preview. It cannot run Craft's PHP/MySQL application. The repository has no production deployment workflow, environment variables, secrets, or Craft-compatible hosting target connected.
+
+If no Craft-compatible server already exists, the fastest supported launch path is a Craft Cloud trial. It requires a Craft Console organization with a payment method and permission to connect this GitHub repository. Do not run `craft setup/cloud` or alter the codebase for Craft Cloud until the owner approves that hosting choice.

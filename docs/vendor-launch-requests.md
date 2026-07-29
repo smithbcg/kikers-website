@@ -6,7 +6,14 @@
 
 Hello,
 
-We are preparing to launch Kiker's replacement website on Craft CMS. Please do not change DNS until we send the final production IP/CNAME values and confirm the launch window.
+We are preparing to launch Kiker's replacement website on Craft CMS. Please lower the TTL for the apex and `www` records as soon as possible, but do not change their destinations until we send the final production IP/CNAME values and confirm the launch window.
+
+The authoritative records currently return:
+
+- `kikersautoparts.com A 198.202.211.1` with TTL 86400;
+- `www.kikersautoparts.com CNAME cdn.webflow.com.` with TTL 86400;
+- MX records at `defenderMX00`, `defenderMX01`, and `defenderMX02.Car-Part.com`;
+- SPF TXT `v=spf1 mx a ip4:69.24.30.0/24 ip4:69.24.29.0/24 ?all`.
 
 When we provide those values, we will need:
 
@@ -20,6 +27,8 @@ The existing full-service inventory remains hosted at:
 `http://search3904.used-auto-parts.biz/inventory/retailF.htm`
 
 Please confirm who will make the DNS change and the expected turnaround once the final target values are supplied.
+
+Car-Part Web Services lists `info@Car-Part.com` and `(859) 344-1925` for support. If this request belongs with a specific Kiker's account representative, please route it to that person.
 
 Thank you.
 
