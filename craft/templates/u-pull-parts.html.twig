@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% include '_partials/seo' with { legacyTemplate: 'u-pull-parts.html' } %}
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,500;0,600;0,700;0,800;1,600;1,700;1,800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="kikers.css?v=20260713-craftcms3">
+</head>
+<body id="top">
+
+{% include '_partials/site-header' with { navActive: 'parts', thirdHref: '#how', ctaLabel: 'Call ' ~ siteSettings.phoneNumber, ctaHref: 'phone' } %}
+
+<nav class="crumbs" aria-label="Breadcrumb"><div class="wrap"><a href="index.html">Home</a><span class="sep">›</span><span>Pull Your Own Parts</span></div></nav>
+
+<!-- HERO -->
+<section class="hero compact" id="search">
+  <div class="hero-photo hero-photo--upull" role="img" aria-label="Kiker's customer holding a part pulled from a vehicle in the yard"></div>
+  <div class="wrap"><div class="hero-grid">
+    <div>
+      <div class="h-tags"><span class="eyebrow on-ink">Self-Service Yard</span><span class="chiplet">Bring your tools</span><span class="chiplet">Flat-rate pricing</span></div>
+      <h1>Pull your own parts. <em>Save big.</em></h1>
+      <p class="lede">Kiker's is a self-service yard in Pensacola, organized by section and row. Search what's in the yard, bring your own tools, pull the part you need, and pay flat-rate pricing at the counter. Open Mon-Fri, 9 AM to 4:30 PM; Sat, 8 AM to 2 PM.</p>
+      <div class="cta-row"><a class="btn btn--green btn--lg call-primary" href="tel:{{ siteSettings.phoneNumber|replace({"-": "", " ": "", "(": "", ")": ""}) }}"><i data-lucide="phone" aria-hidden="true"></i>Call {{ siteSettings.phoneNumber }}</a><a class="btn btn--outline-light btn--lg" href="#live-inventory"><i data-lucide="package-search" aria-hidden="true"></i>View Live Inventory</a></div>
+    </div>
+    <div class="offer-card call-first-card">
+      <div class="ohead"><h2>Need help finding a vehicle?</h2><span class="avail"><span class="dot pulse"></span>Call first</span></div>
+      <div class="sub">The online list shows vehicles in the self-service yard. For the quickest answer about a vehicle or part, call the counter.</div>
+      <a class="btn btn--green btn--block btn--lg call-primary" href="tel:{{ siteSettings.phoneNumber|replace({"-": "", " ": "", "(": "", ")": ""}) }}"><i data-lucide="phone" aria-hidden="true"></i>Call {{ siteSettings.phoneNumber }}</a>
+      <div class="fine"><a href="#live-inventory">Search the live yard inventory</a></div>
+    </div>
+  </div></div>
+</section>
+<div class="hazard"></div>
+
+<!-- CHROME PLATES -->
+<section class="sec tight">
+  <div class="wrap"><div class="plates">
+    <div class="plate"><div><div class="n" style="color:var(--red)">By Row</div><div class="l">Organized Yard</div></div></div>
+    <div class="plate"><div><div class="n" style="color:var(--ink)">Flat-Rate</div><div class="l">Parts Pricing</div></div></div>
+    <div class="plate"><div><div class="n" style="color:var(--ink)">BYO</div><div class="l">Tools &amp; Gloves</div></div></div>
+    <div class="plate"><div><div class="n" style="color:var(--amber)">Weekly</div><div class="l">New Arrivals</div></div></div>
+  </div></div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="sec" id="how" style="background:var(--surface-3)">
+  <div class="wrap">
+    <div class="sec-head center"><span class="eyebrow">How It Works</span><h2>Search · Pull · Save</h2><p>Three steps, and the savings are yours.</p></div>
+    <div class="steps3">
+      <div class="stepc"><div class="node">1</div><h3>Search</h3><p>Check the online inventory or browse the yard. Vehicles are sorted by section and row.</p></div>
+      <div class="stepc"><div class="node">2</div><h3>Pull</h3><p>Bring your own tools and gloves and pull the parts you need. Staff on site if you need a hand.</p></div>
+      <div class="stepc"><div class="node">3</div><h3>Save</h3><p>Pay flat-rate pricing at the counter — a fraction of buying new.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- INVENTORY -->
+<section class="sec" id="live-inventory">
+  <div class="wrap">
+    <div class="sec-head"><div class="row-between"><div><span class="eyebrow">Live Self-Service Inventory</span><h2 style="font-style:italic">Search all active yard vehicles</h2><p>Use year, make, or model to search across the complete live inventory feed. Inventory is maintained by Kiker's yard-management provider and updates from the yard system.</p></div><a class="btn btn--text" href="https://ario.autorecycler.io/yard/kikers-u-pull-it?yard=2c06fa04-9b26-4b8e-b0e8-ac36d7a1b829" target="_blank" rel="noopener">Open inventory in a new tab →</a></div></div>
+    <div class="inventory-embed">
+      <iframe
+        id="ario-inventory"
+        title="Kiker's live U-Pull-It vehicle inventory"
+        src="https://ario.autorecycler.io/yard/kikers-u-pull-it?embed=1&amp;yard=2c06fa04-9b26-4b8e-b0e8-ac36d7a1b829"
+        loading="lazy"
+        referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+    <div class="inventory-preview">
+      {% include '_partials/kiker-icon' with { name: 'warehouse' } only %}
+      <div>
+        <h3>Live inventory opens in AutoRecycler</h3>
+        <p>This preview domain is not authorized to display AutoRecycler inside the page. The production Kiker's domains are authorized; use the direct inventory link here while reviewing the site.</p>
+      </div>
+      <a class="btn btn--filled" href="https://ario.autorecycler.io/yard/kikers-u-pull-it?yard=2c06fa04-9b26-4b8e-b0e8-ac36d7a1b829" target="_blank" rel="noopener">Open Live Inventory →</a>
+    </div>
+    <div class="inventory-fallback">
+      <p>If the inventory does not load, <a href="https://ario.autorecycler.io/yard/kikers-u-pull-it?yard=2c06fa04-9b26-4b8e-b0e8-ac36d7a1b829" target="_blank" rel="noopener">open the live inventory directly</a> or call <a href="tel:{{ siteSettings.phoneNumber|replace({"-": "", " ": "", "(": "", ")": ""}) }}">{{ siteSettings.phoneNumber }}</a>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- YARD PHOTOGRAPHY -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">Inside Kiker's</span><h2 style="font-style:italic">What you'll find in the yard</h2></div>
+    <div class="fcards">
+      <div class="feature-card"><div class="img"><img src="assets/photos/yard-donor-vehicles.jpg" alt="Donor vehicles lined up in Kiker's self-service yard" width="765" height="1020" loading="lazy"></div><span class="flag">THE YARD</span><div class="fc-txt"><h4>Rows of donor vehicles</h4><span class="km">SEARCH · FIND · PULL</span></div></div>
+      <div class="feature-card"><div class="img"><img src="assets/photos/yard-front-end-parts.jpg" alt="Vehicle front end and parts available in the Kiker's yard" width="1360" height="1020" loading="lazy"></div><span class="flag">BODY PARTS</span><div class="fc-txt"><h4>Panels, lights &amp; trim</h4><span class="km">USED ORIGINAL PARTS</span></div></div>
+      <div class="feature-card"><div class="img"><img src="assets/photos/yard-interior-counter.jpg" alt="Kiker's self-service parts counter and yard entrance" width="1360" height="901" loading="lazy"></div><span class="flag amber">SELF-SERVICE</span><div class="fc-txt"><h4>Check in at the counter</h4><span class="km">BRING TOOLS · PAY ON EXIT</span></div></div>
+      <div class="feature-card"><div class="img"><img src="assets/photos/yard-interior-parts-racks.jpg" alt="Organized racks of used automotive parts inside Kiker's" width="1360" height="901" loading="lazy"></div><span class="flag">USED PARTS</span><div class="fc-txt"><h4>More parts behind the counter</h4><span class="km">ASK THE KIKER'S TEAM</span></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="race-rule"></div>
+
+<!-- YARD MAP -->
+<section class="sec" style="background:var(--surface-3)">
+  <div class="wrap">
+    <div class="sec-head center"><span class="eyebrow">Find Your Way</span><h2 style="font-style:italic">Yard map</h2><p>Sorted by manufacturer into clean rows, so you know right where to head.</p></div>
+    {% include '_partials/yard-map' with {
+      mapHeading: 'Find your section faster',
+      mapCopy: 'The self-service yard is organized by manufacturer. Check in at the office, then follow the marked route to the pull rows.'
+    } %}
+  </div>
+</section>
+
+<!-- YARD RULES + HOURS -->
+<section class="sec">
+  <div class="wrap"><div class="split2 top">
+    <div>
+      <span class="eyebrow">Before You Come</span>
+      <h2 style="font-size:clamp(23px,3vw,31px);margin:8px 0 12px;font-style:italic">Yard rules</h2>
+      <ul class="policies" style="border:none;padding:0;margin:0"><div style="display:grid;gap:12px">
+        <li>🧰 <span>Bring your own tools and gloves — it's self-serve.</span></li>
+        <li>👟 <span>Closed-toe shoes required; 16 and up on the yard.</span></li>
+        <li>⚠️ <span>Watch for heavy steel, sharp metal and fluids.</span></li>
+        <li>🏷️ <span>Parts are priced flat-rate at the counter.</span></li>
+      </div></ul>
+      <div style="margin-top:20px;display:flex;gap:12px;flex-wrap:wrap"><a class="btn btn--filled" href="contact.html"><span class="ic">📍</span>Get Directions</a><a class="btn btn--outline" href="tel:{{ siteSettings.phoneNumber|replace({"-": ""}) }}">Call the Yard</a></div>
+    </div>
+    <div class="hours">
+      <h3>Hours</h3>
+      <table class="htable" id="htable">
+        <tr data-d="1"><td class="day">Monday</td><td class="hrs">9:00 – 4:30</td></tr>
+        <tr data-d="2"><td class="day">Tuesday</td><td class="hrs">9:00 – 4:30</td></tr>
+        <tr data-d="3"><td class="day">Wednesday</td><td class="hrs">9:00 – 4:30</td></tr>
+        <tr data-d="4"><td class="day">Thursday</td><td class="hrs">9:00 – 4:30</td></tr>
+        <tr data-d="5"><td class="day">Friday</td><td class="hrs">9:00 – 4:30</td></tr>
+        <tr data-d="6"><td class="day">Saturday</td><td class="hrs">8:00 – 2:00</td></tr>
+        <tr data-d="0"><td class="day">Sunday</td><td class="hrs">Closed</td></tr>
+      </table>
+      <div class="last">Last admission 30 minutes before close.</div>
+      <div class="pays"><span class="pc">VISA</span><span class="pc">MC</span><span class="pc">AMEX</span><span class="pc">DISC</span><span class="pc">CASH</span></div>
+    </div>
+  </div></div>
+</section>
+
+<div class="race-rule"></div>
+<section class="finalcta"><div class="wrap">
+  <div><h2>Need a part? Come pull it.</h2><p>Organized rows, flat-rate pricing, big savings. Open Mon-Fri, 9 AM to 4:30 PM; Sat, 8 AM to 2 PM.</p></div>
+  <div class="grp"><a class="btn btn--amber btn--lg call-primary" href="tel:{{ siteSettings.phoneNumber|replace({"-": "", " ": "", "(": "", ")": ""}) }}"><i data-lucide="phone" aria-hidden="true"></i>Call {{ siteSettings.phoneNumber }}</a><a class="btn btn--outline-light btn--lg" href="#live-inventory">View Live Inventory</a></div>
+</div></section>
+
+{% include '_partials/site-footer' %}
+
+<div class="toast-host" id="toastHost" aria-live="polite"></div>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"AutoPartsStore","@id":"https://smithbcg.github.io/kikers-website/#business","name":"Kiker's U-Pull-It","description":"Self-service salvage yard and used auto parts store in Pensacola, FL. Pull your own parts, organized by section and row, flat-rate pricing.","url":"https://smithbcg.github.io/kikers-website/u-pull-parts.html","telephone":"+1-{{ siteSettings.phoneNumber }}","priceRange":"$","address":{"@type":"PostalAddress","streetAddress":"3010 W. Fairfield Drive","addressLocality":"Pensacola","addressRegion":"FL","postalCode":"32505","addressCountry":"US"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"16:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Saturday"],"opens":"08:00","closes":"14:00"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://smithbcg.github.io/kikers-website/"},{"@type":"ListItem","position":2,"name":"Pull Your Own Parts","item":"https://smithbcg.github.io/kikers-website/u-pull-parts.html"}]}
+</script>
+<script src="kikers.js?v=20260713-craftcms3" defer></script>
+</body>
+</html>

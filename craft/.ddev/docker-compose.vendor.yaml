@@ -1,0 +1,7 @@
+services:
+  web:
+    volumes:
+      - kikers_craft_vendor:/var/www/html/vendor
+
+volumes:
+  kikers_craft_vendor:

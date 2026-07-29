@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% include '_partials/seo' with { legacyTemplate: 'full-service-parts.html' } %}
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,500;0,600;0,700;0,800;1,600;1,700;1,800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="kikers.css?v=20260713-craftcms3">
+</head>
+<body id="top">
+
+{% include '_partials/site-header' with { thirdNav: 'request', thirdHref: '#request', ctaLabel: 'Call ' ~ siteSettings.phoneNumber, ctaHref: 'phone' } %}
+
+<nav class="crumbs" aria-label="Breadcrumb"><div class="wrap"><a href="index.html">Home</a><span class="sep">›</span><span>Full-Service Parts</span></div></nav>
+
+<!-- HERO -->
+<section class="hero compact" id="top-hero">
+  <div class="hero-photo hero-photo--warehouse" role="img" aria-label="Used automotive parts organized inside the Kiker's warehouse"></div>
+  <div class="wrap"><div class="hero-grid">
+    <div>
+      <div class="h-tags"><span class="eyebrow on-ink">Full-Service Parts</span><span class="chiplet">We pull it for you</span></div>
+      <h1>Need a part pulled <em>for you?</em></h1>
+      <p class="lede">Not every job is a DIY job. Tell us the part and the vehicle, and we'll check our yard and the nationwide parts network to track it down. Quality used and OEM parts, vetted from the information available and ready for pickup or shipping. Call <a href="tel:{{ siteSettings.phoneNumber|replace({"-": ""}) }}" style="color:#fff;text-decoration:underline">{{ siteSettings.phoneNumber }}</a> or send a request.</p>
+      <div class="cta-row"><a class="btn btn--green btn--lg call-primary" href="tel:{{ siteSettings.phoneNumber|replace({"-": "", " ": "", "(": "", ")": ""}) }}"><i data-lucide="phone" aria-hidden="true"></i>Call {{ siteSettings.phoneNumber }}</a><a class="btn btn--outline-light btn--lg" href="http://search3904.used-auto-parts.biz/inventory/retailF.htm" target="_blank" rel="noopener"><i data-lucide="external-link" aria-hidden="true"></i>Search Full-Service Inventory</a></div>
+    </div>
+    <div class="offer-card" id="request-mini">
+      <div class="ohead"><h2>Call the parts counter</h2><span class="avail"><span class="dot pulse"></span>Fastest</span></div>
+      <div class="sub">Year, make, model, and the part you need are usually easier to confirm in a quick call.</div>
+      <a class="btn btn--green btn--block btn--lg call-primary" href="tel:{{ siteSettings.phoneNumber|replace({"-": "", " ": "", "(": "", ")": ""}) }}"><i data-lucide="phone" aria-hidden="true"></i>Call {{ siteSettings.phoneNumber }}</a>
+      <div class="fine"><a href="#request">Send a part request instead</a></div>
+    </div>
+  </div></div>
+</section>
+<div class="hazard"></div>
+
+<!-- SELF VS FULL -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head center"><span class="eyebrow">Two Ways to Get Your Part</span><h2 style="font-style:italic">Pull it yourself, or let us</h2><p>Same yard, same savings — your call on who does the wrenching.</p></div>
+    <div class="paths">
+      <div class="path path--quiet">
+        <figure class="path-photo"><img src="assets/photos/optimized/customer-pulled-part-1200.jpg" alt="Kiker's customer holding a part pulled in the self-service yard" width="1200" height="900" loading="lazy"></figure>
+        <div class="pbody">
+          <div class="ic">🔧</div><h3>Self-Serve (U-Pull)</h3>
+          <p>Lowest price. Come in, find your vehicle by row, and pull the part yourself.</p>
+          <ul><li><span class="c">✓</span> Best pricing</li><li><span class="c">✓</span> Bring your own tools</li><li><span class="c">✓</span> Open Mon-Fri 9-4:30; Sat 8-2</li></ul>
+          <a class="btn btn--ink btn--block" href="u-pull-parts.html" style="margin-top:auto"><span class="ic">→</span>Search the Yard</a>
+        </div>
+      </div>
+      <div class="path path--featured">
+        <figure class="path-photo"><img src="assets/photos/yard-interior-engine-racks.jpg" alt="Engines and drivetrain parts organized inside Kiker's full-service warehouse" width="1360" height="901" loading="lazy"></figure>
+        <div class="pbody">
+          <div class="ic">📦</div><h3>Full-Service</h3>
+          <p>We do the pulling. Tell us the part and we'll locate it, pull it, vet what we can, and have it ready.</p>
+          <ul><li><span class="c">✓</span> We pull &amp; vet it</li><li><span class="c">✓</span> We check the nationwide network</li><li><span class="c">✓</span> Pickup or shipping</li></ul>
+          <a class="btn btn--filled btn--block" href="#request" style="margin-top:auto"><span class="ic">→</span>Request a Part</a>
+        </div>
+      </div>
+    </div>
+    <div class="fulfillment-status" aria-label="Full-service part status">
+      <div class="status-item">{% include '_partials/kiker-icon' with { name: 'location' } only %}<span><b>Located</b><span>Our yard or nationwide network</span></span></div>
+      <div class="status-item">{% include '_partials/kiker-icon' with { name: 'inspection' } only %}<span><b>Vetted</b><span>Using all available vehicle information</span></span></div>
+      <div class="status-item">{% include '_partials/kiker-icon' with { name: 'fulfillment' } only %}<span><b>Ready</b><span>Counter pickup or shipping</span></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="sec" style="background:var(--surface-3)">
+  <div class="wrap">
+    <div class="sec-head center"><span class="eyebrow">How It Works</span><h2>Tell us · We find it · You choose delivery</h2></div>
+    <div class="steps3">
+      <div class="stepc"><div class="node">1</div><h3>Tell Us the Part</h3><p>Year, make, model and the part you need. Call or send the form.</p></div>
+      <div class="stepc"><div class="node">2</div><h3>We Track It Down</h3><p>We check our yard first, then the nationwide used-parts network if needed.</p></div>
+      <div class="stepc"><div class="node">3</div><h3>Pickup or Shipping</h3><p>We pull it, vet what we can, and get it ready for pickup or shipping.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- REQUEST FORM -->
+<section class="sec" id="request">
+  <div class="wrap"><div class="split2 top">
+    <div class="info">
+      <span class="eyebrow">Request a Part</span>
+      <h2 style="font-size:clamp(23px,3vw,31px);margin:8px 0 10px;font-style:italic">Can't find it? We'll look.</h2>
+      <p class="lead-p">Give us the details and we'll check our inventory and the broader network. The more you can tell us — trim, engine size, part number — the faster we'll match it. Not every used part can be bench-tested, so we vet it using the vehicle's condition, mileage, history, and any run information available.</p>
+      <div class="qline"><span class="ic">📞</span><span><b><a href="tel:{{ siteSettings.phoneNumber|replace({"-": ""}) }}">{{ siteSettings.phoneNumber }}</a></b><span class="s">Fastest way to reach us — Mon-Fri, 9 to 4:30; Sat, 8 to 2</span></span></div>
+      <div class="qline" style="border-bottom:none"><span class="ic">🌐</span><span><b><a href="http://search3904.used-auto-parts.biz/inventory/retailF.htm" target="_blank" rel="noopener">Search the full-service inventory</a></b><span class="s">This opens Kiker's current Car-Part inventory system in a new tab.</span></span></div>
+    </div>
+    <form class="form-card" onsubmit="return submitMsg(event)">
+      <div class="grid2" style="margin-bottom:16px"><div class="field"><label>Year</label><input placeholder="2012" required></div><div class="field"><label>Make</label><input placeholder="Honda" required></div></div>
+      <div class="grid2" style="margin-bottom:16px"><div class="field"><label>Model</label><input placeholder="Civic" required></div><div class="field"><label>Part needed</label><input placeholder="Alternator" required></div></div>
+      <div class="grid2" style="margin-bottom:16px"><div class="field"><label>How do you want it?</label><select required><option value="" selected disabled>Choose one</option><option>Pickup at the yard</option><option>Ship it to me</option></select></div><div class="field"><label>Shipping ZIP (if needed)</label><input type="text" inputmode="numeric" placeholder="32501"></div></div>
+      <div class="grid2" style="margin-bottom:16px"><div class="field"><label>Name</label><input placeholder="First &amp; last" required></div><div class="field"><label>Phone</label><input type="tel" placeholder="(850) 000-0000" required></div></div>
+      <div class="field" style="margin-bottom:18px"><label>Details (optional)</label><textarea placeholder="Trim, engine size, part number, anything that helps…"></textarea></div>
+      <button class="btn btn--filled btn--block btn--lg" type="submit"><span class="ic">→</span>Send My Part Request</button>
+      <div class="disclaim">We'll call or text you back during business hours.</div>
+    </form>
+  </div></div>
+</section>
+
+<div class="race-rule"></div>
+<section class="finalcta"><div class="wrap">
+  <div><h2>Looking for a part? Let's find it.</h2><p>Quality used and OEM parts — pulled, vetted, and ready for pickup or shipping. Call or send a request.</p></div>
+  <div class="grp"><a class="btn btn--amber btn--lg call-primary" href="tel:{{ siteSettings.phoneNumber|replace({"-": "", " ": "", "(": "", ")": ""}) }}"><i data-lucide="phone" aria-hidden="true"></i>Call {{ siteSettings.phoneNumber }}</a><a class="btn btn--outline-light btn--lg" href="http://search3904.used-auto-parts.biz/inventory/retailF.htm" target="_blank" rel="noopener">Search Inventory ↗</a></div>
+</div></section>
+
+{% include '_partials/site-footer' %}
+
+<div class="toast-host" id="toastHost" aria-live="polite"></div>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"AutoPartsStore","name":"Kiker's U-Pull-It","description":"Full-service used and OEM auto parts in Pensacola, FL. We pull and locate parts for you, including via the nationwide network.","url":"https://smithbcg.github.io/kikers-website/full-service-parts.html","telephone":"+1-{{ siteSettings.phoneNumber }}","priceRange":"$","address":{"@type":"PostalAddress","streetAddress":"3010 W. Fairfield Drive","addressLocality":"Pensacola","addressRegion":"FL","postalCode":"32505","addressCountry":"US"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"16:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Saturday"],"opens":"08:00","closes":"14:00"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://smithbcg.github.io/kikers-website/"},{"@type":"ListItem","position":2,"name":"Full-Service Parts","item":"https://smithbcg.github.io/kikers-website/full-service-parts.html"}]}
+</script>
+<script src="kikers.js?v=20260713-craftcms3" defer></script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+columnSuffix: null
+handle: sectionVariant
+instructions: null
+name: 'Section Type'
+searchable: false
+settings:
+  customOptions: false
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Preserve current layout'
+        -
+          - value
+          - preserve
+        -
+          - default
+          - true
+    -
+      __assoc__:
+        -
+          - label
+          - Hero
+        -
+          - value
+          - hero
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - 'Standard content'
+        -
+          - value
+          - standard
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - 'Cards or grid'
+        -
+          - value
+          - cards
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - 'Split content and media'
+        -
+          - value
+          - split
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - Form
+        -
+          - value
+          - form
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - 'Call to action'
+        -
+          - value
+          - cta
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - 'Utility or divider'
+        -
+          - value
+          - utility
+        -
+          - default
+          - false
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

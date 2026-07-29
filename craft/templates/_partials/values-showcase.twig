@@ -1,0 +1,45 @@
+{% set titleId = titleId|default('kikers-values-title') %}
+<section class="values-showcase" aria-labelledby="{{ titleId }}">
+  <img class="values-showcase__background" src="assets/photos/optimized/values-yard-1920.jpg" alt="" width="1920" height="911" loading="lazy">
+  <div class="values-showcase__scrim" aria-hidden="true"></div>
+  <div class="wrap"><div class="values-showcase__layout">
+    <header class="values-showcase__intro">
+      <span class="eyebrow on-ink">Our Values</span>
+      <h2 id="{{ titleId }}">Five Values You Can Count On</h2>
+      <p>These are the standards we live by so you can count on a better experience every time.</p>
+      <div class="values-showcase__hazard" aria-hidden="true"></div>
+    </header>
+    <div class="values-showcase__grid">
+      <article class="value-promise">
+        <div class="value-promise__icon">{% include '_partials/kiker-icon' with { name: 'wrench' } only %}</div>
+        <h3>Own It</h3>
+        <p class="value-promise__line">Take responsibility.<br>Fix problems.</p>
+        <p>We correct our mistakes, keep the yard in order, and do not leave issues for someone else to handle.</p>
+      </article>
+      <article class="value-promise">
+        <div class="value-promise__icon">{% include '_partials/kiker-icon' with { name: 'paperwork' } only %}</div>
+        <h3>Do Right</h3>
+        <p class="value-promise__line">Tell the truth.<br>Be fair.</p>
+        <p>We give customers honest information, charge fair prices, and do the job properly, even when no one is watching.</p>
+      </article>
+      <article class="value-promise">
+        <div class="value-promise__icon">{% include '_partials/kiker-icon' with { name: 'fast-work' } only %}</div>
+        <h3>Outwork It</h3>
+        <p class="value-promise__line">Find solutions.<br>Follow through.</p>
+        <p>We put in the effort required to solve problems, complete the work, and provide the help our customers need.</p>
+      </article>
+      <article class="value-promise">
+        <div class="value-promise__icon">{% include '_partials/kiker-icon' with { name: 'teamwork' } only %}</div>
+        <h3>Back Each Other</h3>
+        <p class="value-promise__line">Work as<br>a team.</p>
+        <p>We step in, help each other, and get the job done as a team. That means better communication, more consistent service, and fewer delays for our customers.</p>
+      </article>
+      <article class="value-promise">
+        <div class="value-promise__icon">{% include '_partials/kiker-icon' with { name: 'hard-hat' } only %}</div>
+        <h3>Watch Out</h3>
+        <p class="value-promise__line">Be safe.<br>Protect others.</p>
+        <p>We do not take shortcuts at the expense of safety, and we expect every employee to take reasonable precautions to protect customers, employees, and everyone in the yard.</p>
+      </article>
+    </div>
+  </div></div>
+</section>

@@ -1,0 +1,7 @@
+{% set entry = craft.entries.section('pages').slug('home').status(null).one() %}
+
+{% if entry %}
+  {% include 'pages/_entry' with { entry: entry } only %}
+{% else %}
+  {% exit 404 %}
+{% endif %}

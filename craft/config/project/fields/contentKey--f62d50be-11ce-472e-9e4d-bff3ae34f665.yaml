@@ -1,0 +1,16 @@
+columnSuffix: null
+handle: contentKey
+instructions: 'Stable internal key used by the section layout. Do not change this value.'
+name: 'Content Key'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: true
+  initialRows: 1
+  multiline: false
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

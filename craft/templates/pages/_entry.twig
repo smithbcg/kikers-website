@@ -1,0 +1,10 @@
+{% set migratedTemplate = entry.legacyTemplate|default(null) %}
+{% set builtSections = entry.pageSections.all() %}
+
+{% if builtSections|length %}
+  {% include '_builder/page' with { entry: entry, sections: builtSections, legacyTemplate: migratedTemplate } only %}
+{% elseif migratedTemplate %}
+  {% include migratedTemplate %}
+{% else %}
+  {% exit 404 %}
+{% endif %}

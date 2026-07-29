@@ -1,0 +1,134 @@
+allowLineBreaksInTitles: false
+color: null
+description: 'One editable text value, destination, attribute, or image within a page section.'
+fieldLayouts:
+  a6d2164f-8b07-427a-9a0a-10977c49c5ab:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            dateAdded: null
+            disabled: false
+            elementCondition: null
+            id: null
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            required: true
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: f643d8cb-0a80-4dce-9611-1c818465ac6c
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: c809b123-0d98-4672-a82b-b653feee7e7c # Editor Label
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ec96ee45-67f3-41ca-8df4-56f2e1d9a387
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: eea08e80-f72f-4767-92c4-2c011dca6524 # Content Type
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 2d703833-8243-4075-916e-be72f73e10a3
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: fca462b8-776d-4e8c-b8d1-a68e6b1eceb0 # Content Value
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 9f1ae27c-f2d3-4abe-a771-9152e917bc92
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 71ee0961-b25c-4e42-a169-b8d39e815c65 # Managed Image
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 2589f90a-a948-43cd-b9b5-1af92002a833
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: f62d50be-11ce-472e-9e4d-bff3ae34f665 # Content Key
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d1bb52a5-b47e-4cc8-b9d1-bc630cab8eb5
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 39d673a7-5644-4a52-9112-cf532f5f68ac
+        userCondition: null
+    thumbFieldKey: null
+handle: sectionContentItem
+hasTitleField: true
+icon: null
+name: 'Section Content Item'
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+uiLabelFormat: '{title}'

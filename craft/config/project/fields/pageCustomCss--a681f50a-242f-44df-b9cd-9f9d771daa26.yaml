@@ -1,0 +1,16 @@
+columnSuffix: null
+handle: pageCustomCss
+instructions: 'Advanced styles retained from the approved page design.'
+name: 'Page-Specific CSS'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: true
+  initialRows: 12
+  multiline: true
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

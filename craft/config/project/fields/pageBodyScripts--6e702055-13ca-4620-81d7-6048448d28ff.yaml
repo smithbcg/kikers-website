@@ -1,0 +1,16 @@
+columnSuffix: null
+handle: pageBodyScripts
+instructions: 'Advanced structured data and scripts retained from this page design.'
+name: 'Page Body Scripts'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: true
+  initialRows: 10
+  multiline: true
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

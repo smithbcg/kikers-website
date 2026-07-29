@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% include '_partials/seo' with { legacyTemplate: 'blog.html' } %}
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,500;0,600;0,700;0,800;1,600;1,700;1,800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="kikers.css?v=20260713-craftcms3">
+</head>
+<body id="top">
+
+{% include '_partials/site-header' with { ctaLabel: 'Get My Offer', ctaHref: url('sell-your-vehicle') } %}
+
+<nav class="crumbs" aria-label="Breadcrumb"><div class="wrap"><a href="index.html">Home</a><span class="sep">›</span><span>Blog</span></div></nav>
+
+<!-- HERO -->
+<section class="hero compact">
+  <div class="hero-photo hero-photo--yard hero-photo--detail" role="img" aria-label="Aerial view of Kiker's Auto Parts and the Pensacola salvage yard"></div>
+  <div class="wrap">
+    <div class="h-tags"><span class="eyebrow on-ink">From the Pit Crew</span></div>
+    <h1>Tips &amp; <em>guides.</em></h1>
+    <p class="lede">Straight talk from the yard — how to get the most for your car, how to pull your own parts, and what really happens to a vehicle after you sell it.</p>
+  </div>
+</section>
+<div class="hazard"></div>
+
+<!-- POSTS -->
+<section class="sec">
+  <div class="wrap">
+    <div class="bcards">
+      <article class="bcard">
+        <div class="ph ph--16x9"><div class="ph-in"><span class="ph-cam">📷</span><span class="ph-kick">THUMBNAIL</span><span class="ph-desc">Cash / tow-truck image for the "top dollar" post.</span></div></div>
+        <div class="bb"><div class="meta">CASH FOR CARS · 5 MIN</div><h4>How to Get Top Dollar for Your Car in Pensacola</h4><p>What actually moves your offer — and how selling straight to a local yard keeps more money in your pocket.</p><span class="src">Coming soon</span></div>
+      </article>
+      <article class="bcard">
+        <div class="ph ph--16x9"><div class="ph-in"><span class="ph-cam">📷</span><span class="ph-kick">THUMBNAIL</span><span class="ph-desc">Hands + tools pulling a part for the first-timer guide.</span></div></div>
+        <div class="bb"><div class="meta">U-PULL · 6 MIN</div><h4>First-Timer's Guide to Pulling Your Own Parts</h4><p>What to bring, how the yard is organized, and how to save big at a self-serve yard.</p><span class="src">Coming soon</span></div>
+      </article>
+      <article class="bcard">
+        <div class="ph ph--16x9"><div class="ph-in"><span class="ph-cam">📷</span><span class="ph-kick">THUMBNAIL</span><span class="ph-desc">Recycling / copper / crushed metal image.</span></div></div>
+        <div class="bb"><div class="meta">RECYCLING · 4 MIN</div><h4>What Really Happens to Your Junk Car</h4><p>From copper recovery to proper fluid disposal — the responsible recycling behind every vehicle we take in.</p><span class="src">Coming soon</span></div>
+      </article>
+      <article class="bcard">
+        <div class="ph ph--16x9"><div class="ph-in"><span class="ph-cam">📷</span><span class="ph-kick">THUMBNAIL</span><span class="ph-desc">FL title / paperwork image.</span></div></div>
+        <div class="bb"><div class="meta">SELLING · 5 MIN</div><h4>Selling a Junk Car in Florida: Title &amp; No-Title Rules</h4><p>Certificate of Destruction, the derelict-vehicle pathway, and keeping your plate — what Florida actually requires.</p><span class="src">Coming soon</span></div>
+      </article>
+      <article class="bcard">
+        <div class="ph ph--16x9"><div class="ph-in"><span class="ph-cam">📷</span><span class="ph-kick">THUMBNAIL</span><span class="ph-desc">Most-requested parts collage.</span></div></div>
+        <div class="bb"><div class="meta">U-PULL · 4 MIN</div><h4>Top Most-Requested Parts This Month</h4><p>What's moving fast off the yard right now — and where to find it by row.</p><span class="src">Coming soon</span></div>
+      </article>
+      <article class="bcard">
+        <div class="ph ph--16x9"><div class="ph-in"><span class="ph-cam">📷</span><span class="ph-kick">THUMBNAIL</span><span class="ph-desc">Scrap-price chart / metal image.</span></div></div>
+        <div class="bb"><div class="meta">CASH FOR CARS · 5 MIN</div><h4>What Scrap Metal Prices Mean for Your Junk Car</h4><p>Why copper and steel prices move your offer — and how to read the market before you sell.</p><span class="src">Coming soon</span></div>
+      </article>
+    </div>
+    <p class="src" style="margin-top:18px;text-align:center"><span class="tagph">placeholder posts</span> — replace titles/thumbnails with real published articles. Each links to its own post page.</p>
+  </div>
+</section>
+
+<div class="race-rule"></div>
+<section class="finalcta"><div class="wrap">
+  <div><h2>Got a car to sell? Let's get you paid.</h2><p>Fair offer, free towing, same-day pickup. Pensacola's yard for 25 years.</p></div>
+  <div class="grp"><a class="btn btn--amber btn--lg call-primary" href="tel:{{ siteSettings.phoneNumber|replace({"-": "", " ": "", "(": "", ")": ""}) }}"><i data-lucide="phone" aria-hidden="true"></i>Call {{ siteSettings.phoneNumber }}</a><a class="btn btn--outline-light btn--lg" href="contact.html">Visit the Yard</a></div>
+</div></section>
+
+{% include '_partials/site-footer' %}
+
+<div class="toast-host" id="toastHost" aria-live="polite"></div>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Blog","name":"From the Pit Crew — Kiker's U-Pull-It","url":"https://smithbcg.github.io/kikers-website/blog.html","publisher":{"@type":"Organization","name":"Kiker's U-Pull-It"}}
+</script>
+<script src="kikers.js?v=20260713-craftcms3" defer></script>
+</body>
+</html>

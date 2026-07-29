@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% include '_partials/seo' with { legacyTemplate: 'privacy.html' } %}
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,500;0,600;0,700;0,800;1,600;1,700;1,800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="kikers.css?v=20260713-craftcms3">
+<style>.legal p{color:var(--text-2);max-width:74ch;margin:0 0 16px}.legal h3{font-style:italic;font-size:20px;margin:28px 0 10px}</style>
+</head>
+<body id="top">
+
+{% include '_partials/site-header' with { thirdNav: 'none' } %}
+
+<nav class="crumbs" aria-label="Breadcrumb"><div class="wrap"><a href="index.html">Home</a><span class="sep">›</span><span>Privacy Policy</span></div></nav>
+
+<section class="sec"><div class="wrap legal" style="max-width:820px">
+  <span class="eyebrow">Legal</span>
+  <h1 style="font-style:italic;font-size:clamp(30px,4vw,42px);margin:8px 0 6px">Privacy Policy</h1>
+  <p class="src">Last updated: <span class="tagph">add date</span> · This is a starter policy — have it reviewed by counsel before publishing.</p>
+  <h3>What we collect</h3>
+  <p>When you contact us or submit a form (for a cash offer, a part request, or a message), we collect the information you provide — such as your name, phone number, email, and vehicle or part details — so we can respond and serve you.</p>
+  <h3>How we use it</h3>
+  <p>We use your information only to respond to your request, provide quotes and service, schedule pickups, and follow up. We do not sell your personal information.</p>
+  <h3>Analytics &amp; cookies</h3>
+  <p>Our website may use standard analytics and advertising tools (for example, Google Analytics and Google Ads) and cookies to understand site traffic and improve the experience. You can control cookies through your browser settings.</p>
+  <h3>Sharing</h3>
+  <p>We may share information with service providers that help us operate (such as towing partners or our software systems) only as needed to fulfill your request, and as required by law — including federal NMVTIS reporting and any applicable Florida requirements when you sell a vehicle.</p>
+  <h3>Your choices</h3>
+  <p>You can ask us to update or delete your information, or opt out of follow-up messages, by calling <a href="tel:{{ siteSettings.phoneNumber|replace({"-": ""}) }}" style="color:var(--red)">{{ siteSettings.phoneNumber }}</a> or emailing <span class="mono">cars@kikersautoparts.com</span>.</p>
+  <h3>Contact</h3>
+  <p>Kiker's U-Pull-It · {{ siteSettings.streetAddress }} · <a href="tel:{{ siteSettings.phoneNumber|replace({"-": ""}) }}" style="color:var(--red)">{{ siteSettings.phoneNumber }}</a></p>
+</div></section>
+
+{% include '_partials/site-footer' %}
+<div class="toast-host" id="toastHost"></div>
+<script src="kikers.js?v=20260713-craftcms3" defer></script>
+</body>
+</html>

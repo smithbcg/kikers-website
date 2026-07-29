@@ -1,0 +1,55 @@
+columnSuffix: null
+handle: sectionWidth
+instructions: null
+name: 'Container Width'
+searchable: false
+settings:
+  customOptions: false
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Preserve current width'
+        -
+          - value
+          - inherit
+        -
+          - default
+          - true
+    -
+      __assoc__:
+        -
+          - label
+          - 'Full width'
+        -
+          - value
+          - full
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - Standard
+        -
+          - value
+          - standard
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - Narrow
+        -
+          - value
+          - narrow
+        -
+          - default
+          - false
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

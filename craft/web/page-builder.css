@@ -1,0 +1,59 @@
+/* Controls applied only when an editor opts into section-level layout settings. */
+.cms-section-frame {
+  position: relative;
+  isolation: isolate;
+}
+
+.cms-section-frame::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: rgba(0, 0, 0, var(--cms-overlay, 0));
+  content: "";
+  pointer-events: none;
+}
+
+.cms-section-frame.cms-has-background {
+  background-image: var(--cms-background);
+  background-position: center;
+  background-size: cover;
+}
+
+.cms-section-frame__content {
+  position: relative;
+}
+
+.cms-builder-container {
+  width: min(100% - 32px, 1180px);
+  margin-inline: auto;
+}
+
+.cms-width--narrow > .cms-builder-container {
+  width: min(100% - 32px, 760px);
+}
+
+.cms-width--full > .cms-builder-container {
+  width: 100%;
+  max-width: none;
+}
+
+.cms-spacing--none { padding-block: 0; }
+.cms-spacing--compact { padding-block: 24px; }
+.cms-spacing--standard { padding-block: 56px; }
+.cms-spacing--spacious { padding-block: 88px; }
+
+.cms-theme--light { background-color: #fff; color: #171717; }
+.cms-theme--soft { background-color: #f3f4f5; color: #171717; }
+.cms-theme--dark { background-color: #171717; color: #fff; }
+.cms-theme--red { background-color: #c61620; color: #fff; }
+
+@media (max-width: 720px) {
+  .cms-builder-container,
+  .cms-width--narrow > .cms-builder-container {
+    width: min(100% - 24px, 1180px);
+  }
+
+  .cms-spacing--compact { padding-block: 18px; }
+  .cms-spacing--standard { padding-block: 36px; }
+  .cms-spacing--spacious { padding-block: 52px; }
+}

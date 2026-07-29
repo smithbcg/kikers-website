@@ -1,0 +1,16 @@
+columnSuffix: null
+handle: contentLabel
+instructions: 'Identifies where this value appears in the section.'
+name: 'Editor Label'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: false
+  initialRows: 4
+  multiline: false
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% include '_partials/seo' with { legacyTemplate: 'about.html' } %}
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,500;0,600;0,700;0,800;1,600;1,700;1,800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="kikers.css?v=20260713-craftcms3">
+</head>
+<body id="top">
+
+{% include '_partials/site-header' with { navActive: 'story', ctaLabel: 'Call Us', ctaHref: 'phone', drawerCtaLabel: 'Call ' ~ siteSettings.phoneNumber } %}
+
+<nav class="crumbs" aria-label="Breadcrumb"><div class="wrap"><a href="index.html">Home</a><span class="sep">›</span><span>Our Story</span></div></nav>
+
+<!-- HERO -->
+<section class="hero compact">
+  <div class="hero-photo hero-photo--team" role="img" aria-label="The Kiker's U-Pull-It team outside the Pensacola yard"></div>
+  <div class="wrap">
+    <div class="h-tags"><span class="eyebrow on-ink">Our Story</span><span class="chiplet">Since 1972</span><span class="chiplet">3rd generation</span></div>
+    <h1>A Pensacola family. <em>Three generations in.</em></h1>
+    <p class="lede">We're not a faceless online buyer here today and gone tomorrow. We're a Pensacola family that's been through the hard times and come back stronger — and that history is our edge. Nobody around here has it.</p>
+  </div>
+</section>
+<div class="hazard"></div>
+
+<!-- VALUES -->
+{% include '_partials/values-showcase' with { titleId: 'story-values-title' } only %}
+
+<!-- STORY + TIMELINE -->
+<section class="sec">
+  <div class="wrap"><div class="split2 top">
+    <div>
+      <span class="eyebrow">The Long Road</span>
+      <h2 style="font-size:clamp(24px,3.2vw,34px);margin:8px 0 12px;font-style:italic">From the dirt up</h2>
+      <p class="lead-p">Hunter's grandfather bought the property in 1972. The early years were hard — at one point the only shredder between Pensacola and Birmingham wouldn't buy the family's crushed cars, and a four-hour haul north didn't pencil out. A farm-commodity crash later pushed the family into bankruptcy.</p>
+      <p class="lead-p" style="margin-top:14px">They came back. In 2001 the family reopened as Kiker's U-Pull-It. Hunter was 14, breaking down aluminum wheels and setting cars on heavy wheel stands in the sand and dirt under the Pensacola sun. Not many 14-year-olds were doing that. He learned every corner of the business beside his grandfather and today runs the yard as the third generation.</p>
+      <p class="lead-p" style="margin-top:14px;color:var(--text);font-style:italic">"I can let this be a crutch, or it doesn't define me — and we're gonna make the best of it."</p>
+    </div>
+    <div class="timeline light">
+      <div class="tl"><span class="yr">1972</span><span class="tx"><b>Granddad bought the property.</b> The ground Kiker's still sits on today.</span></div>
+      <div class="tl"><span class="yr">'90s</span><span class="tx"><b>Hard years.</b> Shredder politics and a farm-commodity crash tested the family.</span></div>
+      <div class="tl"><span class="yr">2001</span><span class="tx"><b>Reopened as Kiker's U-Pull-It.</b> Hunter, 14, breaking down aluminum wheels and setting cars in the yard.</span></div>
+      <div class="tl"><span class="yr">Today</span><span class="tx"><b>3rd generation, family-led.</b> 25 years serving Pensacola — done by the book.</span></div>
+    </div>
+  </div>
+  <div class="crew-feature">
+    <figure class="site-photo crew-feature__photo"><img src="assets/photos/optimized/crew-counter-1200.jpg" alt="The Kiker's crew standing behind the parts counter" width="1143" height="1200" loading="lazy"><figcaption>{% include '_partials/kiker-icon' with { name: 'teamwork' } only %}The crew behind the counter today.</figcaption></figure>
+    <div class="crew-feature__copy">
+      <span class="eyebrow">Local People, Real Answers</span>
+      <h3>The crew behind the counter</h3>
+      <p>When you call or walk in, you are talking to people who work this yard every day. They know the rows, the parts, and what it takes to make the next step simple.</p>
+    </div>
+  </div>
+  </div>
+</section>
+
+<!-- OWNER -->
+<section class="sec" style="background:var(--surface-3)">
+  <div class="wrap"><div class="leader-demo">
+    <article class="leader-card" aria-labelledby="hunter-kiker-name">
+      <div class="leader-card__media"><img src="assets/photos/optimized/hunter-portrait-900.jpg" alt="Portrait of Hunter Kiker" width="675" height="900" loading="lazy"></div>
+      <div class="leader-card__identity">
+        <h3 id="hunter-kiker-name">Hunter Kiker</h3>
+        <p>Owner · Third generation</p>
+      </div>
+      <button class="leader-card__toggle" type="button" aria-expanded="false" aria-controls="hunter-kiker-profile" title="View Hunter Kiker profile">{% include '_partials/kiker-icon' with { name: 'verified' } only %}<span class="sr-only">View Hunter Kiker profile</span></button>
+      <div class="leader-card__overlay" id="hunter-kiker-profile">
+        <span class="eyebrow">Meet the Owner</span>
+        <h3>Hunter Kiker</h3>
+        <p class="leader-card__role">Owner · Third generation</p>
+        <p class="leader-card__bio">Hunter has worked this yard since he was a teenager. He is hands-on, straight with people, and accountable for how Kiker's treats every customer.</p>
+        <dl class="leader-card__facts">
+          <div class="leader-card__fact"><dt>Generation</dt><dd>3rd</dd></div>
+          <div class="leader-card__fact"><dt>Role</dt><dd>Owner</dd></div>
+        </dl>
+        <span class="leader-card__value">Own it · Do right</span>
+      </div>
+    </article>
+    <div class="leader-guidance">
+      <span class="eyebrow">Meet the Owner</span>
+      <h2>The guy behind every offer</h2>
+      <p class="lead-p">Hunter has worked this yard since he was a teenager. He's hands-on, straight with people, and accountable for how Kiker's treats every customer — whether you're selling a car or pulling a part.</p>
+      <p class="quote">"We make it simple and we do it right — fair cash, paperwork handled, the car recycled the proper way."</p>
+      <div class="sig">Hunter Kiker</div>
+      <div class="role">Owner · Kiker's U-Pull-It · Licensed Florida salvage dealer</div>
+    </div>
+  </div></div>
+</section>
+
+<!-- MILESTONES -->
+<section class="sec tight">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">Milestones</span><h2>Still on the same ground</h2></div>
+    <div class="milestone-grid">
+      <article class="milestone-card"><span class="milestone-card__number">1972</span><span class="milestone-card__label">Land Bought</span><span class="milestone-card__detail">The same Pensacola ground Kiker's works today.</span></article>
+      <article class="milestone-card"><span class="milestone-card__number">2001</span><span class="milestone-card__label">Reopened</span><span class="milestone-card__detail">The family returned as Kiker's U-Pull-It.</span></article>
+      <article class="milestone-card"><span class="milestone-card__number">3rd</span><span class="milestone-card__label">Generation</span><span class="milestone-card__detail">Hunter carries the family business forward.</span></article>
+      <article class="milestone-card"><span class="milestone-card__number">25</span><span class="milestone-card__label">Years Serving</span><span class="milestone-card__detail">Local, licensed, and still accountable.</span></article>
+    </div>
+  </div>
+</section>
+
+<!-- COMMUNITY / GIVING BACK (dark) -->
+<section class="sec story">
+  <div class="wrap"><div class="story-grid">
+    <div>
+      <span class="eyebrow on-ink">Giving Back</span>
+      <h2>Good for the <em>community.</em></h2>
+      <p class="lede">We donate vehicles to the local fire department for extrication training — practice that can save a loved one's life one day. And every car we take in gets recycled the right way: copper and metal recovered, fluids handled properly, good parts going on to keep another family on the road.</p>
+      <p class="body">End of life giving life. It's not just fluff — it's how we've always done it.</p>
+    </div>
+    <figure class="site-photo site-photo--landscape"><img src="assets/photos/optimized/kikers-team-1600.jpg" alt="The Kiker's team together outside the Pensacola yard" width="1600" height="871" loading="lazy"></figure>
+  </div></div>
+</section>
+
+<div class="ecostrip"><div class="wrap"><span class="ic">♻️</span><span class="t">Every vehicle is recycled the right way — good parts reused, metals recovered, fluids handled properly.</span></div></div>
+
+<div class="race-rule"></div>
+<section class="finalcta"><div class="wrap">
+  <div><h2>Pensacola's yard for 25 years.</h2><p>Sell a car, pull a part, or just come say hi. We're the people you actually know.</p></div>
+  <div class="grp"><a class="btn btn--amber btn--lg call-primary" href="tel:{{ siteSettings.phoneNumber|replace({"-": "", " ": "", "(": "", ")": ""}) }}"><i data-lucide="phone" aria-hidden="true"></i>Call {{ siteSettings.phoneNumber }}</a><a class="btn btn--outline-light btn--lg" href="contact.html">Visit the Yard</a></div>
+</div></section>
+
+{% include '_partials/site-footer' %}
+
+<div class="toast-host" id="toastHost" aria-live="polite"></div>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"AboutPage","name":"About Kiker's U-Pull-It","url":"https://smithbcg.github.io/kikers-website/about.html","about":{"@type":"AutoDealer","name":"Kiker's U-Pull-It","foundingDate":"2001","telephone":"+1-{{ siteSettings.phoneNumber }}","address":{"@type":"PostalAddress","addressLocality":"Pensacola","addressRegion":"FL","addressCountry":"US"}}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://smithbcg.github.io/kikers-website/"},{"@type":"ListItem","position":2,"name":"Our Story","item":"https://smithbcg.github.io/kikers-website/about.html"}]}
+</script>
+<script src="kikers.js?v=20260713-craftcms3" defer></script>
+</body>
+</html>

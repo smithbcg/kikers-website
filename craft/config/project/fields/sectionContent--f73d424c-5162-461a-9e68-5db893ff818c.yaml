@@ -1,0 +1,26 @@
+columnSuffix: null
+handle: sectionContent
+instructions: 'Every editable text value, link destination, and image in this section.'
+name: 'Section Content'
+searchable: false
+settings:
+  createButtonLabel: 'Add content item'
+  defaultIndexViewMode: cards
+  enableVersioning: false
+  entryTypes:
+    -
+      __assoc__:
+        -
+          - uid
+          - ae1303e0-4a10-49ad-a208-1614a9c5591c # Section Content Item
+  includeTableView: false
+  maxEntries: null
+  minEntries: null
+  pageSize: null
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: cards
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

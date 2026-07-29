@@ -1,0 +1,16 @@
+columnSuffix: null
+handle: pageHeadHtml
+instructions: 'Advanced stylesheet and script tags retained from this page design.'
+name: 'Page Head HTML'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: true
+  initialRows: 8
+  multiline: true
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

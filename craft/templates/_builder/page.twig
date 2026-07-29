@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% include '_partials/seo' with { entry: entry, legacyTemplate: legacyTemplate } %}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,500;0,600;0,700;0,800;1,600;1,700;1,800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ siteUrl }}kikers.css?v=20260728-storyqa2">
+  <link rel="stylesheet" href="{{ siteUrl }}page-builder.css?v=20260722-icons2">
+  {{ entry.pageHeadHtml|raw }}
+  {% if entry.pageCustomCss %}<style>{{ entry.pageCustomCss|raw }}</style>{% endif %}
+  <style>.cms-page h1,.cms-page h2,.cms-page h3,.cms-page h4{letter-spacing:0}</style>
+</head>
+{% set slug = entry.slug %}
+{% set isSell = slug starts with 'sell-your-' or slug == 'we-buy-cars-near-pensacola' %}
+{% set isParts = slug in ['u-pull-parts', 'full-service-parts'] %}
+{% set isCars = slug starts with 'cars-for-sale' %}
+{% set navActive = isSell ? 'sell' : (isParts ? 'parts' : (slug == 'about' ? 'story' : (slug == 'contact' ? 'visit' : ''))) %}
+{% set thirdNav = slug == 'full-service-parts' ? 'request' : 'how' %}
+{% set thirdHref = slug == 'full-service-parts' ? '#request' : (url(entry.uri) ~ '#how') %}
+{% set ctaLabel = 'Call ' ~ siteSettings.phoneNumber %}
+{% set ctaHref = 'phone' %}
+<body id="top" class="cms-page cms-page--{{ slug }}">
+  {% include '_partials/site-header' with {
+    navActive: navActive,
+    thirdNav: thirdNav,
+    thirdHref: thirdHref,
+    ctaLabel: ctaLabel,
+    ctaHref: ctaHref,
+    drawerCtaLabel: ctaLabel
+  } %}
+
+  <main id="main-content">
+    {% for section in sections %}
+      {% include '_builder/section' with { section: section } only %}
+    {% endfor %}
+  </main>
+
+  {% include '_partials/site-footer' %}
+  {% set isVehicleDetail = slug == 'cars-for-sale-vehicle' %}
+  {% set hasOfferForm = isSell or slug == 'home' %}
+  {% set mobileSecondaryLabel = isParts ? (slug == 'u-pull-parts' ? 'View Inventory' : 'Full-Service Search') : (isVehicleDetail ? 'Vehicle Details' : (slug == 'cars-for-sale' ? 'View Vehicles' : (slug in ['about', 'contact'] ? 'Directions' : (hasOfferForm ? 'Online Offer' : 'Contact')))) %}
+  {% set mobileSecondaryHref = isParts ? (slug == 'u-pull-parts' ? '#live-inventory' : 'http://search3904.used-auto-parts.biz/inventory/retailF.htm') : (isVehicleDetail ? '#details' : (slug == 'cars-for-sale' ? '#inventory' : (slug in ['about', 'contact'] ? siteSettings.directionsUrl : (hasOfferForm ? '#offer-form' : url('contact'))))) %}
+  <nav class="mobile-action-bar" aria-label="Quick actions">
+    <a class="btn btn--outline" href="{{ mobileSecondaryHref }}"{% if slug == 'full-service-parts' %} target="_blank" rel="noopener"{% endif %}><i data-lucide="{{ isParts ? 'package-search' : (isVehicleDetail ? 'car-front' : (slug == 'cars-for-sale' ? 'car-front' : (slug in ['about', 'contact'] ? 'map-pin' : 'badge-dollar-sign'))) }}" aria-hidden="true"></i>{{ mobileSecondaryLabel }}</a>
+    <a class="btn btn--filled call-primary" href="tel:{{ siteSettings.phoneNumber|replace({'-': '', ' ': '', '(': '', ')': ''}) }}"><i data-lucide="phone" aria-hidden="true"></i>Call Now</a>
+  </nav>
+  <div class="toast-host" id="toastHost" aria-live="polite"></div>
+  {{ entry.pageBodyScripts|raw }}
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script>
+  <script src="{{ siteUrl }}kikers.js?v=20260728-storyqa1" defer></script>
+</body>
+</html>

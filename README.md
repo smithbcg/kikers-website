@@ -1,35 +1,32 @@
-# Kiker's U-Pull-It — Website (full set)
+# Kiker's U-Pull-It — Craft CMS Website
 
-Static HTML site. No build step, no framework. Fully responsive (desktop / laptop / tablet / mobile).
+The production application is the Craft CMS 5 project in `craft/`. The root-level static HTML files remain only as historical visual references and must not be deployed as the live website.
 
-## Page groups
-**Live site** (link the shared `kikers.css` + `kikers.js`; these are the primary launch pages):
-index, sell-your-vehicle, u-pull-parts, full-service-parts, about, contact, blog, cars-for-sale,
-cars-for-sale-vehicle, we-buy-cars-near-pensacola, sell-your-car-{pensacola,pace,milton,cantonment},
-thank-you, 404, privacy.
+## Craft CMS migration
 
-**Variants / earlier concepts** (self-contained — each has its own inline CSS, for reference &
-comparison; linked in the footer under Build Versions, not in the main nav): `Kikers-Home.html` (first home), `Kikers-Home-with-Photos.html`
-(photo-rich home), `Kikers-Home-v2.html` (style-guide-vocabulary home), `home-funnel.html` &
-`home-funnel-2.html` (funnel-style home concepts), `Sell-Your-Vehicle-v2.html`,
-`Contact-Visit.html`, `Icon-Comparison.html` (icon-set picker), and `docs/component-kit.html`.
-`index.html` is the active home page.
+- Local site: `http://kikers-craft.ddev.site`
+- Control panel: `http://kikers-craft.ddev.site/admin`
+- Public document root for production: `craft/web`
+- Local runtime: OrbStack + DDEV, PHP 8.3, MySQL 8.0
+- Content: editor-managed pages, assets, universal navigation/footer settings, and inquiries
 
-## Assets
-- `kikers.css` — design system + all components + responsive layer (single source of truth for the live pages).
-- `kikers.js` — shared behavior (sticky nav, mobile drawer, hours highlight, redirects/forms, toast).
-- `sitemap.xml`, `robots.txt`, `docs/component-kit.html`.
+See `craft/README.md` for setup, editing, and deployment instructions.
 
-## Responsive
-Breakpoints (bottom of `kikers.css`, and inlined into each variant): 1024 (4-up → 2-up),
-768 (multi-col → single, sticky buy-box static, stacked CTAs), 560 (single col, full-width CTAs),
-380 (small phone). Global guards prevent horizontal scroll and overflow. Verify in Chrome DevTools
-device mode; tell me any page+width that looks off.
+## Site structure
 
-## Deploy
-Put the folder in git; deploy to any static host (Netlify/Vercel/Cloudflare Pages/GitHub Pages/S3/
-Apache/Nginx). `index.html` is home. Enable pretty-URL rewrites (`/sell-your-vehicle/` → .html) or
-switch canonicals/sitemap to `.html` paths.
+The live routes are Craft entries rendered through the shared page builder. Earlier static concepts remain in the repository only as development history. They are not navigation items, sitemap entries, or production routes.
+
+Public assets live under `craft/web/assets`; uploaded Craft assets use the Site Assets volume at that same public root. Shared front-end behavior and styles live in `craft/web/kikers.js` and `craft/web/kikers.css`.
+
+## Production
+
+- PHP 8.2+ and MySQL 8.0.17+ are required.
+- The public web root must be `craft/web`.
+- The project is currently configured for Craft Solo, which allows one control-panel user.
+- Create `craft/.env` from `craft/.env.example.production`.
+- Configure production SMTP before accepting inquiries.
+- Deploy with `composer install --no-dev --optimize-autoloader` and `php craft up --interactive=0`.
+- Never point the domain at the repository root or deploy this project to a static-only host.
 
 ## Launch notes
 - Business address: `3010 W. Fairfield Drive, Pensacola, FL 32505`.
@@ -43,8 +40,7 @@ switch canonicals/sitemap to `.html` paths.
 - Cars for Sale is gated "coming soon" — don't launch live sales until the FL dealer license + FTC
   Buyers Guide/as-is process are in place (legal review). Listings are samples.
 - Florida legal copy is summarized — verify with FLHSMV; confirm the salvage-dealer license.
-- Inventory cards are sample data → wire real inventory from Crush/Checkmate.
+- The U-Pull inventory is supplied by AutoRecycler/Ario; its upstream YMS sync must be maintained by the inventory provider.
 
 ## Editing
-Live pages: edit `kikers.css` (global look) / `kikers.js` (behavior) / the `.html` (content).
-Variants: self-contained — edit the CSS inside that file's `<style>`.
+Routine content, images, icons, navigation, and footer settings are edited in Craft. Template and stylesheet changes should be deployed through Git.

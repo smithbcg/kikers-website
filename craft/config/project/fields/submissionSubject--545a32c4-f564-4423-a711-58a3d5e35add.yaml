@@ -1,0 +1,16 @@
+columnSuffix: null
+handle: submissionSubject
+instructions: null
+name: 'Subject or Part Needed'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: false
+  initialRows: 4
+  multiline: false
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

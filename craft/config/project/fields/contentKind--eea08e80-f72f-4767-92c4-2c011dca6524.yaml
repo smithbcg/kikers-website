@@ -1,0 +1,55 @@
+columnSuffix: null
+handle: contentKind
+instructions: null
+name: 'Content Type'
+searchable: false
+settings:
+  customOptions: false
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - Text
+        -
+          - value
+          - text
+        -
+          - default
+          - true
+    -
+      __assoc__:
+        -
+          - label
+          - 'Button or link destination'
+        -
+          - value
+          - url
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - Image
+        -
+          - value
+          - image
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - 'HTML attribute'
+        -
+          - value
+          - attribute
+        -
+          - default
+          - false
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

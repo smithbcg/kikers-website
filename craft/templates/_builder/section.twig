@@ -1,0 +1,28 @@
+{% set markup = renderKikersSection(section) %}
+{% set visualPreview = craft.app.request.isPreview %}
+{% if visualPreview %}
+  {% set sectionMeta = kikersEditorMetadata(section, section.title, 'section') %}
+  <div class="kve-section" data-kve-section="{{ sectionMeta|json_encode|e('html_attr') }}">
+{% endif %}
+
+{% set theme = section.sectionTheme.value|default(section.sectionTheme|default('inherit')) %}
+{% set width = section.sectionWidth.value|default(section.sectionWidth|default('inherit')) %}
+{% set spacing = section.sectionSpacing.value|default(section.sectionSpacing|default('inherit')) %}
+{% set background = section.sectionBackground.one() %}
+{% set anchor = section.sectionAnchor|default('')|trim %}
+{% set extraClasses = section.sectionCssClass|default('')|trim %}
+{% set useContainer = section.sectionUseContainer|default(false) %}
+{% set hasFrame = theme != 'inherit' or width != 'inherit' or spacing != 'inherit' or background or anchor or extraClasses or useContainer %}
+
+{% if hasFrame %}
+  {% set overlay = section.sectionOverlay|default(0) %}
+  <div{% if anchor %} id="{{ anchor|e('html_attr') }}"{% endif %}
+    class="cms-section-frame cms-theme--{{ theme }} cms-width--{{ width }} cms-spacing--{{ spacing }}{% if background %} cms-has-background{% endif %}{% if extraClasses %} {{ extraClasses|e('html_attr') }}{% endif %}"
+    {% if background %}style="--cms-background:url('{{ background.url|e('html_attr') }}');--cms-overlay:{{ overlay / 100 }}"{% endif %}>
+    <div class="cms-section-frame__content{% if useContainer %} cms-builder-container{% endif %}">{{ markup|raw }}</div>
+  </div>
+{% else %}
+  {{ markup|raw }}
+{% endif %}
+
+{% if visualPreview %}</div>{% endif %}
