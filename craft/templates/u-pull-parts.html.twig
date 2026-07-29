@@ -10,7 +10,7 @@
 </head>
 <body id="top">
 
-{% include '_partials/site-header' with { navActive: 'parts', thirdHref: '#how', ctaLabel: 'Search Inventory', ctaHref: '#search' } %}
+{% include '_partials/site-header' with { navActive: 'parts', thirdHref: '#how', ctaLabel: 'Call ' ~ siteSettings.phoneNumber, ctaHref: 'phone' } %}
 
 <nav class="crumbs" aria-label="Breadcrumb"><div class="wrap"><a href="index.html">Home</a><span class="sep">›</span><span>Pull Your Own Parts</span></div></nav>
 
@@ -22,17 +22,13 @@
       <div class="h-tags"><span class="eyebrow on-ink">Self-Service Yard</span><span class="chiplet">Bring your tools</span><span class="chiplet">Flat-rate pricing</span></div>
       <h1>Pull your own parts. <em>Save big.</em></h1>
       <p class="lede">Kiker's is a self-service yard in Pensacola, organized by section and row. Search what's in the yard, bring your own tools, pull the part you need, and pay flat-rate pricing at the counter. Open Mon-Fri, 9 AM to 4:30 PM; Sat, 8 AM to 2 PM.</p>
-      <div class="cta-row"><a class="btn btn--amber btn--lg" href="#inventory"><span class="ic">⌕</span>Search Inventory</a><a class="btn btn--outline-light btn--lg" href="contact.html">Plan Your Visit</a></div>
+      <div class="cta-row"><a class="btn btn--green btn--lg call-primary" href="tel:{{ siteSettings.phoneNumber|replace({"-": "", " ": "", "(": "", ")": ""}) }}"><i data-lucide="phone" aria-hidden="true"></i>Call {{ siteSettings.phoneNumber }}</a><a class="btn btn--outline-light btn--lg" href="#live-inventory"><i data-lucide="package-search" aria-hidden="true"></i>View Live Inventory</a></div>
     </div>
-    <div class="offer-card">
-      <div class="ohead"><h2>Find a vehicle</h2></div>
-      <div class="sub">Search by make and model — what's listed is in the yard.</div>
-      <form class="qf" onsubmit="event.preventDefault();toast('Inventory search connects to Crush on the live site.');">
-        <input type="text" placeholder="Search — “F-150 mirror”, “Civic engine”…" aria-label="Search parts">
-        <div class="grid2"><input type="text" placeholder="Make"><input type="text" placeholder="Model"></div>
-        <button class="btn btn--filled btn--block" type="submit"><span class="ic">⌕</span>Search the Yard</button>
-      </form>
-      <div class="fine">Inventory updated as vehicles arrive</div>
+    <div class="offer-card call-first-card">
+      <div class="ohead"><h2>Need help finding a vehicle?</h2><span class="avail"><span class="dot pulse"></span>Call first</span></div>
+      <div class="sub">The online list shows vehicles in the self-service yard. For the quickest answer about a vehicle or part, call the counter.</div>
+      <a class="btn btn--green btn--block btn--lg call-primary" href="tel:{{ siteSettings.phoneNumber|replace({"-": "", " ": "", "(": "", ")": ""}) }}"><i data-lucide="phone" aria-hidden="true"></i>Call {{ siteSettings.phoneNumber }}</a>
+      <div class="fine"><a href="#live-inventory">Search the live yard inventory</a></div>
     </div>
   </div></div>
 </section>
@@ -61,38 +57,33 @@
 </section>
 
 <!-- INVENTORY -->
-<section class="sec" id="inventory">
+<section class="sec" id="live-inventory">
   <div class="wrap">
-    <div class="sec-head"><div class="row-between"><div><span class="eyebrow">Inside Kiker's</span><h2 style="font-style:italic">What you'll find in the yard</h2></div><a class="btn btn--text" href="#search">Search inventory →</a></div></div>
-    <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px">
-      <button class="chip" aria-pressed="true">Ford</button><button class="chip" aria-pressed="false">Chevy</button><button class="chip" aria-pressed="false">Toyota</button><button class="chip" aria-pressed="false">Honda</button><button class="chip" aria-pressed="false">Nissan</button><button class="chip" aria-pressed="false">Dodge / Ram</button>
+    <div class="sec-head"><div class="row-between"><div><span class="eyebrow">Live Self-Service Inventory</span><h2 style="font-style:italic">Search all active yard vehicles</h2><p>Use year, make, or model to search across the complete live inventory feed. Inventory is maintained by Kiker's yard-management provider and updates from the yard system.</p></div><a class="btn btn--text" href="https://ario.autorecycler.io/yard/kikers-u-pull-it?yard=2c06fa04-9b26-4b8e-b0e8-ac36d7a1b829" target="_blank" rel="noopener">Open inventory in a new tab →</a></div></div>
+    <div class="inventory-embed">
+      <iframe
+        id="ario-inventory"
+        title="Kiker's live U-Pull-It vehicle inventory"
+        src="https://ario.autorecycler.io/yard/kikers-u-pull-it?embed=1&amp;yard=2c06fa04-9b26-4b8e-b0e8-ac36d7a1b829"
+        loading="lazy"
+        referrerpolicy="strict-origin-when-cross-origin"></iframe>
     </div>
+    <div class="inventory-fallback">
+      <p>If the inventory does not load, <a href="https://ario.autorecycler.io/yard/kikers-u-pull-it?yard=2c06fa04-9b26-4b8e-b0e8-ac36d7a1b829" target="_blank" rel="noopener">open the live inventory directly</a> or call <a href="tel:{{ siteSettings.phoneNumber|replace({"-": "", " ": "", "(": "", ")": ""}) }}">{{ siteSettings.phoneNumber }}</a>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- YARD PHOTOGRAPHY -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">Inside Kiker's</span><h2 style="font-style:italic">What you'll find in the yard</h2></div>
     <div class="fcards">
       <div class="feature-card"><div class="img"><img src="assets/photos/yard-donor-vehicles.jpg" alt="Donor vehicles lined up in Kiker's self-service yard" width="765" height="1020" loading="lazy"></div><span class="flag">THE YARD</span><div class="fc-txt"><h4>Rows of donor vehicles</h4><span class="km">SEARCH · FIND · PULL</span></div></div>
       <div class="feature-card"><div class="img"><img src="assets/photos/yard-front-end-parts.jpg" alt="Vehicle front end and parts available in the Kiker's yard" width="1360" height="1020" loading="lazy"></div><span class="flag">BODY PARTS</span><div class="fc-txt"><h4>Panels, lights &amp; trim</h4><span class="km">USED ORIGINAL PARTS</span></div></div>
       <div class="feature-card"><div class="img"><img src="assets/photos/yard-interior-counter.jpg" alt="Kiker's self-service parts counter and yard entrance" width="1360" height="901" loading="lazy"></div><span class="flag amber">SELF-SERVICE</span><div class="fc-txt"><h4>Check in at the counter</h4><span class="km">BRING TOOLS · PAY ON EXIT</span></div></div>
       <div class="feature-card"><div class="img"><img src="assets/photos/yard-interior-parts-racks.jpg" alt="Organized racks of used automotive parts inside Kiker's" width="1360" height="901" loading="lazy"></div><span class="flag">USED PARTS</span><div class="fc-txt"><h4>More parts behind the counter</h4><span class="km">ASK THE KIKER'S TEAM</span></div></div>
     </div>
-    <div style="margin-top:32px;display:grid;grid-template-columns:1.4fr 1fr;gap:32px;align-items:start">
-      <div class="list">
-        <div class="li"><div class="av"><img src="assets/photos/originals/Kiker Yard Exterior 3.jpg" alt="Ford vehicle in the Kiker's yard" loading="lazy"></div><div class="tx"><div class="t1">2011 Ford F-150</div><div class="t2">Crew cab · 5.0L V8</div></div><div class="meta">ROW 22</div></div>
-        <div class="li"><div class="av steel"><img src="assets/photos/originals/IMG_0062.jpeg" alt="Honda vehicle being inspected at Kiker's" loading="lazy"></div><div class="tx"><div class="t1">2012 Honda Civic</div><div class="t2">1.8L · Auto</div></div><div class="meta">ROW 14</div></div>
-        <div class="li"><div class="av"><img src="assets/photos/originals/Kiker Yard Exterior 4.jpg" alt="Vehicle ready for parts in the Kiker's yard" loading="lazy"></div><div class="tx"><div class="t1">2008 Chevy Silverado</div><div class="t2">5.3L V8</div></div><div class="meta">ROW 07</div></div>
-        <div class="li"><div class="av steel"><img src="assets/photos/yard-donor-vehicles.jpg" alt="Donor vehicles in the Kiker's yard" loading="lazy"></div><div class="tx"><div class="t1">2010 Toyota Sequoia</div><div class="t2">4WD · 4.7L V8</div></div><div class="meta">ROW 31</div></div>
-        <div class="li"><div class="av"><img src="assets/photos/originals/Screenshot 2026-07-21 at 3.06.24 PM.png" alt="Vehicle rows in the Kiker's yard" loading="lazy"></div><div class="tx"><div class="t1">2009 Nissan Altima</div><div class="t2">2.5L · Auto</div></div><div class="meta">ROW 18</div></div>
-      </div>
-      <div class="spec-card">
-        <div class="sc-top"><div><h4>2012 Honda Civic LX</h4><span class="avail" style="margin-top:6px"><span class="dot"></span>In the yard</span></div><span class="row-tag">ROW 14</span></div>
-        <div class="spec-grid">
-          <div class="cell"><div class="ic">⛽</div><span class="lab">Engine</span><span class="val">1.8L</span></div>
-          <div class="cell"><div class="ic">⏱</div><span class="lab">Mileage</span><span class="val">112k</span></div>
-          <div class="cell"><div class="ic">⚙</div><span class="lab">Trans</span><span class="val">Auto</span></div>
-          <div class="cell"><div class="ic">📅</div><span class="lab">Arrived</span><span class="val">Jun 12</span></div>
-        </div>
-        <div class="sc-foot"><span class="hint">Parts priced in-yard</span><a class="btn btn--amber btn--sm" href="contact.html">Get directions</a></div>
-      </div>
-    </div>
-    <p class="src" style="margin-top:16px">Live inventory connects to Crush on the built site. <span class="tagph">Crush embed goes here</span></p>
   </div>
 </section>
 
@@ -143,7 +134,7 @@
 <div class="race-rule"></div>
 <section class="finalcta"><div class="wrap">
   <div><h2>Need a part? Come pull it.</h2><p>Organized rows, flat-rate pricing, big savings. Open Mon-Fri, 9 AM to 4:30 PM; Sat, 8 AM to 2 PM.</p></div>
-  <div class="grp"><a class="btn btn--amber btn--lg" href="#search"><span class="ic">⌕</span>Search Inventory</a><a class="btn btn--outline-light btn--lg" href="contact.html">Get Directions</a></div>
+  <div class="grp"><a class="btn btn--amber btn--lg call-primary" href="tel:{{ siteSettings.phoneNumber|replace({"-": "", " ": "", "(": "", ")": ""}) }}"><i data-lucide="phone" aria-hidden="true"></i>Call {{ siteSettings.phoneNumber }}</a><a class="btn btn--outline-light btn--lg" href="#live-inventory">View Live Inventory</a></div>
 </div></section>
 
 {% include '_partials/site-footer' %}

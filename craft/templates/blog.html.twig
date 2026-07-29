@@ -61,7 +61,7 @@
 <div class="race-rule"></div>
 <section class="finalcta"><div class="wrap">
   <div><h2>Got a car to sell? Let's get you paid.</h2><p>Fair offer, free towing, same-day pickup. Pensacola's yard for 25 years.</p></div>
-  <div class="grp"><a class="btn btn--amber btn--lg" href="sell-your-vehicle.html"><span class="ic">⚡</span>Get a Cash Offer</a><a class="btn btn--outline-light btn--lg" href="contact.html">Visit the Yard</a></div>
+  <div class="grp"><a class="btn btn--amber btn--lg call-primary" href="tel:{{ siteSettings.phoneNumber|replace({"-": "", " ": "", "(": "", ")": ""}) }}"><i data-lucide="phone" aria-hidden="true"></i>Call {{ siteSettings.phoneNumber }}</a><a class="btn btn--outline-light btn--lg" href="contact.html">Visit the Yard</a></div>
 </div></section>
 
 {% include '_partials/site-footer' %}

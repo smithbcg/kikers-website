@@ -5,7 +5,10 @@
 {% set ctaHref = ctaHref|default('') %}
 {% set drawerCtaLabel = drawerCtaLabel|default(ctaLabel) %}
 {% set phoneHref = 'tel:' ~ siteSettings.phoneNumber|replace({'-': '', ' ': '', '(': '', ')': ''}) %}
-{% set ctaHref = ctaHref == 'phone' ? phoneHref : ctaHref %}
+{# Hunter's preferred conversion path is a direct call on every page. #}
+{% set ctaLabel = 'Call ' ~ siteSettings.phoneNumber %}
+{% set drawerCtaLabel = ctaLabel %}
+{% set ctaHref = phoneHref %}
 
 {% if showUtilityStrip|default(true) %}
   <div class="ustrip"><div class="wrap">
@@ -28,7 +31,7 @@
     <a href="{{ url('about') }}"{{ navActive == 'story' ? ' class="cur"' : '' }}>Our Story</a>
     <a href="{{ url('contact') }}"{{ navActive == 'visit' ? ' class="cur"' : '' }}>Visit</a>
   </nav>
-  {% if ctaLabel and ctaHref %}<a class="btn btn--filled btn--sm" href="{{ ctaHref }}" style="margin-left:8px">{{ ctaLabel }}</a>{% endif %}
+  <a class="btn btn--filled btn--sm call-primary" href="{{ ctaHref }}" style="margin-left:8px"><i data-lucide="phone" aria-hidden="true"></i>{{ ctaLabel }}</a>
   <button class="menu" id="menuBtn" type="button" aria-label="Open menu" aria-controls="drawer" aria-expanded="false">&#9776;</button>
 </div></header>
 <div class="scrim" id="scrim"></div>
@@ -42,5 +45,5 @@
   {% endif %}
   <a href="{{ url('about') }}">Our Story</a>
   <a href="{{ url('contact') }}">Visit</a>
-  {% if drawerCtaLabel and ctaHref %}<a class="btn btn--filled btn--block" href="{{ ctaHref }}">{{ drawerCtaLabel }}</a>{% endif %}
+  <a class="btn btn--filled btn--block call-primary" href="{{ ctaHref }}"><i data-lucide="phone" aria-hidden="true"></i>{{ drawerCtaLabel }}</a>
 </aside>

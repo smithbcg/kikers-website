@@ -11,7 +11,7 @@
 </head>
 <body id="top">
 
-{% include '_partials/site-header' with { thirdHref: '#how', ctaLabel: 'Get My Offer', ctaHref: '#offer-form', drawerCtaLabel: 'Get My Cash Offer' } %}
+{% include '_partials/site-header' with { thirdHref: '#how', ctaLabel: 'Call ' ~ siteSettings.phoneNumber, ctaHref: 'phone' } %}
 
 <!-- HERO -->
 <section class="hero" id="offer">
@@ -21,18 +21,13 @@
       <div class="h-tags"><span class="eyebrow on-ink">Pensacola, FL</span><span class="chiplet">Est. 2001 · 3rd generation</span><span class="chiplet">Open Mon-Fri 9-4:30; Sat 8-2</span></div>
       <h1>Built in the <em>yard.</em></h1>
       <p class="lede">Three generations on the same Pensacola ground since 1972. We buy your car for cash — running or not — and handle the towing, paperwork, and required reporting. Done by the book. Or bring your tools and pull your own parts.</p>
-      <div class="cta-row"><a class="btn btn--green btn--lg" href="#offer-form">{% include '_partials/kiker-icon' with { name: 'cash-offer', extraClass: 'ic' } only %}Get a Cash Offer</a><a class="btn btn--outline-light btn--lg" href="u-pull-parts.html">Find a Part</a></div>
+      <div class="cta-row"><a class="btn btn--green btn--lg call-primary" href="tel:{{ siteSettings.phoneNumber|replace({"-": "", " ": "", "(": "", ")": ""}) }}"><i data-lucide="phone" aria-hidden="true"></i>Call {{ siteSettings.phoneNumber }}</a><a class="btn btn--outline-light btn--lg" href="u-pull-parts.html">Find a Part</a></div>
     </div>
-    <div class="offer-card" id="offer-form">
-      <div class="ohead"><h2>Cash for your car</h2><span class="avail"><span class="dot pulse"></span>Fast</span></div>
-      <div class="sub">A few details — no haggling.</div>
-      <form class="qf" onsubmit="return submitOffer(event)">
-        <input type="text" placeholder="Year, make &amp; model" required>
-        <select required><option value="" selected disabled>Condition</option><option>Runs &amp; drives</option><option>Starts only</option><option>Won't start</option><option>Inoperable</option><option>Wrecked / junk</option></select>
-        <input type="tel" placeholder="Phone" required>
-        <button class="btn btn--filled btn--block" type="submit"><span class="ic">⚡</span>Get My Cash Offer</button>
-      </form>
-      <div class="fine">Free &amp; no obligation</div>
+    <div class="offer-card call-first-card">
+      <div class="ohead"><h2>Call for the fastest answer</h2><span class="avail"><span class="dot pulse"></span>Open today</span></div>
+      <div class="sub">Talk directly with the Kiker's team about selling a vehicle, finding a part, or planning your visit.</div>
+      <a class="btn btn--green btn--block btn--lg call-primary" href="tel:{{ siteSettings.phoneNumber|replace({"-": "", " ": "", "(": "", ")": ""}) }}"><i data-lucide="phone" aria-hidden="true"></i>Call {{ siteSettings.phoneNumber }}</a>
+      <div class="fine">Selling a vehicle? <a href="#offer-form">Send details online instead</a>.</div>
     </div>
   </div></div>
 </section>
@@ -103,7 +98,7 @@
         <div class="service-icon">{% include '_partials/kiker-icon' with { name: 'cash-offer' } only %}</div>
         <div><span class="k">FASTEST WAY TO SELL</span><h3>Cash for your car</h3><p>Running or not, get a fair offer without the listing, haggling, or towing bill. We pick it up and handle the required paperwork.</p>
           <ul class="service-points"><li><i data-lucide="check" aria-hidden="true"></i>Free towing</li><li><i data-lucide="check" aria-hidden="true"></i>Same-day available</li><li><i data-lucide="check" aria-hidden="true"></i>No obligation</li></ul>
-          <a class="btn btn--filled btn--lg" href="#offer-form"><i data-lucide="zap" aria-hidden="true"></i>Get My Cash Offer</a>
+          <a class="btn btn--filled btn--lg call-primary" href="tel:{{ siteSettings.phoneNumber|replace({"-": "", " ": "", "(": "", ")": ""}) }}"><i data-lucide="phone" aria-hidden="true"></i>Call for an Offer</a>
         </div>
       </article>
       <div class="service-secondary-stack">
@@ -115,7 +110,7 @@
 </section>
 
 <!-- LEAD FORM -->
-<section class="sec lead">
+<section class="sec lead" id="offer-form">
   <div class="wrap"><div class="split2">
     <div>
       <span class="eyebrow">Cash for Cars</span>
@@ -184,7 +179,7 @@
       <div class="step done"><div class="node">3</div><div class="lab">Pickup</div><div class="sub">Same-day or on your schedule.</div></div>
       <div class="step done"><div class="node">4</div><div class="lab">Paid</div><div class="sub">Cash in hand, paperwork handled.</div></div>
     </div>
-    <div style="text-align:center;margin-top:38px"><a class="btn btn--filled btn--lg" href="#offer-form"><span class="ic">⚡</span>Get My Cash Offer</a></div>
+    <div style="text-align:center;margin-top:38px"><a class="btn btn--filled btn--lg call-primary" href="tel:{{ siteSettings.phoneNumber|replace({"-": "", " ": "", "(": "", ")": ""}) }}"><i data-lucide="phone" aria-hidden="true"></i>Call {{ siteSettings.phoneNumber }}</a></div>
   </div>
 </section>
 

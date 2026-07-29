@@ -88,7 +88,12 @@ class SubmissionsController extends Controller
             return $this->asFailure('We could not save your request. Please call the yard.');
         }
 
-        $this->sendNotification($entry);
+        if (!$this->sendNotification($entry)) {
+            return $this->asFailure(
+                'We saved your request, but the email notification could not be sent. Please call the yard so we can help right away.',
+                ['entryId' => $entry->id],
+            );
+        }
 
         return $this->asSuccess(
             'Thanks. We received your request.',
@@ -97,9 +102,9 @@ class SubmissionsController extends Controller
         );
     }
 
-    private function sendNotification(Entry $entry): void
+    private function sendNotification(Entry $entry): bool
     {
-        $recipient = App::env('KIKERS_NOTIFICATION_EMAIL') ?: 'sales@kikersautoparts.com';
+        $recipient = App::env('KIKERS_NOTIFICATION_EMAIL') ?: 'cars@kikersautoparts.com';
         $body = [
             'Type: ' . $entry->submissionType,
             'Name: ' . $entry->submissionName,
@@ -111,10 +116,13 @@ class SubmissionsController extends Controller
             'Subject: ' . $entry->submissionSubject,
             'Message: ' . $entry->submissionMessage,
             'Source: ' . $entry->submissionSource,
+            '',
+            'All form answers:',
+            (string)$entry->submissionPayload,
         ];
 
         try {
-            Craft::$app->getMailer()
+            return (bool)Craft::$app->getMailer()
                 ->compose()
                 ->setTo($recipient)
                 ->setSubject($entry->title)
@@ -123,6 +131,7 @@ class SubmissionsController extends Controller
         } catch (Throwable $e) {
             // The entry is authoritative; a mail transport failure must not lose it.
             Craft::warning('Inquiry saved, but notification email failed: ' . $e->getMessage(), __METHOD__);
+            return false;
         }
     }
 

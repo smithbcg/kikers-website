@@ -110,13 +110,10 @@
 <div class="wrap" id="offer">
   <div class="qbar">
     <div class="qcol qleft">
-      <div class="qhd">{% include '_partials/kiker-icon' with { name: 'cash-offer', extraClass: 'ic' } only %}Get a cash offer</div>
-      <div class="qsub">Tell us your vehicle — we'll text or call a real number, fast.</div>
-      <form class="qrow" onsubmit="return submitOffer(event)">
-        <div class="field"><input type="text" placeholder="Year, make &amp; model" aria-label="Year, make and model" required></div>
-        <button class="btn btn--filled" type="submit">Get my offer</button>
-      </form>
-      <div class="qnote">Free &amp; no obligation. Prefer to talk? <a href="tel:{{ siteSettings.phoneNumber|replace({"-": ""}) }}">Call {{ siteSettings.phoneNumber }}</a>.</div>
+      <div class="qhd">{% include '_partials/kiker-icon' with { name: 'cash-offer', extraClass: 'ic' } only %}Call for the fastest cash offer</div>
+      <div class="qsub">Talk directly with Kiker's about your vehicle, pickup, and next steps.</div>
+      <a class="btn btn--green btn--lg btn--block call-primary" href="tel:{{ siteSettings.phoneNumber|replace({"-": "", " ": "", "(": "", ")": ""}) }}"><i data-lucide="phone" aria-hidden="true"></i>Call {{ siteSettings.phoneNumber }}</a>
+      <div class="qnote">Free &amp; no obligation. Can't call right now? <a href="sell-your-vehicle.html#offer-form">Send vehicle details online</a>.</div>
     </div>
     <div class="qcol qright">
       <div class="qcaps">Or — what brings you in?</div>

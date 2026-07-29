@@ -151,6 +151,14 @@ class m260713_151000_seed_page_builder extends Migration
                 if (str_contains($href, 'kikers.css') || str_contains($href, 'fonts.googleapis.com')) {
                     continue;
                 }
+                $src = $node->getAttribute('src');
+                if (
+                    str_contains($src, 'ksrndkehqnwntyxlhgto.com/165238.js')
+                    || str_contains($node->textContent, '$wc_load')
+                ) {
+                    // WhatConverts is loaded once by the shared SEO/head partial.
+                    continue;
+                }
             }
             $headHtml[] = trim((string)$document->saveHTML($node));
         }

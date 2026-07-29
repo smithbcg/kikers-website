@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,500;0,600;0,700;0,800;1,600;1,700;1,800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{{ siteUrl }}kikers.css?v=20260728-cms-controls2">
+  <link rel="stylesheet" href="{{ siteUrl }}kikers.css?v=20260728-launch1">
   <link rel="stylesheet" href="{{ siteUrl }}page-builder.css?v=20260722-icons2">
   {{ entry.pageHeadHtml|raw }}
   {% if entry.pageCustomCss %}<style>{{ entry.pageCustomCss|raw }}</style>{% endif %}
@@ -20,8 +20,8 @@
 {% set navActive = isSell ? 'sell' : (isParts ? 'parts' : (slug == 'about' ? 'story' : (slug == 'contact' ? 'visit' : ''))) %}
 {% set thirdNav = slug == 'full-service-parts' ? 'request' : 'how' %}
 {% set thirdHref = slug == 'full-service-parts' ? '#request' : (url(entry.uri) ~ '#how') %}
-{% set ctaLabel = isParts ? (slug == 'u-pull-parts' ? 'Search Inventory' : 'Request a Part') : (isCars ? 'Call the Yard' : (slug in ['about', 'contact'] ? 'Call Us' : 'Get My Offer')) %}
-{% set ctaHref = isParts ? (slug == 'u-pull-parts' ? '#search' : '#request') : (isCars or slug in ['about', 'contact'] ? 'phone' : '#offer-form') %}
+{% set ctaLabel = 'Call ' ~ siteSettings.phoneNumber %}
+{% set ctaHref = 'phone' %}
 <body id="top" class="cms-page cms-page--{{ slug }}">
   {% include '_partials/site-header' with {
     navActive: navActive,
@@ -40,11 +40,12 @@
 
   {% include '_partials/site-footer' %}
   {% set isVehicleDetail = slug == 'cars-for-sale-vehicle' %}
-  {% set mobilePrimaryLabel = isParts ? (slug == 'u-pull-parts' ? 'Search Inventory' : 'Request a Part') : (isVehicleDetail ? 'Ask About This' : (slug == 'cars-for-sale' ? 'Notify Me' : (slug in ['about', 'contact'] ? 'Visit the Yard' : 'Get My Offer'))) %}
-  {% set mobilePrimaryHref = isParts ? (slug == 'u-pull-parts' ? '#search' : '#request') : (isVehicleDetail ? '#ask' : (slug == 'cars-for-sale' ? '#wishlist' : (slug in ['about', 'contact'] ? url('contact') : '#offer-form'))) %}
+  {% set hasOfferForm = isSell or slug == 'home' %}
+  {% set mobileSecondaryLabel = isParts ? (slug == 'u-pull-parts' ? 'View Inventory' : 'Full-Service Search') : (isVehicleDetail ? 'Vehicle Details' : (slug == 'cars-for-sale' ? 'View Vehicles' : (slug in ['about', 'contact'] ? 'Directions' : (hasOfferForm ? 'Online Offer' : 'Contact')))) %}
+  {% set mobileSecondaryHref = isParts ? (slug == 'u-pull-parts' ? '#live-inventory' : 'http://search3904.used-auto-parts.biz/inventory/retailF.htm') : (isVehicleDetail ? '#details' : (slug == 'cars-for-sale' ? '#inventory' : (slug in ['about', 'contact'] ? siteSettings.directionsUrl : (hasOfferForm ? '#offer-form' : url('contact'))))) %}
   <nav class="mobile-action-bar" aria-label="Quick actions">
-    <a class="btn btn--outline" href="tel:{{ siteSettings.phoneNumber|replace({'-': ''}) }}"><i data-lucide="phone" aria-hidden="true"></i>Call</a>
-    <a class="btn btn--filled" href="{{ mobilePrimaryHref }}"><i data-lucide="{{ isParts ? 'package-search' : (isVehicleDetail ? 'message-square-text' : (slug == 'cars-for-sale' ? 'bell' : (slug in ['about', 'contact'] ? 'map-pin' : 'badge-dollar-sign'))) }}" aria-hidden="true"></i>{{ mobilePrimaryLabel }}</a>
+    <a class="btn btn--outline" href="{{ mobileSecondaryHref }}"{% if slug == 'full-service-parts' %} target="_blank" rel="noopener"{% endif %}><i data-lucide="{{ isParts ? 'package-search' : (isVehicleDetail ? 'car-front' : (slug == 'cars-for-sale' ? 'car-front' : (slug in ['about', 'contact'] ? 'map-pin' : 'badge-dollar-sign'))) }}" aria-hidden="true"></i>{{ mobileSecondaryLabel }}</a>
+    <a class="btn btn--filled call-primary" href="tel:{{ siteSettings.phoneNumber|replace({'-': '', ' ': '', '(': '', ')': ''}) }}"><i data-lucide="phone" aria-hidden="true"></i>Call Now</a>
   </nav>
   <div class="toast-host" id="toastHost" aria-live="polite"></div>
   {{ entry.pageBodyScripts|raw }}

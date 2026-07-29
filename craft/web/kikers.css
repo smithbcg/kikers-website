@@ -827,6 +827,17 @@ img.kiker-icon{background-image:none!important}
 .leader-guidance li{display:flex;gap:10px;color:var(--text-2);font-size:14px}
 .leader-guidance li::before{content:"";width:8px;height:8px;flex:0 0 auto;background:var(--red);margin-top:7px}
 
+/* Launch conversion path: calls are primary; online forms remain secondary. */
+.call-primary .lucide{width:17px;height:17px}
+.call-primary .legacy-inline-icon{filter:brightness(0) invert(1)}
+.call-first-card .sub{font-size:15px;line-height:1.55;margin-bottom:20px}
+.call-first-card .fine a{font-weight:800;text-decoration:underline;text-underline-offset:2px}
+.inventory-embed{position:relative;overflow:hidden;min-height:900px;border:1px solid var(--line);border-radius:var(--r-lg);background:#fff;box-shadow:var(--shadow-2)}
+.inventory-embed iframe{display:block;width:100%;height:calc(100vh - 120px);min-height:900px;border:0;background:#fff}
+.inventory-fallback{margin-top:14px;padding:14px 18px;border-left:4px solid var(--red);background:var(--surface-3);color:var(--text-2)}
+.inventory-fallback p{margin:0}
+.inventory-fallback a{font-weight:800;color:var(--red)}
+
 /* Sticky mobile actions keep the current page's main job within thumb reach. */
 .mobile-action-bar{display:none}
 @media(max-width:760px){
@@ -871,6 +882,7 @@ img.kiker-icon{background-image:none!important}
   .leader-card{width:min(100%,360px)}
   .photo-duo,.about-photo-pair{grid-template-columns:1fr}
   .photo-story-grid{grid-template-columns:1fr}
+  .inventory-embed,.inventory-embed iframe{min-height:760px}
 }
 
 /* Motion is progressive enhancement and respects reduced-motion preferences. */
