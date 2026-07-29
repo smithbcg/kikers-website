@@ -64,6 +64,10 @@ h1,h2,h3,h4{margin:0;font-family:var(--display);font-weight:800;letter-spacing:0
 .btn--outline-light{--bg:transparent;--fg:#fff;--bd:rgba(255,255,255,.55)}.btn--outline-light:hover{--bd:#fff;--bg:rgba(255,255,255,.08)}
 .btn--text{--bg:transparent;--fg:var(--red);--bd:transparent;padding:0 8px;height:auto}.btn--text:hover{text-decoration:underline}
 .btn--sm{height:40px;font-size:12px;padding:0 14px}.btn--lg{height:54px;font-size:15px;padding:0 26px}.btn--block{display:flex;width:100%}
+.btn>.kiker-icon,.btn>.legacy-inline-icon,.btn>.lucide{display:block;flex:0 0 18px;width:18px;height:18px;margin:0;object-fit:contain;background-position:center;background-repeat:no-repeat;background-size:contain;vertical-align:middle}
+.btn--lg>.kiker-icon,.btn--lg>.legacy-inline-icon,.btn--lg>.lucide{flex-basis:20px;width:20px;height:20px}
+.btn--filled>.kiker-icon,.btn--filled>.legacy-inline-icon,.btn--green>.kiker-icon,.btn--green>.legacy-inline-icon,.btn--go>.kiker-icon,.btn--go>.legacy-inline-icon,.btn--ink>.kiker-icon,.btn--ink>.legacy-inline-icon,.btn--outline-light>.kiker-icon,.btn--outline-light>.legacy-inline-icon{filter:brightness(0) invert(1)}
+.btn--amber>.kiker-icon,.btn--amber>.legacy-inline-icon{filter:brightness(0) saturate(100%)}
 .arrow{font-family:var(--body);font-weight:600;font-size:14px;color:var(--red);display:inline-flex;align-items:center;gap:6px}.arrow .x{transition:transform .2s}.arrow:hover .x{transform:translateX(4px)}
 
 /* ===== AVAIL / DOT / BADGES ===== */
@@ -114,7 +118,7 @@ h1,h2,h3,h4{margin:0;font-family:var(--display);font-weight:800;letter-spacing:0
 .hero .hero-photo--milton{background-image:url("assets/photos/originals/Kiker Yard Exterior 2.jpg");background-size:cover;background-position:center 48%;filter:saturate(.9) contrast(1.06)}
 .hero .hero-photo--pace{background-image:url("assets/photos/optimized/cash-pickup-pace-1600.jpg");background-size:cover;background-position:center 43%;filter:saturate(.82) contrast(1.08)}
 .hero .hero-photo--cantonment{background-image:url("assets/photos/originals/Kiker Yard Exterior 1.jpg");background-size:cover;background-position:center 42%;filter:saturate(.9) contrast(1.06)}
-.hero .hero-photo--gulfcoast{background-image:url("assets/photos/optimized/cash-pickup-gulfcoast-1600.jpg");background-size:cover;background-position:center 42%;filter:saturate(.82) contrast(1.08)}
+.hero .hero-photo--gulfcoast{background-image:url("assets/photos/optimized/cash-pickup-pace-1600.jpg");background-size:cover;background-position:center 26%;filter:saturate(.86) contrast(1.06)}
 .hero::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(11,6,17,.92),rgba(11,6,17,.78) 45%,rgba(11,6,17,.48)),radial-gradient(720px 380px at 92% -10%,rgba(220,22,31,.32),transparent 60%)}
 .hero .wrap{position:relative;z-index:2;padding:64px 24px 76px}
 .hero.compact .wrap{padding:50px 24px 56px}
@@ -137,7 +141,7 @@ h1,h2,h3,h4{margin:0;font-family:var(--display);font-weight:800;letter-spacing:0
 .offer-card input,.offer-card select{width:100%;height:46px;background:rgba(255,255,255,.07);border:1.5px solid rgba(255,255,255,.2);border-radius:var(--r-md);color:#fff;padding:0 12px;font-family:var(--body);font-size:14px;outline:none}
 .offer-card input::placeholder{color:rgba(255,255,255,.55)}.offer-card select{color:rgba(255,255,255,.6)}.offer-card option{color:#111}
 .offer-card input:focus,.offer-card select:focus{border-color:var(--amber)}.offer-card .fine{margin-top:10px;text-align:center;color:rgba(255,255,255,.55);font-size:12px}
-@media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:30px}.hero .wrap{padding:46px 24px 54px}.hero .hero-photo--yard,.hero .hero-photo--aerial{background-position:center top}.hero .hero-photo--team{background-position:center 35%}.hero .hero-photo--sell{background-position:45% center}.hero .hero-photo--upull{background-position:58% center}.hero .hero-photo--warehouse{background-position:60% center}.hero .hero-photo--storefront{background-position:center center}.hero::after{background:linear-gradient(180deg,rgba(11,6,17,.72),rgba(11,6,17,.92)),radial-gradient(540px 300px at 50% -20%,rgba(220,22,31,.32),transparent 62%)}}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:30px}.hero .wrap{padding:46px 24px 54px}.hero .hero-photo--yard,.hero .hero-photo--aerial{background-position:center top}.hero .hero-photo--team{background-position:center 35%}.hero .hero-photo--sell{background-position:45% center}.hero .hero-photo--upull{background-position:58% center}.hero .hero-photo--warehouse{background-position:60% center}.hero .hero-photo--storefront{background-position:center center}.hero .hero-photo--gulfcoast{background-position:58% center}.hero::after{background:linear-gradient(180deg,rgba(11,6,17,.72),rgba(11,6,17,.92)),radial-gradient(540px 300px at 50% -20%,rgba(220,22,31,.32),transparent 62%)}}
 
 /* ===== SECTIONS ===== */
 section{scroll-margin-top:80px}
@@ -319,10 +323,12 @@ section{scroll-margin-top:80px}
 
 /* ===== FAQ ===== */
 .faq{max-width:820px;margin:0 auto}
-.faq details{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--e1);margin-bottom:12px;overflow:hidden}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--e1);margin-bottom:12px;overflow:hidden;transition:border-color .2s ease,box-shadow .2s ease}
+.faq details[open]{border-color:rgba(220,22,31,.28);box-shadow:0 10px 26px rgba(11,6,17,.08)}
 .faq summary{list-style:none;cursor:pointer;padding:18px 22px;font-family:var(--display);font-style:italic;font-weight:700;font-size:17px;text-transform:uppercase;display:flex;justify-content:space-between;gap:16px;align-items:center}
 .faq summary::-webkit-details-marker{display:none}.faq summary .pm{color:var(--red);font-size:22px;flex:0 0 auto;transition:transform .2s}
 .faq details[open] summary .pm{transform:rotate(45deg)}.faq .ans{padding:0 22px 20px;color:var(--text-2);font-size:15px}.faq .ans b{color:var(--text)}
+.faq.faq--gsap .ans{overflow:hidden;will-change:height,opacity}
 
 /* ===== TWO PATHS / METHODS / FL CARDS ===== */
 .paths{display:grid;grid-template-columns:1fr 1fr;gap:24px}
@@ -472,6 +478,7 @@ footer.ftr{background:var(--ink);color:rgba(255,255,255,.72);padding:54px 0 28px
   .wrap{padding-left:16px;padding-right:16px}
   .hero .wrap{padding-left:16px;padding-right:16px}
   .hero h1{font-size:36px}
+  .hero.compact h1{font-size:30px;padding-right:5px}
   .plates{grid-template-columns:1fr}
   .plate>div{min-height:92px}
 }
@@ -632,17 +639,17 @@ img.kiker-icon{background-image:none!important}
 .toast .ic.kiker-icon{width:24px;height:24px}
 .legacy-inline-icon{display:inline-block;width:1.15em;height:1.15em;vertical-align:-.18em;margin-right:.28em}
 .yard-map-photo{margin:0;overflow:hidden;border-radius:var(--r-md);background:var(--ink)}
-.yard-map-photo>img{display:block;width:100%;aspect-ratio:16/8.5;object-fit:cover}
-.yard-map-photo--diagram>img{aspect-ratio:16/9;object-fit:contain;background:#0b0611}
+.yard-map-photo>img{display:block;width:100%;height:auto;aspect-ratio:auto;object-fit:contain}
+.yard-map-photo--diagram>img{aspect-ratio:auto;object-fit:contain;background:#0b0611}
 .yard-map-photo figcaption{display:flex;align-items:center;gap:10px;padding:13px 16px;color:#fff;font-size:13px}
 .yard-map-photo figcaption .kiker-icon{width:26px;height:26px}
-.yard-map-block{display:grid;grid-template-columns:minmax(240px,.62fr) minmax(0,1.38fr);gap:28px;align-items:center;max-width:1120px;margin:0 auto}
-.yard-map-block__intro{padding:28px;border-radius:var(--r-md);background:#fff;border:1px solid var(--line);box-shadow:var(--e1)}
+.yard-map-block{display:grid;grid-template-columns:1fr;gap:18px;max-width:1120px;margin:0 auto}
+.yard-map-block__intro{padding:24px 28px;border-radius:var(--r-md);background:#fff;border:1px solid var(--line);box-shadow:var(--e1);display:grid;grid-template-columns:minmax(0,1fr) auto;gap:22px;align-items:center}
 .yard-map-block__intro h3{font-size:clamp(24px,3vw,34px);font-style:italic;margin:8px 0 10px}
-.yard-map-block__intro p{color:var(--text-2);margin:0}
-.yard-map-block__actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+.yard-map-block__intro p{color:var(--text-2);margin:0;max-width:66ch}
+.yard-map-block__actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end;margin-top:0}
 .yard-map-block--compact{margin-top:34px;padding-top:34px;border-top:1px solid var(--line)}
-.yard-map-block--compact .yard-map-photo>img{aspect-ratio:16/7.5}
+.yard-map-block--compact .yard-map-photo>img{aspect-ratio:auto}
 .sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
 .hero-photo--detail{background-position:center 46%;filter:saturate(.72) contrast(1.08)}
 .hero-photo--local{background-position:center 50%;filter:saturate(.82) contrast(1.06)}
@@ -758,6 +765,8 @@ img.kiker-icon{background-image:none!important}
 /* Local pages use the real yard as proof while location-specific photos are gathered. */
 .local-proof-photo{margin:0;background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--e1)}
 .local-proof-photo>img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;object-position:center 48%}
+.local-proof-photo--natural>img{height:auto;aspect-ratio:auto;object-fit:contain;object-position:center;background:var(--surface-3)}
+.local-proof-photo--handoff>img{aspect-ratio:4/3;object-position:center 45%}
 .local-proof-photo figcaption{display:flex;align-items:center;gap:9px;padding:12px 14px;font-size:12.5px;color:var(--text-2);border-top:1px solid var(--line)}
 .local-proof-photo figcaption .lucide{color:var(--red)}
 .cms-page--sell-your-car-pensacola .tag,.cms-page--sell-your-car-pace .tag,.cms-page--sell-your-car-milton .tag,.cms-page--sell-your-car-cantonment .tag,.cms-page--we-buy-cars-near-pensacola .tag{background:#fff}
@@ -778,7 +787,10 @@ img.kiker-icon{background-image:none!important}
 .photo-story-card figcaption{padding:13px 15px;font-size:12.5px;color:var(--text-2);border-top:1px solid var(--line)}
 .about-photo-pair{display:grid;grid-template-columns:.75fr 1.25fr;gap:18px;margin-top:24px}
 .about-photo-pair .site-photo{min-height:0}
-.crew-photo{margin-top:28px}.crew-photo>img{object-position:center 36%}
+.crew-feature{max-width:920px;margin:34px auto 0;display:grid;grid-template-columns:minmax(250px,340px) minmax(0,1fr);gap:34px;align-items:center;padding:22px;background:linear-gradient(145deg,#fff,var(--surface-3));border:1px solid var(--line);border-left:5px solid var(--red);border-radius:var(--r-lg);box-shadow:var(--e2)}
+.crew-feature__photo{box-shadow:none}.crew-feature__photo>img{aspect-ratio:4/5;object-position:center 35%}
+.crew-feature__copy h3{font-size:clamp(25px,3vw,36px);font-style:italic;margin:10px 0 12px}
+.crew-feature__copy p{color:var(--text-2);margin:0;max-width:46ch}
 .contact-team-photo{margin-bottom:22px}.contact-team-photo>img{object-position:center 34%}
 .owner .site-photo{aspect-ratio:1/1}.owner .site-photo>img{object-position:72% center}
 .story .site-photo{border-color:rgba(255,255,255,.16);box-shadow:none}
@@ -828,6 +840,20 @@ img.kiker-icon{background-image:none!important}
 .leader-guidance li{display:flex;gap:10px;color:var(--text-2);font-size:14px}
 .leader-guidance li::before{content:"";width:8px;height:8px;flex:0 0 auto;background:var(--red);margin-top:7px}
 
+/* Our Story milestones: four eras, each with a distinct shop-floor finish. */
+.milestone-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.milestone-card{position:relative;isolation:isolate;min-height:210px;overflow:hidden;padding:28px 24px 24px;border:1px solid rgba(255,255,255,.22);border-radius:var(--r-lg);color:#fff;box-shadow:var(--e2);display:flex;flex-direction:column;justify-content:flex-end}
+.milestone-card::before{content:"";position:absolute;z-index:-1;inset:0;background:linear-gradient(145deg,#0b0611,#353039)}
+.milestone-card::after{content:"";position:absolute;z-index:-1;inset:0;opacity:.13;background:repeating-linear-gradient(135deg,transparent 0 12px,#fff 12px 13px)}
+.milestone-card:nth-child(2)::before{background:linear-gradient(145deg,#dc161f 0%,#8c0c14 72%,#3d0710 100%)}
+.milestone-card:nth-child(3)::before{background:linear-gradient(145deg,#ffc74d 0%,#f6a100 46%,#9b5600 100%)}
+.milestone-card:nth-child(3){color:var(--ink);border-color:rgba(11,6,17,.16)}
+.milestone-card:nth-child(4)::before{background:linear-gradient(145deg,#1e9e57 0%,#0f6e3b 62%,#083d25 100%)}
+.milestone-card__number{font:800 italic clamp(42px,4.5vw,62px)/.9 var(--display);letter-spacing:-.03em}
+.milestone-card__label{margin-top:14px;font:800 italic 16px/1.1 var(--display);text-transform:uppercase;letter-spacing:.04em}
+.milestone-card__detail{margin-top:8px;font-size:12.5px;line-height:1.45;color:rgba(255,255,255,.72)}
+.milestone-card:nth-child(3) .milestone-card__detail{color:rgba(11,6,17,.7)}
+
 /* Launch conversion path: calls are primary; online forms remain secondary. */
 .call-primary .lucide{width:17px;height:17px}
 .call-primary .legacy-inline-icon{filter:brightness(0) invert(1)}
@@ -867,8 +893,9 @@ img.kiker-icon{background-image:none!important}
   .value-item b{font-size:18px}
   .value-item span{font-size:12.5px;margin-top:4px}
   .yard-map-block,.yard-map-block--compact{grid-template-columns:1fr;gap:16px}
-  .yard-map-block__intro{padding:22px}
-  .yard-map-block--compact .yard-map-photo>img{aspect-ratio:16/9}
+  .yard-map-block__intro{grid-template-columns:1fr;padding:22px}
+  .yard-map-block__actions{justify-content:flex-start}
+  .yard-map-block--compact .yard-map-photo>img{aspect-ratio:auto}
   .values-showcase{padding:62px 0}
   .values-showcase__layout{grid-template-columns:1fr;gap:30px}
   .values-showcase__intro h2{max-width:11ch;font-size:42px}
@@ -887,11 +914,18 @@ img.kiker-icon{background-image:none!important}
   .cms-page--cars-for-sale .filters .res{grid-column:1/-1;margin-left:0}
   .leader-demo{grid-template-columns:1fr}
   .leader-card{width:min(100%,360px)}
-  .photo-duo,.about-photo-pair{grid-template-columns:1fr}
+  .photo-duo,.about-photo-pair,.crew-feature{grid-template-columns:1fr}
+  .crew-feature{padding:16px;gap:22px}
+  .crew-feature__photo{width:min(100%,340px);margin:0 auto}
   .photo-story-grid{grid-template-columns:1fr}
+  .milestone-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .inventory-embed,.inventory-embed iframe{min-height:760px}
   .inventory-preview{grid-template-columns:1fr;text-align:left}
   .inventory-preview>.kiker-icon{width:44px;height:44px}
+}
+@media(max-width:520px){
+  .milestone-grid{grid-template-columns:1fr}
+  .milestone-card{min-height:175px}
 }
 
 /* Motion is progressive enhancement and respects reduced-motion preferences. */

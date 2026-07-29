@@ -71,6 +71,20 @@
     }
     node.parentNode.replaceChild(fragment,node);
   });
+  // Keep the recurring conversion and visit actions visually consistent even
+  // when an editor changes the button label or creates a new button in Craft.
+  document.querySelectorAll('.btn').forEach(function(button){
+    if(button.querySelector('.kiker-icon,.lucide'))return;
+    var label=button.textContent.trim().toLowerCase(),iconName='';
+    if(label.indexOf('call')!==-1)iconName='fast-response';
+    else if(label.indexOf('cash offer')!==-1||label.indexOf('get an offer')!==-1||label.indexOf('online offer')!==-1)iconName='cash-offer';
+    else if(label.indexOf('direction')!==-1||label.indexOf('visit')!==-1)iconName='location';
+    if(!iconName)return;
+    var icon=document.createElement('span');
+    icon.className='kiker-icon kiker-icon--'+iconName;
+    icon.setAttribute('aria-hidden','true');
+    button.insertBefore(icon,button.firstChild);
+  });
   // sticky nav border on scroll
   var nav=document.getElementById('nav');
   if(nav){var onScroll=function(){nav.classList.toggle('scrolled',window.scrollY>40);};window.addEventListener('scroll',onScroll,{passive:true});onScroll();}
@@ -109,6 +123,48 @@
     toggle.addEventListener('click',function(){setProfile(!card.classList.contains('is-open'));});
     card.addEventListener('keydown',function(e){if(e.key==='Escape'){setProfile(false);toggle.focus();}});
   });
+  // FAQ motion uses GSAP when available, while native <details> behavior
+  // remains the no-script and reduced-motion fallback.
+  if(window.gsap&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    document.querySelectorAll('.faq').forEach(function(faq){
+      faq.classList.add('faq--gsap');
+      faq.querySelectorAll('details').forEach(function(detail){
+        var summary=detail.querySelector('summary'),answer=detail.querySelector('.ans');
+        if(!summary||!answer)return;
+        if(detail.open)window.gsap.set(answer,{height:'auto',opacity:1});
+        summary.addEventListener('click',function(event){
+          event.preventDefault();
+          if(detail.dataset.animating==='true')return;
+          detail.dataset.animating='true';
+          if(detail.open){
+            window.gsap.to(answer,{
+              height:0,
+              opacity:0,
+              duration:.3,
+              ease:'power2.inOut',
+              onComplete:function(){
+                detail.open=false;
+                detail.dataset.animating='false';
+                window.gsap.set(answer,{clearProps:'height,opacity'});
+              }
+            });
+          }else{
+            detail.open=true;
+            window.gsap.fromTo(answer,{height:0,opacity:0},{
+              height:'auto',
+              opacity:1,
+              duration:.36,
+              ease:'power2.out',
+              onComplete:function(){
+                detail.dataset.animating='false';
+                window.gsap.set(answer,{clearProps:'height,opacity'});
+              }
+            });
+          }
+        });
+      });
+    });
+  }
   // restrained section reveals; content remains visible when JS is unavailable
   var revealTargets=document.querySelectorAll('.cms-page main > section');
   if('IntersectionObserver' in window&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches){

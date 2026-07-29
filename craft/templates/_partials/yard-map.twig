@@ -4,16 +4,19 @@
 
 <div class="yard-map-block{{ compact ? ' yard-map-block--compact' : '' }}">
   <div class="yard-map-block__intro">
-    <span class="eyebrow">Find Your Way</span>
-    <h3>{{ mapHeading }}</h3>
-    <p>{{ mapCopy }}</p>
+    <div>
+      <span class="eyebrow">Find Your Way</span>
+      <h3>{{ mapHeading }}</h3>
+      <p>{{ mapCopy }}</p>
+    </div>
     <div class="yard-map-block__actions">
-      <a class="btn btn--ink btn--sm" href="{{ siteSettings.directionsUrl }}" target="_blank" rel="noopener">Get Directions</a>
-      <a class="btn btn--outline btn--sm" href="{{ url('u-pull-parts') }}">Plan a U-Pull Visit</a>
+      <a class="btn btn--ink btn--sm" href="{{ siteSettings.directionsUrl }}" target="_blank" rel="noopener">{% include '_partials/kiker-icon' with { name: 'location' } only %}Get Directions</a>
+      <a class="btn btn--outline btn--sm" href="{{ url('u-pull-parts') }}">{% include '_partials/kiker-icon' with { name: 'tool-kit' } only %}Plan a U-Pull Visit</a>
+      <a class="btn btn--outline btn--sm" href="{{ siteUrl }}assets/maps/kikers-yard-map.svg?v=20260728-map2" target="_blank" rel="noopener">{% include '_partials/kiker-icon' with { name: 'location' } only %}Open Full Map</a>
     </div>
   </div>
   <figure class="yard-map-photo yard-map-photo--diagram">
-    <img src="assets/maps/kikers-yard-map.svg" alt="Kiker's yard map showing customer parking, office, vehicle sections, drive route, and restricted areas" width="1920" height="1080" loading="lazy">
-    <figcaption>{% include '_partials/kiker-icon' with { name: 'location' } only %}<span>Customer parking and check-in are at the front office.</span></figcaption>
+    <img src="assets/maps/kikers-yard-map.svg?v=20260728-map2" alt="Kiker's yard map showing customer parking, office, vehicle sections, drive route, and restricted areas" width="1920" height="1080" loading="lazy">
+    <figcaption>{% include '_partials/kiker-icon' with { name: 'location' } only %}<span>Customer parking, check-in, pull sections, and staff-only areas — all in one view.</span></figcaption>
   </figure>
 </div>

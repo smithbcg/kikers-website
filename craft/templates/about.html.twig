@@ -26,18 +26,7 @@
 <div class="hazard"></div>
 
 <!-- VALUES -->
-<section class="values-band">
-  <div class="wrap"><div class="values-layout">
-    <div><span class="eyebrow">How We Work</span><h2>The standard at Kiker's</h2></div>
-    <div class="values-grid">
-      <div class="value-item">{% include '_partials/kiker-icon' with { name: 'wrench' } only %}<b>Own It</b><span>See a problem. Fix it.</span></div>
-      <div class="value-item">{% include '_partials/kiker-icon' with { name: 'paperwork' } only %}<b>Do Right</b><span>Honest work. Fair deal.</span></div>
-      <div class="value-item">{% include '_partials/kiker-icon' with { name: 'fast-work' } only %}<b>Outwork It</b><span>Push harder than expected.</span></div>
-      <div class="value-item">{% include '_partials/kiker-icon' with { name: 'teamwork' } only %}<b>Back Each Other</b><span>We win together.</span></div>
-      <div class="value-item">{% include '_partials/kiker-icon' with { name: 'hard-hat' } only %}<b>Watch Out</b><span>Everyone goes home safe.</span></div>
-    </div>
-  </div></div>
-</section>
+{% include '_partials/values-showcase' with { titleId: 'story-values-title' } only %}
 
 <!-- STORY + TIMELINE -->
 <section class="sec">
@@ -56,7 +45,14 @@
       <div class="tl"><span class="yr">Today</span><span class="tx"><b>3rd generation, family-led.</b> 25 years serving Pensacola — done by the book.</span></div>
     </div>
   </div>
-  <figure class="site-photo site-photo--wide crew-photo"><img src="assets/photos/optimized/crew-counter-1200.jpg" alt="The Kiker's crew standing behind the parts counter" width="1143" height="1200" loading="lazy"><figcaption>{% include '_partials/kiker-icon' with { name: 'teamwork' } only %}The crew behind the counter today.</figcaption></figure>
+  <div class="crew-feature">
+    <figure class="site-photo crew-feature__photo"><img src="assets/photos/optimized/crew-counter-1200.jpg" alt="The Kiker's crew standing behind the parts counter" width="1143" height="1200" loading="lazy"><figcaption>{% include '_partials/kiker-icon' with { name: 'teamwork' } only %}The crew behind the counter today.</figcaption></figure>
+    <div class="crew-feature__copy">
+      <span class="eyebrow">Local People, Real Answers</span>
+      <h3>The crew behind the counter</h3>
+      <p>When you call or walk in, you are talking to people who work this yard every day. They know the rows, the parts, and what it takes to make the next step simple.</p>
+    </div>
+  </div>
   </div>
 </section>
 
@@ -97,11 +93,11 @@
 <section class="sec tight">
   <div class="wrap">
     <div class="sec-head"><span class="eyebrow">Milestones</span><h2>Still on the same ground</h2></div>
-    <div class="plates">
-      <div class="plate"><div><div class="n">1972</div><div class="l">Land Bought</div></div></div>
-      <div class="plate"><div><div class="n">2001</div><div class="l">Reopened</div></div></div>
-      <div class="plate"><div><div class="n" style="color:var(--amber)">3rd</div><div class="l">Generation</div></div></div>
-      <div class="plate"><div><div class="n" style="color:var(--red)">25</div><div class="l">Years Serving</div></div></div>
+    <div class="milestone-grid">
+      <article class="milestone-card"><span class="milestone-card__number">1972</span><span class="milestone-card__label">Land Bought</span><span class="milestone-card__detail">The same Pensacola ground Kiker's works today.</span></article>
+      <article class="milestone-card"><span class="milestone-card__number">2001</span><span class="milestone-card__label">Reopened</span><span class="milestone-card__detail">The family returned as Kiker's U-Pull-It.</span></article>
+      <article class="milestone-card"><span class="milestone-card__number">3rd</span><span class="milestone-card__label">Generation</span><span class="milestone-card__detail">Hunter carries the family business forward.</span></article>
+      <article class="milestone-card"><span class="milestone-card__number">25</span><span class="milestone-card__label">Years Serving</span><span class="milestone-card__detail">Local, licensed, and still accountable.</span></article>
     </div>
   </div>
 </section>
